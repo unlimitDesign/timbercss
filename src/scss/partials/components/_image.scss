@@ -19,6 +19,7 @@ img,
 		margin: 0 0 $thumb-margin-bottom $thumb-margin-x;
 	}
 	.image-mask{
+		height: 100%;
 		display: block;
 		overflow: hidden;
 	}
@@ -221,7 +222,8 @@ img,
 }
 .overlay-img-passpartout{
 	&:hover{
-		img{
+		img,
+		.img{
 			transform: scale3d(2,2,1);
 		}
 		.image-mask{
