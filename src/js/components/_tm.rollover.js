@@ -25,7 +25,7 @@ const tmRollover = (function () {
 
 	// Set the plugin defaults
 	const defaults = {
-		transitionElement: '.rollover-content, img, .img',
+		transitionElement: '.rollover-content, .image-mask, img, .img',
 		overlay: '.rollover-content',
 		speed: 400,
 		easing: 'easeInOutQuint',
