@@ -1,0 +1,25 @@
+/*------------------------------------------------------------------
+@section 50. Float Classes
+*/
+.visible{
+	visibility: visible;
+}
+.invisible{
+	visibility: hidden;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $visibility-breakpoint in $visibility-responsive{
+			@if $visibility-breakpoint == $breakpoint{
+				.visible-#{$breakpoint}{
+					visibility: visible;
+				}
+				.invisible-#{$breakpoint}{
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}

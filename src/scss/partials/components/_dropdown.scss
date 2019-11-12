@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------
+@section 11. Dropdown
+*/
+.dropdown{
+	display: inline-flex;
+	position: relative;
+	button, 
+	.button{
+		margin: 0;
+		text-align: left;
+	}
+	&.menu-up .dropdown-menu{
+		@include box-shadow($dropdown-menu-up-box-shadow);
+	}
+	&.menu-right .dropdown-menu{
+		right: 0;
+	}
+}
+.dropdown-menu{
+	min-width: $dropdown-menu-min-width;
+	margin: $dropdown-menu-distance 0 0 0;
+	text-align: left;
+	background: $dropdown-menu-bkg-color;
+	border: $dropdown-menu-border-width solid $dropdown-menu-border-color;
+	border-radius: $component-border-style-rounded;
+	@include box-shadow($dropdown-menu-down-box-shadow);
+	opacity: 0;
+	visibility: hidden;
+	list-style: none;
+	overflow: hidden;
+	@include transition();
+	position: absolute;
+	top: 100%;
+	z-index: 1000;
+	&.active{
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+}
+.dropdown-item{
+	padding: 0.6rem $component-medium-padding-x;
+	display: block;
+	font-size: $dropdown-menu-item-font-size;
+	color: $dropdown-menu-item-color;
+	text-decoration: none;
+	font-weight: normal;
+	cursor: pointer;
+}
+.dropdown-item{
+	&:hover{
+		background: $dropdown-menu-item-bkg-color-hover;
+		color: $dropdown-menu-item-color-hover;
+		text-decoration: none;
+	}
+}
+.dropdown-item{
+	&.active{
+		background: $dropdown-menu-item-bkg-color-active;
+		color: $dropdown-menu-item-color-active;
+	}
+}

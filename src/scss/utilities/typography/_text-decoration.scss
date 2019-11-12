@@ -1,0 +1,31 @@
+/*------------------------------------------------------------------
+@section 64. Text Decoration
+*/
+.underline{
+	text-decoration: underline;
+}
+.line-through{
+	text-decoration: line-through;
+}
+.decoration-none{
+	text-decoration: none;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $text-decoration-breakpoint in $text-decoration-responsive{
+			@if $text-decoration-breakpoint == $breakpoint{
+				.underline-#{$breakpoint}{
+					text-decoration: underline;
+				}
+				.line-through-#{$breakpoint}{
+					text-decoration: line-through;
+				}
+				.decoration-none-#{$breakpoint}{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

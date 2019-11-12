@@ -1,0 +1,103 @@
+/*------------------------------------------------------------------
+@section 16. List
+*/
+ul, ol {
+	margin: 0 0 $component-margin-bottom 2rem;
+	padding: 0;
+	font-size: inherit;
+}
+dl{
+	margin: 0 0 $component-margin-bottom 0;
+}
+dt {
+	font-weight: bold;
+}
+dd{
+	padding-left: $list-dd-padding-left;
+	margin: 0 0 $component-margin-bottom 0;
+}
+ul {
+	list-style: disc outside;
+}
+ol {
+	list-style: decimal outside;
+}
+ul ul, ul ol,
+ol ol, ol ul {
+	margin: $list-nested-margins;
+}
+.list-none{
+	margin-left: 0;
+	list-style: none;
+}
+.list-horizontal{
+	margin-left: 0;
+	> li{
+		margin-right: $list-horizontal-margin-x;
+		display: inline-block;
+	}
+	&.left > li{
+		margin-right: $list-horizontal-margin-x;
+	}
+	&.right > li{
+		margin-left: $list-horizontal-margin-x;
+		margin-right: 0;
+	}
+	&.center > li{
+		margin-left: $list-horizontal-margin-x/2;
+		margin-right: $list-horizontal-margin-x/2;
+	}
+	&:not(.center) > li:last-child{
+		margin-right: 0;
+	}
+	&.right > li:last-child{
+		margin-left: 0;
+	}
+}
+
+// Icon list
+ul li [class*="icon-"]{
+	margin-bottom: 0;
+}
+
+// List group
+.list-group{
+	margin: 0 0 $list-group-group-margin-bottom 0;
+	list-style: none;
+	overflow: hidden;
+	&:after{
+		height: 1px;
+		content: ".";
+		display: block;
+	    overflow: hidden;
+	 }
+	&.flush{
+		*{
+			border-right: 0 !important;
+			border-left: 0 !important;
+		}
+		:first-child > *{
+			border-top: none;
+		}
+		:last-child > *{
+			border-bottom: none;
+		}
+	}
+}
+.list-group-item{
+	margin: 0 0 -1px 0;
+	display: block;
+	background: none;
+	border: $list-group-border-width solid $list-group-border-color;
+	color: $list-group-color;
+	&:hover{
+		background: $list-group-bkg-color-hover;
+		border-color: $list-group-border-color-hover;
+		color: $list-group-color-hover;
+	}
+	&.active{
+		background-color: $list-group-bkg-color-active;
+		border-color: $list-group-border-color-active;
+		color: $list-group-color-active;
+	}
+}

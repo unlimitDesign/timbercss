@@ -1,0 +1,9 @@
+/*------------------------------------------------------------------
+@section 84. Masthead Section
+*/
+.masthead{
+	min-height: $masthead-min-height;
+	> .row{
+		height: 100%;
+	}
+}

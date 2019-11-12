@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------
+@section 21. Pagination Section
+*/
+// Shared attributes
+[class*="pagination-"]{
+	a{
+		margin: 0;
+		display: flex;
+		align-items: center;
+	}
+	[class*="icon-"]{
+		margin-bottom: 0;
+	}
+	small{
+		display: block;
+	}
+	.return-to-index span{
+		width: 100%;
+	}
+}
+
+// Pagination
+.pagination{
+	display: inline-flex;
+	text-align: center;
+	.page-links{
+		display: inherit;
+	}
+	[class*="icon-"]{
+		margin: 0;
+		font-size: $pagination-icon-font-size;
+	}
+	.with-label {
+		width: auto;
+		padding: $pagination-link-label-padding;
+	}
+}
+.pagination-link{
+	width: $pagination-link-size;
+	height: $pagination-link-size;
+	padding: $pagination-link-padding;
+	margin-bottom: 0;
+	background-color: $pagination-link-bkg-color;
+	border-color: $pagination-link-border-color;
+	color: $pagination-link-color;
+	border-radius: $pagination-link-border-radius;
+	font-size: $pagination-link-font-size;
+	font-weight: $pagination-link-font-weight;
+	text-align: center;
+	span{
+		margin-bottom: 0;
+		align-self: center;
+	}
+	&:hover{
+		background-color: $pagination-link-bkg-color-hover;
+		border-color: $pagination-link-border-color-hover;
+		color: $pagination-link-color-hover;
+	}
+	&.active{
+		background-color: $pagination-link-bkg-color-active;
+		border-color: $pagination-link-border-color-active;
+		color: $pagination-link-color-active;
+	}
+}

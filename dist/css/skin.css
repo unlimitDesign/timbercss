@@ -1,0 +1,17 @@
+/*------------------------------------------------------------------
+Skin
+
+/* Hero images */
+.hero-1-1{
+    background-image: url(https://images.unsplash.com/photo-1565813806984-5878f26c8e90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&dpr=1&auto=format&fit=crop&w=1199&h=594&q=80);
+}
+.hero-2-1{
+    background-image: url(https://images.unsplash.com/photo-1556741533-974f8e62a92d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);
+}
+.hero-3-1{
+    background-image: url(https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80);
+}
+.hero-4-1 .media-col{
+    background-image: url(https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+}
+

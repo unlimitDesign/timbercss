@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------
+@section 53. Width Classes
+*/
+.w-inherit{
+	width: inherit;
+}
+.w-min-inherit{
+	min-width: inherit;
+}
+.w-full{
+	width: 100%;
+}
+.w-screen{
+	width: 100vw;
+}
+.w-min-screen{
+	min-width: 100vw;
+}
+@each $width in $width-increments {
+	@each $dimension in $width-dimensions {
+		$value: if(type-of($width) != 'number', #{$width}, #{$width/10}rem);
+		$class-name: if(str-slice($dimension, 0, 1) == 'm', str-slice($dimension, 5, 5), str-slice($dimension, 0, 1));
+		@if $dimension == 'min-width'{
+			$class-name: '#{$class-name}-min';
+		}
+		@if $dimension == 'max-width'{
+			$class-name: '#{$class-name}-max';
+		}
+		.#{$class-name}-#{$width} {
+			#{$dimension}: $value;
+		}
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		.w-#{$breakpoint}-auto{
+			width: auto;
+		}
+		.w-#{$breakpoint}-full{
+			width: 100%;
+		}
+		@each $width-breakpoint in $width-responsive {
+			@if $width-breakpoint == $breakpoint{
+				@each $width in $width-increments {
+					@each $dimension in $width-dimensions {
+						$value: if(type-of($width) != 'number', #{$width}, #{$width/10}rem);
+						$class-name: if(str-slice($dimension, 0, 1) == 'm', str-slice($dimension, 5, 5), str-slice($dimension, 0, 1));
+						@if $dimension == 'min-width'{
+							$class-name: '#{$class-name}-min';
+						}
+						@if $dimension == 'max-width'{
+							$class-name: '#{$class-name}-max';
+						}
+						.#{$class-name}-#{$breakpoint}-#{$width} {
+							#{$dimension}: $value;
+						}
+					}
+				}
+			}
+		}
+	}
+}

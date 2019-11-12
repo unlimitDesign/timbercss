@@ -1,0 +1,13 @@
+/*------------------------------------------------------------------
+@section 56. Disabled States
+*/
+.disabled,
+:disabled,
+:disabled + label,
+:disabled + label:before,
+[readonly]{
+	cursor: default;
+	user-select: none;
+	pointer-events: none;
+	opacity: $component-opacity-disabled;
+}

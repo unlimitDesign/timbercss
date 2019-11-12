@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------
+@section 55. Padding Classes
+*/
+@each $padding in $padding-increments {
+	@each $side in $padding-sides {
+		$value: if(type-of($padding) != 'number', #{$padding}, #{$padding/10}rem);
+		@if $side == 'all' {
+			@if $padding != 'auto'{
+				.p-#{$padding} {
+					padding: $value !important;
+				}
+			}
+		} @else if $side == 'x'{
+			@if $padding != 'auto'{
+				.p#{str-slice($side, 0, 1)}-#{$padding} {
+					padding-right: $value !important;
+					padding-left: $value !important;
+				}
+			}
+		}@else if $side == 'y'{
+			@if $padding != 'auto'{
+				.p#{str-slice($side, 0, 1)}-#{$padding} {
+					padding-top: $value !important;
+					padding-bottom: $value !important;
+				}
+			}
+		} @else {
+			@if $value != 'auto'{
+				.p#{str-slice($side, 0, 1)}-#{$padding} {
+					padding-#{$side}: $value !important;
+				}
+			}
+		}
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $padding-breakpoint in $padding-responsive {
+			@if $padding-breakpoint == $breakpoint{
+				@each $padding in $padding-increments {
+					@each $side in $padding-sides {
+						$value: if(type-of($padding) != 'number', #{$padding}, #{$padding/10}rem);
+						@if $side == 'all' {
+							@if $padding != 'auto'{
+								.p-#{$breakpoint}-#{$padding} {
+									padding: #{$padding/10}rem !important;
+								}
+							}
+						} @else if $side == 'x'{
+							@if $padding != 'auto'{
+								.p#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$padding} {
+									padding-right: $value !important;
+									padding-left: $value !important;
+								}
+							}
+						}@else if $side == 'y'{
+							@if $padding != 'auto'{
+								.p#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$padding} {
+									padding-top: $value !important;
+									padding-bottom: $value !important;
+								}
+							}
+						} @else {
+							@if $value != 'auto'{
+								.p#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$padding} {
+									padding-#{$side}: $value !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

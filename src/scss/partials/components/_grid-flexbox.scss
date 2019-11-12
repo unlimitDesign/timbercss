@@ -1,0 +1,155 @@
+/*------------------------------------------------------------------
+@section 2. Grid
+*/
+.boxed .wrapper-inner,
+.row{
+	max-width: map-get($container-max-widths, xl);
+}
+.row{
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	@extend .flex;
+	@extend .flex-wrap;
+	flex-basis: 100%;
+	&.fluid{
+		max-width: 100%;
+	}
+	.row{
+		width: auto;
+		margin-right: -($column-gutter / 2);
+		margin-left: -($column-gutter / 2);
+	}
+	&.collapse > .col{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&.fluid.collapse .row,
+	.row.fluid.collapse{
+		margin: auto;
+	}
+}
+.row .section-block .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.col{
+	width: 100%;
+	padding-left: ($column-gutter / 2);
+	padding-right: ($column-gutter / 2);
+}
+
+// Column widths
+@for $i from 1 through 12{
+	@if $i != 12 {
+		.w-#{$i}\/12{
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 map-get($column-widths, $i);
+			flex: 0 0 map-get($column-widths, $i);
+			max-width: map-get($column-widths, $i);
+		}
+	} @else{
+		.w-full{
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 map-get($column-widths, $i);
+			flex: 0 0 map-get($column-widths, $i);
+			max-width: map-get($column-widths, $i);
+		}
+	}
+}
+// Order
+.order-first {
+	-webkit-box-ordinal-group: 0;
+	-ms-flex-order: -1;
+	order: -1; }
+
+.order-last {
+	-webkit-box-ordinal-group: 14;
+	-ms-flex-order: 13;
+	order: 13; }
+@for $i from 0 through 12{
+	.order-#{$i} {
+		-webkit-box-ordinal-group: $i + 1;
+		-ms-flex-order: $i;
+		order: $i;
+	}
+}
+
+// Offset
+@for $i from 0 through 11{
+	.offset-#{$i} {
+		margin-left: map-get($column-widths, $i);
+	}
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		
+		// Container width
+		.boxed .wrapper-inner,
+		.row{
+			max-width: map-get($container-max-widths, $breakpoint);
+		}
+
+		// Force widths in smallest breakpoints
+		@if $breakpoint == 'sm'{
+			[class*="offset-"]{ margin-left: 0; }
+			.w-1\/12,
+			.w-2\/12,
+			.w-3\/12,
+			.w-4\/12,
+			.w-5\/12,
+			.w-6\/12,
+			.w-7\/12,
+			.w-8\/12,
+			.w-9\/12,
+			.w-10\/12,
+			.w-11\/12,
+			.w-full{
+				-webkit-box-flex: 0;
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		@each $column-breakpoint in $column-responsive {
+			@if $column-breakpoint == $breakpoint{
+				// Column widths
+				@for $i from 1 through 12{
+					@if $i != 12 {
+						.w-#{$breakpoint}-#{$i}\/12{
+							-webkit-box-flex: 0;
+							-ms-flex: 0 0 map-get($column-widths, $i);
+							flex: 0 0 map-get($column-widths, $i);
+							max-width: map-get($column-widths, $i);
+						}
+					} @else{
+						.w-#{$breakpoint}-full{
+							-webkit-box-flex: 0;
+							-ms-flex: 0 0 map-get($column-widths, $i);
+							flex: 0 0 map-get($column-widths, $i);
+							max-width: map-get($column-widths, $i);
+						}
+					}
+				}
+				// Order
+				@for $i from 0 through 12{
+					.order-#{$breakpoint}-#{$i} {
+						-webkit-box-ordinal-group: $i + 1;
+						-ms-flex-order: $i;
+						order: $i;
+					}
+				}
+
+				// Offset
+				@for $i from 0 through 11{
+					.offset-#{$breakpoint}-#{$i} {
+						margin-left: map-get($column-widths, $i);
+					}
+				}
+			}
+		}
+	}
+}

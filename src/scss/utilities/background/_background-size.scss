@@ -1,0 +1,38 @@
+/*------------------------------------------------------------------
+@section 31. Background Size Classes
+*/
+
+.bg-auto{
+	background-size: auto;
+}
+.bg-cover{
+	background-size: cover;
+}
+.bg-contain{
+	background-size: contain;
+}
+.bg-full{
+	background-size: 100%;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $bg-size-breakpoint in $bg-size-responsive {
+			@if $bg-size-breakpoint == $breakpoint{
+				.bg-#{$breakpoint}-auto{
+					background-size: auto;
+				}
+				.bg-#{$breakpoint}-cover{
+					background-size: cover;
+				}
+				.bg-#{$breakpoint}-contain{
+					background-size: contain;
+				}
+				.bg-#{$breakpoint}-full{
+					background-size: 100%;
+				}
+			}
+		}
+	}
+}

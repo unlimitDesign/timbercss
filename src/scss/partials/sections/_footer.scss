@@ -1,0 +1,116 @@
+/*------------------------------------------------------------------
+@section 78. Footer Section
+*/
+.footer{
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	ul{
+		margin-left: 0;
+		list-style: none;
+	}
+	ul ul,
+	ol ol{
+		margin-left: $footer-block-link-nested-margin;
+	}
+}
+.footer-block{
+	margin-bottom: $footer-block-margin-bottom;
+}
+.footer-top-inner,
+.footer-block:last-child{
+	> *:first-child,
+	> *:first-child{
+		margin-top: 0;
+	}
+	> *:last-child,
+	> *:last-child{
+		margin-bottom: 0;
+	}
+}
+body.boxed{
+	.footer .footer-top,
+	.footer .footer-bottom{
+		padding-left: $column-gutter;
+		padding-right: $column-gutter;
+	}
+}
+
+// Colors
+.footer{
+	background-color: $footer-bkg-color;
+}
+.footer-top{
+	padding-top: $footer-top-padding-top;
+	padding-bottom: $footer-top-padding-bottom;
+	background-color: $footer-top-bkg-color;
+}
+.footer-bottom{
+	padding-bottom: $footer-bottom-padding-bottom;
+	font-size: $footer-bottom-font-size;
+	background-color: $footer-bottom-bkg-color;
+}
+.footer-title{
+	color: $footer-title-color;
+}
+.footer-bottom-inner{
+	padding-top: $footer-bottom-inner-padding-top;
+	border-top: $footer-bottom-inner-border-top;
+}
+.footer-light{
+	background-color: $footer-bkg-alt-color;
+	.footer-top{
+		background-color: $footer-top-bkg-alt-color;
+	}
+	.footer-bottom{
+		background-color: $footer-bottom-bkg-alt-color;
+	}
+	.footer-title{
+		color: $footer-title-alt-color;
+	}
+	.footer-bottom-inner{
+		border-top: $footer-bottom-inner-alt-border-top;
+	}
+}
+.footer-block{
+	color: $footer-color;
+	a:not(.button){
+		color: $footer-link-color !important;
+		&:hover{
+			color: $footer-link-color-hover !important;
+		}
+	}
+}
+.footer-light{
+	.footer-block{
+		color: $footer-alt-color;
+		a:not(.button){
+			color: $footer-link-alt-color !important;
+			&:hover{
+				color: $footer-link-alt-color-hover !important;
+			}
+		}
+	}
+}
+
+// Logo
+.footer-logo{
+	width: $footer-logo-width;
+	display: inline-block;
+	line-height: 1;
+	a{
+		display: block;
+	}
+	a:hover{
+		opacity: $footer-logo-hover-opacity;
+	}
+}
+
+/* Breakpoints */
+@include breakpoint-min(md){
+	.content.reveal-footer{
+		box-shadow: $footer-reveal-box-shadow;
+		position: relative;
+		z-index: 1;
+	}
+}

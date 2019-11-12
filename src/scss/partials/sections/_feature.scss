@@ -1,0 +1,30 @@
+/*------------------------------------------------------------------
+@section 77. Feature Section
+*/
+
+.feature{
+	.row{
+		height: 100%;
+		align-items: center;
+	}
+	.col{
+		height: auto;
+	}
+	.media-col{
+		.thumbnail,
+		.video-container{
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Feature 2
+.feature-media-col-right{
+	width: $feature-horizontal-image-width;
+	margin-right: -($feature-horizontal-image-width - 100%);
+}
+.feature-media-col-left{
+	width: $feature-horizontal-image-width;
+	margin-left:  -($feature-horizontal-image-width - 100%);
+	margin-right: auto;
+}

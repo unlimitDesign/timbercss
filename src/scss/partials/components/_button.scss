@@ -1,0 +1,120 @@
+/*------------------------------------------------------------------
+@section 7. Button
+*/
+button, 
+.button{
+	width: auto;
+	padding: $component-medium-padding-y $component-medium-padding-x;
+	margin: 0 $button-margin-x $button-margin-bottom 0;
+	background-color: $button-bkg-color;
+	border: $button-border-width solid $button-border-color;
+	line-height: $button-line-height;
+	font-family: inherit;
+    font-size: $component-medium-font-size;
+    font-weight: $component-font-weight;
+    color: $button-color;
+    text-decoration: none;
+    vertical-align: middle;
+	display: inline-flex;
+	justify-content: center;
+	cursor: pointer;
+	-webkit-appearance: none;
+	   -moz-appearance:	none;
+			appearance:	none;
+		[class*="icon"]{
+			margin-bottom: 0;
+		}
+	@include transition();
+	&:hover{
+		background-color: color-mod($button-bkg-color-hover, $color-lightness-amount);
+		border-color: color-mod($button-border-color-hover, $color-lightness-amount);
+		color: $button-color-hover;
+		text-decoration: none;
+	}
+	&:focus{
+		outline: none;
+	}
+	&.size-sm{
+		padding: $component-small-padding-y $component-small-padding-x !important;
+		font-size: $component-small-font-size !important;
+	}
+	&.size-md{
+		padding: $component-medium-padding-y $component-medium-padding-x!important;
+		font-size: $component-medium-font-size !important;
+	}
+	&.size-lg{
+		padding: $component-large-padding-y $component-large-padding-x !important;
+		font-size: $component-large-font-size !important;
+	}
+	&.size-xl{
+		padding: $component-xlarge-padding-y $component-xlarge-padding-x !important;
+		font-size: $component-xlarge-font-size !important;
+	}
+	[class*="icon-"]{
+		font-size: $form-icon-font-size;
+	}
+	[class*="icon-"].left{
+		margin-left: 0;
+		margin-right: $button-icon-margin;
+	}
+	[class*="icon-"].right{
+		margin-left: $button-icon-margin;
+		margin-right: 0;
+	}
+	.button-content{
+		display: flex;
+		align-items: center;
+	}
+	.button-content small{
+		display: block;
+	}
+	&.loading{
+		.preloader{
+			width: 2rem;
+			height: 2rem;
+			margin: 0 1rem 0 0;
+			position: relative;
+			top: auto;
+			left: auto;
+		}
+	}
+	> *{
+		pointer-events: none;
+	}
+	.badge{
+		line-height: inherit;
+	}
+}
+
+// Alignment inheritance
+[class*="left-"]{
+	button,
+	.button{
+		margin-right: $button-margin-x !important;
+		margin-left: 0 !important;
+	}
+}
+.center,
+[class*="center-"]{
+	button,
+	.button{
+		margin-right: $button-margin-x/2;
+		margin-left: $button-margin-x/2;
+	}
+}
+.right,
+[class*="right-"]{
+	button,
+	.button{
+		margin-right: 0;
+		margin-left: $button-margin-x;
+	}
+}
+
+// Button Nav
+.button-nav{
+	> *{
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+}

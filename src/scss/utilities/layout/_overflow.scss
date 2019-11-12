@@ -1,0 +1,97 @@
+/*------------------------------------------------------------------
+@section 48. Overflow Classes
+*/
+.overflow-visible{
+	overflow: visible !important;
+}
+.overflow-auto{ 
+	overflow: auto !important;
+}
+.overflow-hidden{
+	overflow: hidden !important;
+}
+.overflow-x-auto{
+	overflow-x: auto !important;
+}
+.overflow-y-auto{
+	overflow-y: auto !important;
+}
+.overflow-x-hidden{
+	overflow-x: hidden !important;
+}
+.overflow-y-hidden{
+	overflow-y: hidden !important;
+}
+.overflow-x-visible{
+	overflow-x: visible !important;
+}
+.overflow-y-visible{
+	overflow-y: visible !important;
+}
+.overflow-x-scroll{
+	overflow-x: auto !important;
+}
+.overflow-y-scroll{
+	overflow-y: auto !important;
+}
+.overflow-scroll{
+	overflow: scroll !important;
+}
+.scrolling-touch{
+	-webkit-overflow-scrolling: touch !important;
+}
+.scrolling-auto{
+	-webkit-overflow-scrolling: auto !important;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $overflow-breakpoint in $overflow-responsive {
+			@if $overflow-breakpoint == $breakpoint{
+				.overflow-#{$breakpoint}-visible{
+					overflow: visible !important;
+				}
+				.overflow-#{$breakpoint}-auto{ 
+					overflow: auto !important;
+				}
+				.overflow-#{$breakpoint}-hidden{
+					overflow: hidden !important;
+				}
+				.overflow-#{$breakpoint}-x-auto{
+					overflow-x: auto !important;
+				}
+				.overflow-#{$breakpoint}-y-auto{
+					overflow-y: auto !important;
+				}
+				.overflow-#{$breakpoint}-x-hidden{
+					overflow-x: hidden !important;
+				}
+				.overflow-#{$breakpoint}-y-hidden{
+					overflow-y: hidden !important;
+				}
+				.overflow-#{$breakpoint}-x-visible{
+					overflow-x: visible !important;
+				}
+				.overflow-#{$breakpoint}-y-visible{
+					overflow-y: visible !important;
+				}
+				.overflow-#{$breakpoint}-x-scroll{
+					overflow-x: auto !important;
+				}
+				.overflow-#{$breakpoint}-y-scroll{
+					overflow-y: auto !important;
+				}
+				.overflow-#{$breakpoint}-scroll{
+					overflow: scroll !important;
+				}
+				.scrolling-#{$breakpoint}-touch{
+					-webkit-overflow-scrolling: touch !important;
+				}
+				.scrolling-#{$breakpoint}-auto{
+					-webkit-overflow-scrolling: auto !important;
+				}
+			}
+		}
+	}
+}

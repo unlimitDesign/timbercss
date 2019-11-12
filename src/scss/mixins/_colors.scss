@@ -1,0 +1,35 @@
+@mixin color-classes($attribute: 'color', $attribute2: '', $prefix: '-', $separator: '-',$colon: ':') {
+	@each $state in $color-states {
+		&#{$prefix} {
+			@each $color-name in map-keys($base-colors) {
+				@if $state == active{
+					$colon: '.'
+				}
+				&#{if($state != base, #{$state}#{$separator}#{$color-name}#{$colon}#{$state}, #{$color-name})} {
+					@if $state == hover{
+						#{$attribute}: color-mod(map-get($base-colors, $color-name), $color-lightness-amount);
+						@if $attribute2 != '' and map-get($base-colors, $color-name) != transparent {
+							#{$attribute2}: color-mod(map-get($base-colors, $color-name), $color-lightness-amount);
+						}
+					}@else{
+						#{$attribute}: map-get($base-colors, $color-name);
+						@if $attribute2 != '' and map-get($base-colors, $color-name) != transparent {
+							#{$attribute2}: map-get($base-colors, $color-name);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@mixin gradient-classes($prefix: '-') {
+	@each $gradient-name, $values in $gradient-colors{
+		&#{$prefix}#{$gradient-name} {
+			@if map-get($values, gradient) == linear{
+				@include gradient-linear($deg: map-get($values, deg), $start-color: map-get($values, start-color), $end-color: map-get($values, end-color));
+			} @else{
+				@include gradient-radial($inner-color: map-get($values, start-color), $outer-color: map-get($values, end-color));
+			}
+		}
+	}
+}

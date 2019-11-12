@@ -1,0 +1,12 @@
+@function color-mod($color,$color-lightness-amount){
+	@if (str-index(inspect($color), 'ffffff')) == null{
+		@if $color-lightness == lighten{
+			@return lighten($color,$color-lightness-amount);
+		}
+		@else {
+			@return darken($color,$color-lightness-amount);
+		}
+	}@else {
+		@return $color;
+	}
+}

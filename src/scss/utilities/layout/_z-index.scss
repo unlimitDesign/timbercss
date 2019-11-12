@@ -1,0 +1,23 @@
+/*------------------------------------------------------------------
+@section 51. Zindex Classes
+*/
+@each $zindex in $z-index-increments {
+	.z-#{$zindex} {
+		z-index: #{$zindex};
+	}
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $z-index-breakpoint in $z-index-responsive{
+			@if $z-index-breakpoint == $breakpoint{
+				@each $zindex in $z-index-increments {
+					.z-#{$breakpoint}-#{$zindex} {
+						z-index: #{$zindex};
+					}
+				}
+			}
+		}
+	}
+}

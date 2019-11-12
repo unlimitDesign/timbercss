@@ -1,0 +1,79 @@
+/*------------------------------------------------------------------
+@section 54. Margin Classes
+*/
+@each $margin in $margin-increments {
+	@each $side in $margin-sides {
+		$value: if(type-of($margin) != 'number', #{$margin}, #{$margin/10}rem);
+		@if $side == 'all' {
+			@if $margin != 'auto'{
+				.m-#{$margin} {
+					margin: $value !important;
+				}
+			}
+		} @else if $side == 'x'{
+			.m#{str-slice($side, 0, 1)}-#{$margin} {
+				margin-right: $value !important;
+				margin-left: $value !important;
+			}
+		}@else if $side == 'y'{
+			@if $margin != 'auto'{
+				.m#{str-slice($side, 0, 1)}-#{$margin} {
+					margin-top: $value !important;
+					margin-bottom: $value !important;
+				}
+			}
+		} @else {
+			.m#{str-slice($side, 0, 1)}-#{$margin} {
+				margin-#{$side}: $value !important;
+			}
+			@if $margin != 0 and $margin != auto{
+				.-m#{str-slice($side, 0, 1)}-#{$margin} {
+					margin-#{$side}: -#{$value} !important;
+				}
+			}
+		}
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $margin-breakpoint in $margin-responsive {
+			@if $margin-breakpoint == $breakpoint{
+				@each $margin in $margin-increments {
+					@each $side in $margin-sides {
+						$value: if(type-of($margin) != 'number', #{$margin}, #{$margin/10}rem);
+						@if $side == 'all' {
+							@if $margin != 'auto'{
+								.m-#{$breakpoint}-#{$margin} {
+									margin: #{$margin/10}rem !important;
+								}
+							}
+						} @else if $side == 'x'{
+							.m#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$margin} {
+								margin-right: $value !important;
+								margin-left: $value !important;
+							}
+						}@else if $side == 'y'{
+							@if $margin != 'auto'{
+								.m#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$margin} {
+									margin-top: $value !important;
+									margin-bottom: $value !important;
+								}
+							}
+						} @else {
+							.m#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$margin} {
+								margin-#{$side}: $value !important;
+							}
+							@if $margin != 0 and $margin != auto{
+								.-m#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$margin} {
+									margin-#{$side}: -#{$value} !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

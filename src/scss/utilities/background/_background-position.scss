@@ -1,0 +1,68 @@
+/*------------------------------------------------------------------
+@section 29. Background Position Classes
+*/
+
+.bg-bottom {
+	background-position: bottom;
+}
+.bg-center {
+	background-position: center;
+}
+.bg-left {
+	background-position: left;
+}
+.bg-left-bottom {
+	background-position: left bottom;
+}
+.bg-left-top {
+	background-position: left top;
+}
+.bg-right {
+	background-position: right;
+}
+.bg-right-bottom {
+	background-position: right bottom;
+}
+.bg-right-top {
+	background-position: right top;
+}
+.bg-top {
+	background-position: top;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $bg-position-breakpoint in $bg-position-responsive {
+			@if $bg-position-breakpoint == $breakpoint{
+				.bg-#{$breakpoint}-bottom {
+					background-position: bottom;
+				}
+				.bg-#{$breakpoint}-center {
+					background-position: center;
+				}
+				.bg-#{$breakpoint}-left {
+					background-position: left;
+				}
+				.bg-#{$breakpoint}-left-bottom {
+					background-position: left bottom;
+				}
+				.bg-#{$breakpoint}-left-top {
+					background-position: left top;
+				}
+				.bg-#{$breakpoint}-right {
+					background-position: right;
+				}
+				.bg-#{$breakpoint}-right-bottom {
+					background-position: right bottom;
+				}
+				.bg-#{$breakpoint}-right-top {
+					background-position: right top;
+				}
+				.bg-#{$breakpoint}-top {
+					background-position: top;
+				}
+			}
+		}
+	}
+}

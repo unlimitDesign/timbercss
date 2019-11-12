@@ -1,0 +1,94 @@
+/*------------------------------------------------------------------
+@section 27. Tabs
+*/
+.tabs{
+	padding: 0;
+	margin: 0 0 $component-margin-bottom 0 !important;
+	.tab-nav{
+		padding: 0;
+		display: flex;
+		a{
+			margin: 0 !important;
+		}
+		&.center{
+			justify-content: center;
+		}
+		&.right{
+			justify-content: flex-end;
+		}
+	}
+	&.vertical{
+		display: flex;
+		flex-wrap: wrap;
+		.tab-nav{
+			display: initial;
+			&:not([class*="w-"]){
+				width: $tabs-tab-nav-width;
+			}
+			a{
+				width: 100%;
+			}
+		}
+		&.right{
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+// Tab panes
+.tab-panes{
+	margin-top: -1px;
+	padding: $component-medium-padding-x;
+	border: $tabs-border-width solid $tabs-border-color;
+	> div{
+		height: 0;
+		visibility: hidden;
+		background: none;
+	}
+	> .active{
+		height: auto;
+		visibility: visible;
+	}
+	.tab-content{
+		opacity: 0;
+	}
+	.animate-in .tab-content{
+		opacity: 1;
+		@include transition();
+	}
+	&.vertical{
+		.tab-panes{
+			margin-top: 0;
+			margin-left: -1px;
+			&:not([class*="w-"]){
+				width: $tabs-pane-width;
+			}
+		}
+		&.right .tab-panes{
+			margin-right: -1px;
+			margin-left: 0;
+		}
+	}
+}
+
+/* Breakpoints */
+@include breakpoint-max(sm){
+	.tabs{
+		.tab-nav{
+			display: flex;
+			flex-wrap: wrap;
+			a{
+				width: 100%;
+			}
+		}
+		.tab-panes{
+			margin-top: -($tabs-border-width + $tabs-tab-margin-x);
+		}
+		&.vertical{
+			.tab-panes,
+			&.right .tab-panes{
+				border-top: none;
+			}
+		}
+	}
+}

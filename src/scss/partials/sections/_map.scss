@@ -1,0 +1,28 @@
+/*------------------------------------------------------------------
+@section 83. Map Section
+*/
+.section-block{
+	&.map-wrapper{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+.map-container{
+	width: 100%;
+	height: $map-height;
+	> div{
+		width: 100%;
+		height: 100%;
+		 img {
+			max-width: none;
+		}
+	}
+	.gm-style .gm-style-iw{
+		padding: $map-tooltip-padding;
+		text-align: $map-tooltip-text-alignment;
+		font-size: $map-tooltip-font-size;
+		font-weight: $map-tooltip-font-weight;
+		line-height: $map-tooltip-line-height;
+		color: $map-tooltip-color;
+	}
+}

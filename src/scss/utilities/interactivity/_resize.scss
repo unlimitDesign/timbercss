@@ -1,0 +1,38 @@
+/*------------------------------------------------------------------
+@section 44. Resize
+*/
+
+.resize-none{
+	resize: none;
+}
+.resize{
+	resize: both;
+}
+.resize-y{
+	resize: vertical;
+}
+.resize-x{
+	resize: horizontal;
+}
+
+// Breaktpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $resize-breakpoint in $resize-responsive {
+			@if $resize-breakpoint == $breakpoint{
+				.resize-#{$breakpoint}-none{
+					resize: none;
+				}
+				.resize-#{$breakpoint}{
+					resize: both;
+				}
+				.resize-#{$breakpoint}-y{
+					resize: vertical;
+				}
+				.resize-#{$breakpoint}-x{
+					resize: horizontal;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,377 @@
+/*------------------------------------------------------------------
+@section 12. Forms
+*/
+input,
+textarea{
+	width: 100%;
+	padding: $component-medium-padding-y $component-medium-padding-x;
+	margin: 0 0 $form-element-margin-bottom 0;
+}
+input, 
+select, 
+textarea,
+.form-element,
+.form-element + label:before{
+	-webkit-appearance: none;
+	   -moz-appearance:	none;
+			appearance: none;
+	-webkit-border-radius: 0;
+	@include transition(border background color);
+}
+select{
+	width: 100%;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	line-height: inherit;
+	font-size: inherit;
+}
+select.form-element{
+	color: $form-element-placeholder-color;
+}
+input[type="checkbox"]{
+	-webkit-appearance: checkbox;
+	   -moz-appearance:	checkbox;
+			appearance: checkbox;
+}
+input:focus,
+textarea:focus,
+select:focus{
+	outline:none;
+}
+textarea{
+	min-width: $textarea-min-height;
+	min-height: $textarea-max-height;
+	&.form-element{
+		line-height: $body-line-height;
+	}
+}
+.textarea-no-resize{
+	resize: none;
+}
+label{
+	margin-bottom: $form-label-margin-bottom;
+	color: $form-label-color;
+	font-size: $form-label-font-size;
+	display: inline-block;
+}
+
+// Form container
+.form-container{
+	position: relative;
+	input[type=submit]{
+		margin-bottom: 0;
+	}
+}
+.row-form{
+	margin-left: -$form-container-gutter !important;
+	margin-right: -$form-container-gutter !important;
+	.col{
+		padding-left: $form-container-gutter;
+		padding-right: $form-container-gutter;
+	}
+}
+
+// Form elements
+.form-element{
+	background: $form-element-bkg-color;
+	line-height: $form-element-line-height;
+	font-size: $component-medium-font-size;
+	color: $form-element-color;
+	border: $form-element-border-width solid $form-element-border-color;
+	border-radius: 0;
+	&::-webkit-input-placeholder{
+		color: $form-element-placeholder-color;
+	}
+	&:focus::-webkit-input-placeholder{
+		color: $form-element-placeholder-color-focus;
+	}
+	&::-moz-placeholder{
+		color: $form-element-placeholder-color;
+	}
+	&:focus::-moz-placeholder{
+		color: $form-element-placeholder-color-focus;
+	}
+	&:-ms-input-placeholder{
+		color: $form-element-placeholder-color;
+	}
+	&:focus:-ms-input-placeholder{
+		color: $form-element-placeholder-color-focus;
+	}
+	&.size-sm{
+		padding: $component-small-padding-y $component-small-padding-x;
+		font-size: $component-small-font-size;
+		select{
+			padding: $component-small-padding-y 3.5rem $component-small-padding-y $component-small-padding-x;
+			font-size: $component-small-font-size;
+		}
+	}
+	&.size-md{
+		padding: $component-medium-padding-y $component-medium-padding-x;
+		font-size: $component-medium-font-size;
+		select{
+			padding: $component-medium-padding-y 4.5rem $component-medium-padding-y $component-medium-padding-x;
+			font-size: $component-medium-font-size;
+		}
+	}
+	&.size-lg{
+		padding: $component-large-padding-y $component-large-padding-x;
+		font-size: $component-large-font-size;
+		select{
+			padding: $component-large-padding-y 5rem $component-large-padding-y $component-large-padding-x;
+			font-size: $component-large-font-size;
+		}
+	}
+	&.size-xl{
+		padding: $component-xlarge-padding-y $component-xlarge-padding-x;
+		font-size: $component-xlarge-font-size;
+		select{
+			padding: $component-xlarge-padding-y 5.5rem $component-xlarge-padding-y $component-xlarge-padding-x;
+			font-size: $component-xlarge-font-size;
+		}
+	}
+}
+
+// Input group
+.input-group,
+.input-group .input-icon,
+.input-group .form-element{
+	margin: 0;
+	display: flex;
+}
+.input-group{
+	margin: 0 0 $form-element-margin-bottom 0;
+	label{
+		align-self: center;
+	}
+	.input-icon{
+		padding-right: $component-medium-padding-x/2 !important;
+		padding-left: $component-medium-padding-x/2 !important;
+		align-items: center;
+		[class*="icon-"]{
+			margin: 0;
+			font-size: $form-icon-font-size;
+		}
+	}
+	.input-icon{
+		background: $form-element-indication-bkg-color;
+		color: $form-element-indication-color;
+		border-color: $form-element-border-color;
+	}
+	&:not(.reverse){
+		.form-element:not(.input-icon):not(:focus){
+			border-left: $form-element-border-width solid $form-element-border-color;
+		}
+		 .input-icon{
+			border-left: none;
+		}
+	}
+	&.reverse{
+		flex-direction: row-reverse;
+		.input-icon{
+			border-right: none;
+		}
+	}
+	.form-select{
+		margin-bottom: 0;
+	}
+}
+
+// Select
+.form-select{
+	width: 100%;
+	padding: 0 !important;
+	margin: 0 0 $form-element-margin-bottom 0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	select{
+		width: 100%;
+		padding: $component-medium-padding-y $component-medium-padding-x;
+	}
+	&:after{
+		font-family: $component-font-library;
+		font-size: $select-icon-font-size;
+		color: $select-icon-color;
+		content: $select-icon;
+		pointer-events: none;
+		position: absolute;
+		right: $component-medium-padding-x/2;
+		z-index: 1;
+	}
+	&.size-sm:after{
+		right: $component-small-padding-x/2;
+	}
+	&.size-md:after{
+		right: $component-medium-padding-x/2;
+	}
+	&.size-lg:after{
+		right: $component-large-padding-x/2;
+	}
+	&.size-xl:after{
+		right: $component-xlarge-padding-x/2;
+	}
+}
+
+// Checkbox & radio
+.checkbox,
+.radio{
+	margin-bottom: 0 !important;
+	width: auto;
+	border: none;
+	opacity: 0;
+	position: absolute;
+	z-index: 1; 
+	&:focus + label {
+		outline: none;
+	}
+	+ .checkbox-label:before, 
+	+ .radio-label:before{
+		width: $checkbox-radio-md;
+		height: $checkbox-radio-md;
+		line-height: $checkbox-radio-md;
+		margin-right: 1rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: $form-element-bkg-color;
+		border: $form-element-border-width solid $form-element-border-color;
+		content: '';
+		font-family: $component-font-library;
+		text-align: center;
+		vertical-align: middle;
+	}
+	&.size-sm + label{
+		&:before{
+			width: $checkbox-radio-sm;
+			height: $checkbox-radio-sm;
+			font-size: 90%;
+			line-height: $checkbox-radio-sm;
+		}
+		font-size: $component-small-font-size;
+	}
+	&.size-md + label{
+		&:before{
+			width: $checkbox-radio-md;
+			height: $checkbox-radio-md;
+			font-size: 100%;
+			line-height: $checkbox-radio-md;
+		}
+	}
+	&.size-lg + label{
+		&:before{
+			width: $checkbox-radio-large;
+			height: $checkbox-radio-large;
+			font-size: 130%;
+			line-height: $checkbox-radio-large;
+		}
+		font-size: $component-large-font-size;
+	}
+	&.size-xl + label{
+		&:before{
+			width: $checkbox-radio-xlarge;
+			height: $checkbox-radio-xlarge;
+			font-size: 150%;
+			line-height: $checkbox-radio-xlarge;
+		}
+		font-size: $component-xlarge-font-size;
+	}
+}
+.checkbox{
+	& + label:before{
+		border-radius: $component-border-style-rounded;
+	}
+	&:checked + label:not([class*="color-"]){
+		opacity: 1;
+		color: $checkbox-radio-checked-label-color;
+	}
+	&:checked + label:before {
+		content: $checkbox-icon;
+		background: $checkbox-radio-checked-bkg-color;
+		color: $checkbox-radio-checked-color;
+	}
+}
+.radio{
+	& + label:before{
+		border-radius: 50%;
+	}
+	&:checked + label:not([class*="color-"]){
+		opacity: 1;
+		color: $checkbox-radio-checked-label-color;
+	}
+	&:checked + label:before {
+		background: $checkbox-radio-checked-color;
+		box-shadow: inset 0px 0px 0px 4px $checkbox-radio-checked-bkg-color;
+	}
+}
+.checkbox-label, 
+.radio-label{
+	margin-bottom: $form-element-margin-bottom;;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.checkbox,
+.radio{
+	color: $checkbox-radio-label-color;
+	& + label{
+		margin-right: $checkbox-radio-margin-x;
+	}
+}
+.center{
+	.checkbox,
+	.radio{
+		& + label{
+			margin-right: $checkbox-radio-margin-x/2;
+			margin-left: $checkbox-radio-margin-x/2;
+		}
+	}
+}
+.right{
+	.checkbox,
+	.radio{
+		& + label{
+			margin-right: 0;
+			margin-left: $checkbox-radio-margin-x;
+		}
+	}
+}
+
+// Focus
+.form-element:focus,
+.form-element select:focus{
+	background: $form-element-bkg-color-focus;
+	color: $form-element-placeholder-color-focus;
+	border: $form-element-border-width solid $form-element-border-color-focus;
+	box-shadow: $form-element-box-shadow-focus;
+	outline: none;
+	z-index: 1;
+}
+.form-element:focus + label:before{
+	border: $form-element-border-width solid $form-element-border-color-focus;
+}
+
+// Focus required fields
+.form-element.required-field,
+.form-element.required-field + label:before{
+    background-color: $form-element-bkg-color-required;
+	border-color: $form-element-border-color-required;
+	box-shadow: none;
+	color: $form-element-placeholder-color-required;
+	position: relative;
+	
+}
+.checkbox.required-field{
+	position: absolute;
+}
+
+/* Breakpoints */
+@include breakpoint-min(sm){
+	.input-group label{
+		margin-bottom: 0;
+	}
+}
+@include breakpoint-max(sm){
+	.input-group.label{
+		flex-wrap: wrap;
+	}
+}

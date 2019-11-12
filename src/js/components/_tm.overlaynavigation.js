@@ -1,0 +1,255 @@
+// Copyright © ThemeMountain 2019
+// Plugin: Overlay Navigation 
+// Version: 1.0.0
+// URL: @ThemeMountain
+// Author: Thememountain, Christian Lundgren, Shu Miyao
+// Description: Detect when elements enter and/or leave viewport
+// License: MIT
+
+// Import utilities
+import classList from '../utilities/_chaining.js';
+import tmEasing from '../utilities/_tm.easing.js';
+
+const tmOverlayNavigation = (function () {
+
+	// Use strict mode
+	'use strict';
+
+	if (typeof navigator == 'undefined' || typeof document == 'undefined' || typeof window == 'undefined') return false;
+
+	// Check for mobile device and determine event type
+	let mobile = false;
+	if( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) ||  navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) ||  navigator.userAgent.match(/BlackBerry/i) ||  navigator.userAgent.match(/Windows Phone/i) ) mobile = true;
+	
+	// Check event type
+	const eventType = mobile ? 'touchstart' : 'click';
+
+	// Set the plugin defaults
+	const defaults = {
+		easing: 'easeInOutQuint',
+		initialized: function(){},					// Callback - tabs initialized
+		overlayNavOpen: function(){},				// Callback - tab pane is visible
+		overlayNavClosed: function(){},				// Callback - tab pane hidden
+		destroyed: function(){}						// Callback - tabs destroyed
+	};
+
+	/**
+	* Constructor.
+	* @param  {element}  element  The selector element(s).
+	* @param  {object}   options  The plugin options.
+	*/
+	function OverlayNavigation(element, options) {
+
+		// Some aliases and classes used thruoghout
+		let body;												// Body alias
+		let siteWrapper;										// Site wrapper alias
+		let overlayNavShow = '.overlay-nav-show';				// Side nav show button.
+		let overlayNavHide = '.overlay-nav-hide';				// Side nav hide button.
+
+		// Create an empty plugin object
+		let plugin = {};
+
+		// Get defaults and merge with user options
+		try{
+			plugin.this = this;
+			plugin.elements = element;
+			plugin.defaults = defaults;
+			plugin.options = options;
+			plugin.settings = Object.assign({}, defaults, options);
+		}catch(error){
+			console.log(`${error} - format must be: let x = new tmOverlayNavigation('.selector',{options})`);
+		}
+
+		/**
+		* Get the classes associated with the overlay nav
+		* @param  {object}  element  The target overlay nav.
+		*/
+		const getClasses = (overlayNav) =>{
+			
+			// Determine animation type & scrollbar setting
+			let animation = overlayNav.dataset.animation ? overlayNav.dataset.animation : 'no-transition';
+			let scrollbar = overlayNav.dataset.noScrollbar ? 'no-scrollbar' : 'scrollbar';
+
+			// Add reveal and reset classes
+			classList(overlayNav).addClass(scrollbar);
+
+			// Return classes
+			return {animation: animation};
+		};
+
+		/**
+		* Public variables and methods.
+		*/
+
+		/**
+		* Initialize the plugin.
+		*/
+		plugin.initialize = () => {
+
+			if(plugin.elements == null) return false;
+
+			// Loop through each overlay navigation show link
+			document.querySelectorAll(plugin.elements).forEach(function(overlayNavShow){
+				
+				// Get overlay nav target
+				let overlayNavId = overlayNavShow.dataset.targetOverlayNav ? overlayNavShow.dataset.targetOverlayNav : overlayNavShow.href.substring(overlayNavShow.href.indexOf('#'));
+				let targetOverlayNav;
+				try{
+					targetOverlayNav = document.querySelector(overlayNavId);
+				}catch(error){
+					console.log(`${error} - please give overlay navigation a unique id`);
+					return false;
+				}
+
+				// Add reset animation class.
+				console.log(targetOverlayNav)
+				classList(targetOverlayNav).addClass(getClasses(targetOverlayNav).animation + '-reset');
+
+				// Add open events to nav show links
+				overlayNavShow.addEventListener(eventType, plugin.openNav, false);
+
+				// Add close events to overlay nav hide links
+				targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, false);
+			});
+			
+			// Get body
+			body = document.querySelector('body');
+			
+			// Nav active
+			body.dataset.overlayNavActive = false;
+
+			// Get site wrapper
+			siteWrapper = document.querySelector('.wrapper');
+			
+			// Callback
+			plugin.settings.initialized();
+		};
+
+		/**
+		* Trigger link click.
+		* @param  {links}  element  The link to trigger a click on. 
+		*/
+		plugin.triggerLinkClick = (link) => {
+			try{
+				link = document.querySelector(link);
+				let event = new MouseEvent('click', {
+					bubbles: true,
+					cancelable: true,
+					view: window
+				});
+				let canceled = !link.dispatchEvent(event);
+			}catch(error) {
+				console.log(`${error} - selector not entered or does not exist`);
+			}
+		};
+
+		/**
+		* Open overlay navigation.
+		* @param  {object}  element  The target overlay nav. 
+		*/
+		plugin.openNav = () => {
+			event.preventDefault();
+
+			// Get overlay nav target
+			let overlayNavId = event.target.dataset.targetOverlayNav ? event.target.dataset.targetOverlayNav : event.target.href.substring(event.target.href.indexOf('#'));
+			let targetOverlayNav = document.querySelector(overlayNavId);
+
+			// Nav now active add utility class to body
+			body.dataset.overlayNavActive = true;
+			classList(body).addClass('overflow-hidden');
+
+			// Add animation & state classes to wrapper
+			classList(siteWrapper).addClass('inactive');
+
+			// Add animation & state classes to overlay nav
+			classList(targetOverlayNav).addClass('active').addClass(getClasses(targetOverlayNav).animation);
+			targetOverlayNav.style.transitionTimingFunction = tmEasing[plugin.settings.easing];
+
+			// On transition end issue callack
+			targetOverlayNav.addEventListener('transitionend', function transition(event){
+				event.target.removeEventListener('transitionend', transition, false);
+				if(event.target != targetOverlayNav) return false;
+
+				// Callback
+				plugin.settings.overlayNavOpen();
+			});
+		};
+
+		/**
+		* Close overlay navigation.
+		*/
+		plugin.closeNav = () => {
+			event.preventDefault();
+
+			let overlayNavId = event.target.closest('.overlay-navigation-wrapper').id;
+			let targetOverlayNav = document.querySelector('#'+overlayNavId);
+
+			// Remove animation classes
+			classList(targetOverlayNav).removeClass(getClasses(targetOverlayNav).animation);
+
+			// On transition end remove classes 
+			targetOverlayNav.addEventListener('transitionend', function transition(event){
+				event.target.removeEventListener('transitionend', transition, false);
+				if(event.target != targetOverlayNav) return false;
+				classList(body).removeClass('overflow-hidden');
+				classList(siteWrapper).removeClass('inactive');
+				classList(targetOverlayNav).removeClass('active');
+
+				// Callback
+				plugin.settings.overlayNavClosed();
+			}, false);
+
+			// Nav inactive
+			body.dataset.overlayNavActive = false;
+		};
+
+		/**
+		* Refresh the plugin.
+		*/
+		plugin.refresh = () => {
+			// Destroy the existing initialization
+			plugin.destroy();
+
+			// Initialize the plugin
+			plugin.settings = Object.assign({}, defaults, options);
+			plugin.initialize();
+		};
+
+		/**
+		* Destroy an existing initialization.
+		*/
+		plugin.destroy = () => {
+
+			if (!plugin.settings) return;
+
+			// Loop through each overlay navigation show link
+			document.querySelectorAll(plugin.elements).forEach(function(overlayNavShow){
+				
+				// Get overlay nav target
+				let overlayNavId = overlayNavShow.dataset.targetOverlayNav ? overlayNavShow.dataset.targetOverlayNav : overlayNavShow.href.substring(overlayNavShow.href.indexOf('#'));
+				let targetOverlayNav = document.querySelector(overlayNavId);
+
+				// Add open events to nav show links
+				overlayNavShow.removeEventListener(eventType, plugin.openNav, false);
+
+				// Add close events to overlay nav hide links
+				targetOverlayNav.querySelector(overlayNavHide).removeEventListener(eventType, plugin.closeNav, false);
+			});
+
+			// Callback
+			plugin.settings.destroyed();
+
+			// Reset variables
+			plugin.settings = null;
+		};
+
+		// Return API
+		return plugin;
+	}
+
+	// Return constructor
+	return OverlayNavigation;
+})();
+
+// Export plugin
+export default tmOverlayNavigation;

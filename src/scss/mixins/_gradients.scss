@@ -1,0 +1,10 @@
+@mixin gradient-linear($deg: 45deg, $start-color: $blue, $end-color: $blue, $start-percent: 0%, $end-percent: 100%) {
+	background-image: linear-gradient($deg, $start-color $start-percent, $end-color $end-percent);
+	background-repeat: repeat-x;
+	border: none;
+}
+@mixin gradient-radial($inner-color: $blue, $outer-color: $blue) {
+	background-image: radial-gradient(circle, $inner-color, $outer-color);
+	background-repeat: no-repeat;
+	border: none;
+}

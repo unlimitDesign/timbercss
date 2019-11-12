@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+@section 62. Line Height Classes
+*/
+
+.leading-none{
+	line-height: $leading-none;
+}
+.leading-tight{
+	line-height: $leading-tight;
+}
+.leading-snug{
+	line-height: $leading-snug;
+}
+.leading-normal{
+	line-height: $leading-normal;
+}
+.leading-relaxed{
+	line-height: $leading-relaxed;
+}
+.leading-loose{
+	line-height: $leading-loose;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $leading-breakpoint in $leading-responsive {
+			@if $leading-breakpoint == $breakpoint{
+				.leading-#{$breakpoint}-none{
+					line-height: $leading-none;
+				}
+				.leading-#{$breakpoint}-tight{
+					line-height: $leading-tight;
+				}
+				.leading-#{$breakpoint}-snug{
+					line-height: $leading-snug;
+				}
+				.leading-#{$breakpoint}-normal{
+					line-height: $leading-normal;
+				}
+				.leading-#{$breakpoint}-relaxed{
+					line-height: $leading-relaxed;
+				}
+				.leading-#{$breakpoint}-loose{
+					line-height: $leading-loose;
+				}
+			}
+		}
+	}
+}

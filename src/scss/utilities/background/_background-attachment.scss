@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------
+@section 28. Background Attachment Classes
+*/
+
+.bg-fixed{
+	background-attachment: fixed;
+}
+.bg-local{
+	background-attachment: local;
+}
+.bg-scroll{
+	background-attachment: scroll;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $bg-attachment-breakpoint in $bg-attachment-responsive {
+			@if $bg-attachment-breakpoint == $breakpoint{
+				.bg-#{$breakpoint}-fixed{
+					background-attachment: fixed;
+				}
+				.bg-#{$breakpoint}-local{
+					background-attachment: local;
+				}
+				.bg-#{$breakpoint}-scroll{
+					background-attachment: scroll;
+				}
+			}
+		}
+	}
+}

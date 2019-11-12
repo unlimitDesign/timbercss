@@ -1,0 +1,29 @@
+/*------------------------------------------------------------------
+@section 35. Background Color Classes
+*/
+
+.bg-none{
+	background: none;
+}
+.bg {
+	@include color-classes($attribute: 'background-color', $attribute2: 'border-color');
+}
+.bg-gradient{
+	@include gradient-classes();
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $bg-color-breakpoint in $bg-color-responsive{
+			@if $bg-color-breakpoint == $breakpoint{
+				.bg-#{$breakpoint} {
+					@include color-classes($attribute: 'background-color', $attribute2: 'border-color');
+				}
+				.bg-#{$breakpoint}-gradient{
+					@include gradient-classes();
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,65 @@
+/*------------------------------------------------------------------
+@section 39. Shadow Classes
+*/
+@each $state in $shadow-states {
+	$prefix: if($state == 'base', '', '-');
+	$punctuation: if($state == active, '.', ':');
+	@if $state == 'base'{
+		$state: '';
+		$punctuation: '';
+	}
+	.shadow#{$prefix}#{$state}#{$punctuation}#{$state}{
+		box-shadow: $shadow;
+	}	
+	.shadow#{$prefix}#{$state}-x2#{$punctuation}#{$state}{
+		box-shadow: $shadow-x2;
+	}
+	.shadow#{$prefix}#{$state}-x3#{$punctuation}#{$state}{
+		box-shadow: $shadow-x3;
+	}
+	.shadow#{$prefix}#{$state}-x4#{$punctuation}#{$state}{
+		box-shadow: $shadow-x4;
+	}
+	.shadow#{$prefix}#{$state}-inner#{$punctuation}#{$state}{
+		box-shadow: $shadow-inner;
+	}
+	.shadow#{$prefix}#{$state}-outline#{$punctuation}#{$state}{
+		box-shadow: $shadow-outline;
+		position: relative;
+		z-index: 2;
+	}
+	.shadow#{$prefix}#{$state}-none#{$punctuation}#{$state}{
+		box-shadow: none;
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $shadow-breakpoint in $shadow-responsive {
+			@if $shadow-breakpoint == $breakpoint{
+				.shadow-#{$breakpoint}{
+					box-shadow: $shadow;	
+				}	
+				.shadow-#{$breakpoint}-x2{
+					box-shadow: $shadow-x2;
+				}
+				.shadow-#{$breakpoint}-x3{
+					box-shadow: $shadow-x3;
+				}
+				.shadow-#{$breakpoint}-x4{
+					box-shadow: $shadow-x4;
+				}
+				.shadow-#{$breakpoint}-inner{
+					box-shadow: $shadow-inner;
+				}
+				.shadow-#{$breakpoint}-outline{
+					box-shadow: $shadow-outline;
+				}
+				.shadow-#{$breakpoint}-none{
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}

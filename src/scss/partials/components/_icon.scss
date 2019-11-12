@@ -1,0 +1,34 @@
+/*------------------------------------------------------------------
+@section 14. Icon
+*/
+[class*="icon-"]{
+	margin: 0 $icon-margin-x $icon-margin-bottom 0;
+	font-size: $icon-medium;
+	text-decoration: none;
+	&.size-sm{
+		font-size: $icon-small;
+	}
+	&.size-md{
+		font-size: $icon-medium;
+	}
+	&.size-lg{
+		font-size: $icon-large;
+	}
+	&.size-xl{
+		font-size: $icon-xlarge;
+	}
+}
+
+// Alignment inheritance
+.center{
+	[class*="icon-"]{
+		margin-right: $icon-margin-x/2;
+		margin-left: $icon-margin-x/2;
+	}
+}
+.right{
+	[class*="icon-"]{
+		margin-right: 0;
+		margin-left: $icon-margin-x;
+	}
+}

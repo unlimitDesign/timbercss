@@ -1,0 +1,3 @@
+@function ouput-icon-css($character) {
+  @return unquote('\"\\#{$character}\"');
+}

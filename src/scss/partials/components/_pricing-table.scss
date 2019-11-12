@@ -1,0 +1,135 @@
+/*------------------------------------------------------------------
+@section 22. Pricing Table
+*/
+
+// Table wrapper
+.pricing-table{
+	width: 100%;
+	margin-bottom: $component-margin-bottom;
+	&.row{
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.pricing-table-column{
+		@include transition();
+	}
+	&[class*="border-"]{
+		border-width: 0;
+		.pricing-table-column{
+			border-color: inherit !important;
+		}
+	}
+	.pricing-table-price .currency{
+		font-size: $pricing-table-currency-font-size;
+		top: -($pricing-table-currency-top);
+	}
+	.pricing-table-price .interval{
+		font-size: $pricing-table-interval-font-size;
+	}
+}
+
+// Column
+.pricing-table-column{
+	padding: 0;
+	overflow: hidden;
+	&.callout{
+		margin-left: -($pricing-table-border-width);
+		margin-bottom: -($pricing-table-callout-top * -2);
+		border: $pricing-table-border-width solid $pricing-table-callout-border-color !important;
+		top: $pricing-table-callout-top;
+		> .pricing-table-header{
+			padding-top: $pricing-table-callout-padding-y;
+		}
+		> .pricing-table-footer{
+			padding-bottom: $pricing-table-callout-padding-y;
+		}
+	}
+	&.callout,
+	&[class*="shadow"]{
+		position: relative;
+		z-index: 1;
+	}
+	> *:not(hr){
+		padding: $pricing-table-padding;
+	}
+	> *:not(:first-child){
+		padding-top: 0;
+	}
+	> [class*="bg-"]{
+		padding: $pricing-table-padding;
+	}
+}
+
+[class*="border-"] .pricing-table-column{
+	border-width: $pricing-table-border-width $pricing-table-border-width $pricing-table-border-width 0;
+	border-style: solid;
+	border-color: $pricing-table-border-color;
+	&:first-child{
+		border-width: $pricing-table-border-width;
+	}
+}
+
+// Header
+.pricing-table-header{
+	*{
+		margin: 0;
+	}
+}
+
+// Price
+.pricing-table-price{
+	font-size: $pricing-table-price-font-size;
+	.currency{
+		margin-right: $pricing-table-currency-margin-right;
+		font-size: $pricing-table-currency-font-size;
+		position: relative;
+		top: -($pricing-table-currency-top);
+	}
+	.interval{
+		font-size: $pricing-table-interval-font-size;
+		opacity: $pricing-table-interval-opacity;
+	}
+}
+
+// Options
+.pricing-table-options{
+	del{
+		opacity: $pricing-table-option-del-opacity;
+		text-decoration: none;
+	}
+	li{
+		margin-bottom: 0;
+		padding: $pricing-table-options-padding-y 0;
+	}
+	&.with-icon li{
+		&:before{
+			margin-right: $pricing-table-icon-margin-right;
+			font-family: $component-font-library;
+			content: $pricing-table-icon-included;
+			float: left;
+		}
+		&.del:before{
+			content: $pricing-table-icon-not-included;
+		}
+	}
+}
+.pricing-table-options,
+.pricing-table-options ul{
+	margin: 0;
+	list-style: none;
+	line-height: inherit;
+}
+.pricing-table-text{
+	line-height: inherit;
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+
+// Footer
+.pricing-table-footer{
+	button,
+	.button{
+		margin-bottom: 0;
+	}
+}

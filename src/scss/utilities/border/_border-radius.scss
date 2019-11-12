@@ -1,0 +1,112 @@
+/*------------------------------------------------------------------
+@section 32. Border Radius Classes
+*/
+.rounded-none{
+	border-radius: 0 !important;
+}
+.rounded-tl-none{
+	border-top-left-radius: 0 !important;
+}
+.rounded-tr-none{
+	border-top-right-radius: 0 !important;
+}
+.rounded-br-none{
+	border-bottom-right-radius: 0 !important;
+}
+.rounded-bl-none{
+	border-bottom-left-radius: 0 !important;
+}
+.rounded {
+	border-radius: $component-border-style-rounded !important;
+}
+.rounded-t {
+	border-radius: $component-border-style-rounded $component-border-style-rounded 0 0 !important;
+}
+.rounded-tl {
+	border-top-left-radius: $component-border-style-rounded !important;
+}
+.rounded-r {
+	border-radius: 0 $component-border-style-rounded $component-border-style-rounded 0 !important;
+}
+.rounded-tr {
+	border-top-right-radius: $component-border-style-rounded !important;
+}
+.rounded-b {
+	border-radius: 0 0 $component-border-style-rounded $component-border-style-rounded !important;
+}
+.rounded-br {
+	border-bottom-right-radius: $component-border-style-rounded !important;
+}
+.rounded-l {
+	border-radius: $component-border-style-rounded 0 0 $component-border-style-rounded !important;
+}
+.rounded-bl {
+	border-bottom-left-radius: $component-border-style-rounded !important;
+}
+.rounded-full{
+	border-radius: $component-border-style-full !important;
+}
+.rounded-inherit{
+	border-radius: inherit !important;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $border-rounded-breakpoint in $border-rounded-responsive {
+			@if $border-rounded-breakpoint == $breakpoint{
+				.rounded-#{$breakpoint}-none{
+					border-radius: 0 !important;
+				}
+				.rounded-#{$breakpoint}-none{
+					border-radius: 0 !important;
+				}
+				.rounded-#{$breakpoint}-tl-none{
+					border-top-left-radius: 0 !important;
+				}
+				.rounded-#{$breakpoint}-tr-none{
+					border-top-right-radius: 0 !important;
+				}
+				.rounded-#{$breakpoint}-br-none{
+					border-bottom-right-radius: 0 !important;
+				}
+				.rounded-bl-none{
+					border-bottom-left-radius: 0 !important;
+				}
+				.rounded-#{$breakpoint} {
+					border-radius: $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-t {
+					border-radius: $component-border-style-rounded $component-border-style-rounded 0 0 !important;
+				}
+				.rounded-#{$breakpoint}-tl {
+					border-top-left-radius: $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-r {
+					border-radius: 0 $component-border-style-rounded $component-border-style-rounded 0 !important;
+				}
+				.rounded-#{$breakpoint}-tr {
+					border-top-right-radius: $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-b {
+					border-radius: 0 0 $component-border-style-rounded $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-br {
+					border-bottom-right-radius: $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-l {
+					border-radius: $component-border-style-rounded 0 0 $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-bl {
+					border-bottom-left-radius: $component-border-style-rounded !important;
+				}
+				.rounded-#{$breakpoint}-full{
+					border-radius: $component-border-style-full !important;
+				}
+				.rounded-#{$breakpoint}-inherit{
+					border-radius: inherit !important;
+				}
+			}
+		}
+	}
+}

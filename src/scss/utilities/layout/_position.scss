@@ -1,0 +1,111 @@
+/*------------------------------------------------------------------
+@section 49. Position Classes
+*/
+.static{
+	position: static;
+}
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.fixed{
+	position: fixed;
+}
+.sticky,
+.freeze{
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+@each $space in $position-increments {
+	@each $side in $position-sides {
+		@if type-of($space) == 'number'{
+			@if $position-unit != 'rem'{
+				.ps#{str-slice($side, 0, 1)}-#{$space} {
+					#{$side}: #{$space+unquote('%')};
+				}
+				@if $space != 0{
+					.-ps#{str-slice($side, 0, 1)}-#{$space} {
+						#{$side}: -#{$space+unquote('%')};
+					}
+				}
+			}@else{
+				.ps#{str-slice($side, 0, 1)}-#{$space} {
+					#{$side}: #{$space/10}rem;
+				}
+				@if $space != 0{
+					.-ps#{str-slice($side, 0, 1)}-#{$space} {
+						#{$side}: -#{$space/10}rem;
+					}
+				}
+			}
+		}@else{
+			.ps#{str-slice($side, 0, 1)}-#{$space} {
+				#{$side}: #{$space};
+			}
+		}
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		.static-#{$breakpoint}{
+			position: static;
+		}
+		.relative-#{$breakpoint}{
+			position: relative;
+		}
+		.absolute-#{$breakpoint}{
+			position: absolute;
+		}
+		.fixed-#{$breakpoint}{
+			position: fixed;
+		}
+		.sticky-#{$breakpoint}{
+			position: -webkit-sticky;
+			position: sticky;
+		}
+		.ps-#{$breakpoint}-auto{
+			top: auto;
+			right: auto;
+			bottom: auto;
+			left: auto;
+		}
+		@each $position-breakpoint in $position-responsive {
+			@if $position-breakpoint == $breakpoint{
+				@each $space in $position-increments {
+					@each $side in $position-sides {
+						@if type-of($space) == 'number'{
+							@if $position-unit != 'rem'{
+								.ps#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$space} {
+									#{$side}: #{$space+unquote('%')};
+								}
+								@if $space != 0{
+									.-ps#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$space} {
+										#{$side}: -#{$space+unquote('%')};
+									}
+								}
+							}@else{
+								.ps#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$space} {
+									#{$side}: #{$space/10}rem;
+								}
+								@if $space != 0{
+									.-ps#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$space} {
+										#{$side}: -#{$space/10}rem;
+									}
+								}
+							}
+						} @else{
+							.ps#{str-slice($side, 0, 1)}-#{$breakpoint}-#{$space} {
+								#{$side}: #{$space};
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

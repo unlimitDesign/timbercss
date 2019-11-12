@@ -1,0 +1,24 @@
+/*------------------------------------------------------------------
+@section 5. Badge
+*/
+.badge{
+	padding: $component-badge-padding-x $component-badge-padding-y;
+	display: inline-block;
+	background: $component-bkg-color;
+	border: $component-border-color;
+	color: $component-color;
+	font-size: $component-badge-font-size;
+	font-weight: $component-badge-font-weight;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	&:empty {
+	    display: none;
+	}
+}
+.button{
+	.badge{
+		position: relative;
+	}
+}

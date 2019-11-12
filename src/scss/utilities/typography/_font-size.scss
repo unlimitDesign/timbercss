@@ -1,0 +1,76 @@
+/*------------------------------------------------------------------
+@section 58. Font Size Classes
+*/
+
+h1, h2, h3, h4, h5, h6{
+	margin-top: $headings-margin-top;
+	margin-bottom: $headings-margin-bottom;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	color: $headings-color;
+}
+
+* h1:first-child,
+* h2:first-child,
+* h3:first-child,
+* h4:first-child,
+* h5:first-child,
+* h6:first-child{
+	margin-top: 0;
+}
+
+h1{ font-size: $h1-font-size; }
+h2{ font-size: $h2-font-size; }
+h3{ font-size: $h3-font-size; }
+h4{ font-size: $h4-font-size; }
+h5{ font-size: $h5-font-size; }
+h6{ font-size: $h6-font-size; }
+
+p{
+	margin-top: $paragraph-margin-top;
+	margin-bottom: $paragraph-margin-bottom;
+}
+
+hr {
+  margin-top: $hr-margin-top;
+  margin-bottom: $hr-margin-bottom;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+}
+
+small{
+  font-size: $small-font-size;
+  font-weight: inherit;
+}
+
+/* Custom font classes */
+@each $font-size, $size in $font-sizes {
+	.text-#{$font-size}{
+		font-size: #{$size} !important;
+	}
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@if $breakpoint == $h-tag-responsive {
+			h1{ font-size: $h1-responsive-font-size; }
+			h2{ font-size: $h2-responsive-font-size; }
+			h3{ font-size: $h3-responsive-font-size; }
+			h4{ font-size: $h4-responsive-font-size; }
+			h5{ font-size: $h5-responsive-font-size; }
+			h6{ font-size: $h6-responsive-font-size; }
+			body { font-size: $body-responsive-font-size; }
+		}
+		@each $font-size-breakpoint in $font-size-responsive{
+			@if $font-size-breakpoint == $breakpoint{
+				@each $font-size, $size in $font-sizes {
+					.text-#{$breakpoint}-#{$font-size}{
+						font-size: #{$size} !important;
+					}
+				}
+			}
+		}
+	}
+}

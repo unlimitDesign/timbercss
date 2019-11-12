@@ -1,0 +1,107 @@
+/*------------------------------------------------------------------
+@section 26. Table
+*/
+.table{
+	width: 100%;
+	margin-bottom: $component-margin-bottom;
+	border-width: 1px 1px 0 1px;
+	border-color: $table-border-color;
+	border-style: solid;
+	font-size: $component-medium-font-size;
+	line-height: 1.5;
+	text-align: left;
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+	> thead > tr > th, 
+	> tbody > tr > th, 
+	> tfoot > tr > th, 
+	> thead > tr > td, 
+	> tbody > tr > td, 
+	> tfoot > tr > td{
+		padding: $component-medium-padding-y $component-medium-padding-x;
+	}
+	> thead{
+		color: $table-header-color;
+		background-color: $table-header-bkg-color;
+		> tr > th{
+			border-bottom: none;
+		}
+	}
+	&:not(.striped){
+		th,
+		th + th,
+		td{
+			border-left: none;
+			border-bottom: 1px solid $table-border-color;
+		}
+	}
+	&.striped{
+		tbody tr:nth-child(even){
+			background-color: $table-striped-row-bkg-color;
+		}
+		tbody td:nth-child(even){
+			background-color: $table-striped-column-bkg-color
+		}
+	}
+	&.hover{
+		tbody tr:hover {
+			background-color: $table-striped-row-bkg-color-hover;
+		}
+	}
+	&.size-sm{
+		> thead > tr > th,
+		> tbody > tr > th,
+		> tfoot > tr > th,
+		> thead > tr > td,
+		> tbody > tr > td,
+		> tfoot > tr > td{
+			padding: $component-small-padding-y $component-small-padding-x;
+			font-size: $component-small-font-size;
+		}
+	}
+	&.size-md{
+		> thead > tr > th,
+		> tbody > tr > th,
+		> tfoot > tr > th,
+		> thead > tr > td,
+		> tbody > tr > td,
+		> tfoot > tr > td{
+			padding: $component-medium-padding-y $component-medium-padding-x;
+			font-size: $component-medium-font-size;
+		}
+	}
+	&.size-lg{
+		> thead > tr > th,
+		> tbody > tr > th,
+		> tfoot > tr > th,
+		> thead > tr > td,
+		> tbody > tr > td,
+		> tfoot > tr > td{
+			padding: $component-large-padding-y $component-large-padding-x;
+			font-size: $component-large-font-size;
+		}
+	}
+	&.size-xl{
+		> thead > tr > th,
+		> tbody > tr > th,
+		> tfoot > tr > th,
+		> thead > tr > td,
+		> tbody > tr > td,
+		> tfoot > tr > td{
+			padding: $component-xlarge-padding-y $component-xlarge-padding-x;
+			font-size: $component-xlarge-font-size;
+		}
+	}
+}
+.table-scrollable{
+	width: 100%;
+	display: block;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	> .table th,
+	> .table td{
+		white-space: nowrap !important;
+	}
+}

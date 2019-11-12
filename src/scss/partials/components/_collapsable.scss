@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+@section 10. Collapsable
+*/
+.collapsable-target{
+	height: 0;
+	overflow: hidden;
+	@include transition(height);
+	&:not(.include-margin) > *:last-child{
+		margin-bottom: 0 !important;
+	}
+	&.active{
+		height: auto;
+	}
+}
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		.collapsable-target{
+			&.inactive-#{$breakpoint}:not(.active){
+				height: 0;
+			}
+		}
+	}
+}
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-min($breakpoint){
+		.collapsable-target{
+			&.active-#{$breakpoint}{
+				height: auto;
+			}
+		}
+	}
+}

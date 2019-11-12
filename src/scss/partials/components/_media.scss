@@ -1,0 +1,23 @@
+/*------------------------------------------------------------------
+@section 17. Media
+*/
+.video-container{
+	margin-bottom: $component-margin-bottom;
+	overflow: hidden;
+	position: relative;
+	> *{
+		position: absolute;
+	}
+}
+.bg-video-container{
+	width:100%;
+	height:100%;
+	position: absolute;
+	> *{
+		position: inherit;
+	}
+}
+iframe{
+	border: none;
+	overflow: hidden;
+}

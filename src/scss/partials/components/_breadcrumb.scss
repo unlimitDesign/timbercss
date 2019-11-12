@@ -1,0 +1,29 @@
+/*------------------------------------------------------------------
+@section 6. Breadcrumb
+*/
+.breadcrumb { 
+	margin-bottom: $breadcrumb-margin-bottom;
+	margin-left: 0;
+	list-style: none;
+	overflow: hidden;
+	li { 
+		display: inline-block;
+	}
+	li,
+	li a {
+		font-size: $breadcrumb-font-size;
+	}
+	li:after,
+	li:before{
+		padding-left: $breadcrumb-divider-padding-x;
+		padding-right: $breadcrumb-divider-padding-x;
+	}
+	li:after{
+		content: "#{$breadcrumb-divider}";
+	}
+	li:last-child:after,
+	&.right li:first-child:before{
+		content: "";
+		padding: 0;
+	}
+}

@@ -1,0 +1,52 @@
+/*------------------------------------------------------------------
+@section 8. Card
+*/
+.card{
+	width: 100%;
+	padding: $component-medium-padding-x;
+	margin-bottom: $component-margin-bottom;
+	background-color: $component-bkg-color;
+	border: $card-border-width solid $component-bkg-color;
+	overflow: hidden;
+	@include transition();
+	position: relative;
+	.card{
+		width: auto;
+		padding: inherit;
+	}
+	&.dismissable{
+		max-height: 100rem;
+		 .close{
+			text-decoration: none;
+			opacity: $card-dismissable-close-opacity;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 1rem;
+			z-index: 10;
+			&:hover{
+				text-decoration: none;
+				opacity: $card-dismissable-close-opacity-hover;
+			}
+		}
+	}
+	&.size-sm{
+		padding: $component-small-padding-x;
+	}
+	&.size-md{
+		padding: $component-medium-padding-x;
+	}
+	&.size-lg{
+		padding: $component-large-padding-x;
+	}
+	&.size-xl{
+		padding: $component-xlarge-padding-x;
+	}
+	> *:first-child,
+	> *.close + *{
+		margin-top: 0;
+	}
+	> *:last-child{
+		margin-bottom: 0;
+	}
+}

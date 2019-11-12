@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+@section 46. Display Classes
+*/
+.hidden{
+	 display: none !important; 
+}
+.block{
+	 display: block !important; 
+}
+.inline{
+	 display: inline !important; 
+}
+.inline-block {
+	 display: inline-block !important; 
+}
+.flex{
+	 display: flex !important; 
+}
+.inline-flex{
+	 display: inline-flex !important; 
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $display-breakpoint in $display-responsive {
+			@if $display-breakpoint == $breakpoint{
+				.hidden-#{$breakpoint}{
+					 display: none !important; 
+				}
+				.block-#{$breakpoint}{
+					 display: block !important; 
+				}
+				.inline-#{$breakpoint}{
+					 display: inline !important; 
+				}
+				.inline-block-#{$breakpoint}{
+					 display: inline-block !important; 
+				}
+				.flex-#{$breakpoint}{
+					 display: flex !important; 
+				}
+				.inline-flex-#{$breakpoint}{
+					 display: inline-flex !important; 
+				}
+			}
+		}
+	}
+}

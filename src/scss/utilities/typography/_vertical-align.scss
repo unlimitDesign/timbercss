@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+@section 66. Alignment Classes
+*/
+.align-baseline{
+	vertical-align: baseline !important; 
+}
+.align-top{
+	vertical-align: top !important; 
+}
+.align-middle{
+	vertical-align: middle !important; 
+}
+.align-bottom{
+	vertical-align: bottom !important; 
+}
+.align-text-bottom {
+	vertical-align: text-bottom !important; 
+}
+.align-text-top{
+	vertical-align: text-top !important; 
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $vertical-align-breakpoint in $vertical-align-responsive{
+			@if $vertical-align-breakpoint == $breakpoint{
+				.align-#{$breakpoint}-baseline{
+					vertical-align: baseline !important; 
+				}
+				.align-#{$breakpoint}-top{
+					vertical-align: top !important; 
+				}
+				.align-#{$breakpoint}-middle{
+					vertical-align: middle !important; 
+				}
+				.align-#{$breakpoint}-bottom{
+					vertical-align: bottom !important; 
+				}
+				.align-#{$breakpoint}-text-bottom {
+					vertical-align: text-bottom !important; 
+				}
+				.align-#{$breakpoint}-text-top{
+					vertical-align: text-top !important; 
+				}
+			}
+		}
+	}
+}

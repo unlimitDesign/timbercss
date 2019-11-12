@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------
+@section 67. Text Classes
+*/
+.whitespace-normal{
+	white-space: normal;
+}
+.whitespace-no-wrap{
+	white-space: nowrap;
+}
+.whitespace-pre{
+	white-space: pre;
+}
+.whitespace-pre-line{
+	white-space: pre-line;
+}
+.whitespace-pre-wrap{
+	white-space: pre-wrap;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $whitespace-breakpoint in $whitespace-responsive{
+			@if $whitespace-breakpoint == $breakpoint{
+				.whitespace-#{$breakpoint}-normal{
+					white-space: normal;
+				}
+				.whitespace-#{$breakpoint}-no-wrap{
+					white-space: nowrap;
+				}
+				.whitespace-#{$breakpoint}-pre{
+					white-space: pre;
+				}
+				.whitespace-#{$breakpoint}-pre-line{
+					white-space: pre-line;
+				}
+				.whitespace-#{$breakpoint}-pre-wrap{
+					white-space: pre-wrap;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+/*------------------------------------------------------------------
+@section 23. Progress Bar
+*/
+.progress-bar-group{
+	margin-bottom: $component-margin-bottom;
+	.progress-bar:last-child{
+		margin-bottom: 0;
+	}
+}
+.progress-bar{
+	width: 100%;
+	height: $progress-medium-height;
+	margin-bottom: $component-margin-bottom;
+	display: flex;
+	background: $progress-bar-wrapper-bkg-color;
+	border: $progress-bar-wrapper-border-width solid $progress-bar-wrapper-border-color;
+	font-size: $progress-medium-font-size;
+	color: $progress-bar-color;
+	overflow: hidden;
+	transform: translate3d(0,0,0);
+	position: relative;
+	&.tmh-perspective{
+		overflow: hidden !important;
+	}
+}
+.progress-bar-inner{
+	width: 100%;
+	height: 100%;
+	padding: 0 $progress-bar-padding-x;
+	display: flex;
+	background-color: $progress-bar-bkg-color;
+	align-items: center;
+	flex-flow: row-reverse;
+	-webkit-backface-visibility: hidden;
+}

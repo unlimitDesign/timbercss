@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------
+@section 3. CSS Grid
+*/
+.grid {
+	display: grid;
+	grid-gap: $column-gutter;
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	grid-auto-flow: dense;
+	justify-items: stretch;
+	align-items: stretch;
+	.box:not([class*="mb-"]),
+	.is-bg-image{
+		width: 100%;
+		height: 100%;
+		margin: 0 !important;
+	}
+	&.fixed-dimension{
+		.grid-item{
+			overflow: hidden;
+		}
+		.thumbnail{
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+.grid-item{
+	min-height: 20rem;
+	position: relative;
+}
+.grid-item-inner{
+	height: 100%;
+}
+.grid.preload{
+	position: relative;
+	.grid-item-inner{
+		width: $grid-item-width-start;
+		height: $grid-item-height-start;
+		transition-duration: 400ms;
+		opacity: 0;
+		transform: $grid-item-transform-start;
+		transition-property: all;
+		will-change: all;
+	}
+	.grid-item.loaded .grid-item-inner{
+		width: $grid-item-width-end;
+		height: $grid-item-height-end;
+		opacity: 1;
+		transform: $grid-item-transform-end;
+	}
+}
+
+// Cols
+@for $i from 1 through $grid-max-colums + 1{
+	@if $i != $grid-max-colums + 1 {
+		.grid-cols-#{$i}{
+			@if $i != 1{
+				grid-template-columns: repeat(#{$i}, 1fr);
+			} @else {
+				grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+			}
+		}
+	}
+}
+
+// Gutters
+@each $gutter in $grid-gutters {
+	.grid-gutter-#{$gutter} {
+		grid-gap: #{$gutter/10}rem;
+	}
+}
+
+// Spans
+@each $span in $grid-col-row-spans {
+	.span-cols-#{$span} {
+		grid-column-end: span #{$span};
+	}
+	.span-rows-#{$span} {
+		grid-row-end: span #{$span};
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $grid-col-row-breakpoint in $grid-col-row-responsive {
+			@if $grid-col-row-breakpoint == $breakpoint{
+				@each $span in $grid-col-row-spans {
+					.span-#{$breakpoint}-cols-#{$span} {
+						grid-column-end: span #{$span};
+					}
+					.span-#{$breakpoint}-rows-#{$span} {
+						grid-row-end: span #{$span};
+					}
+				}
+			}
+		}
+		@each $grid-breakpoint in $grid-responsive {
+			@if $grid-breakpoint == $breakpoint{
+				@for $i from 1 through $grid-max-colums + 1{
+					@if $i != $grid-max-colums + 1 {
+						@if $i != 1{
+							.grid-#{$breakpoint}-cols-#{$i}{
+								grid-template-columns: repeat(#{$i}, 1fr);
+							}
+						} @else {
+							.grid-#{$breakpoint}-cols-#{$i}{
+								grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+							}
+						}
+					}
+				}
+				.grid-#{$breakpoint}-cols-1 [class*="span-cols-"]{
+					grid-column-end: auto;
+				}
+			}
+		}
+	}
+}

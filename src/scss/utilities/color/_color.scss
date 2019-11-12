@@ -1,0 +1,37 @@
+/*------------------------------------------------------------------
+@section 37. Color Classes
+*/
+[class*="color-"] *:not([class*="color-"]){
+	color: inherit !important;
+}
+[class*="color-"]::-webkit-input-placeholder{
+	background-color: inherit;
+	border-color: inherit;
+	color: inherit;
+}
+[class*="color-"]::-moz-placeholder{
+	background-color: inherit;
+	border-color: inherit;
+	color: inherit;
+}
+[class*="color-"]:-ms-input-placeholder{
+	background-color: inherit;
+	border-color: inherit;
+	color: inherit;
+}
+.color {
+	@include color-classes($attribute: 'color');
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $color-breakpoint in $color-responsive{
+			@if $color-breakpoint == $breakpoint{
+				.color-#{$breakpoint} {
+					@include color-classes($attribute: 'color');
+				}
+			}
+		}
+	}
+}

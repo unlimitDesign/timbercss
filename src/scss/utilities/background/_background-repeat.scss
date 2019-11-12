@@ -1,0 +1,38 @@
+/*------------------------------------------------------------------
+@section 30. Background Repeat Classes
+*/
+
+.bg-repeat{
+	background-repeat: repeat;
+}
+.bg-no-repeat{
+	background-repeat: no-repeat;
+}
+.bg-repeat-x{
+	background-repeat: repeat-x;
+}
+.bg-repeat-y{
+	background-repeat: repeat-y;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $bg-repeat-breakpoint in $bg-repeat-responsive {
+			@if $bg-repeat-breakpoint == $breakpoint{
+				.bg-#{$breakpoint}-repeat{
+					background-repeat: repeat;
+				}
+				.bg-#{$breakpoint}-no-repeat{
+					background-repeat: no-repeat;
+				}
+				.bg-#{$breakpoint}-repeat-x{
+					background-repeat: repeat-x;
+				}
+				.bg-#{$breakpoint}-repeat-y{
+					background-repeat: repeat-y;
+				}
+			}
+		}
+	}
+}

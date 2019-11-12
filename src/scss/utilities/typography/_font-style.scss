@@ -1,0 +1,25 @@
+/*------------------------------------------------------------------
+@section 59. Text Classes
+*/
+.italic{
+	font-style: italic;
+}
+.roman{
+	font-style: normal;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $font-style-breakpoint in $font-style-responsive{
+			@if $font-style-breakpoint == $breakpoint{
+				.italic-#{$breakpoint}{
+					font-style: italic;
+				}
+				.roman-#{$breakpoint}{
+					font-style: normal;
+				}
+			}
+		}
+	}
+}

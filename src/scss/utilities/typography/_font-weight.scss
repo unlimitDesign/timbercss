@@ -1,0 +1,67 @@
+/*------------------------------------------------------------------
+@section 60. Text Classes
+*/
+.font-thin{
+	font-weight: $font-weight-thin !important;
+}
+.font-extra-light{
+	font-weight: $font-weight-extra-light !important;
+}
+.font-light{
+	font-weight: $font-weight-light !important;
+}
+.font-normal{
+	font-weight: $font-weight-normal !important;
+}
+.font-medium{
+	font-weight: $font-weight-medium !important;
+}
+.font-demi-bold{
+	font-weight: $font-weight-demi-bold !important;
+}
+.font-bold{
+	font-weight: $font-weight-bold !important;
+}
+.font-heavy{
+	font-weight: $font-weight-heavy !important;
+}
+.font-black{
+	font-weight: $font-weight-black !important;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $font-weight-breakpoint in $font-weight-responsive{
+			@if $font-weight-breakpoint == $breakpoint{
+				.font-#{$breakpoint}-thin{
+					font-weight: $font-weight-thin !important;
+				}
+				.font-#{$breakpoint}-extra-light{
+					font-weight: $font-weight-extra-light !important;
+				}
+				.font-#{$breakpoint}-light{
+					font-weight: $font-weight-light !important;
+				}
+				.font-#{$breakpoint}-normal{
+					font-weight: $font-weight-normal !important;
+				}
+				.font-#{$breakpoint}-medium{
+					font-weight: $font-weight-medium !important;
+				}
+				.font-#{$breakpoint}-demi-bold{
+					font-weight: $font-weight-demi-bold !important;
+				}
+				.font-#{$breakpoint}-bold{
+					font-weight: $font-weight-bold !important;
+				}
+				.font-#{$breakpoint}-heavy{
+					font-weight: $font-weight-heavy !important;
+				}
+				.font-#{$breakpoint}-black{
+					font-weight: $font-weight-black !important;
+				}
+			}
+		}
+	}
+}

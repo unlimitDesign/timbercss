@@ -1,0 +1,26 @@
+/*------------------------------------------------------------------
+@section 85. Sidebar Section
+*/
+.sidebar{
+	.sidebar-block{
+		margin-bottom: $sidebar-block-margin-bottom;
+		li:not(:last-child){
+			margin-bottom: $sidebar-block-link-margin-bottom;
+		}
+		&:first-child .sidebar-title{
+			margin-top: 0;
+		}
+		&:last-child,
+		> *:last-child{
+			margin-bottom: 0;
+		}
+		> ul{
+			margin-left: 0;
+			list-style: none;
+		}
+		ul ul,
+		ol ol{
+			margin-left: $sidebar-block-link-nested-margin;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+/*------------------------------------------------------------------
+@section 40. Clear Transition Classes
+*/
+.no-transition,
+.no-transition-reset{
+	-webkit-transition-duration: 0ms !important;
+			transition-duration: 0ms !important;
+}

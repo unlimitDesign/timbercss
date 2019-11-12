@@ -1,0 +1,71 @@
+{
+  "name": "timbercss",
+  "author": "unlimit.design",
+  "version": "0.1.0",
+  "description": "A CSS Framework for Rapid Website Prototyping",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unlimitDesign/timbercss.git"
+  },
+  "license": "MIT",
+  "homepage": "https://timbercss.com",
+  "bugs": {
+    "url": "https://github.com/unlimitDesign/timbercss/issues"
+  },
+  "main": "src/js/index.js",
+  "style": "src/scss/timber.scss",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --env dev",
+    "build": "webpack --mode production --env prod"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-prismjs": "^1.1.1",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.7",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-csstoc": "^0.2.0",
+    "gulp": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "image-webpack-loader": "^4.6.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-banner": "^3.0.0",
+    "purgecss-webpack-plugin": "^1.5.0",
+    "sass-loader": "^7.1.0",
+    "terser-webpack-plugin": "^1.2.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.0.3",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "javascript",
+            "css",
+            "markup",
+            "scss"
+          ],
+          "plugins": [
+            "line-numbers",
+            "unescaped-markup"
+          ],
+          "theme": "",
+          "css": true
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "prismjs": "^1.17.1"
+  }
+}

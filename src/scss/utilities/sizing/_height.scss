@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------
+@section 52. Height Classes
+*/
+.h-inherit{
+	height: inherit;
+}
+.h-min-inherit{
+	min-height: inherit;
+}
+.h-full{
+	height: 100%;
+}
+.h-screen{
+	height: 100vh;
+}
+.h-min-screen{
+	min-height: 100vh;
+}
+@each $height in $height-increments {
+	@each $dimension in $height-dimensions {
+		$value: if(type-of($height) != 'number', #{$height}, #{$height/10}rem);
+		$class-name: if(str-slice($dimension, 0, 1) == 'm', str-slice($dimension, 5, 5), str-slice($dimension, 0, 1));
+		@if $dimension == 'min-height'{
+			$class-name: '#{$class-name}-min';
+		}
+		@if $dimension == 'max-height'{
+			$class-name: '#{$class-name}-max';
+		}
+		.#{$class-name}-#{$height} {
+			#{$dimension}: $value;
+		}
+	}
+}
+
+// Breakpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		.h-#{$breakpoint}-auto{
+			height: auto;
+		}
+		@each $height-breakpoint in $height-responsive {
+			@if $height-breakpoint == $breakpoint{
+				@each $height in $height-increments {
+					@each $dimension in $height-dimensions {
+						$value: if(type-of($height) != 'number', #{$height}, #{$height/10}rem);
+						$class-name: if(str-slice($dimension, 0, 1) == 'm', str-slice($dimension, 5, 5), str-slice($dimension, 0, 1));
+						@if $dimension == 'min-height'{
+							$class-name: '#{$class-name}-min';
+						}
+						@if $dimension == 'max-height'{
+							$class-name: '#{$class-name}-max';
+						}
+						.#{$class-name}-#{$breakpoint}-#{$height} {
+							#{$dimension}: $value;
+						}
+					}
+				}
+			}
+		}
+	}
+}

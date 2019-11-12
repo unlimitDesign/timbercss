@@ -1,0 +1,93 @@
+/*------------------------------------------------------------------
+@section 34. Border Width Classes
+*/
+@each $width in $border-widths {
+	.border-#{$width} {
+		border-width: #{$width}px !important;
+	}
+}
+.border-t{ 
+	border-right-width: 0 !important;
+	border-bottom-width: 0 !important;
+	border-left-width: 0 !important;
+}
+.border-r{ 
+	border-top-width: 0 !important;
+	border-bottom-width: 0 !important;
+	border-left-width: 0 !important;
+}
+.border-b{ 
+	border-top-width: 0 !important;
+	border-right-width: 0 !important;
+	border-left-width: 0 !important;
+}
+.border-l{ 
+	border-top-width: 0 !important;
+	border-right-width: 0 !important;
+	border-bottom-width: 0 !important;
+}
+.border-none{ 
+	border: none !important; 
+}
+.border-t-none{ 
+	border-top: none !important; 
+}
+.border-r-none{ 
+	border-right: none !important; 
+}
+.border-b-none{ 
+	border-bottom: none !important; 
+}
+.border-l-none{ 
+	border-left: none !important; 
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $border-width-breakpoint in $border-width-responsive {
+			@if $border-width-breakpoint == $breakpoint{
+				@each $width in $border-widths {
+					.border-#{$breakpoint}-#{$width} {
+						border-width: #{$width}px !important;
+					}
+				}
+				.border-#{$breakpoint}-t{ 
+					border-right-width: 0 !important;
+					border-bottom-width: 0 !important;
+					border-left-width: 0 !important;
+				}
+				.border-#{$breakpoint}-r{ 
+					border-top-width: 0 !important;
+					border-bottom-width: 0 !important;
+					border-left-width: 0 !important;
+				}
+				.border-#{$breakpoint}-b{ 
+					border-top-width: 0 !important;
+					border-right-width: 0 !important;
+					border-left-width: 0 !important;
+				}
+				.border-#{$breakpoint}-l{ 
+					border-top-width: 0 !important;
+					border-right-width: 0 !important;
+					border-bottom-width: 0 !important;
+				}
+				.border-#{$breakpoint}-none{ 
+					border: none !important; 
+				}
+				.border-#{$breakpoint}-t-none{ 
+					border-top: none !important; 
+				}
+				.border-#{$breakpoint}-r-none{ 
+					border-right: none !important; 
+				}
+				.border-#{$breakpoint}-b-none{ 
+					border-bottom: none !important; 
+				}
+				.border-#{$breakpoint}-l-none{ 
+					border-left: none !important; 
+				}
+			}
+		}
+	}
+}

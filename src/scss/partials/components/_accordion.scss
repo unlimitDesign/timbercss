@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+@section 4. Accordion
+*/
+.accordion{
+	padding: 0;
+	margin-bottom: $component-margin-bottom;
+	border: none !important;
+	.accordion-nav{
+		width: 100%;
+		margin: 0 0 $accordion-tab-margin-bottom 0;
+		justify-content: left;
+	}
+	.accordion-nav + div{
+		height: 0;
+		overflow: hidden;
+		@include transition();
+	}
+	.active:nth-last-child(2){
+		border-bottom-right-radius: 0 !important;
+		border-bottom-left-radius: 0 !important;
+	}
+	.accordion-nav.active + div{
+		height: auto;
+		visibility: visible;
+	}
+}
+.accordion-content{
+	height: auto;
+	padding: $component-medium-padding-x;
+	display: block;
+	border: $accordion-border-width solid $accordion-border-color;
+	overflow: hidden;
+}

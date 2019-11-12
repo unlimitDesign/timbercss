@@ -1,0 +1,159 @@
+/*------------------------------------------------------------------
+@section 24. Progressline
+*/
+.progressline{
+	margin-bottom: $component-margin-bottom;
+	margin-left: $progressline-bullet-size/2;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	.progressline-item {
+		width: 100%;
+		padding-top: $progressline-bullet-margin-y - $progressline-bullet-size/2;
+		padding-left: $progressline-item-padding-x;
+		text-align: left;
+		position: relative;
+		&:before {
+			width: $progressline-bullet-size;
+			height: $progressline-bullet-size;
+			display: block;
+			background: transparent;
+			border: $progressline-bullet-border-width solid $progressline-border-color;
+			border-radius: 100%;
+			content: "";
+			position: absolute;
+			top: $progressline-bullet-margin-y;
+			left: -($progressline-bullet-size/2);
+			@include transition();
+		}
+		&.active:before {
+			background: $progressline-bullet-color;
+			border: $progressline-bullet-border-width solid $progressline-bullet-border-color;
+		}
+		&:after {
+			width: $progressline-border-width;
+			background: $progressline-border-color;
+			display: block;
+			content: "";
+			position: absolute;
+			top: $progressline-bullet-size + $progressline-bullet-margin-y*2;
+			bottom: 0;
+			left: -1px;
+		}
+		&:last-child .progressline-content{
+			padding-bottom: 0;
+		}
+	}
+	.progressline-section {
+		padding-left: 0;
+		&:before {
+			width: $progressline-bullet-size;
+			height: auto;
+			background: transparent !important;
+			content: "";
+			border: none;
+			border-radius: 0;
+			top: 0;
+			bottom: $progressline-content-padding-bottom;
+			position: absolute;
+			border-top: $progressline-border-width solid $progressline-border-color;
+			border-bottom: $progressline-border-width solid $progressline-border-color;
+		}
+		&:after {
+			content: "";
+			height: $progressline-content-padding-bottom;
+			top: auto;
+		}
+	}
+	.progressline-content *:last-child,
+	.progressline-section *:last-child {
+		margin-bottom: 0;
+	}
+}
+.progressline .progressline-section *,
+.progressline.right .progressline-section *{
+	padding: $progressline-content-padding-bottom/2 0 $progressline-content-padding-bottom + $progressline-content-padding-bottom/2 !important;
+}
+.progressline-content{
+	padding-bottom: $progressline-content-padding-bottom;
+}
+
+/* Breakpoint */
+@include breakpoint-min(sm){
+	.progressline{
+		.progressline-item {
+			display: block;
+		}
+		&.center{
+			.progressline-item {
+				padding-left: 0;
+		 	}
+			.progressline-item:before{
+				margin-left: -($progressline-bullet-size/2);
+				left: 50%;
+			}
+			.progressline-item:after{
+				margin-left: -($progressline-border-width/2);
+				left: 50%;
+			}
+		 	.progressline-info,
+			.progressline-content {
+				width: 50%;
+			}
+			.progressline-item .progressline-info,
+			.progressline-item.entry-left .progressline-content  {
+				float: left;
+				text-align: right;
+				padding-right: $progressline-item-padding-x;
+				padding-left: 0;
+			}
+			.progressline-item .progressline-content,
+			.progressline-item.entry-left .progressline-info {
+				float: right;
+				text-align: left;
+				padding-left: $progressline-item-padding-x;
+			}
+			.progressline-item.progressline-section .progressline-content,
+			.progressline-item.progressline-section .progressline-info {
+				float: none;
+				padding: 0;
+				width: 100%;
+				text-align: center;
+			}
+			.progressline-section {
+				padding-top: 0;
+				text-align: center;
+			}
+			.progressline-section .progressline-marker:after {
+				height: 3rem;
+				bottom: 0;
+				top: auto;
+			}
+			.progressline-section .progressline-title {
+				left: auto;
+			}
+		}
+		&.right{
+			margin-right: $progressline-bullet-size/2;
+			margin-left: 0;
+			.progressline-item{
+				padding-left: 0;
+				padding-right: $progressline-item-padding-x;
+				text-align: right;
+			}
+			.progressline-section {
+				padding-right: 0;
+			}
+			.progressline-item:before{
+				margin-right: -($progressline-bullet-size/2);
+				right: 0;
+				left: auto;
+			}
+			.progressline-item:after{
+				margin-right: -($progressline-border-width/2);
+				right: 0;
+				left: auto;
+			}
+		}
+	}
+}

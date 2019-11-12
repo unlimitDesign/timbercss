@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+@section 61. Letter Spacing Classes
+*/
+.tracking-tighter{
+	letter-spacing: $tracking-tighter;
+}
+.tracking-tight{
+	letter-spacing: $tracking-tight;
+}
+.tracking-normal{
+	letter-spacing: $tracking-normal;
+}
+.tracking-wide{
+	letter-spacing: $tracking-wide;
+}
+.tracking-wider{
+	letter-spacing: $tracking-wider;
+}
+.tracking-widest{
+	letter-spacing: $tracking-widest;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $tracking-breakpoint in $tracking-responsive {
+			@if $tracking-breakpoint == $breakpoint{
+				.tracking-#{$breakpoint}-tighter{
+					letter-spacing: $tracking-tighter;
+				}
+				.tracking-#{$breakpoint}-tight{
+					letter-spacing: $tracking-tight;
+				}
+				.tracking-#{$breakpoint}-normal{
+					letter-spacing: $tracking-normal;
+				}
+				.tracking-#{$breakpoint}-wide{
+					letter-spacing: $tracking-wide;
+				}
+				.tracking-#{$breakpoint}-wider{
+					letter-spacing: $tracking-wider;
+				}
+				.tracking-#{$breakpoint}-widest{
+					letter-spacing: $tracking-widest;
+				}
+			}
+		}
+	}
+}

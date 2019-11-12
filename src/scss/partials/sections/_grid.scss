@@ -1,0 +1,90 @@
+/*------------------------------------------------------------------
+@section 79. Grid Section
+*/
+
+// Filter menu
+.grid-filter-menu{
+	text-align: center;
+	z-index: 2;
+	&.left{
+		text-align: left;
+		li:first-child,
+		li:first-child a:not(.button){
+			padding-left: 0;
+			margin-left: 0;
+		}
+	}
+	&right{
+		text-align: right;
+		li:last-child,
+		li:last-child a:not(.button){
+			padding-right: 0;
+			margin-right: 0;
+		}
+	}
+	ul{
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	li{
+		padding: $grid-filter-menu-link-padding;
+		display: inline-block;
+		font-size: $grid-filter-menu-link-font-size;
+		line-height: 1;
+	}
+	a{
+		padding: 0.5rem 0;
+		line-height: 1;
+		color: $grid-filter-menu-link-color;
+		-webkit-transition-property: background, border-color, color, opacity;
+				transition-property: background, border-color, color, opacity;
+		-webkit-transition-duration: $grid-filter-menu-animation-duration;
+				transition-duration: $grid-filter-menu-animation-duration;
+		&:hover{
+			color: $grid-filter-menu-link-color-hover;
+			text-decoration: none;
+		}
+		&.active{
+			color: $grid-filter-menu-link-color-active;
+			border-bottom: $grid-filter-menu-link-active-border-width solid $grid-filter-menu-link-active-border-color;
+		}
+	}
+	a.button {
+		padding: $grid-filter-menu-button-padding;
+		margin: 0;
+		background: transparent;
+		border: transparent;
+		&:hover{
+			background: transparent;
+			border-top: transparent;
+			border-right: transparent;
+			border-left: transparent;
+		}
+		&.active,
+		&.active:hover{
+			color: $grid-filter-menu-button-active-color;
+			background-color: $grid-filter-menu-button-active-bkg-color;
+		}
+	}
+	.project-count{
+		margin-left: 0.5rem;
+	}
+}
+.grid-filter-menu, 
+.grid-filter-dropdown{
+	padding-bottom: $grid-filter-menu-padding-bottom;
+}
+.grid-filter-menu, 
+.grid-filter-dropdown{
+	+ .grid-container{
+		padding-top: 0;
+	}
+}
+.grid-filter-dropdown{
+	z-index: 2;
+	.dropdown .button{
+		min-width: $grid-filter-dropdown-menu-min-width;
+	}
+}

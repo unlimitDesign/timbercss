@@ -1,0 +1,254 @@
+/*------------------------------------------------------------------
+@section 25. Side Navigation
+*/
+// Associated wrapper classes
+.reveal-side-navigation {
+	background-color: $reveal-wrapper-bkg-color;
+	> div:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 0;
+		height: 0;
+		content: '';
+		opacity: 0;
+		z-index: 110;
+		transition: opacity 300ms, width 0ms, height 0ms;
+	}
+}
+.inactive.reveal-side-navigation {
+	> div:after {
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		@include transition(opacity, 300ms);
+	}
+}
+.element-reveal-left{
+	transform: translate3d($side-nav-wrapper-width,0,0);
+	&.slide-in{
+		transform: translate3d(0,0,0);
+	}
+}
+.element-reveal-right{
+	transform: translate3d(-($side-nav-wrapper-width),0,0);
+	&.slide-in{
+		transform: translate3d(0,0,0);
+	}
+}
+
+// Side nav wrapper
+.side-navigation-wrapper{
+	width: $side-nav-wrapper-width;
+	height: 100%;
+	padding: 0;
+	background: $side-nav-bkg-color;
+	box-shadow: $side-nav-inner-shadow-left;
+	overflow-y: scroll;
+	visibility: hidden;
+	position: fixed !important;
+	left: 0;
+	right: auto;
+	transform: translate3d(-100%,0,0);
+	-webkit-backface-visibility: hidden;
+	&.active{
+		visibility: visible;
+	}
+	&.enter-right{
+		text-align: left;
+		box-shadow: $side-nav-inner-shadow-right;
+		right: 0;
+		left: auto;
+		transform: translate3d(100%,0,0);
+	}
+	&.no-scrollbar{
+		overflow: hidden;
+		.side-navigation-scroll-pane{
+			width: 100%;
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			position: absolute;
+			left: 0;
+		}
+		.side-navigation-scroll-pane::-webkit-scrollbar{
+			display: none;
+		}
+	}
+}
+
+// Navigation
+.side-navigation{
+	width: 100%;
+	ul{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		&:not(.list-horizontal) li{
+			width: 100%;
+			display: block;
+			margin-bottom: 0;
+		}
+	}
+	.sub-menu{
+		height: 0;
+		overflow: hidden;
+		line-height: $side-nav-sub-menu-line-height;
+		text-align: inherit;
+		left: 0;
+		right: 0;
+	}
+	&:not(.center):not(.right) .sub-menu .sub-menu{
+		padding-left: $side-nav-sub-menu-child-padding;
+	}
+	&.center{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.right{
+		margin-left: auto;
+		.sub-menu .sub-menu{
+			padding: 0 $side-nav-sub-menu-child-padding 0 0;
+		}
+	}
+}
+
+// Main menu item styling
+.side-main-menu-item{
+	padding: $side-nav-link-padding;
+	display: block;
+	font-size: $side-nav-font-size;
+	font-weight: $side-nav-font-weight;
+	line-height: $side-nav-line-height;
+	color: $side-nav-color;
+	&:hover{
+		color: $side-nav-color-hover;
+	}
+	&.active{
+	 	color: $side-nav-color-active;
+	 	text-decoration: $side-nav-text-decoration-active;
+		font-weight: $side-nav-font-weight-active;
+		&:hover{
+			color: $side-nav-color-active;
+		}
+	}
+}
+
+// Sub menu
+.side-navigation{
+	.sub-menu{
+		background: none;
+		box-shadow: none;
+		opacity: 1;
+		visibility: visible;
+		position: relative;
+	}
+}
+
+// Sub menu item styling
+.side-sub-menu-item{
+	padding: $side-nav-sub-menu-link-padding;
+	display: block;
+	font-size: $side-nav-sub-menu-font-size;
+	font-weight: $side-nav-sub-menu-font-weight;
+	line-height: $side-nav-sub-menu-line-height;
+	color: $side-nav-sub-menu-color; 
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&:hover{
+		color: $side-nav-sub-menu-color-hover;
+	}
+	&.active{
+	 	color: $side-nav-sub-menu-color-active;
+	 	text-decoration: $side-nav-sub-menu-text-decoration-active;
+		font-weight: $side-nav-sub-menu-font-weight-active;
+		&:hover{
+			color: $side-nav-sub-menu-color-active;
+		}
+	}
+}
+
+// Side nav transition
+.side-navigation-wrapper{
+	&.no-transition-reset{
+		transform: translate3d(0,0,0);
+	}
+	&.slide-in-reset{
+		z-index: 104;
+	}
+	&.slide-in{
+		transform: translate3d(0,0,0);
+	}
+	&.push-in-reset{
+		transform: translate3d(-60%,0,0);
+	}
+	&.enter-right.push-in-reset{
+		transform: translate3d(60%,0,0);
+	}
+	&.push-in,
+	&.enter-right.push-in{
+		transform: translate3d(0,0,0);
+	}
+	&.reveal-reset,
+	&.enter-right.reveal-reset{
+		transform: translate3d(0,0,0);
+	}
+	&.scale-in-reset,
+	&.enter-right.scale-in-reset{
+		transform: translate3d(0,0,0) scale(0.9);
+	}
+	&.scale-in,
+	&.enter-right.scale-in{
+		transform: translate3d(0,0,0) scale(1)
+	}
+}
+.side-navigation-wrapper,
+.reveal-side-navigation{
+	transition: transform $side-nav-transition-duration, visibility 0ms;
+}
+
+// Side navigation fallback for non CSS3 supporting browsers
+.side-navigation-wrapper{
+	&.hide{
+		visibility: hidden;
+		left: -($side-nav-wrapper-width);
+	}
+	&.enter-right.hide{
+		right: -($side-nav-wrapper-width);
+	}
+}
+.element-show-left{
+	left: $side-nav-wrapper-width;
+}
+.element-show-right{
+	left: -($side-nav-wrapper-width);
+}
+.element-show-left,
+.element-show-right{
+	position: relative !important;
+}
+
+// Breakpoints
+@include breakpoint-max(sm){
+	.side-navigation-wrapper{
+		width: $side-nav-wrapper-mobile-width;
+	}
+	.element-reveal-left{
+		transform: translate3d($side-nav-wrapper-mobile-width,0,0);
+	}
+	.element-reveal-right{
+		transform: translate3d(-($side-nav-wrapper-mobile-width),0,0);
+	}
+	.side-navigation-wrapper.hide{
+		right: $side-nav-wrapper-mobile-width;
+	}
+	.side-navigation-wrapper.enter-right.hide{
+		right: -($side-nav-wrapper-mobile-width);
+	}
+	.element-show-left{
+		left: $side-nav-wrapper-mobile-width;
+	}
+	.element-show-right{
+		left: -($side-nav-wrapper-mobile-width);
+	}
+}

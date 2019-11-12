@@ -1,0 +1,57 @@
+/*------------------------------------------------------------------
+@section 42. Cursor
+*/
+
+.cursor-auto{
+	cursor: auto;
+}
+.cursor-default{
+	cursor: default;
+}
+.cursor-pointer{
+	cursor: pointer;
+}
+.cursor-wait{
+	cursor: wait;
+}
+.cursor-text{
+	cursor: text;
+}
+.cursor-move{
+	cursor: move;
+}
+.cursor-not-allowed	{
+	cursor: not-allowed;
+}
+
+// Breaktpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $cursor-breakpoint in $cursor-responsive {
+			@if $cursor-breakpoint == $breakpoint{
+				.cursor-#{$breakpoint}-auto{
+					cursor: auto;
+				}
+				.cursor-#{$breakpoint}-default{
+					cursor: default;
+				}
+				.cursor-#{$breakpoint}-pointer{
+					cursor: pointer;
+				}
+				.cursor-#{$breakpoint}-wait{
+					cursor: wait;
+				}
+				.cursor-#{$breakpoint}-text{
+					cursor: text;
+				}
+				.cursor-#{$breakpoint}-move{
+					cursor: move;
+				}
+				.cursor-#{$breakpoint}-not-allowed{
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+}
+
