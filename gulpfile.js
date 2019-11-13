@@ -1,28 +1,41 @@
 'use strict';
 
-const gulp = require('gulp');
+const Gulp = require('gulp');
+// csstoc
+const Csstoc = require('./src/gulp/csstoc.js');
 // const beautify = require('gulp-html-beautify');
-const brsync = require('browser-sync');
+const Brsync = require('browser-sync');
 
 const beautify_option = {
     'indent_size': 2
 }
 
 const tasks = {
-    build: function () {
+    build: function (done) {
         // @todo
+        done();
     },
     brsync: function () {
-        brsync.init({
+        Brsync.init({
             notify: false,
             server: 'docs/'
         });
     },
     reload: function () {
-        brsync.reload();
+        Brsync.reload();
     },
     watch: function () {
-        gulp.watch(['**/*.html', '**/*.css', '**/*.js'], ['tasks.reload']);
+        // @todo gulp watch not working
+        Gulp.watch(['**/*.html', '**/*.css', '**/*.js'], ['tasks.reload']);
+    },
+    csstoc: function (done) {
+        Csstoc({
+            sectionString: 'section',
+            tocHead: 'Boilerplate - Table Of Contents'
+        }, {
+            'docs-timber': ['./docs/css/timber.css']
+        });
+        done();
     }
 }
 
@@ -30,7 +43,8 @@ const tasks = {
  * Define Tasks
  */
 // single tasks
-gulp.task('build', tasks.build);
+Gulp.task('build', tasks.build);
+Gulp.task('csstoc', tasks.csstoc);
 
 // task:default, multiple tasks
-gulp.task('default', gulp.series([tasks.brsync, tasks.watch]));
+Gulp.task('default', Gulp.series([tasks.brsync, tasks.watch]));
