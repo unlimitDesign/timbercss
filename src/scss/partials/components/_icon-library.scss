@@ -10,13 +10,13 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url(#{$tb-icon-path}/MaterialIcons-Regular.eot);
+  src: url(#{$font-icon-path}/MaterialIcons-Regular.eot);
   /* For IE6-8 */
   src: local('Material Icons'),
   local('MaterialIcons-Regular'),
-  url(#{$tb-icon-path}/MaterialIcons-Regular.woff2) format('woff2'),
-  url(#{$tb-icon-path}/MaterialIcons-Regular.woff) format('woff'),
-  url(#{$tb-icon-path}/MaterialIcons-Regular.ttf) format('truetype');
+  url(#{$font-icon-path}/MaterialIcons-Regular.woff2) format('woff2'),
+  url(#{$font-icon-path}/MaterialIcons-Regular.woff) format('woff'),
+  url(#{$font-icon-path}/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .icon-material {
@@ -43,11 +43,11 @@
   font-style: normal;
   font-weight: normal;
   font-display: auto;
-  src: url(#{$tb-icon-path}/Brands.eot);
-  src: url(#{$tb-icon-path}/Brands.eot?#iefix) format('embedded-opentype'),
-  url(#{$tb-icon-path}/Brands.woff2) format('woff2'),
-  url(#{$tb-icon-path}/Brands.woff) format('woff'),
-  url(#{$tb-icon-path}/Brands.ttf) format('truetype')
+  src: url(#{$font-icon-path}/Brands.eot);
+  src: url(#{$font-icon-path}/Brands.eot?#iefix) format('embedded-opentype'),
+  url(#{$font-icon-path}/Brands.woff2) format('woff2'),
+  url(#{$font-icon-path}/Brands.woff) format('woff'),
+  url(#{$font-icon-path}/Brands.ttf) format('truetype')
 }
 
 .icon-brands {
