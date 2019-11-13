@@ -5,3 +5,4 @@ gulpfile.js
 webpack.config.js
 webpack.dev.js
 webpack.prod.js
+_redirects
