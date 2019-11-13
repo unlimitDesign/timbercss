@@ -1,8 +1,8 @@
 'use strict'
 
 /**
- * For NPM module
- */
+* For NPM module
+*/
 
 // Core
 import timberCoreLibrary from './_tm.core.js';
