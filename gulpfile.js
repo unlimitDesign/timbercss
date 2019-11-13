@@ -2,7 +2,7 @@
 
 const Gulp = require('gulp');
 // csstoc
-const Csstoc = require('./src/gulp/csstoc.js');
+const Csstoc = require('./src/gulp-lib/csstoc.js');
 // const beautify = require('gulp-html-beautify');
 const Brsync = require('browser-sync');
 
@@ -11,27 +11,34 @@ const beautify_option = {
 }
 
 const tasks = {
-    build: function (done) {
-        // @todo
-        done();
-    },
+    /**
+     * Tasks to be kept running
+     */
+    // Browser live update
     brsync: function () {
         Brsync.init({
             notify: false,
             server: 'docs/'
         });
     },
-    reload: function () {
-        Brsync.reload();
-    },
     watch: function () {
-        // @todo gulp watch not working
-        Gulp.watch(['**/*.html', '**/*.css', '**/*.js'], ['tasks.reload']);
+        Gulp.watch(['./docs/**/*.html', './docs/**/*.css', './docs/**/*.js'], tasks.reload);
+    },
+    /**
+     * Tasks called as necessary
+     */
+    reload: function (done) {
+        Brsync.reload();
+        done();
+    },
+    build_docs: function (done) {
+        // @todo
+        done();
     },
     csstoc: function (done) {
         Csstoc({
             sectionString: 'section',
-            tocHead: 'Boilerplate - Table Of Contents'
+            tocHead: 'Timber CSS Framework by unlimit.design - Table Of Contents'
         }, {
             'docs-timber': ['./docs/css/timber.css']
         });
@@ -43,8 +50,8 @@ const tasks = {
  * Define Tasks
  */
 // single tasks
-Gulp.task('build', tasks.build);
+Gulp.task('build_docs', tasks.build_docs);
 Gulp.task('csstoc', tasks.csstoc);
 
 // task:default, multiple tasks
-Gulp.task('default', Gulp.series([tasks.brsync, tasks.watch]));
+Gulp.task('default', Gulp.parallel(tasks.brsync, tasks.watch));
