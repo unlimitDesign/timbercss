@@ -8,7 +8,7 @@ $font-icon-path: '../icons' !default;
 // Font Variables
 //--------------------------------------------------------------------------------
 
-$font-base-size: 62.5% !default; // Base font size set to 10px (62.5% of 16px) for easier REM values
+$font-base-size: 62.5% !default;                             // Base font size set to 10px (62.5% of 16px) for easier REM values
 
 //--------------------------------------------------------------------------------
 // Utility Variables
@@ -18,150 +18,163 @@ $font-base-size: 62.5% !default; // Base font size set to 10px (62.5% of 16px) f
 // Colors
 //
 
-$black: #07090C !default; // Base colors
-$grey-ultradark: #1C2232 !default;
-$grey-darkest: #303C57 !default;
-$grey-darker: #45567C !default;
-$grey-dark: #7D89A3 !default;
-$grey: #9EA7BB !default;
-$grey-light: #AFB6C7 !default;
-$grey-lighter: #C0C6D2 !default;
-$grey-lightest: #E1E4EA !default;
-$grey-ultralight: #F2F3F6 !default;
-$white: #ffffff !default;
+$black:                                                     #07090C !default;                                                                               // Base colors
+$grey-ultradark:                                            #1C2232 !default;
+$grey-darkest:                                              #303C57 !default;
+$grey-darker:                                               #45567C !default;
+$grey-dark:                                                 #7D89A3 !default;
+$grey:                                                      #9EA7BB !default;
+$grey-light:                                                #AFB6C7 !default;
+$grey-lighter:                                              #C0C6D2 !default;
+$grey-lightest:                                             #E1E4EA !default;
+$grey-ultralight:                                           #F2F3F6 !default;
+$white:                                                     #ffffff !default;
 
-$blue: #0096ff !default;
-$indigo: #6574cd !default;
-$purple: #9561e2 !default;
-$pink: #f44f7f !default;
-$red: #f14844 !default;
-$orange: #f6993f !default;
-$yellow: #ffed4a !default;
-$green: #38c172 !default;
-$teal: #48d2c5 !default;
-$cyan: #1ec4de !default;
+$blue:                                                      #0096ff !default;
+$indigo:                                                    #6574cd !default;
+$purple:                                                    #9561e2 !default;
+$pink:                                                      #f44f7f !default;
+$red:                                                       #f14844 !default;
+$orange:                                                    #f6993f !default;
+$yellow:                                                    #ffed4a !default;
+$green:                                                     #38c172 !default;
+$teal:                                                      #48d2c5 !default;
+$cyan:                                                      #1ec4de !default;
 
-$primary: $blue !default; // Theme specific colors
-$secondary: $grey-darker !default;
-$success: $green !default;
-$info: $blue !default;
-$warning: $yellow !default;
-$danger: $red !default;
+$primary:                                                   $blue !default;                                                                                 // Theme specific colors
+$secondary:                                                 $grey-darker !default;
+$success:                                                   $green !default;
+$info:                                                      $blue !default;
+$warning:                                                   $yellow !default;
+$danger:                                                    $red !default;
 
-$base-colors:(transparent: transparent, // Color states for base and theme specific colors - provides color, :hover color, :focus color
-	primary: $primary,
-	secondary: $secondary,
-	black: $grey-ultradark,
-	grey-darkest: $grey-darkest,
-	grey-darker: $grey-darker,
-	grey-dark: $grey-dark,
-	grey: $grey,
-	grey-light: $grey-light,
-	grey-lighter: $grey-lighter,
-	grey-lightest: $grey-lightest,
-	grey-ultralight: $grey-ultralight,
-	white: $white,
-	blue: $primary,
-	indigo: $indigo,
-	purple: $purple,
-	pink: $pink,
-	red: $red,
-	orange: $orange,
-	yellow: $yellow,
-	green: $green,
-	teal: $teal,
-	cyan: $cyan,
-	success: $green,
-	info: $blue,
-	warning: $orange,
-	danger: $red,
+$base-colors:(  
+    transparent:                                            transparent,                                                                                                                                            // Color states for base and theme specific colors - provides color, :hover color, :focus color
+    primary:                                                $primary,
+    secondary:                                              $secondary,
+    black:                                                  $grey-ultradark,
+    grey-darkest:                                           $grey-darkest,
+    grey-darker:                                            $grey-darker,
+    grey-dark:                                              $grey-dark,
+    grey:                                                   $grey,
+    grey-light:                                             $grey-light,
+    grey-lighter:                                           $grey-lighter,
+    grey-lightest:                                          $grey-lightest,
+    grey-ultralight:                                        $grey-ultralight,
+    white:                                                  $white,
+    blue:                                                   $primary,
+    indigo:                                                 $indigo,
+    purple:                                                 $purple,
+    pink:                                                   $pink,
+    red:                                                    $red,
+    orange:                                                 $orange,
+    yellow:                                                 $yellow,
+    green:                                                  $green,
+    teal:                                                   $teal,
+    cyan:                                                   $cyan,
+    success:                                                $green,
+    info:                                                   $blue,
+    warning:                                                $orange,
+    danger:                                                 $red,
 ) !default;
 
-$gradient-colors:("grey-ultralight": (gradient: linear, // Linear or radial
-		deg: 125deg,
-		start-color: #F2F3F6,
-		end-color: #ffffff),
-	"dark-ocean": (gradient: linear, // Linear or radial
-		deg: 125deg,
-		start-color: #303FA0,
-		end-color: #45cafc),
-	"purple-haze": (gradient: linear,
-		deg: 125deg,
-		start-color: #8b6ced,
-		end-color: #6586f6),
-	"royal-garden": (gradient: linear,
-		deg: 125deg,
-		start-color: #ed6ea0,
-		end-color: #ec8c69)) !default;
+$gradient-colors:(
+    "grey-ultralight": (
+        gradient:                                           linear,                                                                                         // Linear or radial
+        deg:                                                125deg,
+        start-color:                                        #F2F3F6,
+        end-color:                                          #ffffff
+    ),
+    "dark-ocean": (
+        gradient:                                           linear,                                                                                         // Linear or radial
+        deg:                                                125deg,
+        start-color:                                        #303FA0,
+        end-color:                                          #45cafc
+    ),
+    "purple-haze": (
+        gradient:                                           linear,
+        deg:                                                125deg,
+        start-color:                                        #8b6ced,
+        end-color:                                          #6586f6
+    ),
+    "royal-garden": (
+        gradient:                                           linear,
+        deg:                                                125deg,
+        start-color:                                        #ed6ea0,
+        end-color:                                          #ec8c69
+    )
+) !default;
 
-$color-states: (base, hover, focus, active) !default; // Determines for which states (base or default, hover, focus, active) for background, border, font color classes should be created
-$color-lightness: darken !default; // Lighten or darken colors
-$color-lightness-amount: 6% !default; // Lighten/darken amount - used for hover states
+$color-states:                                              (base, hover, focus, active) !default;                                                          // Determines for which states (base or default, hover, focus, active) for background, border, font color classes should be created
+$color-lightness:                                           darken !default;                                                                                // Lighten or darken colors
+$color-lightness-amount:                                    6% !default;                                                                                    // Lighten/darken amount - used for hover states
 
-$bg-color-responsive: (lg, md, sm) !default; // Whether background color utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$border-color-responsive: (lg, md, sm) !default; // Whether border color utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$color-responsive: (lg, md, sm) !default; // Whether color utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-
+$bg-color-responsive:                                       (lg,md,sm) !default;                                                                                    // Whether background color utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$border-color-responsive:                                   (lg,md,sm) !default;                                                                                    // Whether border color utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$color-responsive:                                          (lg,md,sm) !default;                                                                                    // Whether color utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+    
 //
 // Breakpoints
 //
 
-$breakpoints: (xl: 1440px,
-	lg: 1200px,
-	md: 992px,
-	sm: 768px, // Grid breakpoints
-	xs: 576px,
-) !default;
+$breakpoints: (
+    xl: 1440px,
+    lg: 1200px,
+    md: 992px,
+    sm: 768px,                                                                                                                                              // Grid breakpoints
+    xs: 576px,  
+)!default;
 
 //
 // Container Widths
 //
 
-$container-max-widths: (xl: 114rem, // Container widths
-	lg: 96rem,
-	md: 72rem,
-	sm: 54rem,
-	xs: 100%,
-) !default;
+$container-max-widths: (
+    xl: 114rem,                                                                                                                                             // Container widths
+    lg: 96rem,
+    md: 72rem,
+    sm: 54rem,
+    xs: 100%,
+)!default;
 
 //
 // Column Widths
 //
 
-$column-widths: ( // Column widths - used for column, order and offset classes leave as 12 or reduce as necessary based on grid system used
-	0: 0,
-	1: 8.333333%,
-	2: 16.666667%,
-	3: 25%,
-	4: 33.333333%,
-	5: 41.666667%,
-	6: 50%,
-	7: 58.333333%,
-	8: 66.666667%,
-	9: 75%,
-	10: 83.333333%,
-	11: 91.666667%,
-	12: 100%,
-) !default;
-$column-gutter: 3rem !default; // Column gutter size
-$column-responsive: (lg, md, sm) !default; // Whether column utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$column-widths: (                                                                                                                                           // Column widths - used for column, order and offset classes leave as 12 or reduce as necessary based on grid system used
+    0: 0,
+    1: 8.333333%,
+    2: 16.666667%,
+    3: 25%,
+    4: 33.333333%,
+    5: 41.666667%,
+    6: 50%,
+    7: 58.333333%,
+    8: 66.666667%,
+    9: 75%, 
+    10: 83.333333%,
+    11: 91.666667%,
+    12: 100%,
+)!default;
+$column-gutter:                                             3rem !default;                                                                                  // Column gutter size
+$column-responsive:                                         (lg,md,sm) !default;                                                                            // Whether column utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                   
 
 //
 // Flexbox
 //
 
-$flexbox-responsive: (lg, md, sm) !default; // Whether flex utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$flexbox-responsive:                                        (lg,md,sm) !default;                                                                            // Whether flex utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                                                                                         
 
 
 //
 // CSS Grid
 //
 
-$grid-col-row-spans: (2, 3) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$grid-col-row-responsive: (lg, md, sm) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$grid-gutters: (0, 3, 15, 30) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$grid-max-colums: 8 !default; // Defines the number of max columns for a CSS grid
-$grid-responsive: (lg, md, sm) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-col-row-spans:                                        (2,3) !default;                                                                             // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-col-row-responsive:                                   (lg,md,sm) !default;                                                                        // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-gutters:                                              (0, 3, 15, 30) !default;                                                                    // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-max-colums:                                           8 !default;                                                                                 // Defines the number of max columns for a CSS grid
+$grid-responsive:                                           (lg,md,sm) !default;                                                                        // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
@@ -169,14 +182,14 @@ $grid-responsive: (lg, md, sm) !default; // Whether display utitlity classes sho
 //
 
 // Width
-$width-increments: (auto, 0, 1, 25, 50, 80, 100, 150, 200, 250, 300, 350, 400) !default; // Width increments - defines width amounts
-$width-dimensions: (width, min-width) !default; // Defines width dimensions for width classes - accepts: width, min-width, max-width
-$width-responsive: (lg, md, sm) !default; // Whether width utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$width-increments:                                          (auto, 0, 1, 25, 50, 80, 100, 150, 200, 250, 300, 350, 400) !default;                           // Width increments - defines width amounts
+$width-dimensions:                                          (width, min-width) !default;                                                                    // Defines width dimensions for width classes - accepts: width, min-width, max-width
+$width-responsive:                                          (lg,md,sm) !default;                                                                                    // Whether width utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Height
-$height-increments: (auto, 0, 1, 25, 50, 80, 100, 150, 200, 250, 300, 350, 400) !default; // Height increments - defines height amounts
-$height-dimensions: (height, min-height) !default; // Defines height dimensions for size classes - accepts: height, min-height, max-height
-$height-responsive: (lg, md, sm) !default; // Whether height utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$height-increments:                                         (auto, 0, 1, 25, 50, 80, 100, 150, 200, 250, 300, 350, 400) !default;                           // Height increments - defines height amounts
+$height-dimensions:                                         (height, min-height) !default;                                                                  // Defines height dimensions for size classes - accepts: height, min-height, max-height
+$height-responsive:                                         (lg,md,sm) !default;                                                                                    // Whether height utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
@@ -184,36 +197,36 @@ $height-responsive: (lg, md, sm) !default; // Whether height utitlity classes sh
 //
 
 // Padding
-$padding-increments: (0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100) !default; // Padding increments - defines padding amounts
-$padding-sides: (all, x, y, top, right, bottom, left) !default; // Defines sides for padding classes - accepts: all, x, y, top, bottom, right, left
-$padding-responsive: (lg, md, sm) !default; // Whether padding utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$padding-increments:                                        (0,1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100) !default;                     // Padding increments - defines padding amounts
+$padding-sides:                                             (all, x, y, top, right, bottom, left) !default;                                                 // Defines sides for padding classes - accepts: all, x, y, top, bottom, right, left  
+$padding-responsive:                                        (lg,md,sm) !default;                                                                            // Whether padding utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Margin
-$margin-increments: (auto, 0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100) !default; // Margin increments - defines margin amounts
-$margin-sides: (all, x, y, top, right, bottom, left) !default; // Defines sides for margin classes - accepts: all, x, y, top, bottom, right, left
-$margin-responsive: (xl, lg, md, sm, xs) !default; // Whether margin utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$margin-increments:                                         (auto, 0,1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100) !default;               // Margin increments - defines margin amounts
+$margin-sides:                                              (all, x, y, top, right, bottom, left) !default;                                                 // Defines sides for margin classes - accepts: all, x, y, top, bottom, right, left  
+$margin-responsive:                                         (xl,lg,md,sm,xs) !default;                                                                          // Whether margin utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
-// Background
+// Background 
 //
 
-$bg-attachment-responsive: (lg, md, sm) !default;
-$bg-position-responsive: (lg, md, sm) !default;
-$bg-repeat-responsive: (lg, md, sm) !default;
-$bg-size-responsive: (lg, md, sm) !default;
+$bg-attachment-responsive:                                  (lg,md,sm) !default;
+$bg-position-responsive:                                    (lg,md,sm) !default;
+$bg-repeat-responsive:                                      (lg,md,sm) !default;
+$bg-size-responsive:                                        (lg,md,sm) !default;
 
 
 //
-// Border
+// Border 
 //
 
-$border-rounded: 0.4rem !default; // Component common border style rounded corner - used for buttons, badges, form elements
-$border-rounded-responsive: (lg, md, sm) !default; // Whether border radius utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$border-full: 999rem !default; // Component common border style pill - used for buttons, badges, form elements
-$border-style-responsive: (lg, md, sm) !default; // Whether border style utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$border-widths: (1, 2, 4, 8) !default; // Border widths - defines border widths as pixels
-$border-width-responsive: (lg, md, sm) !default; // Whether border utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$border-rounded:                                            0.4rem !default;                                                                                // Component common border style rounded corner - used for buttons, badges, form elements
+$border-rounded-responsive:                                 (lg,md,sm) !default;                                                                            // Whether border radius utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$border-full:                                               999rem !default;                                                                                // Component common border style pill - used for buttons, badges, form elements
+$border-style-responsive:                                   (lg,md,sm) !default;                                                                            // Whether border style utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$border-widths:                                             (1, 2,4,8) !default;                                                                            // Border widths - defines border widths as pixels
+$border-width-responsive:                                   (lg,md,sm) !default;                                                                            // Whether border utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
@@ -221,31 +234,28 @@ $border-width-responsive: (lg, md, sm) !default; // Whether border utitlity clas
 //
 
 // Opacity
-$opacity-increments: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default;
-$opacity-responsive: (lg, md, sm) !default;
+$opacity-increments:                                        (0,10,20,30,40,50,60,70,80,90,100) !default;
+$opacity-responsive:                                        (lg,md,sm) !default;
 
 // Shadow
-$shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.10) !default;
-$shadow-x2: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.12),
-0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.08) !default;
-$shadow-x3: 0 1.5rem 3rem 0 rgba(0, 0, 0, 0.11),
-0 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.08) !default;
-$shadow-x4: 0 2rem 4rem 0 rgba(0, 0, 0, .16),
-0 0.8rem 2rem 0 rgba(0, 0, 0, .08) !default;
-$shadow-inner: inset 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.1) !default;
-$shadow-outline: 0 0 0 0.3rem rgba(52, 144, 220, 0.3) !default;
-$shadow-states: (base, hover, focus, active) !default; // Determines for which states (base or default, hover, focus, active) color classes should be created
-$shadow-responsive: (lg, md, sm) !default; // Whether shadow utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$shadow:                                                    0 0.2rem 0.4rem 0 rgba(0,0,0,0.10) !default;
+$shadow-x2:                                                 0 0.4rem 0.8rem 0 rgba(0,0,0,0.12), 0 0.2rem 0.4rem 0 rgba(0,0,0,0.08) !default;
+$shadow-x3:                                                 0 1.5rem 3rem 0 rgba(0,0,0,0.11), 0 0.5rem 1.5rem 0 rgba(0,0,0,0.08) !default;
+$shadow-x4:                                                 0 2rem 4rem 0 rgba(0,0,0,.16), 0 0.8rem 2rem 0 rgba(0,0,0,.08) !default;
+$shadow-inner:                                              inset 0 0.2rem 0.4rem 0 rgba(0,0,0,0.1) !default;
+$shadow-outline:                                            0 0 0 0.3rem rgba(52,144,220,0.3) !default;
+$shadow-states:                                             (base, hover, focus, active) !default;                                                          // Determines for which states (base or default, hover, focus, active) color classes should be created
+$shadow-responsive:                                         (lg,md,sm) !default;                                                                            // Whether shadow utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
 // Interactivity
 //
 
-$cursor-responsive: (lg, md, sm) !default; // Whether cursor utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$pointer-events-responsive: (lg, md, sm) !default; // Whether pointer event utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$resize-responsive: (lg, md, sm) !default; // Whether resize utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$select-responsive: (lg, md, sm) !default; // Whether select utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$cursor-responsive:                                         (lg,md,sm) !default;                                                                        // Whether cursor utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$pointer-events-responsive:                                 (lg,md,sm) !default;                                                                        // Whether pointer event utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$resize-responsive:                                         (lg,md,sm) !default;                                                                        // Whether resize utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$select-responsive:                                         (lg,md,sm) !default;                                                                        // Whether select utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
@@ -253,26 +263,26 @@ $select-responsive: (lg, md, sm) !default; // Whether select utitlity classes sh
 //
 
 // Display
-$display-responsive: (lg, md, sm) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$display-responsive:                                        (lg,md,sm) !default;                                                                        // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Float
-$float-responsive: (lg, md, sm) !default; // Whether float utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$float-responsive:                                          (lg,md,sm) !default;                                                                        // Whether float utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Overflow
-$overflow-responsive: (lg, md, sm) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$overflow-responsive:                                       (lg,md,sm) !default;                                                                        // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Position
-$position-increments: (auto, 0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100) !default; // Position increments - defines position amounts as percentages
-$position-sides: (top, right, bottom, left) !default; // Defines sides for position classes - accepts: all, top, bottom, right, left
-$position-responsive: (lg, md, sm) !default; // Whether position utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$position-unit: rem !default; // Whether rem or percentage should be use, accepts 'rem' or 'percent'
+$position-increments:                                       (auto, 0,1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100) !default;               // Position increments - defines position amounts as percentages
+$position-sides:                                            (top, right, bottom, left) !default;                                                            // Defines sides for position classes - accepts: all, top, bottom, right, left
+$position-responsive:                                       (lg,md,sm) !default;                                                                        // Whether position utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                                                                             
+$position-unit:                                             rem !default;                                                                                   // Whether rem or percentage should be use, accepts 'rem' or 'percent'                                                                              
 
 // Visibility
-$visibility-responsive: (lg, md, sm) !default; // Whether float utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$visibility-responsive:                                     (lg,md,sm) !default;                                                                        // Whether float utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Z Index Amounts
-$z-index-increments: (auto, 0, 10, 20, 30, 40) !default;
-$z-index-responsive: (lg, md, sm) !default;
+$z-index-increments:                                        (auto, 0, 10, 20, 30, 40) !default;
+$z-index-responsive:                                        (lg,md,sm) !default;
 
 
 //
@@ -280,852 +290,824 @@ $z-index-responsive: (lg, md, sm) !default;
 //
 
 // Font Family
-$font-family-sans-serif: -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-sans-serif !default;
-$font-family-serif: Georgia,
-Cambria,
-"Times New Roman",
-Times,
-serif !default;
-$font-family-monospace: "Courier New",
-Courier,
-monospace,
-sans-serif !default;
-$font-family-responsive: (lg, md, sm) !default;
+$font-family-sans-serif:                                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:                                         Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-monospace:                                     "Courier New", Courier, monospace, sans-serif !default;
+$font-family-responsive:                                    (lg,md,sm) !default;
 
 // Font Size
-$font-sizes: ( // Font sizes for font size utitlity classes
-	huge-x5: 7.723rem,
-	huge-x4: 5.941rem,
-	huge-x3: 4.57rem,
-	huge-x2: 3.515rem,
-	huge: 2.704rem,
-	large: 2.08rem,
-	normal: 1.6rem,
-	small: 1.231rem,
-	tiny: 0.947rem,
-) !default;
-$font-size-responsive: (lg, md, sm) !default;
+$font-sizes: (                                              // Font sizes for font size utitlity classes                                                                                        
+    huge-x5: 7.723rem,
+    huge-x4: 5.941rem,
+    huge-x3: 4.57rem,
+    huge-x2: 3.515rem,
+    huge: 2.704rem,
+    large: 2.08rem,
+    normal: 1.6rem,
+    small: 1.231rem,
+    tiny: 0.947rem,
+)!default;
+$font-size-responsive:                                      (lg,md,sm) !default;
 
 // Font Style
-$font-style-responsive: (lg, md, sm) !default;
+$font-style-responsive:                                     (lg,md,sm) !default;
 
 // Font Weight
-$font-weight-thin: 100 !default; // Font weights for font weight classes
-$font-weight-extra-light: 200 !default;
-$font-weight-light: 300 !default;
-$font-weight-normal: 400 !default;
-$font-weight-medium: 500 !default;
-$font-weight-demi-bold: 600 !default;
-$font-weight-bold: 700 !default;
-$font-weight-heavy: 800 !default;
-$font-weight-black: 900 !default;
-$font-weight-responsive: (lg, md, sm) !default;
+$font-weight-thin:                                          100 !default;                                           // Font weights for font weight classes
+$font-weight-extra-light:                                   200 !default;
+$font-weight-light:                                         300 !default;
+$font-weight-normal:                                        400 !default;
+$font-weight-medium:                                        500 !default;
+$font-weight-demi-bold:                                     600 !default;
+$font-weight-bold:                                          700 !default;
+$font-weight-heavy:                                         800 !default;
+$font-weight-black:                                         900 !default;
+$font-weight-responsive:                                    (lg,md,sm) !default;
 
 // Letter Spacing
-$tracking-tighter: -0.05em !default;
-$tracking-tight: -0.025em !default;
-$tracking-normal: 0 !default;
-$tracking-wide: 0.025em !default;
-$tracking-wider: 0.05em !default;
-$tracking-widest: 0.1em !default;
-$tracking-responsive: (lg, md, sm) !default; // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$tracking-tighter:                                          -0.05em !default;
+$tracking-tight:                                            -0.025em !default;
+$tracking-normal:                                           0 !default;
+$tracking-wide:                                             0.025em !default;
+$tracking-wider:                                            0.05em !default;
+$tracking-widest:                                           0.1em !default;
+$tracking-responsive:                                       (lg,md,sm) !default;                                    // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                              
 
 // Line Height
-$leading-none: 1 !default;
-$leading-tight: 1.25 !default;
-$leading-snug: 1.375 !default;
-$leading-normal: 1.5 !default;
-$leading-relaxed: 1.625 !default;
-$leading-loose: 2 !default;
-$leading-responsive: (lg, md, sm) !default;
+$leading-none:                                              1 !default;
+$leading-tight:                                             1.25 !default;
+$leading-snug:                                              1.375 !default;
+$leading-normal:                                            1.5 !default;
+$leading-relaxed:                                           1.625 !default;
+$leading-loose:                                             2 !default;
+$leading-responsive:                                        (lg,md,sm) !default;
 
 // Text Align
-$text-align-responsive: (lg, md, sm) !default;
+$text-align-responsive:                                     (lg,md,sm) !default;
 
 // Text Decoration
-$text-decoration-responsive: (lg, md, sm) !default;
+$text-decoration-responsive:                                (lg,md,sm) !default;
 
 // Text Transform
-$text-transform-responsive: (lg, md, sm) !default;
+$text-transform-responsive:                                 (lg,md,sm) !default;
 
 // Vertical Align
-$vertical-align-responsive: (lg, md, sm) !default;
+$vertical-align-responsive:                                 (lg,md,sm) !default;
 
 // Whitespace
-$whitespace-responsive: (lg, md, sm) !default;
+$whitespace-responsive:                                     (lg,md,sm) !default;
 
 // Word Break
-$word-break-responsive: (lg, md, sm) !default;
+$word-break-responsive:                                     (lg,md,sm) !default;
 
 
 //--------------------------------------------------------------------------------
 // Component Variables
 //--------------------------------------------------------------------------------
 
-$transitions-enabled: true !default; // Whether transitions should be enabled
-$transition-property: background-color,
-border,
-box-shadow,
-color,
-height,
-max-height,
-width,
-line-height,
-margin,
-opacity,
-padding,
-rotate,
-scale,
-transform,
-translate,
-visibility !default;
-$transition-duration: 300ms !default;
-$transition-easing: ease-in-out !default; // Component transition function - possibly values swing, ease-in, ease-in-out or cubic-bezier(x, x, x, x)
+$transitions-enabled:                                       true !default;                                          // Whether transitions should be enabled
+$transition-property:                                       background-color, border, box-shadow, color, height, max-height,width, line-height, margin, opacity, padding, rotate, scale, transform, translate, visibility  !default;
+$transition-duration:                                       300ms !default;
+$transition-easing:                                         ease-in-out !default;                                   // Component transition function - possibly values swing, ease-in, ease-in-out or cubic-bezier(x, x, x, x)
 
 // Body Colors
-$body-bkg-color: $white !default; // Body background color
-$body-boxed-bkg-color: $grey-ultralight !default; // Boxed body background color
-$body-color: $secondary !default; // Body font color
+$body-bkg-color:                                            $white !default;                                        // Body background color
+$body-boxed-bkg-color:                                      $grey-ultralight !default;                              // Boxed body background color
+$body-color:                                                $secondary !default;                                    // Body font color
 
 // Section Block
-$section-block-padding-x: 0 !default; // Section block horizontal padding
-$section-block-padding-y: 11rem !default; // Section block vertical padding
-$section-block-replicable-padding-y: 8rem !default; // Takes into account bottom margin of elements within a section block which is set to 3rem
-$section-block-bkg-color: $white !default; // Default section block background color
+$section-block-padding-x:                                   0 !default;                                             // Section block horizontal padding
+$section-block-padding-y:                                   11rem !default;                                         // Section block vertical padding
+$section-block-replicable-padding-y:                        8rem !default;                                          // Takes into account bottom margin of elements within a section block which is set to 3rem
+$section-block-bkg-color:                                   $white !default;                                        // Default section block background color
 
 // Link Colors
-$link-color: $primary !default; // Link color
-$link-decoration: none !default; // Link decoration
-$link-color-hover: $secondary !default; // Link hover color
-$link-decoration-hover: none !default; // Link hover decoration
+$link-color:                                                $primary !default;                                      // Link color
+$link-decoration:                                           none !default;                                          // Link decoration
+$link-color-hover:                                          $secondary !default;                                    // Link hover color
+$link-decoration-hover:                                     none !default;                                          // Link hover decoration
 
 // Component Colors
-$component-bkg-color: $grey-ultralight !default; // Component common background color - used for buttons, dropdown button, tabs, accordions, boxes, list groups
-$component-border-color: $grey-lightest !default; // Component common border color
-$component-color: $secondary !default; // Component common color
+$component-bkg-color:                                       $grey-ultralight !default;                              // Component common background color - used for buttons, dropdown button, tabs, accordions, boxes, list groups
+$component-border-color:                                    $grey-lightest !default;                                // Component common border color
+$component-color:                                           $secondary !default;                                    // Component common color
 
-$component-bkg-color-hover: $grey-ultralight !default; // Component common background hover color
-$component-border-color-hover: $grey-lightest !default; // Component common border hover color
-$component-color-hover: $grey-ultradark !default; // Component common hover color
+$component-bkg-color-hover:                                 $grey-ultralight !default;                              // Component common background hover color          
+$component-border-color-hover:                              $grey-lightest !default;                                // Component common border hover color
+$component-color-hover:                                     $grey-ultradark !default;                               // Component common hover color
 
-$component-border-color-active: $primary !default; // Component common background active color
-$component-bkg-color-active: $component-border-color-active !default; // Component common border active color
-$component-color-active: $white !default; // Component common active color
-
-$component-opacity-disabled: 0.5 !default; // Component common disabled opacity - for when the .disabled class is used on a component
+$component-border-color-active:                             $primary !default;                                      // Component common background active color
+$component-bkg-color-active:                                $component-border-color-active !default;                // Component common border active color
+$component-color-active:                                    $white !default;                                        // Component common active color
+    
+$component-opacity-disabled:                                0.5 !default;                                           // Component common disabled opacity - for when the .disabled class is used on a component
 
 // Shared component variables
-$component-border-width: 1px !default; // Component common border width
+$component-border-width:                                    1px !default;                                           // Component common border width
 
-$component-border-style-rounded: $border-rounded !default; // Component common border style rounded corner - used for buttons, badges, form elements
-$component-border-style-full: $border-full !default; // Component common border style pill - used for buttons, badges, form elements
+$component-border-style-rounded:                            $border-rounded !default;                               // Component common border style rounded corner - used for buttons, badges, form elements
+$component-border-style-full:                               $border-full !default;                                  // Component common border style pill - used for buttons, badges, form elements
 
-$component-small-padding-y: 1rem !default; // Commponent small vertical padding
-$component-small-padding-x: 1.5rem !default; // Commponent small horizontal padding
-$component-medium-padding-y: 1.3rem !default; // Commponent medium vertical padding
-$component-medium-padding-x: 2.5rem !default; // Commponent medium horizontal padding
-$component-large-padding-y: 1.6rem !default; // Commponent large vertical padding
-$component-large-padding-x: 3rem !default; // Commponent large horizontal padding
-$component-xlarge-padding-y: 1.9rem !default; // Commponent extra large vertical padding
-$component-xlarge-padding-x: 3.5rem !default; // Commponent extra large horizontal padding
+$component-small-padding-y:                                 1rem !default;                                          // Commponent small vertical padding
+$component-small-padding-x:                                 1.5rem !default;                                        // Commponent small horizontal padding
+$component-medium-padding-y:                                1.3rem !default;                                        // Commponent medium vertical padding
+$component-medium-padding-x:                                2.5rem !default;                                        // Commponent medium horizontal padding
+$component-large-padding-y:                                 1.6rem !default;                                        // Commponent large vertical padding
+$component-large-padding-x:                                 3rem !default;                                          // Commponent large horizontal padding
+$component-xlarge-padding-y:                                1.9rem !default;                                        // Commponent extra large vertical padding
+$component-xlarge-padding-x:                                3.5rem !default;                                        // Commponent extra large horizontal padding
 
-$component-badge-padding-x: 0.3rem !default; // Commponent small vertical padding
-$component-badge-padding-y: 0.4rem !default; // Commponent small vertical padding
+$component-badge-padding-x:                                 0.3rem !default;                                        // Commponent small vertical padding
+$component-badge-padding-y:                                 0.4rem !default;                                        // Commponent small vertical padding
 
-$component-margin-bottom: 2rem !default; // Commponent small vertical padding
+$component-margin-bottom:                                   2rem !default;                                          // Commponent small vertical padding
 
 // Fonts
-$font-family-base: $font-family-sans-serif !default;
-$body-font-size: 1.6rem !default; // Body font size
-$body-line-height: 1.8 !default; // Body line height
-$body-responsive-font-size: 1.4rem !default; // Body font size for smaller devices
+$font-family-base:                                          $font-family-sans-serif !default;
+$body-font-size:                                            1.6rem !default;                                        // Body font size
+$body-line-height:                                          1.8 !default;                                           // Body line height
+$body-responsive-font-size:                                 1.4rem !default;                                        // Body font size for smaller devices
 
-$h1-font-size: 4.57rem !default; // H1-h6 font sizes
-$h2-font-size: 3.515rem !default;
-$h3-font-size: 2.704rem !default;
-$h4-font-size: 2.08rem !default;
-$h5-font-size: 1.6rem !default;
-$h6-font-size: 1.231rem !default;
+$h1-font-size:                                              4.57rem !default;                                       // H1-h6 font sizes
+$h2-font-size:                                              3.515rem !default;
+$h3-font-size:                                              2.704rem !default;
+$h4-font-size:                                              2.08rem !default;
+$h5-font-size:                                              1.6rem !default;
+$h6-font-size:                                              1.231rem !default;
 
-$h1-responsive-font-size: 3.381rem !default; // H1-h6 font sizes for smaller devices
-$h2-responsive-font-size: 2.542rem !default;
-$h3-responsive-font-size: 1.911rem !default;
-$h4-responsive-font-size: 1.596rem !default;
-$h5-responsive-font-size: 1.437rem !default;
-$h6-responsive-font-size: 1.080rem !default;
-$h-tag-responsive: (md) !default; // Determines at what breakpoint the h tag responsive sizes should kick in
+$h1-responsive-font-size:                                   3.381rem !default;                                      // H1-h6 font sizes for smaller devices
+$h2-responsive-font-size:                                   2.542rem !default;
+$h3-responsive-font-size:                                   1.911rem !default;
+$h4-responsive-font-size:                                   1.596rem !default;
+$h5-responsive-font-size:                                   1.437rem !default;
+$h6-responsive-font-size:                                   1.080rem !default;
+$h-tag-responsive:                                          (md) !default;                                          // Determines at what breakpoint the h tag responsive sizes should kick in
 
-$headings-margin-top: 3rem !default; // H tag top margin
-$headings-margin-bottom: 2rem !default; // H tag bottom margin
-$headings-font-family: inherit !default; // H tag font family
-$headings-font-weight: $font-weight-demi-bold !default; // H tag font weight
-$headings-line-height: 1.2 !default; // H tag line height
-$headings-color: $secondary !default; // H tag color
+$headings-margin-top:                                       3rem !default;                                          // H tag top margin
+$headings-margin-bottom:                                    2rem !default;                                          // H tag bottom margin
+$headings-font-family:                                      inherit !default;                                       // H tag font family
+$headings-font-weight:                                      $font-weight-demi-bold !default;                        // H tag font weight    
+$headings-line-height:                                      1.2 !default;                                           // H tag line height
+$headings-color:                                            $secondary !default;                                    // H tag color
 
-$paragraph-margin-top: 0 !default; // P tag margin top
-$paragraph-margin-bottom: 2rem !default; // P tag margin bottom
+$paragraph-margin-top:                                      0 !default;                                             // P tag margin top
+$paragraph-margin-bottom:                                   2rem !default;                                          // P tag margin bottom
+        
+$small-font-size:                                           80% !default;                                           // Small font size
 
-$small-font-size: 80% !default; // Small font size
+$text-muted:                                                $grey !default;                                         // Muted text color
 
-$text-muted: $grey !default; // Muted text color
+$hr-margin-top:                                             3rem !default;  
+$hr-margin-bottom:                                          $component-margin-bottom !default;                      // Horizontal rule bottom margin
+$hr-border-width:                                           $component-border-width !default;                       // Horizontal border width
+$hr-border-color:                                           rgba($grey-ultradark, .1) !default;                     // Horizontal rule border color
 
-$hr-margin-top: 3rem !default;
-$hr-margin-bottom: $component-margin-bottom !default; // Horizontal rule bottom margin
-$hr-border-width: $component-border-width !default; // Horizontal border width
-$hr-border-color: rgba($grey-ultradark, .1) !default; // Horizontal rule border color
-
-$component-small-font-size: 1.1rem !default; // Component small font size
-$component-medium-font-size: 1.3rem !default; // Component medium font size
-$component-large-font-size: 1.4rem !default; // Component large font size
-$component-xlarge-font-size: 1.5rem !default; // Component xlarge font size
-$component-font-weight: 400 !default; // Component font weight
-$component-badge-font-size: 75% !default; // Component badge font size
-$component-badge-font-weight: 400 !default; // Component badge font weight
+$component-small-font-size:                                 1.1rem !default;                                        // Component small font size
+$component-medium-font-size:                                1.3rem !default;                                    // Component medium font size
+$component-large-font-size:                                 1.4rem !default;                                        // Component large font size
+$component-xlarge-font-size:                                1.5rem !default;                                    // Component xlarge font size
+$component-font-weight:                                     400 !default;                                           // Component font weight
+$component-badge-font-size:                                 75% !default;                                           // Component badge font size
+$component-badge-font-weight:                               400 !default;                                           // Component badge font weight
 
 // Font Lib
-$component-font-library: 'Material Icons' !default; // Font library font family - used for UI throughout framework, to import another library do so in _icon-library.scss
+$component-font-library:                                    'Material Icons' !default;                              // Font library font family - used for UI throughout framework, to import another library do so in _icon-library.scss
 
 // Side navigation
-$reveal-wrapper-bkg-color: $white !default; // Reaveal wrapper background color - content inner wrapper receives a background color to hide side navigation
+$reveal-wrapper-bkg-color:                                  $white !default;                                        // Reaveal wrapper background color - content inner wrapper receives a background color to hide side navigation
 
-$side-nav-wrapper-width: 35rem !default; // Side navigation width
-$side-nav-wrapper-mobile-width: 70% !default; // Side navigation mobile width
+$side-nav-wrapper-width:                                    35rem !default;                                         // Side navigation width
+$side-nav-wrapper-mobile-width:                             70% !default;                                           // Side navigation mobile width
 
-$side-nav-bkg-color: rgba(0, 0, 0, 1) !default; // Side navigation width
-$side-nav-inner-shadow-left: inset -7px 0 9px -7px rgba(0, 0, 0, 0.6) !default; // Side navigation wrapper inner shadow - when it enters from the left hand side of the viewport
-$side-nav-inner-shadow-right: inset 7px 0 9px -7px rgba(0, 0, 0, 0.6) !default; // Side navigation wrapper inner shadow - when it enters from the right hand side of the viewport
+$side-nav-bkg-color:                                        rgba(0,0,0,1) !default;                                 // Side navigation width
+$side-nav-inner-shadow-left:                                inset -7px 0 9px -7px rgba( 0, 0, 0, 0.6 ) !default;    // Side navigation wrapper inner shadow - when it enters from the left hand side of the viewport
+$side-nav-inner-shadow-right:                               inset 7px 0 9px -7px rgba( 0, 0, 0, 0.6 ) !default;     // Side navigation wrapper inner shadow - when it enters from the right hand side of the viewport
 
-$side-nav-link-padding: 0.8rem 0 !default; // Side navigation link padding
-$side-nav-font-size: 1.4rem !default; // Side navigation link font size
-$side-nav-font-weight: 400 !default; // Side navigation link font weight
-$side-nav-line-height: 1.6 !default; // Side navigation link line height
-$side-nav-color: $grey !default; // Side navigation link color
-$side-nav-color-hover: $white !default; // Side navigation link hover color
-$side-nav-color-active: $white !default; // Side navigation link active color
-$side-nav-text-decoration-active: none !default; // Side navigation link active text deocoration
-$side-nav-font-weight-active: 400 !default; // Side navigation link active font weight
+$side-nav-link-padding:                                     0.8rem 0 !default;                                      // Side navigation link padding
+$side-nav-font-size:                                        1.4rem !default;                                        // Side navigation link font size
+$side-nav-font-weight:                                      400 !default;                                           // Side navigation link font weight
+$side-nav-line-height:                                      1.6 !default;                                           // Side navigation link line height
+$side-nav-color:                                            $grey !default;                                         // Side navigation link color
+$side-nav-color-hover:                                      $white !default;                                        // Side navigation link hover color
+$side-nav-color-active:                                     $white !default;                                        // Side navigation link active color
+$side-nav-text-decoration-active:                           none !default;                                          // Side navigation link active text deocoration
+$side-nav-font-weight-active:                               400 !default;                                           // Side navigation link active font weight
 
-$side-nav-sub-menu-child-padding: 2rem !default; // Side navigation sub menu padding
-$side-nav-sub-menu-link-padding: 1rem 2rem 1rem 2rem !default; // Side navigation sub menu link padding
-$side-nav-sub-menu-font-size: 1.3rem !default; // Side navigation sub menu link font size
-$side-nav-sub-menu-font-weight: 400 !default; // Side navigation sub menu link font weight
-$side-nav-sub-menu-line-height: 1.6 !default; // Side navigation sub menu link line height
-$side-nav-sub-menu-color: $grey !default; // Side navigation sub menu link color
-$side-nav-sub-menu-color-hover: $white !default; // Side navigation sub menu link hover color
-$side-nav-sub-menu-color-active: $white !default; // Side navigation sub menu link active color
-$side-nav-sub-menu-text-decoration-active: none !default; // Side navigation sub menu link active text deocoration
-$side-nav-sub-menu-font-weight-active: 400 !default; // Side navigation sub menu link active font weight
+$side-nav-sub-menu-child-padding:                           2rem !default;                                          // Side navigation sub menu padding
+$side-nav-sub-menu-link-padding:                            1rem 2rem 1rem 2rem !default;                           // Side navigation sub menu link padding
+$side-nav-sub-menu-font-size:                               1.3rem !default;                                        // Side navigation sub menu link font size
+$side-nav-sub-menu-font-weight:                             400 !default;                                           // Side navigation sub menu link font weight
+$side-nav-sub-menu-line-height:                             1.6 !default;                                           // Side navigation sub menu link line height
+$side-nav-sub-menu-color:                                   $grey !default;                                         // Side navigation sub menu link color
+$side-nav-sub-menu-color-hover:                             $white !default;                                        // Side navigation sub menu link hover color
+$side-nav-sub-menu-color-active:                            $white !default;                                        // Side navigation sub menu link active color
+$side-nav-sub-menu-text-decoration-active:                  none !default;                                          // Side navigation sub menu link active text deocoration
+$side-nav-sub-menu-font-weight-active:                      400 !default;                                           // Side navigation sub menu link active font weight
 
-$side-nav-transition-duration: 500ms !default; // Overlay navigaion transition duration
+$side-nav-transition-duration:                              500ms !default;                                         // Overlay navigaion transition duration
 
 // Overlay navigation
-$overlay-navigation-max-width: 30rem !default; // Overlay navigation menu max width
+$overlay-navigation-max-width:                              30rem !default;                                         // Overlay navigation menu max width
 
-$overlay-nav-bkg-color: rgba(255, 255, 255, 0.95) !default; // Overlay navigation background color
+$overlay-nav-bkg-color:                                     rgba(255,255,255,0.95) !default;                        // Overlay navigation background color
 
-$overlay-nav-link-padding: 0.8rem 0 !default; // Overlay navigation padding
-$overlay-nav-font-size: 1.4rem !default; // Overlay navigation link font size
-$overlay-nav-font-weight: 400 !default; // Overlay navigation link font weight
-$overlay-nav-line-height: 1.6 !default; // Overlay navigation link line height
-$overlay-nav-color: $grey !default; // Overlay navigation link color
-$overlay-nav-color-hover: $primary !default; // Overlay navigation link hover color
-$overlay-nav-color-active: $primary !default; // Overlay navigation link active color
-$overlay-nav-text-decoration-active: none !default; // Overlay navigation link active text deocoration
-$overlay-nav-font-weight-active: 400 !default; // Overlay navigation link active font weight
+$overlay-nav-link-padding:                                  0.8rem 0 !default;                                      // Overlay navigation padding
+$overlay-nav-font-size:                                     1.4rem !default;                                        // Overlay navigation link font size
+$overlay-nav-font-weight:                                   400 !default;                                           // Overlay navigation link font weight
+$overlay-nav-line-height:                                   1.6 !default;                                           // Overlay navigation link line height
+$overlay-nav-color:                                         $grey !default;                                         // Overlay navigation link color
+$overlay-nav-color-hover:                                   $primary !default;                                      // Overlay navigation link hover color
+$overlay-nav-color-active:                                  $primary !default;                                      // Overlay navigation link active color
+$overlay-nav-text-decoration-active:                        none !default;                                          // Overlay navigation link active text deocoration
+$overlay-nav-font-weight-active:                            400 !default;                                           // Overlay navigation link active font weight
 
-$overlay-nav-sub-menu-child-padding: 2rem !default; // Overlay navigation sub menu padding
-$overlay-nav-sub-menu-link-padding: 1rem 2rem 1rem 2rem !default; // Overlay navigation sub menu link padding
-$overlay-nav-sub-menu-font-size: 1.3rem !default; // Overlay navigation font size
-$overlay-nav-sub-menu-font-weight: 400 !default; // Overlay navigation link font weight
-$overlay-nav-sub-menu-line-height: 1.6 !default; // Overlay navigation link line height
-$overlay-nav-sub-menu-color: $grey !default; // Overlay navigation sub menu link color
-$overlay-nav-sub-menu-color-hover: $primary !default; // Overlay navigation sub menu link hover color
-$overlay-nav-sub-menu-color-active: $primary !default; // Overlay navigation sub menu link active color
-$overlay-nav-sub-menu-text-decoration-active: none !default; // Overlay navigation sub menu link active text deocoration
-$overlay-nav-sub-menu-font-weight-active: 400 !default; // Overlay navigation sub menu link active font weight
+$overlay-nav-sub-menu-child-padding:                        2rem !default;                                          // Overlay navigation sub menu padding
+$overlay-nav-sub-menu-link-padding:                         1rem 2rem 1rem 2rem !default;                           // Overlay navigation sub menu link padding
+$overlay-nav-sub-menu-font-size:                            1.3rem !default;                                        // Overlay navigation font size
+$overlay-nav-sub-menu-font-weight:                          400 !default;                                           // Overlay navigation link font weight
+$overlay-nav-sub-menu-line-height:                          1.6 !default;                                           // Overlay navigation link line height
+$overlay-nav-sub-menu-color:                                $grey !default;                                         // Overlay navigation sub menu link color
+$overlay-nav-sub-menu-color-hover:                          $primary !default;                                      // Overlay navigation sub menu link hover color
+$overlay-nav-sub-menu-color-active:                         $primary !default;                                      // Overlay navigation sub menu link active color
+$overlay-nav-sub-menu-text-decoration-active:               none !default;                                          // Overlay navigation sub menu link active text deocoration
+$overlay-nav-sub-menu-font-weight-active:                   400 !default;                                           // Overlay navigation sub menu link active font weight
 
-$overlay-nav-transition-duration: 500ms !default; // Overlay navigaion transition duration
+$overlay-nav-transition-duration:                           500ms !default;                                         // Overlay navigaion transition duration
 
 // Navigation
-$nav-bar-height: 6rem !default; // Nav bar height
-$nav-bar-logo-margin-x: 3rem !default; // Logo horizontal spacing
+$nav-bar-height:                                            6rem !default;                                          // Nav bar height
+$nav-bar-logo-margin-x:                                     3rem !default;                                          // Logo horizontal spacing                      
 
-$nav-link-padding: 1rem 1.5rem !default; // Nav link horizontal spacing
-$nav-link-span-line-height: 1.4 !default; // Nav link span line height - used for multiple line link items
-$nav-font-size: 1.4rem !default; // Nav link font size
-$nav-link-description-font-size: 1.2rem !default; // Nav link description font size
-$nav-font-weight: 400 !default; // Nav link font weight
-$nav-description-font-weight: 400 !default; // Nav link description font weight
-$nav-color: $secondary !default; // Nav link color
-$nav-color-hover: $primary !default; // Nav link hover color
-$nav-color-active: $primary !default; // Nav link active color
-$nav-bkg-color-active: transparent !default; // Nav link background active color
-$nav-text-decoration-active: none !default; // Nav link active text deocoration
-$nav-font-weight-active: 400 !default; // Nav link active font weight
-$nav-icon-down: 'expand_more' !default; // Nav link icon down - when the classes .sub-menu-indicator & .contains-sub-menu are used
-$nav-icon-font-size: 1.8rem !default; // Nav link icon font size
-$nav-icon-color: $secondary !default; // Nav link icon color
-$nav-icon-color-hover: $primary !default; // Nav link icon hover color
+$nav-link-padding:                                          1rem 1.5rem !default;                                   // Nav link horizontal spacing
+$nav-link-span-line-height:                                 1.4 !default;                                           // Nav link span line height - used for multiple line link items
+$nav-font-size:                                             1.4rem !default;                                        // Nav link font size
+$nav-link-description-font-size:                            1.2rem !default;                                        // Nav link description font size
+$nav-font-weight:                                           400 !default;                                           // Nav link font weight
+$nav-description-font-weight:                               400 !default;                                           // Nav link description font weight
+$nav-color:                                                 $secondary !default;                                    // Nav link color
+$nav-color-hover:                                           $primary !default;                                      // Nav link hover color
+$nav-color-active:                                          $primary !default;                                      // Nav link active color
+$nav-bkg-color-active:                                      transparent !default;                                   // Nav link background active color
+$nav-text-decoration-active:                                none !default;                                          // Nav link active text deocoration
+$nav-font-weight-active:                                    400 !default;                                           // Nav link active font weight
+$nav-icon-down:                                             'expand_more' !default;                                 // Nav link icon down - when the classes .sub-menu-indicator & .contains-sub-menu are used
+$nav-icon-font-size:                                        1.8rem !default;                                        // Nav link icon font size
+$nav-icon-color:                                            $secondary !default;                                    // Nav link icon color
+$nav-icon-color-hover:                                      $primary !default;                                      // Nav link icon hover color
 
-$nav-sub-menu-min-width: 20rem !default; // Sub menu width
-$nav-sub-menu-bkg-color: $white !default; // Sub menu background color
-$nav-sub-menu-box-shadow: 0 0.2rem 1.8rem rgba(0, 0, 0, .15) !default; // Sub menu shadow
-$nav-sub-menu-border-radius: 0.3rem !default; // Sub menu border style
-$nav-sub-menu-link-padding: 1rem 1.5rem !default; // Sub menu link padding
-$nav-sub-menu-font-size: 1.3rem !default; // Sub menu link font size
-$nav-sub-menu-font-weight: 400 !default; // Sub menu link font weight
-$nav-sub-menu-line-height: 1.6 !default; // Sub menu link line height
-$nav-sub-menu-color: $grey-dark !default; // Sub menu link color
-$nav-sub-menu-color-hover: $primary !default; // Sub menu link hover color
-$nav-sub-menu-bkg-color-hover: transparent !default; // Sub menu link background hover color
-$nav-sub-menu-color-active: $primary !default; // Sub menu link active color
-$nav-sub-menu-bkg-color-active: transparent !default; // Sub menu link active backgroud
-$nav-sub-menu-text-decoration-active: none !default; // Sub menu link active text deocoration
-$nav-sub-menu-font-weight-active: 400 !default; // Sub menu link active font weight
-$nav-sub-menu-icon-right: 'chevron_right' !default; // Sub menu link icon right - when the classes .sub-menu-indicator & .contains-sub-menu are used
-$nav-sub-menu-icon-padding-right: 1.2rem !default; // Sub menu link icon padding right - when nav link icon is used
+$nav-sub-menu-min-width:                                    20rem !default;                                         // Sub menu width
+$nav-sub-menu-bkg-color:                                    $white !default;                                        // Sub menu background color
+$nav-sub-menu-box-shadow:                                   0 0.2rem 1.8rem rgba(0,0,0,.15) !default;               // Sub menu shadow
+$nav-sub-menu-border-radius:                                0.3rem !default;                                        // Sub menu border style
+$nav-sub-menu-link-padding:                                 1rem 1.5rem !default;                                   // Sub menu link padding
+$nav-sub-menu-font-size:                                    1.3rem !default;                                        // Sub menu link font size
+$nav-sub-menu-font-weight:                                  400 !default;                                           // Sub menu link font weight
+$nav-sub-menu-line-height:                                  1.6 !default;                                           // Sub menu link line height
+$nav-sub-menu-color:                                        $grey-dark !default;                                    // Sub menu link color
+$nav-sub-menu-color-hover:                                  $primary !default;                                      // Sub menu link hover color
+$nav-sub-menu-bkg-color-hover:                              transparent !default;                                   // Sub menu link background hover color
+$nav-sub-menu-color-active:                                 $primary !default;                                      // Sub menu link active color
+$nav-sub-menu-bkg-color-active:                             transparent !default;                                   // Sub menu link active backgroud
+$nav-sub-menu-text-decoration-active:                       none !default;                                          // Sub menu link active text deocoration
+$nav-sub-menu-font-weight-active:                           400 !default;                                           // Sub menu link active font weight
+$nav-sub-menu-icon-right:                                   'chevron_right' !default;                               // Sub menu link icon right - when the classes .sub-menu-indicator & .contains-sub-menu are used
+$nav-sub-menu-icon-padding-right:                           1.2rem !default;                                        // Sub menu link icon padding right - when nav link icon is used
 
-$nav-mega-menu-wrapper-padding: 2rem 0 !default; // Mega menu wrapper padding
-$nav-mega-menu-column-padding-x: 2rem !default; // Mega menu column horizontal spacing
-$nav-mega-menu-column-width: 33.33333% !default; // Mega menu column widths
-$nav-mega-menu-column-divider: 1px solid $grey-lightest !default; // Mega menu column divider width, style, color
+$nav-mega-menu-wrapper-padding:                             2rem 0 !default;                                        // Mega menu wrapper padding
+$nav-mega-menu-column-padding-x:                            2rem !default;                                          // Mega menu column horizontal spacing                                              
+$nav-mega-menu-column-width:                                33.33333% !default;                                     // Mega menu column widths
+$nav-mega-menu-column-divider:                              1px solid $grey-lightest !default;                      // Mega menu column divider width, style, color
 
-$nav-mega-menu-link-padding: 0.6rem 1.5rem !default; // Mega menu link padding
-$nav-mega-menu-color: $grey-dark !default; // Mega menu link color
-$nav-mega-menu-color-hover: $primary !default; // Mega menu link hover color
-$nav-mega-menu-bkg-color-hover: $grey-ultralight !default; // Mega menu link background hover color
-$nav-mega-menu-color-active: $primary !default; // Mega menu link active color
-$nav-mega-menu-bkg-color-active: $grey-ultralight !default; // Mega menu link background active color
-$nav-mega-menu-text-decoration-active: none !default; // Mega menu link active text deocoration
-$nav-mega-menu-font-weight-active: 400 !default; // Mega menu link active font weight
+$nav-mega-menu-link-padding:                                0.6rem 1.5rem !default;                                 // Mega menu link padding
+$nav-mega-menu-color:                                       $grey-dark !default;                                    // Mega menu link color
+$nav-mega-menu-color-hover:                                 $primary !default;                                      // Mega menu link hover color
+$nav-mega-menu-bkg-color-hover:                             $grey-ultralight !default;                              // Mega menu link background hover color
+$nav-mega-menu-color-active:                                $primary !default;                                      // Mega menu link active color
+$nav-mega-menu-bkg-color-active:                            $grey-ultralight !default;                              // Mega menu link background active color
+$nav-mega-menu-text-decoration-active:                      none !default;                                          // Mega menu link active text deocoration
+$nav-mega-menu-font-weight-active:                          400 !default;                                           // Mega menu link active font weight
 
-$hamburger-nav-padding: 1rem !default; // Hamburger nav padding
-$hamburger-nav-icon: '' !default; // Hamburger nav icon i.e. 'reorder'
-$hamburger-nav-font-size: 2.5rem !default; // Hamburger font size
-$hamburger-nav-color: $grey-dark !default; // Hamburger color
-$hamburger-nav-color-hover: $primary !default; // Hamburger hover color
+$hamburger-nav-padding:                                     1rem !default;                                          // Hamburger nav padding
+$hamburger-nav-icon:                                        '' !default;                                            // Hamburger nav icon i.e. 'reorder'
+$hamburger-nav-font-size:                                   2.5rem !default;                                        // Hamburger font size
+$hamburger-nav-color:                                       $grey-dark !default;                                    // Hamburger color
+$hamburger-nav-color-hover:                                 $primary !default;                                      // Hamburger hover color
 
-$hamburger-nav-animated-border-width: 2.4rem !default; // Animated hamburger nav border width
-$hamburger-nav-animated-border-height: 0.2rem !default; // Animated hamburger nav border height
-$hamburger-nav-animated-border-spacing: 0.5rem !default; // Animated hamburger nav border spacing
-$hamburger-nav-animated-duration: 700ms !default; // Animated hamburger nav transition speed
+$hamburger-nav-animated-border-width:                       2.4rem !default;                                        // Animated hamburger nav border width
+$hamburger-nav-animated-border-height:                      0.2rem !default;                                        // Animated hamburger nav border height
+$hamburger-nav-animated-border-spacing:                     0.5rem !default;                                        // Animated hamburger nav border spacing
+$hamburger-nav-animated-duration:                           700ms !default;                                         // Animated hamburger nav transition speed
 
-$aux-nav-icon: 'clear' !default; // Auxiliary nav close icon
-$aux-nav-close-color: $grey !default; // Auxiliary close color
-$aux-nav-close-color-hover: $red !default; // Auxiliary close hover color
+$aux-nav-icon:                                              'clear' !default;                                       // Auxiliary nav close icon
+$aux-nav-close-color:                                       $grey !default;                                         // Auxiliary close color
+$aux-nav-close-color-hover:                                 $red !default;                                          // Auxiliary close hover color
 
 // Accordion
-$accordion-tab-margin-bottom: 1px !default; // Accordion tab button margin bottom - adds 1px space between tab buttons
+$accordion-tab-margin-bottom:                               1px !default;                                           // Accordion tab button margin bottom - adds 1px space between tab buttons
 
-$accordion-border-width: $component-border-width !default; // Accordion border with - affects tab button and content
-$accordion-border-color: $component-border-color !default; // Accordion border color
+$accordion-border-width:                                    $component-border-width !default;                       // Accordion border with - affects tab button and content
+$accordion-border-color:                                    $component-border-color !default;                       // Accordion border color
 
 // Blockquote
-$blockquote-floated-width: 40% !default; // Blockquote floated width - in content
-$blockquote-floated-margin-x: 2rem !default; // Blockquote floated horizontal spacing
+$blockquote-floated-width:                                  40% !default;                                           // Blockquote floated width - in content
+$blockquote-floated-margin-x:                               2rem !default;                                          // Blockquote floated horizontal spacing 
 
-$blockquote-cite-margin-top: 2rem !default; // Bloackquote cite top margin
+$blockquote-cite-margin-top:                                2rem !default;                                          // Bloackquote cite top margin
 
-$blockquote-color: $secondary !default; // Blockquote color
-$blockquote-line-height: 1.5 !default; // Blockquote line height
-$blockquote-cite-font-size: 70%; // Blockquote cite font size
+$blockquote-color:                                          $secondary !default;                                    // Blockquote color
+$blockquote-line-height:                                    1.5 !default;                                           // Blockquote line height
+$blockquote-cite-font-size:                                 70%;                                                    // Blockquote cite font size
 
-$blockquote-small-font-size: 1.8rem !default; // Blockquote small font size
-$blockquote-medium-font-size: 2rem !default; // Blockquote medium font size
-$blockquote-large-font-size: 2.2rem !default; // Blockquote large font size
-$blockquote-xlarge-font-size: 2.4rem !default; // Blockquote xlarge font size
+$blockquote-small-font-size:                                1.8rem !default;                                        // Blockquote small font size
+$blockquote-medium-font-size:                               2rem !default;                                          // Blockquote medium font size
+$blockquote-large-font-size:                                2.2rem !default;                                        // Blockquote large font size
+$blockquote-xlarge-font-size:                               2.4rem !default;                                        // Blockquote xlarge font size
 
-$blockquote-avatar-border-radius: $component-border-style-full; // Blockquote avatar border style
+$blockquote-avatar-border-radius:                           $component-border-style-full;                           // Blockquote avatar border style
 
 // Card
-$card-border-width: $component-border-width !default; // Box border width
-$card-box-shadow: none !default; // Box shadow
-$card-hover-box-shadow: none !default; // Box hover shadow - for when the class .shadow-on-hover is added to div.box
-$card-dismissable-close-opacity: 0.6 !default; // Box close button opacity - for when the class .dismissable is added to div.box
-$card-dismissable-close-opacity-hover: 1 !default; // Box close button hover opacity
+$card-border-width:                                         $component-border-width !default;                       // Box border width
+$card-box-shadow:                                           none !default;                                          // Box shadow
+$card-hover-box-shadow:                                     none !default;                                          // Box hover shadow - for when the class .shadow-on-hover is added to div.box
+$card-dismissable-close-opacity:                            0.6 !default;                                           // Box close button opacity - for when the class .dismissable is added to div.box
+$card-dismissable-close-opacity-hover:                      1 !default;                                             // Box close button hover opacity
 
 // Breadcrumb
-$breadcrumb-divider-padding-x: 1.2rem !default; // Breadcrumb divider horizontal spacing
-$breadcrumb-font-size: 1.2rem !default; // Breadcrumb font size
-$breadcrumb-margin-bottom: 0 !default; // Breadcrumb bottom margin
-$breadcrumb-divider-color: grey !default; // Breadcrumb divider color
-$breadcrumb-active-color: grey !default; // Breadcrumb active page color
-$breadcrumb-divider: "/" !default; // Breadcrumb divider
+$breadcrumb-divider-padding-x:                              1.2rem !default;                                        // Breadcrumb divider horizontal spacing
+$breadcrumb-font-size:                                      1.2rem !default;                                        // Breadcrumb font size
+$breadcrumb-margin-bottom:                                  0 !default;                                             // Breadcrumb bottom margin
+$breadcrumb-divider-color:                                  grey !default;                                          // Breadcrumb divider color
+$breadcrumb-active-color:                                   grey !default;                                          // Breadcrumb active page color
+$breadcrumb-divider:                                        "/" !default;                                           // Breadcrumb divider
 
 // Button
-$button-margin-bottom: 1rem !default; // Button bottom margin
-$button-margin-x: 1rem !default; // Button horizontal spacing
+$button-margin-bottom:                                      1rem !default;                                          // Button bottom margin
+$button-margin-x:                                           1rem !default;                                          // Button horizontal spacing
 
-$button-border-width: $component-border-width !default; // Button border width
+$button-border-width:                                       $component-border-width !default;                       // Button border width
 
-$button-icon-margin: 0.5rem !default; // Button icon margin - for when icon is added to the button
+$button-icon-margin:                                        0.5rem !default;                                        // Button icon margin - for when icon is added to the button
 
-$button-line-height: 1.5 !default; // Button line height
+$button-line-height:                                        1.5 !default;                                           // Button line height
 
-$button-bkg-color: $component-bkg-color-active !default; // Button background color
-$button-border-color: $component-border-color-active !default; // Button border color
-$button-color: $component-color-active !default; // Button color
+$button-bkg-color:                                          $component-bkg-color-active  !default;                  // Button background color
+$button-border-color:                                       $component-border-color-active  !default;               // Button border color
+$button-color:                                              $component-color-active  !default;                      // Button color
 
-$button-bkg-color-hover: $component-bkg-color-active !default; // Button background hover color
-$button-border-color-hover: $component-border-color-active !default; // Button border hover color
-$button-color-hover: $component-color-active !default; // Button hover color
+$button-bkg-color-hover:                                    $component-bkg-color-active  !default;                  // Button background hover color
+$button-border-color-hover:                                 $component-border-color-active  !default;               // Button border hover color
+$button-color-hover:                                        $component-color-active  !default;                      // Button hover color
 
-$button-bkg-color-active: $component-bkg-color-active !default; // Button background active color
-$button-border-color-active: $component-border-color-active !default; // Button border active color
-$button-color-active: $component-color-active !default; // Button active color
+$button-bkg-color-active:                                   $component-bkg-color-active !default;                   // Button background active color
+$button-border-color-active:                                $component-border-color-active !default;                // Button border active color
+$button-color-active:                                       $component-color-active !default;                       // Button active color
 
-$button-box-shadow: none !default; // Button shadow
-$button-hover-box-shadow: none !default; // Button shadow on hover - for when the class .shadow-on-hover is added to a.button or button
+$button-box-shadow:                                         none !default;                                          // Button shadow
+$button-hover-box-shadow:                                   none !default;                                          // Button shadow on hover - for when the class .shadow-on-hover is added to a.button or button
 
 // Code
-$code-font-size: inherit !default;
-$code-color: pink !default;
-$kbd-padding-y: .2rem !default;
-$kbd-padding-x: .4rem !default;
-$kbd-font-size: $code-font-size !default;
-$kbd-color: white !default;
-$kbd-bkg-color: grey !default;
-$pre-color: grey !default;
+$code-font-size:                                            inherit !default;
+$code-color:                                                pink !default;
+$kbd-padding-y:                                             .2rem !default;
+$kbd-padding-x:                                             .4rem !default;
+$kbd-font-size:                                             $code-font-size !default;
+$kbd-color:                                                 white !default;
+$kbd-bkg-color:                                             grey !default;
+$pre-color:                                                 grey !default;
 
 // Dropdown
-$dropdown-menu-min-width: 18rem !default; // Dropdown medium list width
-$dropdown-menu-distance: 0.3rem !default;
-$dropdown-menu-bkg-color: $white !default; // Dropdown list background color
-$dropdown-menu-border-color: $grey-lightest !default; // Dropdown list border color
-$dropdown-menu-border-width: $component-border-width !default; // Dropdown list border width
-$dropdown-menu-down-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !default; // Dropdown list shadow opening downwards
-$dropdown-menu-up-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1) !default; // Dropdown list shadow opening upwards
+$dropdown-menu-min-width:                                   18rem !default;                                         // Dropdown medium list width                                           
+$dropdown-menu-distance:                                    0.3rem !default;
+$dropdown-menu-bkg-color:                                   $white !default;                                        // Dropdown list background color                       
+$dropdown-menu-border-color:                                $grey-lightest !default;                                // Dropdown list border color
+$dropdown-menu-border-width:                                $component-border-width !default;                       // Dropdown list border width
+$dropdown-menu-down-box-shadow:                             0 0.5rem 1rem rgba(0, 0, 0, 0.1) !default;              // Dropdown list shadow opening downwards
+$dropdown-menu-up-box-shadow:                               0 0 1rem rgba(0, 0, 0, 0.1) !default;                   // Dropdown list shadow opening upwards
 
-$dropdown-menu-item-font-size: 1.2rem !default; // Dropdown list font size
-$dropdown-menu-item-color: $grey-darker !default; // Dropdown list link color
-$dropdown-menu-item-bkg-color-hover: $component-bkg-color-hover !default; // Dropdown list link background hover color
-$dropdown-menu-item-color-hover: $component-color-hover !default; // Dropdown list link hover color
-$dropdown-menu-item-bkg-color-active: $component-bkg-color-active !default; // Dropdown list link background active color
-$dropdown-menu-item-color-active: $component-color-active !default; // Dropdown list link active color
+$dropdown-menu-item-font-size:                              1.2rem !default;                                        // Dropdown list font size
+$dropdown-menu-item-color:                                  $grey-darker !default;                                  // Dropdown list link color
+$dropdown-menu-item-bkg-color-hover:                        $component-bkg-color-hover !default;                    // Dropdown list link background hover color
+$dropdown-menu-item-color-hover:                            $component-color-hover !default;                        // Dropdown list link hover color
+$dropdown-menu-item-bkg-color-active:                       $component-bkg-color-active !default;                   // Dropdown list link background active color
+$dropdown-menu-item-color-active:                           $component-color-active !default;                       // Dropdown list link active color
 
 // Feature Columns
-$feature-col-group-padding: 7rem !default; // Grouped feature columns padding
-$feature-col-icon-margin-bottom: 2rem !default; // Feature column icon bottom margin
-$feature-col-icon-font-size: 3rem !default; // Feature column medium icon font size
+$feature-col-group-padding:                                 7rem !default;                                          // Grouped feature columns padding 
+$feature-col-icon-margin-bottom:                            2rem !default;                                          // Feature column icon bottom margin
+$feature-col-icon-font-size:                                3rem !default;                                          // Feature column medium icon font size
 
 // Form Element
-$form-container-gutter: 1rem !default; // Form element gutter - spacing between form element columns
+$form-container-gutter:                                     1rem !default;                                          // Form element gutter - spacing between form element columns                               
+                                    
+$textarea-min-height:                                       10rem !default;                                         // Textarea min height
+$textarea-max-height:                                       20rem !default;                                         // Text area max height
 
-$textarea-min-height: 10rem !default; // Textarea min height
-$textarea-max-height: 20rem !default; // Text area max height
+$select-icon:                                               'expand_more' !default;                                 // Select icon - replaces default select box arrows
+$select-icon-font-size:                                     1.9rem !default;                                        // Select icon font size
+$select-icon-color:                                         $grey-dark !default;                                    // Select icon color
 
-$select-icon: 'expand_more' !default; // Select icon - replaces default select box arrows
-$select-icon-font-size: 1.9rem !default; // Select icon font size
-$select-icon-color: $grey-dark !default; // Select icon color
+$checkbox-radio-margin-x:                                   1rem !default;                                          // Checkbox and radio horizontal spacing
+$checkbox-icon:                                             'check_box' !default;                                   // Checkbox icon - when checked
+$checkbox-radio-checked-bkg-color:                          $white !default;                                        // Checkbox and radio checked state background color
+$checkbox-radio-checked-color:                              $component-bkg-color-active !default;                   // Checkbox and radio checked state icon color
+$checkbox-radio-label-color:                                $grey !default;                                         // Checkbox and radio label color
+$checkbox-radio-checked-label-color:                        $grey-ultradark !default;                               // Checkbox and radio checked state label color
+$checkbox-radio-sm:                                         1.6rem !default;                                            // Checkbox and radio small
+$checkbox-radio-md:                                         2rem !default;                                              // Checkbox and radio medium
+$checkbox-radio-large:                                      2.4rem !default;                                        // Checkbox and radio large
+$checkbox-radio-xlarge:                                     2.7rem !default;                                        // Checkbox and radio extra large
 
-$checkbox-radio-margin-x: 1rem !default; // Checkbox and radio horizontal spacing
-$checkbox-icon: 'check_box' !default; // Checkbox icon - when checked
-$checkbox-radio-checked-bkg-color: $white !default; // Checkbox and radio checked state background color
-$checkbox-radio-checked-color: $component-bkg-color-active !default; // Checkbox and radio checked state icon color
-$checkbox-radio-label-color: $grey !default; // Checkbox and radio label color
-$checkbox-radio-checked-label-color: $grey-ultradark !default; // Checkbox and radio checked state label color
-$checkbox-radio-sm: 1.6rem !default; // Checkbox and radio small
-$checkbox-radio-md: 2rem !default; // Checkbox and radio medium
-$checkbox-radio-large: 2.4rem !default; // Checkbox and radio large
-$checkbox-radio-xlarge: 2.7rem !default; // Checkbox and radio extra large
+$form-element-margin-bottom:                                1.5rem !default;                                        // Form element bottom margin
+$form-element-border-width:                                 $component-border-width !default;                       // Form element border width
+$form-element-line-height:                                  $button-line-height !default;                           // Form element line height - make sure line height is the same as button for merged form elements and consisten look
 
-$form-element-margin-bottom: 1.5rem !default; // Form element bottom margin
-$form-element-border-width: $component-border-width !default; // Form element border width
-$form-element-line-height: $button-line-height !default; // Form element line height - make sure line height is the same as button for merged form elements and consisten look
+$form-element-box-shadow-focus:                             none !default;                                          // Form element shadow on focus
 
-$form-element-box-shadow-focus: none !default; // Form element shadow on focus
+$form-label-margin-bottom:                                  0.8rem !default;                                        // Form element label bottom margin
+$form-label-color:                                          $grey-darker !default;                                  // Form element label color
+$form-label-font-size:                                      1.4rem !default;                                        // Form element label font size
 
-$form-label-margin-bottom: 0.8rem !default; // Form element label bottom margin
-$form-label-color: $grey-darker !default; // Form element label color
-$form-label-font-size: 1.4rem !default; // Form element label font size
+$form-icon-font-size:                                       140% !default;                                          // Form element icon font size - applies to form element when use of the .input-indication class
 
-$form-icon-font-size: 140% !default; // Form element icon font size - applies to form element when use of the .input-indication class
-
-$form-element-bkg-color: $white !default; // Form element background color
-$form-element-bkg-color-focus: $white !default; // Form element background focus color
-$form-element-bkg-color-required: $white !default; // Form element background required color
-$form-element-border-color: $component-border-color !default; // Form element border color
-$form-element-border-color-focus: $component-border-color-active !default; // Form element border focus color
-$form-element-border-color-required: $red !default; // Form element border required color
-$form-element-placeholder-color: $grey-dark !default; // Form element placeholder color
-$form-element-placeholder-color-focus: $grey-ultradark !default; // Form element placeholder focus color
-$form-element-placeholder-color-required: $red !default; // Form element placeholder required color
-$form-element-color: $grey-ultradark !default; // Form element color
-$form-element-indication-bkg-color: $grey-ultralight !default; // Form element indication icon background color
-$form-element-indication-bkg-color-required: $red !default; // Form element indication icon background required color
-$form-element-indication-border-color: $grey-ultralight !default; // Form element indication icon border color
-$form-element-indication-border-color-required: $red !default; // Form element indication icon border required color
-$form-element-indication-color: $grey-ultradark !default; // Form element indication icon color
-$form-element-indication-color-required: $red !default; // Form element indication icon required color
-$form-element-border-width-focus: 0.3rem !default;
-$form-element-border-opacity-focus: 0.3 !default;
+$form-element-bkg-color:                                    $white !default;                                        // Form element background color
+$form-element-bkg-color-focus:                              $white !default;                                        // Form element background focus color
+$form-element-bkg-color-required:                           $white !default;                                        // Form element background required color
+$form-element-border-color:                                 $component-border-color !default;                       // Form element border color
+$form-element-border-color-focus:                           $component-border-color-active !default;                // Form element border focus color
+$form-element-border-color-required:                        $red !default;                                          // Form element border required color
+$form-element-placeholder-color:                            $grey-dark !default;                                    // Form element placeholder color
+$form-element-placeholder-color-focus:                      $grey-ultradark !default;                               // Form element placeholder focus color
+$form-element-placeholder-color-required:                   $red !default;                                          // Form element placeholder required color
+$form-element-color:                                        $grey-ultradark !default;                               // Form element color
+$form-element-indication-bkg-color:                         $grey-ultralight !default;                              // Form element indication icon background color
+$form-element-indication-bkg-color-required:                $red !default;                                          // Form element indication icon background required color
+$form-element-indication-border-color:                      $grey-ultralight !default;                              // Form element indication icon border color
+$form-element-indication-border-color-required:             $red !default;                                          // Form element indication icon border required color
+$form-element-indication-color:                             $grey-ultradark !default;                               // Form element indication icon color
+$form-element-indication-color-required:                    $red !default;                                          // Form element indication icon required color
+$form-element-border-width-focus:                           0.3rem !default;
+$form-element-border-opacity-focus:                         0.3 !default;
 
 // Icons sizes
-$icon-margin-bottom: 1rem !default; // Icon bottom margin
-$icon-margin-x: 1rem !default; // Icon horizontal spacing
-$icon-label-margin-x: 1rem !default; // Icon horizontal spacing
+$icon-margin-bottom:                                        1rem !default;                                          // Icon bottom margin
+$icon-margin-x:                                             1rem !default;                                          // Icon horizontal spacing
+$icon-label-margin-x:                                       1rem !default;                                          // Icon horizontal spacing
 
-$icon-small: 1.6rem !default; // Icon small size
-$icon-medium: 2.4rem !default; // Icon medium size
-$icon-large: 3.2rem !default; // Icon large size
-$icon-xlarge: 3.8rem !default; // Icon extra large size
+$icon-small:                                                1.6rem !default;                                        // Icon small size
+$icon-medium:                                               2.4rem !default;                                        // Icon medium size
+$icon-large:                                                3.2rem !default;                                        // Icon large size
+$icon-xlarge:                                               3.8rem !default;                                        // Icon extra large size
 
-$icon-boxed-border-width: $component-border-width !default; // Boxed icon border width
-$icon-boxed-border-color: $component-border-color !default; // Boxed icon border color
+$icon-boxed-border-width:                                   $component-border-width !default;                       // Boxed icon border width
+$icon-boxed-border-color:                                   $component-border-color !default;                       // Boxed icon border color
 
-$icon-boxed-small: 5.8rem !default; // Boxed icon small
-$icon-boxed-medium: 6.6rem !default; // Boxed icon medium
-$icon-boxed-large: 7.4rem !default; // Boxed icon large
-$icon-boxed-xlarge: 9rem !default; // Boxed icon extra large
-$icon-box-shadow: none !default; // Icon shadow
-$icon-hover-box-shadow: none !default; // Icon shadow on hover - for when the class .shadow-on-hover is added to .icon
+$icon-boxed-small:                                          5.8rem !default;                                        // Boxed icon small
+$icon-boxed-medium:                                         6.6rem !default;                                        // Boxed icon medium
+$icon-boxed-large:                                          7.4rem !default;                                        // Boxed icon large
+$icon-boxed-xlarge:                                         9rem !default;                                          // Boxed icon extra large
+$icon-box-shadow:                                           none !default;                                          // Icon shadow
+$icon-hover-box-shadow:                                     none !default;                                          // Icon shadow on hover - for when the class .shadow-on-hover is added to .icon
 
 // Images
-$thumb-margin-bottom: 1rem !default; // Thumb bottom margin
-$thumb-margin-x: 2rem !default; // Thumb horizontal spacing
-$thumb-rollover-padding: 3rem !default; // Thumb rollover wrapper padding
-$thumb-rollover-bkg-color: rgba(0, 0, 0, 0.5) !default; // Thumb rollover background color
-$thumb-rollover-color: #fff !default; // Thumb rollover color
-$thumb-rollover-font-size: 1.2rem !default; // Thumb rollover font size
-$thumb-caption-below-padding: 1rem 1.5rem !default; // Thumb caption below padding - for when caption is placed under the thumb
-$thumb-caption-border-width: $component-border-width !default; // Thumb caption below border with
-$thumb-caption-border-color: $component-border-color !default; // Thumb caption below color
-$thumb-caption-below-font-size: 1.2rem !default; // Thumb caption below font size
-$thumb-caption-below-font-style: italic !default; // Thumb caption font style
-$thumb-caption-over-padding: 3rem !default; // Thumb caption over padding - when captions are placed overlay the thumb
+$thumb-margin-bottom:                                       1rem !default;                                          // Thumb bottom margin
+$thumb-margin-x:                                            2rem !default;                                          // Thumb horizontal spacing
+$thumb-rollover-padding:                                    3rem !default;                                          // Thumb rollover wrapper padding
+$thumb-rollover-bkg-color:                                  rgba(0,0,0,0.5) !default;                               // Thumb rollover background color
+$thumb-rollover-color:                                      #fff !default;                                          // Thumb rollover color
+$thumb-rollover-font-size:                                  1.2rem !default;                                        // Thumb rollover font size
+$thumb-caption-below-padding:                               1rem 1.5rem !default;                                   // Thumb caption below padding - for when caption is placed under the thumb
+$thumb-caption-border-width:                                $component-border-width !default;                       // Thumb caption below border with
+$thumb-caption-border-color:                                $component-border-color !default;                       // Thumb caption below color
+$thumb-caption-below-font-size:                             1.2rem !default;                                        // Thumb caption below font size
+$thumb-caption-below-font-style:                            italic !default;                                        // Thumb caption font style
+$thumb-caption-over-padding:                                3rem !default;                                          // Thumb caption over padding - when captions are placed overlay the thumb
 
-// Lists
-$list-nested-margins: 0.4rem 0 0.4rem 3rem !default; // Nested list group margins
-$list-horizontal-margin-x: 1rem !default; // List group horizontal spacing
+// Lists 
+$list-nested-margins:                                       0.4rem 0 0.4rem 3rem !default;                          // Nested list group margins
+$list-horizontal-margin-x:                                  1rem !default;                                          // List group horizontal spacing
 
-$list-dd-padding-left: 3rem !default; // List group description list padding
+$list-dd-padding-left:                                      3rem !default;                                          // List group description list padding
 
-$list-group-border-width: $component-border-width !default; // List group border width
-$list-group-group-margin-bottom: $component-margin-bottom !default; // List group bottom margin
+$list-group-border-width:                                   $component-border-width !default;                       // List group border width
+$list-group-group-margin-bottom:                            $component-margin-bottom !default;                      // List group bottom margin
 
-$list-group-bkg-color: $white !default; // List group link background color
-$list-group-border-color: $component-border-color !default; // List group link border color
-$list-group-color: $component-color !default; // List group link color
+$list-group-bkg-color:                                      $white !default;                                        // List group link background color
+$list-group-border-color:                                   $component-border-color !default;                       // List group link border color
+$list-group-color:                                          $component-color !default;                              // List group link color
 
-$list-group-bkg-color-hover: $component-bkg-color-hover !default; // List group link background hover color
-$list-group-border-color-hover: $component-border-color-hover !default; // List group link border hover color
-$list-group-color-hover: $component-color-hover !default; // List group link hover color
+$list-group-bkg-color-hover:                                $component-bkg-color-hover !default;                    // List group link background hover color
+$list-group-border-color-hover:                             $component-border-color-hover !default;                 // List group link border hover color
+$list-group-color-hover:                                    $component-color-hover !default;                        // List group link hover color
 
-$list-group-bkg-color-active: $component-bkg-color-active !default; // List group link background active color
-$list-group-border-color-active: $component-border-color-active !default; // List group link border active color
-$list-group-color-active: $component-color-active !default; // List group link active color
+$list-group-bkg-color-active:                               $component-bkg-color-active !default;                   // List group link background active color
+$list-group-border-color-active:                            $component-border-color-active !default;                // List group link border active color
+$list-group-color-active:                                   $component-color-active !default;                       // List group link active color
 
 // MediaElement
-$mejs-controls-height: 4.4rem !default; // Player controls height - 44px for sufficient tap space
-$mejs-controls-player-radius: $component-border-style-rounded !default; // Player control border style
-$mejs-time-total-bkg-color: $grey-dark !default; // Player total time background color
-$mejs-time-hovered-bkg-color: rgba(255, 255, 255, 0.5) !default; // Player time slider hovered background color
-$mejs-time-hovered-negative-bkg-color: rgba(0, 0, 0, 0.2) !default; // Player time slider hovered negative background color
-$mejs-time-vol-loaded-bkg-color: $grey-light !default; // Player volume slider loaded background color
-$mejs-time-vol-current-bkg-color: $component-bkg-color-active !default; // Player volume slider current volume background color
-$mejs-time-color: $grey-dark !default; // Player time color
-$mejs-tooltip-bkg-color: $grey-ultradark !default; // Player tooltip background color - appears on hovering the time slider
-$mejs-video-player-bkg-color: rgba(255, 255, 255, 0.9) !default; // Video player background color
-$mejs-video-player-play-button-bkg-color: $white !default; // Video player play button background color
-$mejs-audio-player-bkg-color: $grey-ultralight !default; // Audio player background color
-$mejs-audio-player-play-button-bkg-color: $grey-lightest !default; // Audio player play button background color
+$mejs-controls-height:                                      4.4rem !default;                                        // Player controls height - 44px for sufficient tap space
+$mejs-controls-player-radius:                               $component-border-style-rounded !default;               // Player control border style
+$mejs-time-total-bkg-color:                                 $grey-dark !default;                                    // Player total time background color
+$mejs-time-hovered-bkg-color:                               rgba(255, 255, 255, 0.5) !default;                      // Player time slider hovered background color
+$mejs-time-hovered-negative-bkg-color:                      rgba(0, 0, 0, 0.2) !default;                            // Player time slider hovered negative background color
+$mejs-time-vol-loaded-bkg-color:                            $grey-light !default;                                   // Player volume slider loaded background color
+$mejs-time-vol-current-bkg-color:                           $component-bkg-color-active !default;                   // Player volume slider current volume background color
+$mejs-time-color:                                           $grey-dark !default;                                    // Player time color
+$mejs-tooltip-bkg-color:                                    $grey-ultradark !default;                               // Player tooltip background color - appears on hovering the time slider
+$mejs-video-player-bkg-color:                               rgba(255,255,255,0.9) !default;                         // Video player background color
+$mejs-video-player-play-button-bkg-color:                   $white !default;                                        // Video player play button background color
+$mejs-audio-player-bkg-color:                               $grey-ultralight !default;                              // Audio player background color
+$mejs-audio-player-play-button-bkg-color:                   $grey-lightest !default;                                // Audio player play button background color
 
 // Pagination
-$pagination-link-size: 4rem !default; // Pagination link width/height
-$pagination-link-padding: 1rem !default; // Pagination link padding
-$pagination-link-margin-x: 0 !default; // Pagination link icon horizontal spacing - if icon is used for arrow icon for next/previous links
-$pagination-link-label-padding: 0 1.5rem !default; // Pagination link label padding - for when .with-label class is used
-$pagination-link-border-radius: $component-border-style-rounded !default; // Pagination link border style
-$pagination-link-font-size: 1.5rem !default; // Pagination link font size
-$pagination-link-font-weight: 400 !default; // Pagination link font weight
-$pagination-icon-font-size: 2rem !default; // Pagination link icon font size
-$pagination-link-bkg-color: $white !default; // Pagination link background color
-$pagination-link-border-color: $grey-lightest !default; // Pagination link border color
-$pagination-link-bkg-color-hover: $primary !default; // Pagination link background hover color
-$pagination-link-border-color-hover: $pagination-link-bkg-color-hover !default; // Pagination link border hover color
-$pagination-link-color: $grey !default; // Pagination link color
-$pagination-link-color-hover: $white !default; // Pagination link hover color
-$pagination-link-bkg-color-active: $pagination-link-bkg-color-hover !default; // Pagination link background active color
-$pagination-link-border-color-active: $pagination-link-bkg-color-hover !default; // Pagination link border active color
-$pagination-link-color-active: $white !default; // Pagination link active color
+$pagination-link-size:                                      4rem !default;                                              // Pagination link width/height
+$pagination-link-padding:                                   1rem !default;                                              // Pagination link padding
+$pagination-link-margin-x:                                  0 !default;                                                 // Pagination link icon horizontal spacing - if icon is used for arrow icon for next/previous links                                 
+$pagination-link-label-padding:                             0 1.5rem !default;                                          // Pagination link label padding - for when .with-label class is used                                   
+$pagination-link-border-radius:                             $component-border-style-rounded !default;                   // Pagination link border style
+$pagination-link-font-size:                                 1.5rem !default;                                            // Pagination link font size
+$pagination-link-font-weight:                               400 !default;                                               // Pagination link font weight
+$pagination-icon-font-size:                                 2rem !default;                                              // Pagination link icon font size
+$pagination-link-bkg-color:                                 $white !default;                                            // Pagination link background color
+$pagination-link-border-color:                              $grey-lightest !default;                                    // Pagination link border color
+$pagination-link-bkg-color-hover:                           $primary !default;                                              // Pagination link background hover color
+$pagination-link-border-color-hover:                        $pagination-link-bkg-color-hover !default;                  // Pagination link border hover color
+$pagination-link-color:                                     $grey !default;                                             // Pagination link color
+$pagination-link-color-hover:                               $white !default;                                            // Pagination link hover color
+$pagination-link-bkg-color-active:                          $pagination-link-bkg-color-hover !default;                  // Pagination link background active color
+$pagination-link-border-color-active:                       $pagination-link-bkg-color-hover !default;                  // Pagination link border active color
+$pagination-link-color-active:                              $white !default;                                            // Pagination link active color
 
 // Pricing Tables
-$pricing-table-border-width: $component-border-width !default; // Pricing table border width
-$pricing-table-border-color: $component-border-color !default; // Pricing table border color
+$pricing-table-border-width:                                $component-border-width !default;                       // Pricing table border width
+$pricing-table-border-color:                                $component-border-color !default;                       // Pricing table border color
 
-$pricing-table-callout-padding-y: 4.5rem !default; // Pricing table callout column vertical padding
-$pricing-table-callout-top: -1.5rem !default; // Pricing table callout column top position - set to a negative value to accomodate for the additional padding
-$pricing-table-callout-border-color: $white !default; // Pricing table callout column border column
+$pricing-table-callout-padding-y:                           4.5rem !default;                                        // Pricing table callout column vertical padding
+$pricing-table-callout-top:                                 -1.5rem !default;                                       // Pricing table callout column top position - set to a negative value to accomodate for the additional padding
+$pricing-table-callout-border-color:                        $white !default;                                        // Pricing table callout column border column
 
-$pricing-table-padding: 3rem !default; // Pricing table column padding
-$pricing-table-hr-margin: $pricing-table-padding !default; // Pricing table column horizontal rule margin
+$pricing-table-padding:                                     3rem !default;                                          // Pricing table column padding
+$pricing-table-hr-margin:                                   $pricing-table-padding !default;                        // Pricing table column horizontal rule margin
 
-$pricing-table-price-font-size: 3.294rem !default;
-$pricing-table-currency-margin-right: 0.2rem !default; // Pricing table currency margin right
-$pricing-table-currency-font-size: 50% !default; // Pricing table currency font size
-$pricing-table-currency-top: auto !default; // Pricing table currency top position
-$pricing-table-interval-font-size: 1.3rem !default; // Pricing table interval font size
-$pricing-table-interval-opacity: 0.5 !default; // Pricing table interval opacity
+$pricing-table-price-font-size:                             3.294rem !default;
+$pricing-table-currency-margin-right:                       0.2rem !default;                                        // Pricing table currency margin right
+$pricing-table-currency-font-size:                          50% !default;                                           // Pricing table currency font size
+$pricing-table-currency-top:                                auto !default;                                          // Pricing table currency top position
+$pricing-table-interval-font-size:                          1.3rem !default;                                        // Pricing table interval font size
+$pricing-table-interval-opacity:                            0.5 !default;                                           // Pricing table interval opacity
 
-$pricing-table-options-padding-y: 0.7rem !default; // Pricing table options vertical padding
-$pricing-table-option-del-opacity: 0.5 !default; // Pricing table options strikeout opacity
+$pricing-table-options-padding-y:                           0.7rem !default;                                        // Pricing table options vertical padding
+$pricing-table-option-del-opacity:                          0.5 !default;                                           // Pricing table options strikeout opacity
 
-$pricing-table-icon-margin-right: 1rem !default; // Pricing table options icon margin right
-$pricing-table-icon-included: 'done' !default; // Pricing table icon - for when the class .with-icon is added to ul.pricing-options
-$pricing-table-icon-not-included: 'close' !default; // Pricing table icon - for when the class .with-icon is added to ul.pricing-options
+$pricing-table-icon-margin-right:                           1rem !default;                                          // Pricing table options icon margin right
+$pricing-table-icon-included:                               'done' !default;                                        // Pricing table icon - for when the class .with-icon is added to ul.pricing-options
+$pricing-table-icon-not-included:                           'close' !default;                                       // Pricing table icon - for when the class .with-icon is added to ul.pricing-options
 
-$pricing-table-margin-bottom-mobile: 1rem !default; // Pricing table column bottom margin on mobile - when tables stack
+$pricing-table-margin-bottom-mobile:                        1rem !default;                                          // Pricing table column bottom margin on mobile - when tables stack
 
 // Progress Bar
-$progress-bar-padding-x: 1.5rem !default; // Progress bar horizontal padding
+$progress-bar-padding-x:                                    1.5rem !default;                                        // Progress bar horizontal padding
 
-$progress-bar-wrapper-border-width: $component-border-width !default; // Progress bar border width
+$progress-bar-wrapper-border-width:                         $component-border-width !default;                       // Progress bar border width
 
-$progress-bar-wrapper-bkg-color: $component-bkg-color !default; // Progress bar track background color
-$progress-bar-wrapper-border-color: $component-bkg-color !default; // Progress bar track border color
-$progress-bar-bkg-color: $component-bkg-color-active !default; // Progress bar background color
-$progress-bar-color: $white !default; // Progress bar color
+$progress-bar-wrapper-bkg-color:                            $component-bkg-color !default;                          // Progress bar track background color
+$progress-bar-wrapper-border-color:                         $component-bkg-color !default;                          // Progress bar track border color
+$progress-bar-bkg-color:                                    $component-bkg-color-active !default;                   // Progress bar background color
+$progress-bar-color:                                        $white !default;                                        // Progress bar color
 
-$progres-bar-label-margin-bottom: 0.8rem !default; // Progress bar label bottom margin
-$progres-bar-with-label-margin-bottom: 2rem !default; // Progress bar with label bottom margin
-$progres-bar-label-font-size: 1.2rem !default; // Progress bar label font size
+$progres-bar-label-margin-bottom:                           0.8rem !default;                                        // Progress bar label bottom margin
+$progres-bar-with-label-margin-bottom:                      2rem !default;                                          // Progress bar with label bottom margin
+$progres-bar-label-font-size:                               1.2rem !default;                                        // Progress bar label font size
 
-$progress-small-height: 1rem !default; // Progress bar small height
-$progress-small-font-size: 1rem !default; // Progress bar small font size
-$progress-medium-height: 2rem !default; // Progress bar medium height
-$progress-medium-font-size: 1.2rem !default; // Progress bar medium font size
-$progress-large-height: 3rem !default; // Progress bar large height
-$progress-large-font-size: 1.4rem !default; // Progress bar large font size
-$progress-xlarge-height: 4rem !default; // Progress bar extra large height
-$progress-xlarge-font-size: 1.5rem !default; // Progress bar extra large font size
+$progress-small-height:                                     1rem !default;                                          // Progress bar small height
+$progress-small-font-size:                                  1rem !default;                                          // Progress bar small font size
+$progress-medium-height:                                    2rem !default;                                          // Progress bar medium height
+$progress-medium-font-size:                                 1.2rem !default;                                        // Progress bar medium font size
+$progress-large-height:                                     3rem !default;                                          // Progress bar large height
+$progress-large-font-size:                                  1.4rem !default;                                        // Progress bar large font size
+$progress-xlarge-height:                                    4rem !default;                                          // Progress bar extra large height
+$progress-xlarge-font-size:                                 1.5rem !default;                                        // Progress bar extra large font size
 
 // Tables
-$table-border-color: $component-border-color !default; // Table border color
-$table-header-bkg-color: $grey-lightest !default; // Table header background color
-$table-header-color: $headings-color !default; // Table header color
-$table-striped-row-bkg-color: rgba(14, 30, 37, .02) !default; // Table striped row background color
-$table-striped-row-bkg-color-hover: $grey-ultralight !default; // Table striped row background hover color
-$table-striped-column-bkg-color: rgba(14, 30, 37, .02) !default;
+$table-border-color:                                        $component-border-color !default;                       // Table border color               
+$table-header-bkg-color:                                    $grey-lightest !default;                                // Table header background color
+$table-header-color:                                        $headings-color !default;                               // Table header color
+$table-striped-row-bkg-color:                               rgba(14,30,37,.02) !default;                            // Table striped row background color
+$table-striped-row-bkg-color-hover:                         $grey-ultralight !default;                              // Table striped row background hover color
+$table-striped-column-bkg-color:                            rgba(14,30,37,.02) !default;                            
 
 // Progressline
-$progressline-item-padding-x: 3rem !default; // Progressline horizontal spacing
+$progressline-item-padding-x:                               3rem !default;                                          // Progressline horizontal spacing
 
-$progressline-bullet-margin-y: 0.6rem !default; // Progressline event bullet vertical spacing - the space between timeline line and event
-$progressline-bullet-size: 1.4rem !default; // Progressline event bullet size
-$progressline-bullet-color: $component-bkg-color-active !default; // Progressline event bullet color
-$progressline-bullet-border-width: 0.2rem !default; // Progressline event bullet border width
-$progressline-bullet-border-color: $component-bkg-color-active !default; // Progressline event bullet border color
+$progressline-bullet-margin-y:                              0.6rem !default;                                        // Progressline event bullet vertical spacing - the space between timeline line and event
+$progressline-bullet-size:                                  1.4rem !default;                                        // Progressline event bullet size
+$progressline-bullet-color:                                 $component-bkg-color-active !default;                   // Progressline event bullet color
+$progressline-bullet-border-width:                          0.2rem !default;                                        // Progressline event bullet border width
+$progressline-bullet-border-color:                          $component-bkg-color-active !default;                   // Progressline event bullet border color
 
-$progressline-border-width: 0.2rem !default; // Progressline border width
-$progressline-border-color: $component-border-color !default; // Progressline border color
+$progressline-border-width:                                 0.2rem !default;                                        // Progressline border width
+$progressline-border-color:                                 $component-border-color !default;                       // Progressline border color
 
-$progressline-content-padding-bottom: 4rem !default; // Progressline content vertical spacing
+$progressline-content-padding-bottom:                       4rem !default;                                          // Progressline content vertical spacing
 
 // Tabs
-$tabs-tab-nav-width: 25% !default; // Tabs nav column width - for when the class .vertical is added to div.tabs
-$tabs-pane-width: 75% !default; // Tabs content column width
+$tabs-tab-nav-width:                                        25% !default;                                           // Tabs nav column width - for when the class .vertical is added to div.tabs    
+$tabs-pane-width:                                           75% !default;                                           // Tabs content column width 
 
-$tabs-tab-margin-x: 1px !default; // Tabs button bottom margin
+$tabs-tab-margin-x:                                         1px !default;                                           // Tabs button bottom margin
 
-$tabs-border-width: $component-border-width !default; // Tabs button and content border width
-$tabs-border-color: $component-border-color !default; // Tabs button and content border color
+$tabs-border-width:                                         $component-border-width !default;                       // Tabs button and content border width
+$tabs-border-color:                                         $component-border-color !default;                       // Tabs button and content border color
 
 //--------------------------------------------------------------------------------
 // Plugin Variables
 //--------------------------------------------------------------------------------
 
 // Preloder
-$plugin-preloader-size: 5rem !default; // Plugin loader size
-$plugin-preloader-border-width: 3px !default; // Plugin loader border width
+$plugin-preloader-size:                                     5rem !default;                                          // Plugin loader size
+$plugin-preloader-border-width:                             3px !default;                                           // Plugin loader border width
 
-$plugin-preloader-color-1: $black !default; // Plugin loader color 1 - color shifts three times with each cyle
-$plugin-preloader-color-2: $black !default; // Plugin loader color 2
-$plugin-preloader-color-3: $black !default; // Plugin loader color 3
+$plugin-preloader-color-1:                                  $black !default;                                        // Plugin loader color 1 - color shifts three times with each cyle
+$plugin-preloader-color-2:                                  $black !default;                                        // Plugin loader color 2
+$plugin-preloader-color-3:                                  $black !default;                                        // Plugin loader color 3                        
 
 // Summit Lightbox
-$summit-wrapper-padding: 6rem 0 8rem 0 !default; // Lightbox vertical padding, determines the position of the image from the top/bottom of the viewport
-$summit-thumbnail-wrapper-height: 10rem !default; // Lightbox thumbnail wrapper height
-$summmit-thumbnail-wrapper-padding: 0 1rem !default;
+$summit-wrapper-padding:                                    6rem 0 8rem 0 !default;                                 // Lightbox vertical padding, determines the position of the image from the top/bottom of the viewport
+$summit-thumbnail-wrapper-height:                           10rem !default;                                         // Lightbox thumbnail wrapper height
+$summmit-thumbnail-wrapper-padding:                         0 1rem !default;
 
-$summit-overlay-bkg-color: rgba(0, 0, 0, .8) !default; // Lightbox overlay background color
-$summit-media-shadow: 0 0 4rem rgba(0, 0, 0, 0.3) !default; // Lightbox media wrapper shadow
+$summit-overlay-bkg-color:                                  rgba(0,0,0,.8) !default;                                // Lightbox overlay background color
+$summit-media-shadow:                                       0 0 4rem rgba(0,0,0, 0.3) !default;                     // Lightbox media wrapper shadow
 
-$summit-preloader-color-1: $white !default; // Plugin loader color 1 - color shifts three times with each cyle
-$summit-preloader-color-2: $white !default; // Plugin loader color 2
-$summit-preloader-color-3: $white !default; // Plugin loader color 3
+$summit-preloader-color-1:                                  $white !default;                                        // Plugin loader color 1 - color shifts three times with each cyle
+$summit-preloader-color-2:                                  $white !default;                                        // Plugin loader color 2
+$summit-preloader-color-3:                                  $white !default;                                        // Plugin loader color 3                        
 
-$summit-nav-size: 5rem !default; // Lightbox navigation size - includes arrow and toolbar
-$summit-nav-font-size: 2rem !default; // Lightbox navigation font size
-$summit-nav-arrows-font-size: 5rem !default; // Lightbox navigation arrow font size
-$summit-nav-social-font-size: 1.6rem !default; // Lightbox social links font size
-$summit-nav-margin-top: -2.5rem !default; // Lightbox arrow nav top margin - negative as top position is set to 50%
-$summit-nav-top: 50% !default; // Lightbox arrow nav top position
-$summit-nav-bottom: auto !default; // Lightbox arrow nav bottom position
-$summit-nav-prev-left: 0 !default; // Lightbox arrow nav prev left position
-$summit-nav-prev-right: auto !default; // Lightbox arrow nav prev right position
-$summit-nav-next-left: auto !default; // Lightbox arrow nav next left position
-$summit-nav-next-right: 0 !default; // Lightbox arrow nav next right position
-$summit-nav-prev-border-radius: $component-border-style-rounded !default; // Lightbox arrow prev border style
-$summit-nav-next-border-radius: $component-border-style-rounded !default; // Lightbox arrow next border style
-$summit-nav-bkg-color: rgba(0, 0, 0, 0.3) !default; // Lightbox arrow nav background color
-$summit-nav-icon-color: $grey-lighter !default; // Lightbox arrow nav icon color
-$summit-nav-icon-color-hover: $grey !default; // Lightbox arrow nav icon hover color
-$summit-nav-prev-icon: 'navigate_before' !default; // Lightbox arrow nav prev color
-$summit-nav-next-icon: 'navigate_next' !default; // Lightbox arrow nav next icon
-$summit-nav-opacity: 0.5 !default; // Lightbox arrow nav opacity
-$summit-nav-opacity-hover: 1 !default; // Lightbox arrow nav hover opacity
-$summit-nav-hover-width: 7rem !default; // Lightbox arrow nav hover width - expands in width upon hover
-$summit-nav-hover-transform: none !default; // Lightbox arrow nav transform - for advanced effects on hover
+$summit-nav-size:                                           5rem !default;                                          // Lightbox navigation size - includes arrow and toolbar
+$summit-nav-font-size:                                      2rem !default;                                          // Lightbox navigation font size
+$summit-nav-arrows-font-size:                               5rem !default;                                          // Lightbox navigation arrow font size
+$summit-nav-social-font-size:                               1.6rem !default;                                        // Lightbox social links font size
+$summit-nav-margin-top:                                     -2.5rem !default;                                       // Lightbox arrow nav top margin - negative as top position is set to 50%
+$summit-nav-top:                                            50% !default;                                           // Lightbox arrow nav top position
+$summit-nav-bottom:                                         auto !default;                                          // Lightbox arrow nav bottom position
+$summit-nav-prev-left:                                      0 !default;                                             // Lightbox arrow nav prev left position
+$summit-nav-prev-right:                                     auto !default;                                          // Lightbox arrow nav prev right position
+$summit-nav-next-left:                                      auto !default;                                          // Lightbox arrow nav next left position
+$summit-nav-next-right:                                     0 !default;                                             // Lightbox arrow nav next right position
+$summit-nav-prev-border-radius:                             $component-border-style-rounded !default;               // Lightbox arrow prev border style
+$summit-nav-next-border-radius:                             $component-border-style-rounded !default;               // Lightbox arrow next border style
+$summit-nav-bkg-color:                                      rgba( 0, 0, 0, 0.3 ) !default;                          // Lightbox arrow nav background color
+$summit-nav-icon-color:                                     $grey-lighter !default;                                 // Lightbox arrow nav icon color
+$summit-nav-icon-color-hover:                               $grey !default;                                         // Lightbox arrow nav icon hover color
+$summit-nav-prev-icon:                                      'navigate_before' !default;                             // Lightbox arrow nav prev color
+$summit-nav-next-icon:                                      'navigate_next' !default;                               // Lightbox arrow nav next icon
+$summit-nav-opacity:                                        0.5 !default;                                           // Lightbox arrow nav opacity
+$summit-nav-opacity-hover:                                  1 !default;                                             // Lightbox arrow nav hover opacity
+$summit-nav-hover-width:                                    7rem !default;                                          // Lightbox arrow nav hover width - expands in width upon hover
+$summit-nav-hover-transform:                                none !default;                                          // Lightbox arrow nav transform - for advanced effects on hover
 
-$summit-zoom-in-icon: 'zoom_in' !default; // Lightbox zoom icon
-$summit-zoom-out-icon: 'zoom_out' !default; // Lightbox zoom icon
-$summit-thumbnail-icon: 'photo_library' !default; // Lightbox thumbnail icon
-$summit-exit-icon: 'clear' !default; // Lightbox exit icon
+$summit-zoom-in-icon:                                       'zoom_in' !default;                                     // Lightbox zoom icon
+$summit-zoom-out-icon:                                      'zoom_out' !default;                                    // Lightbox zoom icon
+$summit-thumbnail-icon:                                     'photo_library' !default;                               // Lightbox thumbnail icon
+$summit-exit-icon:                                          'clear' !default;                                       // Lightbox exit icon
 
-$summit-caption-padding: 1rem 1.5rem !default; // Lightbox caption padding
-$summit-caption-bkg-color: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)) !default; // Lightbox caption background color
-$summit-caption-font-size: 1.3rem !default; // Lightbox caption font size
+$summit-caption-padding:                                    1rem 1.5rem !default;                                   // Lightbox caption padding
+$summit-caption-bkg-color:                                  linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)) !default;// Lightbox caption background color
+$summit-caption-font-size:                                  1.3rem !default;                                        // Lightbox caption font size
 
 //--------------------------------------------------------------------------------
 // Block Variables
 //--------------------------------------------------------------------------------
 
-// Content
-$content-animation-duration: 500ms !default; // Global content animation duration
+// Content                              
+$content-animation-duration:                                500ms !default;                                         // Global content animation duration
 
 // Overlay Navigation
-$overlay-navigation-footer-font-size: 1.4rem !default; // Overlay navigation footer font size
+$overlay-navigation-footer-font-size:                       1.4rem !default;                                        // Overlay navigation footer font size
 
 // Side Navigation
-$side-navigation-footer-font-size: 1.4rem !default; // Side navigation footer font size
+$side-navigation-footer-font-size:                          1.4rem !default;                                        // Side navigation footer font size         
 
 // Header
-$header-height: 8rem !default; // Header starting height
-$header-compact-height: 6rem !default; // Height header receives upon scrolling down the page
-$header-pre-padding-y: 0.8rem !default; // Pre header vertical padding
+$header-height:                                             8rem !default;                                          // Header starting height
+$header-compact-height:                                     6rem !default;                                          // Height header receives upon scrolling down the page
+$header-pre-padding-y:                                      0.8rem !default;                                        // Pre header vertical padding
 
-$header-bkg-color: $white !default; // Default background color header
-$header-bkg-color-on-scroll: $white !default; // Background color header receives upon scrolling down the page
-$header-border-bottom-on-scroll: 0px solid $grey-ultralight !default; // Border color header receives upon scrolling down the page
-$header-mobile-bkg-color: $white !default; // Mobile header background color
+$header-bkg-color:                                          $white !default;                                        // Default background color header
+$header-bkg-color-on-scroll:                                $white !default;                                        // Background color header receives upon scrolling down the page                    
+$header-border-bottom-on-scroll:                            0px solid $grey-ultralight !default;                    // Border color header receives upon scrolling down the page
+$header-mobile-bkg-color:                                   $white !default;                                        // Mobile header background color
 
-$header-nav-color-on-scroll: $grey !default; // Navigation color items receives upon scrolling down the page
-$header-nav-color-on-scroll-hover: $grey-ultradark !default; // Navigation hover color items receives upon scrolling down the page
-$header-nav-color-on-scroll-active: $grey-ultradark !default; // Navigation active color items receives upon scrolling down the page
-$header-nav-bkg-color-active-on-scroll: transparent !default; // Navigation background color active item receives upon scrolling down the page
+$header-nav-color-on-scroll:                                $grey !default;                                         // Navigation color items receives upon scrolling down the page
+$header-nav-color-on-scroll-hover:                          $grey-ultradark !default;                               // Navigation hover color items receives upon scrolling down the page
+$header-nav-color-on-scroll-active:                         $grey-ultradark !default;                               // Navigation active color items receives upon scrolling down the page
+$header-nav-bkg-color-active-on-scroll:                     transparent !default;                                   // Navigation background color active item receives upon scrolling down the page
 
-$header-swap-color: $secondary !default; // Text color of items given the class .swap-color
-$header-swap-color-on-scroll: $grey !default; // Text color of items given the class .swap-color on header scroll
+$header-swap-color:                                         $secondary !default;                                    // Text color of items given the class .swap-color  
+$header-swap-color-on-scroll:                               $grey !default;                                         // Text color of items given the class .swap-color on header scroll 
 
-$header-pre-bkg-color: $grey-light !default; // Pre header background color
-$header-pre-color: $secondary !default; // Pre header color
-$header-pre-link-color: $secondary !default; // Pre header link color
-$header-pre-link-color-hover: $primary !default; // Pre header link hover color
+$header-pre-bkg-color:                                      $grey-light !default;                                   // Pre header background color
+$header-pre-color:                                          $secondary !default;                                    // Pre header color
+$header-pre-link-color:                                     $secondary !default;                                    // Pre header link color
+$header-pre-link-color-hover:                               $primary !default;                                      // Pre header link hover color
 
-$header-box-shadow-on-scroll: none !default; // Shadow header receives upon scrolling down the page
+$header-box-shadow-on-scroll:                               none !default;                                          // Shadow header receives upon scrolling down the page      
 
-$header-logo-width: 10rem !default; // Default logo width
-$header-logo-width-mobile: 10rem !default; // Default logo width
-$header-logo-compact-width: 10rem !default; // Width logo receives upon scrolling down the page
-$header-logo-font-size: 2rem !default; // Logo font size if image is not used
-$header-logo-font-size-mobile: 1.3rem !default; // Logo font size on mobile
-$header-logo-compact-font-size: 1.5rem !default; // Font size logo receives upon scrolling down the page
-$header-logo-color: $grey-ultradark; // Logo color if image is not used
-$header-logo-hover-opacity: 0.6 !default; // Logo hover opacity
+$header-logo-width:                                         10rem !default;                                         // Default logo width
+$header-logo-width-mobile:                                  10rem !default;                                         // Default logo width
+$header-logo-compact-width:                                 10rem !default;                                         // Width logo receives upon scrolling down the page
+$header-logo-font-size:                                     2rem !default;                                          // Logo font size if image is not used
+$header-logo-font-size-mobile:                              1.3rem !default;                                        // Logo font size on mobile
+$header-logo-compact-font-size:                             1.5rem !default;                                        // Font size logo receives upon scrolling down the page
+$header-logo-color:                                         $grey-ultradark;                                        // Logo color if image is not used
+$header-logo-hover-opacity:                                 0.6 !default;                                           // Logo hover opacity
 
-$header-logo-1-animate-end: translateY(-8rem) !default; // Top logo ending animation position
-$header-logo-2-animate-start: translateY(8rem) !default; // Body logo start animation position - hidden out of view
-$header-logo-2-animate-end: translateY(0) !default; // Body logo ending animation position
+$header-logo-1-animate-end:                                 translateY(-8rem) !default;                             // Top logo ending animation position
+$header-logo-2-animate-start:                               translateY(8rem) !default;                              // Body logo start animation position - hidden out of view
+$header-logo-2-animate-end:                                 translateY(0) !default;                                 // Body logo ending animation position
 
-$header-nav-icon-padding-x: 1.5rem !default; // Header nav icon left/right padding
-$header-nav-icon-font-size: 1.4rem !default; // Header nav icon font size
+$header-nav-icon-padding-x:                                 1.5rem !default;                                        // Header nav icon left/right padding
+$header-nav-icon-font-size:                                 1.4rem !default;                                        // Header nav icon font size
 
-$header-nav-items-divider: 1px solid $grey-lightest !default; // Header nav icons divider width, style and color
-$header-transparent-nav-items-divider: 1px solid rgba(255, 255, 255, 0.2) !default; // Header nav icons divider width, style and color for transparent header
+$header-nav-items-divider:                                  1px solid $grey-lightest !default;                      // Header nav icons divider width, style and color
+$header-transparent-nav-items-divider:                      1px solid rgba(255,255,255,0.2) !default;               // Header nav icons divider width, style and color for transparent header
 
-$header-cart-badge-size: 1.6rem !default;
-$header-cart-font-size: 1rem !default;
-$header-cart-badge-top: -0.8rem !default; // Header cart badge top - negative value moves it further up
-$header-cart-badge-right: -0.8rem !default; // Header cart badge right - negative value moves it further right
+$header-cart-badge-size:                                    1.6rem !default;
+$header-cart-font-size:                                     1rem !default;
+$header-cart-badge-top:                                     -0.8rem !default;                                       // Header cart badge top - negative value moves it further up
+$header-cart-badge-right:                                   -0.8rem !default;                                       // Header cart badge right - negative value moves it further right
 
-$header-animation-duration: 500ms !default; // Header animation duration - sub menus, link rollovers etc.
-$header-reaveal-animation-duration: 500ms !default; // Header reveal animation duration - speed at which header is revealed or becomes sticky.
+$header-animation-duration:                                 500ms !default;                                         // Header animation duration - sub menus, link rollovers etc.
+$header-reaveal-animation-duration:                         500ms !default;                                         // Header reveal animation duration - speed at which header is revealed or becomes sticky.
 
 // Sidebar
-$sidebar-block-margin-bottom: 3rem !default; // Widget vertical spacing
-$sidebar-block-link-margin-bottom: 0.5rem !default; // Widget link vertical spacing
-$sidebar-block-link-nested-margin: 0.4rem 0 1rem 1rem !default; // Widget nested link vertical spacing
+$sidebar-block-margin-bottom:                               3rem !default;                                          // Widget vertical spacing
+$sidebar-block-link-margin-bottom:                          0.5rem !default;                                        // Widget link vertical spacing
+$sidebar-block-link-nested-margin:                          0.4rem 0 1rem 1rem !default;                            // Widget nested link vertical spacing
 
 // Grids
-$grid-item-width-start: 100% !default; // Grid item width start animation position
-$grid-item-width-end: 100% !default; // Grid item width  end animation positio
-$grid-item-height-start: 0 !default; // Grid item height start animation position
-$grid-item-height-end: 100% !default; // Grid item height end animation positio
-$grid-item-transform-start: scale(1.3) !default; // Grid item transform start animation position
-$grid-item-transform-end: scale(1) !default; // Grid item transform end animation positio
-$grid-filter-menu-padding-bottom: 5rem !default; // Filter menu bottom padding
-$grid-filter-dropdown-menu-min-width: 15rem !default; // Filter dropdown min width
-$grid-filter-menu-link-padding: 0 1rem !default; // Filter menu links horizontal spacing
-$grid-filter-menu-button-padding: 0.7rem 1.2rem !default; // Filter button padding - for when .button class is used on filter links
-$grid-filter-menu-link-font-size: 1.2rem !default; // Filter menu link font size
-$grid-filter-menu-link-color: #999 !default; // Filter link color
-$grid-filter-menu-link-color-hover: $primary !default; // Filter link hover color
-$grid-filter-menu-link-color-active: $primary !default; // Filter link active color
-$grid-filter-menu-link-active-border-width: 1px !default; // Filter link active border width - underlines the active link
-$grid-filter-menu-link-active-border-color: $primary !default; // Filter link active border color
-$grid-filter-menu-button-active-bkg-color: $primary !default; // Filter button active background color - for when .button class is used
-$grid-filter-menu-button-active-color: $white !default; // Filter button active color - for when .button class is used
-$grid-filter-menu-animation-duration: 500ms !default; // Filter menu link animation duration - duration of link animations
+$grid-item-width-start:                                     100% !default;                                          // Grid item width start animation position
+$grid-item-width-end:                                       100% !default;                                          // Grid item width  end animation positio
+$grid-item-height-start:                                    0 !default;                                             // Grid item height start animation position
+$grid-item-height-end:                                      100% !default;                                          // Grid item height end animation positio
+$grid-item-transform-start:                                 scale(1.3) !default;                                    // Grid item transform start animation position
+$grid-item-transform-end:                                   scale(1) !default;                                      // Grid item transform end animation positio
+$grid-filter-menu-padding-bottom:                           5rem !default;                                          // Filter menu bottom padding
+$grid-filter-dropdown-menu-min-width:                       15rem !default;                                         // Filter dropdown min width
+$grid-filter-menu-link-padding:                             0 1rem !default;                                        // Filter menu links horizontal spacing 
+$grid-filter-menu-button-padding:                           0.7rem 1.2rem !default;                                 // Filter button padding - for when .button class is used on filter links
+$grid-filter-menu-link-font-size:                           1.2rem !default;                                        // Filter menu link font size
+$grid-filter-menu-link-color:                               #999 !default;                                          // Filter link color
+$grid-filter-menu-link-color-hover:                         $primary !default;                                      // Filter link hover color                  
+$grid-filter-menu-link-color-active:                        $primary !default;                                          // Filter link active color 
+$grid-filter-menu-link-active-border-width:                 1px !default;                                           // Filter link active border width - underlines the active link 
+$grid-filter-menu-link-active-border-color:                 $primary !default;                                          // Filter link active border color
+$grid-filter-menu-button-active-bkg-color:                  $primary !default;                                          // Filter button active background color - for when .button class is used
+$grid-filter-menu-button-active-color:                      $white !default;                                        // Filter button active color - for when .button class is used
+$grid-filter-menu-animation-duration:                       500ms !default;                                         // Filter menu link animation duration - duration of link animations
 
-$grid-item-description-margin-top: 2rem !default; // Vertical spacing between grid image and grid item description (appears below the image)
-$grid-project-title-margin-bottom: 0rem !default; // Grid title margin bottom
-$grid-project-description-margin-top: 0.5rem !default; // Grid descripion margin
+$grid-item-description-margin-top:                          2rem !default;                                          // Vertical spacing between grid image and grid item description (appears below the image)
+$grid-project-title-margin-bottom:                          0rem !default;                                          // Grid title margin bottom 
+$grid-project-description-margin-top:                       0.5rem !default;                                        // Grid descripion margin 
 
-// Feature
-$feature-horizontal-image-width: 170% !default; // Media column width for feature 2 - the higher the percentage the more is pushed out of viewport
+// Feature  
+$feature-horizontal-image-width:                            170% !default;                                              // Media column width for feature 2 - the higher the percentage the more is pushed out of viewport
 
 // Heros
-$hero-min-height: 50rem !default; // Hero min height
-$hero-media-col-min-height-mobile: 30rem !default; // Hero media column min height on mobile
+$hero-min-height:                                           50rem !default;                                             // Hero min height
+$hero-media-col-min-height-mobile:                          30rem !default;                                             // Hero media column min height on mobile
 
 // Masthead
-$masthead-min-height: 35rem !default; // Masthead min height
+$masthead-min-height:                                       35rem !default;                                             // Masthead min height
 
 // Logos
-$logo-grid-item-height: 16rem !default; // Logo link padding - forms the box around logos
+$logo-grid-item-height:                                     16rem !default;                                             // Logo link padding - forms the box around logos
 
 // Footer
-$footer-top-padding-top: 7rem !default; // Top footer top padding
-$footer-top-padding-bottom: 4rem !default; // Top footer bottom padding
-$footer-bottom-padding-bottom: 2rem !default; // Bottom footer bottom padding
-$footer-bottom-inner-padding-top: 3rem !default; // Bottom footer inner top padding
-$footer-block-margin-bottom: 3rem !default; // Footer widget bottom margin
-$footer-logo-width: 10rem !default; // Footer logo width
-$footer-logo-hover-opacity: 0.6 !default; // Footer logo hover opacity
-$footer-reveal-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5) !default; // Footer reveal shadow - if footer is set to fixed position, this is the shadow the content wrapper is give to when revealing the footer
+$footer-top-padding-top:                                    7rem !default;                                              // Top footer top padding
+$footer-top-padding-bottom:                                 4rem !default;                                              // Top footer bottom padding
+$footer-bottom-padding-bottom:                              2rem !default;                                              // Bottom footer bottom padding
+$footer-bottom-inner-padding-top:                           3rem !default;                                              // Bottom footer inner top padding
+$footer-block-margin-bottom:                                3rem !default;                                              // Footer widget bottom margin
+$footer-logo-width:                                         10rem !default;                                             // Footer logo width
+$footer-logo-hover-opacity:                                 0.6 !default;                                               // Footer logo hover opacity
+$footer-reveal-box-shadow:                                  0 2rem 5rem rgba(0,0,0,0.5) !default;                       // Footer reveal shadow - if footer is set to fixed position, this is the shadow the content wrapper is give to when revealing the footer
 
-$footer-bkg-color: $grey-ultradark !default; // Footer backgorund color
-$footer-top-bkg-color: transparent !default; // Top footer background color
-$footer-bottom-bkg-color: transparent !default; // Bottom footer background color
-$footer-bottom-inner-border-top: 1px solid $grey-darkest !default; // Bottom footer divider weight, style, color - used to distinguish bottom footer from top footer
-$footer-bkg-alt-color: $white !default; // Footer alternative background color - applied if the class .footer-light is used
-$footer-top-bkg-alt-color: transparent !default; // Top footer alternative background color
-$footer-bottom-bkg-alt-color: transparent !default; // Bottom footer alternative background color
-$footer-bottom-inner-alt-border-top: 1px solid $grey-lightest !default; // Top footer alternative divider weight, style, color
-$footer-bottom-font-size: 1.3rem !default; // Footer copyright text font size
+$footer-bkg-color:                                          $grey-ultradark !default;                                   // Footer backgorund color
+$footer-top-bkg-color:                                      transparent !default;                                       // Top footer background color
+$footer-bottom-bkg-color:                                   transparent !default;                                       // Bottom footer background color
+$footer-bottom-inner-border-top:                            1px solid $grey-darkest !default;                           // Bottom footer divider weight, style, color - used to distinguish bottom footer from top footer
+$footer-bkg-alt-color:                                      $white !default;                                            // Footer alternative background color - applied if the class .footer-light is used
+$footer-top-bkg-alt-color:                                  transparent !default;                                       // Top footer alternative background color
+$footer-bottom-bkg-alt-color:                               transparent !default;                                       // Bottom footer alternative background color
+$footer-bottom-inner-alt-border-top:                        1px solid $grey-lightest !default;                          // Top footer alternative divider weight, style, color
+$footer-bottom-font-size:                                   1.3rem !default;                                            // Footer copyright text font size
 
-$footer-title-color: $white !default; // Footer title color
-$footer-title-alt-color: $grey-ultradark !default; // Footer alternative title color - applied if the class .footer-light is used
-$footer-color: $grey-light !default; // Footer color
-$footer-alt-color: $grey-light !default; // Footer alternative color
-$footer-block-link-nested-margin: 0.4rem 0 1rem 1rem !default; // Footer nested lists indentation
-$footer-link-color: $grey !default; // Footer link color
-$footer-link-alt-color: $grey !default; // Footer alternative link color
-$footer-link-color-hover: $white !default; // Footer link hover color
-$footer-link-alt-color-hover: $primary !default; // Footer alternative link hover color
+$footer-title-color:                                        $white !default;                                            // Footer title color
+$footer-title-alt-color:                                    $grey-ultradark !default;                                   // Footer alternative title color - applied if the class .footer-light is used
+$footer-color:                                              $grey-light !default;                                       // Footer color
+$footer-alt-color:                                          $grey-light !default;                                       // Footer alternative color
+$footer-block-link-nested-margin:                           0.4rem 0 1rem 1rem !default;                                // Footer nested lists indentation
+$footer-link-color:                                         $grey !default;                                     // Footer link color
+$footer-link-alt-color:                                     $grey !default;                                     // Footer alternative link color
+$footer-link-color-hover:                                   $white !default;                                        // Footer link hover color
+$footer-link-alt-color-hover:                               $primary !default;                                      // Footer alternative link hover color

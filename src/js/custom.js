@@ -3,7 +3,7 @@ import timberCore from './_tm.core.js';
 
 // Core instance
 let timber = new timberCore({
-	initialize: false
+  initialize: false
 });
 
 // Initialize all imported modules
@@ -12,7 +12,7 @@ let timber = new timberCore({
 // For callbacks: timber.module.modlename.settings.callback = function(){};
 // console.log(timber.module.modlename.settings) for module settings
 if (typeof timber.initialize != 'undefined') {
-	timber.initialize();
+  timber.initialize();
 }
 
 // Syntax highlighter for docs only
