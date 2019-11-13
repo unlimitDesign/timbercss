@@ -8,7 +8,7 @@ const copyright = 'Copyright © ThemeMountain 2019';
 const author = 'Thememountain, Christian Lundgren, Shu Miyao'
 
 // File name output
-const outputFolder = 'dist';
+const outputFolder = 'docs';
 const jsFilename = 'tm.core.min.js';
 const cssFilename = 'timber.css';
 const cssFilenameMin = 'timber.min.css';
@@ -34,8 +34,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Modules
 module.exports = {
-  entry: [path.resolve(__dirname,'./src/js/custom.js'),
-          path.resolve(__dirname,'./src/scss/timber.scss')],
+  entry: [path.resolve(__dirname, './src/js/custom.js'),
+  path.resolve(__dirname, './src/scss/timber.scss')],
   output: {
     path: path.resolve(__dirname, `./${outputFolder}`),
     filename: `./js/${jsFilename}`
@@ -66,12 +66,12 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'icons',
-                publicPath: '../icons'
-            }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'icons',
+            publicPath: '../icons'
+          }
         }]
       },
 
@@ -126,15 +126,15 @@ module.exports = {
 
     // Css extractor
     new MiniCssExtractPlugin({
-        filename: `./css/${cssFilename}`
+      filename: `./css/${cssFilename}`
     }),
     new MiniCssExtractPlugin({
-        filename: `./css/${cssFilenameMin}`
+      filename: `./css/${cssFilenameMin}`
     }),
 
     // Purge css
     new PurgecssPlugin({
-      paths: glob.sync(`${path.join(__dirname, 'dist')}/**/*.html`,  { nodir: true }),
+      paths: glob.sync(`${path.join(__dirname, outputFolder)}/**/*.html`, { nodir: true }),
       whitelist: testWhitelist,
       whitelistPatterns: testWhitelistPatterns
     }),
@@ -143,5 +143,5 @@ module.exports = {
     new webpack.BannerPlugin({
       banner: `${copyright}\nVersion: ${version}\nHash:[hash]\nChunkhash:[chunkhash]\nFilebase:[filebase]\nAuthor: ${author}\nTimestamp: ${new Date(Date.now())}\n`
     })
- ],
+  ],
 };

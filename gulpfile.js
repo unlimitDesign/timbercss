@@ -15,7 +15,7 @@ const tasks = {
     brsync: function () {
         brsync.init({
             notify: false,
-            server: 'dist/'
+            server: 'docs/'
         });
     },
     reload: function () {

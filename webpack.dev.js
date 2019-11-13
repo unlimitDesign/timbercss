@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 // File name output
-const outputFolder = 'dist';
+const outputFolder = 'docs';
 const jsFilename = 'tm.core.min.js';
 const cssFilename = 'timber.css';
 
@@ -15,8 +15,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Modules
 module.exports = {
-  entry: [path.resolve(__dirname,'./src/js/custom.js'),
-          path.resolve(__dirname,'./src/scss/timber.scss')],
+  entry: [path.resolve(__dirname, './src/js/custom.js'),
+  path.resolve(__dirname, './src/scss/timber.scss')],
   output: {
     path: path.resolve(__dirname, `./${outputFolder}`),
     filename: `./js/${jsFilename}`
@@ -25,7 +25,7 @@ module.exports = {
   // Server
   devServer: {
     port: devServerPort,
-    contentBase: path.resolve(__dirname, `./${outputFolder}`), 
+    contentBase: path.resolve(__dirname, `./${outputFolder}`),
     watchContentBase: true
   },
 
@@ -54,12 +54,12 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'icons',
-                publicPath: '../icons'
-            }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'icons',
+            publicPath: '../icons'
+          }
         }]
       },
     ]
@@ -70,10 +70,10 @@ module.exports = {
 
     // Css extractor
     new MiniCssExtractPlugin({
-        filename: `./css/${cssFilename}`
+      filename: `./css/${cssFilename}`
     }),
- ],
+  ],
 
- // HMR 
- watch: hmr
+  // HMR
+  watch: hmr
 };

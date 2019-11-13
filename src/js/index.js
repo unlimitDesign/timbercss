@@ -1,17 +1,11 @@
+'use strict'
+
 /**
  * For NPM module
  */
 
 // Core
-import timberCore from './_tm.core.js';
+import timberCoreLibrary from './_tm.core.js';
 
 // Core instance
-module.exports = initTimberCore;
-
-function initTimberCore(options = { initialize: false }) {
-    if (!(this instanceof initTimberCore)) {
-        return new timberCore(options)
-    } else {
-        return false;
-    }
-}
+export default new timberCoreLibrary({ initialize: false });
