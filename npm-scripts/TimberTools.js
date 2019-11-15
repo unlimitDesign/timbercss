@@ -237,7 +237,12 @@ module.exports = class TimberTools {
             test: /\.(sa|sc|c)ss$/,
             use: [
                 $MiniCssExtractPlugin.loader,
-                'css-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                },
                 {
                     loader: 'sass-loader',
                     options: {
