@@ -45,7 +45,7 @@ if (Tbs.webpackMode === 'development') {
             Tbs.getPlugin_writeFilePlugin(),
             Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
             Tbs.getPlugin_miniCssExtract('timberCssFileMinPath'),
-            Tbs.getPlugin_purgecssPlugin(),
+            // Tbs.getPlugin_purgecssPlugin(),
             Tbs.getPlugin_banner()
         ],
     };
