@@ -20,7 +20,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --env dev",
     "build": "webpack --mode production --env prod",
-    "build_lib_prod": "webpack --mode production --env updateTimberLibs",
+    "build_lib_prod": "rm -rf dist;webpack --mode production --env updateTimberLibs",
     "build_lib_dev": "webpack-dev-server --mode development --env updateTimberLibs",
     "testTimberTools": "node ./npm-scripts/webpack.test.js"
   },
