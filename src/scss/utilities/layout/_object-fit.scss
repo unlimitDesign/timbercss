@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------
+@section 48. Object Fit Classes
+*/
+.object-contain	{
+	object-fit: contain;
+}
+.object-cover {
+	object-fit: cover;
+}
+.object-fill {
+	object-fit: fill;
+}
+.object-none {
+	object-fit: none;
+}
+.object-scale-down {
+	object-fit: scale-down;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $object-fit-breakpoint in $object-fit-responsive{
+			@if $object-fit-breakpoint == $breakpoint{
+				.object-#{$breakpoint}-contain	{
+					object-fit: contain;
+				}
+				.object-#{$breakpoint}-cover {
+					object-fit: cover;
+				}
+				.object-#{$breakpoint}-fill {
+					object-fit: fill;
+				}
+				.object-#{$breakpoint}-none {
+					object-fit: none;
+				}
+				.object-#{$breakpoint}-scale-down {
+					object-fit: scale-down;
+				}
+			}
+		}
+	}
+}

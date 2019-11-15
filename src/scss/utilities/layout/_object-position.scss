@@ -1,0 +1,67 @@
+/*------------------------------------------------------------------
+@section 49. Object Position Classes
+*/
+.object-bottom {
+	object-position: bottom;
+}
+.object-center {
+	object-position: center;
+}
+.object-left {
+	object-position: left;
+}
+.object-left-bottom	{
+	object-position: left bottom;
+}
+.object-left-top {
+	object-position: left top;
+}
+.object-right {
+	object-position: right;
+}
+.object-right-bottom {
+	object-position: right bottom;
+}
+.object-right-top {
+	object-position: right top;
+}
+.object-top	{
+	object-position: top;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $object-position-breakpoint in $object-position-responsive{
+			@if $object-position-breakpoint == $breakpoint{
+				.object-#{$breakpoint}-bottom {
+					object-position: bottom;
+				}
+				.object-#{$breakpoint}-center {
+					object-position: center;
+				}
+				.object-#{$breakpoint}-left {
+					object-position: left;
+				}
+				.object-#{$breakpoint}-left-bottom	{
+					object-position: left bottom;
+				}
+				.object-#{$breakpoint}-left-top {
+					object-position: left top;
+				}
+				.object-#{$breakpoint}-right {
+					object-position: right;
+				}
+				.object-#{$breakpoint}-right-bottom {
+					object-position: right bottom;
+				}
+				.object-#{$breakpoint}-right-top {
+					object-position: right top;
+				}
+				.object-#{$breakpoint}-top	{
+					object-position: top;
+				}
+			}
+		}
+	}
+}
