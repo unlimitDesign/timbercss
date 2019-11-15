@@ -51,10 +51,10 @@ module.exports = class TimberTools_library extends TimberTools {
      *
      * @return  {object}               devServer settings
      */
-    getDevServer(contentBase = 'docs') {
+    getDevServer(contentBase) {
         return {
             port: this.options.serverPort,
-            host: "0.0.0.0",
+            host: this.options.serverHost,
             contentBase: (contentBase) ? contentBase : this.options.contentBase,
             watchContentBase: this.options.watchEnabled,
             disableHostCheck: true
