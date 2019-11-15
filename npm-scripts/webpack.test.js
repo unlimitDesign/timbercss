@@ -1,4 +1,4 @@
-const TimberTools = require("./TimberTools.js");
+const TimberTools = require("./lib/TimberTools.js");
 
 const Tbs = new TimberTools({});
 
