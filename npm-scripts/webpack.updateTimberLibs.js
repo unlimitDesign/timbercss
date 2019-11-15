@@ -1,6 +1,6 @@
 'use strict';
 
-const $TimberTools = require('./lib/TimberTools.js');
+const $TimberTools = require('./lib/TimberTools_library.js');
 
 const Tbs = new $TimberTools({ env: 'updateTimberLibs', outputDir: 'dist' });
 
