@@ -22,7 +22,6 @@ if (Tbs.webpackMode === 'development') {
             ]
         },
         plugins: [
-            // Tbs.getPlugin_copyWebpackPlugin('', 'dist/icons', 'src/icons'),
             Tbs.getPlugin_writeFilePlugin(),
             Tbs.getPlugin_miniCssExtract('timberCssFilePath')
         ]
@@ -33,6 +32,7 @@ if (Tbs.webpackMode === 'development') {
         context: Tbs.getContext(),
         entry: Tbs.getEntries(),
         output: Tbs.getOutput(),
+        devtool: 'source-map',
         module: {
             rules: [
                 Tbs.getModuleRule_babel(),
@@ -42,7 +42,6 @@ if (Tbs.webpackMode === 'development') {
         },
         optimization: Tbs.getOptimization(),
         plugins: [
-            //  Tbs.getPlugin_copyWebpackPlugin('', 'dist/icons', 'src/icons'),
             Tbs.getPlugin_writeFilePlugin(),
             Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
             Tbs.getPlugin_miniCssExtract('timberCssFileMinPath'),
