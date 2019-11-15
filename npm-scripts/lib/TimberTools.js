@@ -177,7 +177,7 @@ module.exports = class TimberTools {
      *
      * @return  {object}               devServer settings
      */
-    getDevServer(contentBase = 'docs') {
+    getDevServer(contentBase) {
         return {
             port: this.options.serverPort,
             host: "0.0.0.0",
