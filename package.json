@@ -1,7 +1,7 @@
 {
   "name": "timbercss",
-  "author": "unlimitdesign",
   "version": "0.1.7",
+  "author": "unlimitdesign",
   "description": "A CSS Framework for Rapid Website Prototyping",
   "keywords": [],
   "repository": {
@@ -15,9 +15,14 @@
   },
   "main": "src/js/index.js",
   "style": "src/scss/timber.scss",
+  "copyright": "Copyright © unlimit.design 2019",
+  "authorCredits": "unlimit.design, Christian Lundgren, Shu Miyao",
   "scripts": {
     "start": "webpack-dev-server --mode development --env dev",
-    "build": "webpack --mode production --env prod"
+    "build": "webpack --mode production --env prod",
+    "build_lib_prod": "webpack --mode production --env updateTimberLibs",
+    "build_lib_dev": "webpack-dev-server --mode development --env updateTimberLibs",
+    "testTimberTools": "node ./npm-scripts/webpack.test.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -25,10 +30,9 @@
     "babel-plugin-prismjs": "^1.1.1",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
+    "copy-webpack-plugin": "^5.0.5",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
-    "gulp": "^4.0.2",
-    "gulp-watch": "^5.0.1",
     "image-webpack-loader": "^4.6.0",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.13.0",
@@ -39,7 +43,8 @@
     "terser-webpack-plugin": "^1.4.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "babel": {
     "plugins": [

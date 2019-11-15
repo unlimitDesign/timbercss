@@ -2,7 +2,16 @@
  * based on grunt-csstoc by Benno Mielkehttps://github.com/webinfluenza/grunt-csstoc
  * Licensed under the MIT license.
  */
-
+/**
+ * Use example:
+ *
+ *      Csstoc({
+            sectionString: 'section',
+            tocHead: 'Timber CSS Framework by unlimit.design - Table Of Contents'
+        }, {
+            'docs-timber': ['./docs/css/timber.css']
+        });
+ */
 'use strict';
 
 module.exports = function (options = {

@@ -1,6 +1,7 @@
 docs
 dist
-src/gulp-lib
+src/docs
+npm-scripts
 Gruntfile.js
 gulpfile.js
 webpack.config.js
