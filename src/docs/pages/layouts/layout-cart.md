@@ -1,10 +1,9 @@
 ---
-title: Layout: Cart
-menu_label: Layout: Cart
+title: Layout - Cart
+menu_label: Layout - Cart
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-cart
 ---
 
 <!-- Masthead -->

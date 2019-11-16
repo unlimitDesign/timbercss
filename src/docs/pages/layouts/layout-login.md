@@ -1,10 +1,9 @@
 ---
-title: Layout: Login
-menu_label: Layout: Login
+title: Layout - Login
+menu_label: Layout - Login
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-login
 ---
 
 <!-- Login Section -->

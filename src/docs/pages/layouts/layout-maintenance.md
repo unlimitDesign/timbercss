@@ -1,10 +1,9 @@
 ---
-title: Layout: Maintenance
-menu_label: Layout: Maintenance
+title: Layout - Maintenance
+menu_label: Layout - Maintenance
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-maintenance
 ---
 
 <!-- Maintenenace Section -->

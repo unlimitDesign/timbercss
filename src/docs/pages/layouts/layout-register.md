@@ -1,10 +1,9 @@
 ---
-title: Layout: Register
-menu_label: Layout: Register
+title: Layout - Register
+menu_label: Layout - Register
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-register
 ---
 
 <!-- Header -->

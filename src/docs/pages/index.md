@@ -2,9 +2,8 @@
 title: Installing Timber
 menu_label: Installing Timber
 layout: documentation
-category: Index
+category: ["No Category"]
 markup_language: html
-relative_path: index
 ---
 
 <div class="section-block p-0 bg-black">

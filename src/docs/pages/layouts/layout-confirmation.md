@@ -1,10 +1,9 @@
 ---
-title: Layout: Checkout
-menu_label: Layout: Checkout
+title: Layout - Checkout
+menu_label: Layout - Checkout
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-confirmation
 ---
 
 <!-- Intro Title Section 1 -->

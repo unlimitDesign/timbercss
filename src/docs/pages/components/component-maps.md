@@ -1,10 +1,9 @@
 ---
-title: Components: Google Maps
-menu_label: Components: Google Maps
+title: Components - Google Maps
+menu_label: Components - Google Maps
 layout: documentation
-category: Components
+category: ["No Category"]
 markup_language: html
-relative_path: components/component-maps
 ---
 
 <!-- Intro Title Section 1 -->

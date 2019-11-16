@@ -1,10 +1,9 @@
 ---
-title: Layout: Checkout
-menu_label: Layout: Checkout
+title: Layout - Checkout
+menu_label: Layout - Checkout
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-checkout
 ---
 
 <!-- Masthead -->
@@ -30,29 +29,6 @@ relative_path: layouts/layout-checkout
 <!-- Masthead End -->
 <div class="section-block">
   <div class="row">
-    <!-- Sidebar -->
-    <aside class="col w-4/12 w-md-full order-2 order-md-1 sidebar">
-      <div class="cart-overview freeze" data-extra-space-top="100" data-extra-space-bottom="110" data-push-section=".footer">
-        <div class="row">
-          <div class="col w-full">
-            <h3 class="mb-30">Your Cart</h3>
-            <div class="cart-overview">
-              <p class="lead mb-10">You have <span class="item-number weight-bold">3</span> items in your cart, for a subtotal of 1685.00</p>
-              <hr class="my-10">
-              <div class="cart-amount cart-shipping flex items-center justify-between"> Shipping <span class="amount"><span class="currency">$</span>1685.00</span>
-              </div>
-              <hr class="my-10">
-              <div class="cart-amount cart-tax flex items-center justify-between"> Taxes <span class="amount"><span class="currency">$</span>50.00</span>
-              </div>
-              <hr class="my-10">
-              <div class="cart-total flex items-center justify-between"> Total <span class="amount"><span class="currency">$</span>2035.00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <!-- Sidebar End -->
     <!-- Content Inner -->
     <div class="col w-6/12 w-md-full offset-1 offset-md-0 order-1 order-md-2 content-inner">
       <!-- Billing Form -->

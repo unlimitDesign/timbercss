@@ -1,10 +1,9 @@
 ---
-title: Layout: Single Product Alt
-menu_label: Layout: Single Product Alt
+title: Layout - Single Product Alt
+menu_label: Layout - Single Product Alt
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-product-single-alt
 ---
 
 <!-- Masthead -->
@@ -120,90 +119,6 @@ relative_path: layouts/layout-product-single-alt
       <!-- Related Info End -->
     </div>
     <!-- Content Inner End -->
-    <!-- Sidebar -->
-    <aside class="col w-4/12 w-md-full sidebar">
-      <hr class="hidden block-md mt-40 mb-50">
-      <div class="product-overview freeze" data-extra-space-top="100" data-extra-space-bottom="100" data-push-section=".products-similar">
-        <div class="row">
-          <div class="col w-full">
-            <h3>License Pricing</h3>
-            <!-- Product Description -->
-            <div class="product-description">
-              <p>All price options are billed yearly. You may cancel your subscription at any time. Extensions subject to yearly license for support and updates. View terms.</p>
-            </div>
-            <!-- Product Description End -->
-            <!-- Product Form -->
-            <form class="product-form" action="#" method="" novalidate="">
-              <div class="row">
-                <div class="col w-full">
-                  <div class="field-wrapper">
-                    <input id="radio-price-1" class="form-element radio" value="" name="price" type="radio" tabindex="10" checked="">
-                    <label for="radio-price-1" class="radio-label product-price">
-                      <ins>
-                        <span class="amount">$99.00</span> Single Site</ins>
-                    </label>
-                  </div>
-                  <div class="field-wrapper">
-                    <input id="radio-price-2" class="form-element radio" value="" name="price" type="radio" tabindex="11">
-                    <label for="radio-price-2" class="radio-label product-price">
-                      <ins>
-                        <span class="amount">$199.00</span> 2-6 Sites</ins>
-                    </label>
-                  </div>
-                  <div class="field-wrapper">
-                    <input id="radio-price-3" class="form-element radio" value="" name="price" type="radio" tabindex="11">
-                    <label for="radio-price-3" class="radio-label product-price">
-                      <ins>
-                        <span class="amount">$259.00</span> Unlimited Sites</ins>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col w-full">
-                  <input type="submit" value="Add To Cart" class="form-submit button rounded size-md mb-20 w-full bg-theme bg-hover-theme color-white color-hover-white" tabindex="5">
-                </div>
-              </div>
-            </form>
-            <!-- Product Price End -->
-          </div>
-        </div>
-        <div class="product-share">
-          <hr class="mt-0">
-          <ul class="social-list list-horizontal left">
-            <li>
-              <h5>Share:</h5>
-            </li>
-            <li>
-              <a href="#" class="socialize" data-network="pinterest" data-url="http://dev.thememountain.com/faulkner/project-style-one.html" data-description="Your Page Description Here" data-image="http://dev.thememountain.com/faulkner/images/portfolio/projects/project-1-1.jpg" data-title="Your Page Title Here" title="Share on Pinterest">
-                <span class="icon-brands pinterest size-sm"></span></a>
-            </li>
-            <li>
-              <a href="#" class="socialize" data-network="facebook" data-url="http://dev.thememountain.com/faulkner/project-style-one.html" data-image="http://dev.thememountain.com/faulkner/images/portfolio/projects/project-1-1.jpg" title="Share on Facebook">
-                <span class="icon-brands facebook size-sm"></span></a>
-            </li>
-            <li>
-              <a href="#" class="socialize" data-network="googleplus" data-url="http://dev.thememountain.com/faulkner/project-style-one.html" data-image="http://dev.thememountain.com/faulkner/images/portfolio/projects/project-1-1.jpg" title="Share on Google">
-                <span class="icon-brands google size-sm"></span></a>
-            </li>
-            <li>
-              <a href="#" class="socialize" data-network="twitter" data-url="http://dev.thememountain.com/faulkner/project-style-one.html" data-description="Your Page Description Here" data-user="ThemeMountain" data-image="http://dev.thememountain.com/faulkner/images/portfolio/projects/project-1-1.jpg" data-title="Your Page Title Here" title="Share on Twitter">
-                <span class="icon-brands twitter size-sm"></span></a>
-            </li>
-            <li>
-              <a href="#" class="socialize" data-network="linkedin" data-url="http://dev.thememountain.com/faulkner/project-style-one.html" data-description="Your Page Description Here" data-user="ThemeMountain" data-image="http://dev.thememountain.com/faulkner/images/portfolio/projects/project-1-1.jpg" data-title="Your Page Title Here" title="Share on LinkedIn">
-                <span class="icon-brands linkedin size-sm"></span></a>
-            </li>
-            <li>
-              <a href="#" class="socialize" data-network="email" data-url="http://dev.thememountain.com/faulkner/project-style-one.html" data-email="info@thememountain.com" data-subject="Check out this site" data-description="Your Page Description Here" data-image="http://dev.thememountain.com/faulkner/images/portfolio/projects/project-1-1.jpg" data-title="Your Page Title Here" title="Share by Email">
-                <span class="icon-brands email size-sm"></span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </aside>
-    <!-- Sidebar End -->
     <!-- Products Similar -->
     <div class="col w-full">
       <hr>

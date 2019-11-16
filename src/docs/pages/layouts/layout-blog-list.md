@@ -1,10 +1,9 @@
 ---
-title: Layout: Blog List
-menu_label: Layout: Blog List
+title: Layout - Blog List
+menu_label: Layout - Blog List
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-blog-list
 ---
 
 <!-- Masthead -->

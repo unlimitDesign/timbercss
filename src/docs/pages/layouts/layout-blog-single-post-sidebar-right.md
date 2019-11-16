@@ -1,10 +1,9 @@
 ---
-title: Layout: Blog Single Post Sidebar Right
-menu_label: Layout: Blog Single Post Sidebar Right
+title: Layout - Blog Single Post Sidebar Right
+menu_label: Layout - Blog Single Post Sidebar Right
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-blog-single-post-sidebar-right
 ---
 
 <!-- Masthead -->
@@ -142,42 +141,6 @@ relative_path: layouts/layout-blog-single-post-sidebar-right
       </div>
     </div>
     <!-- Content Inner End -->
-    <!-- Sidebar -->
-    <aside class="col w-4/12 w-md-full sidebar">
-      <div class="freeze" data-extra-space-top="100" data-extra-space-bottom="0" data-push-section=".pagination-3">
-        <div class="footer-block">
-          <h4 class="widget-title">About</h4>
-          <p><strong>Starting a new business?</strong> Then Boilerplate is for you! This multi-purpose template offers 8 carefully crafted concepts with two variations each, 20+ components and 8+ plugins.</p>
-        </div>
-        <div class="footer-block">
-          <h4 class="widget-title">Find Something</h4>
-          <div class="search-form-container site-search">
-            <form action="#" method="get" novalidate="">
-              <div class="row">
-                <div class="col w-full">
-                  <div class="field-wrapper">
-                    <input type="text" name="search" class="form-search form-element rounded" placeholder="type &amp; hit enter...">
-                  </div>
-                </div>
-              </div>
-            </form>
-            <div class="form-response"></div>
-          </div>
-        </div>
-        <div class="footer-block">
-          <h4 class="widget-title">Popular Categories</h4>
-          <ul>
-            <li><a href="#">Development</a></li>
-            <li><a href="#">Tools</a></li>
-            <li><a href="#">Changelog</a></li>
-            <li><a href="#">Inspiration</a></li>
-            <li><a href="#">Ecommerce</a></li>
-            <li><a href="#">Security</a></li>
-          </ul>
-        </div>
-      </div>
-    </aside>
-    <!-- Sidebar End -->
   </div>
 </div>
 <!-- Pagination With Label -->

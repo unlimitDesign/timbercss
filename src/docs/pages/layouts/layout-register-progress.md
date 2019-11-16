@@ -1,10 +1,9 @@
 ---
-title: Layout: Register With Progress Line
-menu_label: Layout: Register With Progress Line
+title: Layout - Register With Progress Line
+menu_label: Layout - Register With Progress Line
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-register-progress
 ---
 
 <!-- Register Section -->

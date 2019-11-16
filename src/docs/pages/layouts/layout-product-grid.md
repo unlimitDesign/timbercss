@@ -1,10 +1,9 @@
 ---
-title: Layout: Product Grid
-menu_label: Layout: Product Grid
+title: Layout - Product Grid
+menu_label: Layout - Product Grid
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-product-grid
 ---
 
 <!-- Masthead -->

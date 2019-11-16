@@ -1,10 +1,9 @@
 ---
-title: Layout: Blog Grid
-menu_label: Layout: Blog Grid
+title: Layout - Blog Grid
+menu_label: Layout - Blog Grid
 layout: documentation
-category: Layouts
+category: ["No Category"]
 markup_language: html
-relative_path: layouts/layout-blog-grid
 ---
 
 <!-- Masthead -->
