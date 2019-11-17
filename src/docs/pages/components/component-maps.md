@@ -2,7 +2,7 @@
 title: Components - Google Maps
 menu_label: Components - Google Maps
 layout: documentation
-category: ["No Category"]
+category: ["Components"]
 markup_language: html
 ---
 
