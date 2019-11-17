@@ -22,8 +22,9 @@ if (Tbs.webpackMode === 'development') {
             ]
         },
         plugins: [
-            Tbs.getPlugin_writeFilePlugin(),
-            Tbs.getPlugin_miniCssExtract('timberCssFilePath')
+            Tbs.getPlugin_writeFile(),
+            Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
+            Tbs.getPlugin_timberToolsUpdateDocPages()
         ]
     };
 } else {
@@ -42,7 +43,7 @@ if (Tbs.webpackMode === 'development') {
         },
         optimization: Tbs.getOptimization(),
         plugins: [
-            Tbs.getPlugin_writeFilePlugin(),
+            Tbs.getPlugin_writeFile(),
             Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
             Tbs.getPlugin_miniCssExtract('timberCssFileMinPath'),
             // Tbs.getPlugin_purgecssPlugin(),

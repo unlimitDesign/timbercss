@@ -41,9 +41,10 @@ module.exports = class TimberTools {
             authorCredits: 'unlimit.design, Christian Lundgren, Shu Miyao',
             // server configs
             serverPort: '3000',
-            serverHost: '0.0.0.0',
-            watchEnabled: true,
+            serverHost: 'localhost',
+            watchContentBaseEnabled: true,
             contentBase: 'docs',
+            publicPath: 'docs/js/',
             // source
             htmlDir: './docs',
             // output directories.

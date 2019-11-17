@@ -18,4 +18,3 @@ if (typeof timber.initialize != 'undefined') {
 // Syntax highlighter for docs only
 import Prism from 'prismjs';
 Prism.highlightAll();
-

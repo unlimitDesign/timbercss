@@ -12,6 +12,7 @@ const $PurgecssPlugin = require('purgecss-webpack-plugin');
 const $OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const $CopyWebpackPlugin = require('copy-webpack-plugin');
 const $WriteFilePlugin = require('write-file-webpack-plugin');
+const $TimberToolsUpdateDocPages = require('./TimberToolsUpdateDocPages.js');
 
 
 /**
@@ -56,8 +57,14 @@ module.exports = class TimberTools_library extends TimberTools {
             port: this.options.serverPort,
             host: this.options.serverHost,
             contentBase: (contentBase) ? contentBase : this.options.contentBase,
-            watchContentBase: this.options.watchEnabled,
-            disableHostCheck: true
+            publicPath: this.options.publicPath,
+            watchContentBase: this.options.watchContentBaseEnabled,
+            disableHostCheck: true,
+            inline: true,
+            stats: {
+                children: false, // Hide children information
+                maxModules: 0 // Set the maximum number of modules to be shown
+            },
         };
     }
 
@@ -210,7 +217,7 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     // used for copying the icons folder in updateTimberLibs
-    getPlugin_copyWebpackPlugin(originalLocation = '', targetLocation = 'dist/icons', sourceDirectory = 'src/icons') {
+    getPlugin_copyWebpack(originalLocation = '', targetLocation = 'dist/icons', sourceDirectory = 'src/icons') {
         return new $CopyWebpackPlugin(
             [
                 {
@@ -221,5 +228,13 @@ module.exports = class TimberTools_library extends TimberTools {
             { context: sourceDirectory }
         );
     }
-    getPlugin_writeFilePlugin() { return new $WriteFilePlugin(); }
+    getPlugin_writeFile() { return new $WriteFilePlugin(); }
+
+    getPlugin_timberToolsUpdateDocPages() {
+        return new $TimberToolsUpdateDocPages();
+    }
+
+    /**
+     * Documentaion
+     */
 }
