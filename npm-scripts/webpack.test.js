@@ -1,5 +1,14 @@
-const TimberTools = require("./lib/TimberTools.js");
+const $Fs = require('fs');
+const $Path = require('path');
+const $Glob = require('glob');
+const { JSDOM } = require('jsdom'); // uninstall when done
+const $Beautify = require('js-beautify');
 
-const Tbs = new TimberTools({});
+/**
+ * Plan
+ * 1. Delete docs folder
+ * 2. Copy folders (public/images, public/css)
+ * 3. Compile src/docs/pages into docs/
+ * End
+ */
 
-console.log(Tbs);

@@ -18,9 +18,10 @@
   "copyright": "Copyright © unlimit.design 2019",
   "authorCredits": "unlimit.design, Christian Lundgren, Shu Miyao",
   "scripts": {
-    "start": "webpack-dev-server --mode development --env updateTimberLibs",
-    "build": "rm -rf dist;webpack --mode production --env updateTimberLibs",
-    "testTimberTools": "node ./npm-scripts/webpack.test.js"
+    "start": "node ./npm-scripts/lib/timber.build-documentation.js;webpack-dev-server --mode development --env timber;",
+    "build": "rm -rf dist;webpack --mode production --env timber",
+    "testTimberTools": "node ./npm-scripts/webpack.test.js",
+    "docs": "node ./npm-scripts/lib/timber.build-documentation.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

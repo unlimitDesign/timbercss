@@ -1,6 +1,6 @@
 'use strict';
 
-const TimberTools = require('./TimberTools.js');
+const TimberTools = require('./timber.js');
 
 const $Glob = require('glob');
 const $Webpack = require('webpack');
@@ -16,9 +16,7 @@ const $TimberToolsUpdateDocPages = require('./TimberToolsUpdateDocPages.js');
 
 
 /**
- * Timber CSS Maintanance Tools Class
- *
- * Use `.timbercss.json` config file for your local environment. Copy .timbercss.sample.json as `.timbercss.json` and modify to suit to your needs.
+ * Timber CSS Tools Class for maintaining the library
  */
 module.exports = class TimberTools_library extends TimberTools {
     /**
@@ -40,8 +38,8 @@ module.exports = class TimberTools_library extends TimberTools {
         // make minified version if it is not development env.
         const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
         return {
-            path: this.getAbsolutePath(this.options.outputDir) + '/',
-            filename: `js/${_outputJsFileName}`,
+            path: this.getAbsolutePath(this.options.outputDir),
+            filename: `./js/${_outputJsFileName}`,
         }
     }
 
@@ -52,15 +50,16 @@ module.exports = class TimberTools_library extends TimberTools {
      *
      * @return  {object}               devServer settings
      */
-    getDevServer(contentBase) {
+    getDevServer() {
         return {
             port: this.options.serverPort,
             host: this.options.serverHost,
-            contentBase: (contentBase) ? contentBase : this.options.contentBase,
-            publicPath: this.options.publicPath,
-            watchContentBase: this.options.watchContentBaseEnabled,
             disableHostCheck: true,
-            inline: true,
+            contentBase: this.getAbsolutePath(this.options.contentBase),
+            publicPath: "dist/",// this.getAbsolutePath(this.options.outputDir),
+            watchContentBase: this.options.watchContentBaseEnabled,
+            // inline: true,
+            // compress: true,
             stats: {
                 children: false, // Hide children information
                 maxModules: 0 // Set the maximum number of modules to be shown

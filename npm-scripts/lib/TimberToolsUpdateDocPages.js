@@ -1,4 +1,4 @@
-const TimberTools = require('./TimberTools.js');
+const TimberTools = require('./timber.js');
 
 class TimberToolsUpdateDocPages extends TimberTools {
     apply(compiler) {

@@ -35,7 +35,6 @@ module.exports = class TimberTools {
         // default option values
         const _default_options = {
             // choose among documentation, production and development.
-            env: (options.env) ? options.env : 'updateTimberLibs',
             version: Package.version,
             copyright: 'Copyright © unlimit.design 2019',
             authorCredits: 'unlimit.design, Christian Lundgren, Shu Miyao',
@@ -43,12 +42,13 @@ module.exports = class TimberTools {
             serverPort: '3000',
             serverHost: 'localhost',
             watchContentBaseEnabled: true,
-            contentBase: 'docs',
-            publicPath: 'docs/js/',
-            // source
+            contentBase: 'docs/',
+            // source, will be same as contentBase
             htmlDir: './docs',
-            // output directories.
-            outputDir: 'dist',
+            // output directories.  will be same as contentBase otherwise live preview does not work
+            outputDir: 'dist/',
+            // this is used for css / js to be distributed.
+            distDir: 'dist/',
             // timber lib source file paths
             timberJsSrcFilePath: './src/js/custom.js',
             timberCssSrcFilePath: './src/scss/timber.scss',
@@ -135,4 +135,13 @@ module.exports = class TimberTools {
     getAbsolutePath(relativePath = '') {
         return $Path.resolve(this.absoluteRootDir, relativePath);
     }
+
+    /**
+     * Webpack Settings
+     */
+
+    getContext() {
+        return this.absoluteRootDir;
+    }
+
 }
