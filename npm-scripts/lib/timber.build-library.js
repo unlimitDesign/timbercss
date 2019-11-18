@@ -13,7 +13,9 @@ const $OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const $CopyWebpackPlugin = require('copy-webpack-plugin');
 const $WriteFilePlugin = require('write-file-webpack-plugin');
 const $TimberToolsUpdateDocPages = require('./TimberToolsUpdateDocPages.js');
+const $Chokidar = require('chokidar');
 
+const $ExecSync = require('child_process').execSync;
 
 /**
  * Timber CSS Tools Class for maintaining the library
@@ -57,9 +59,24 @@ module.exports = class TimberTools_library extends TimberTools {
             disableHostCheck: this.options.disableHostCheck,
             contentBase: this.options.contentBase,
             publicPath: this.options.serverPublicPath,
-            watchContentBase: this.options.watchContentBaseEnabled,
+            watchContentBase: false,
             // inline: true,
             // compress: true,
+            before(app, server) {
+                $Chokidar.watch([
+                    './src/docs/pages/**/*.md',
+                    './src/docs/public/**/*.css',
+                    './src/docs/public/images/*',
+                    './src/docs/layouts/**/*.html',
+                ], { awaitWriteFinish: true, ignoreInitial: true }).on('all', function (eventName, path) {
+                    // server.sockWrite(server.sockets, 'content-changed', path);
+                    if (eventName === 'add' || eventName === 'change' || eventName === 'unlink') {
+                        console.log(eventName, path);
+                        $ExecSync('node ./npm-scripts/lib/timber.build-documentation.js --mode development');
+                        server.sockWrite(server.sockets, "content-changed");
+                    }
+                })
+            },
             stats: {
                 children: false, // Hide children information
                 maxModules: 0 // Set the maximum number of modules to be shown

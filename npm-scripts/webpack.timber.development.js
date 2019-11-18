@@ -2,9 +2,6 @@
 
 /**
  * This config is for development mode.
- * In package script,
- * "start": "node ./npm-scripts/lib/timber.build-documentation.js;webpack-dev-server --mode development --env timber;",
- *
  * 1. Removes docs/ directory then create a blank docs/ diretory/ Then Compiles documentation under docs/. (timber.build-documentation.js)
  * 2. Webpack compiles in memory, and publish the documentaion under docs/. The javascript is hosted within the memory.
  * 3. Watch is left running. It re-compiles js / scss in memory when js / scss or any contents hosted under docs/ is updated.
@@ -12,6 +9,8 @@
  */
 
 const $TimberTools = require('./lib/timber.build-library.js');
+
+const $WebpackShellPluginNext = require('webpack-shell-plugin-next');
 
 const Tbs = new $TimberTools();
 
@@ -30,6 +29,13 @@ let moduleExports = {
         ]
     },
     plugins: [
+        new $WebpackShellPluginNext({
+            onBuildStart: {
+                scripts: ['node ./npm-scripts/lib/timber.build-documentation.js --mode development'],
+                blocking: true,
+                parallel: false
+            }
+        }),
         Tbs.getPlugin_writeFile(),
         Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
         Tbs.getPlugin_timberToolsUpdateDocPages()

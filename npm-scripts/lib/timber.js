@@ -41,7 +41,6 @@ module.exports = class TimberTools {
             /* server configs */
             serverPort: '3000',
             serverHost: 'localhost',
-            watchContentBaseEnabled: true,
             disableHostCheck: true,
             contentBase: 'docs',
             serverPublicPath: '/js/',

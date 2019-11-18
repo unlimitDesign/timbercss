@@ -57,14 +57,18 @@ class TimberTools_documentation extends TimberTools {
         // Frequently used constants
         const _contentBase = this.getAbsolutePath(_options.contentBase);
         const _contentSourceDir = this.getAbsolutePath(_options.contentSourceDir);
+        console.log("Initiating Timber CSS Documentation Build Process");
         /**
          * 1. Remove docs/ directory
          */
-        this.rmDirRF(_contentBase);
+        this.rmDirRF(_contentBase + '/blocks');
+        this.rmDirRF(_contentBase + '/components');
+        this.rmDirRF(_contentBase + '/getting-started');
+        this.rmDirRF(_contentBase + '/utilities');
         /**
          * 2. Create a blank docs/ directory
          */
-        $Fs.mkdirSync(_contentBase);
+        //  $Fs.mkdirSync(_contentBase);
         /**
          * 3. Compile documentation under `docs/`
          */
@@ -77,6 +81,7 @@ class TimberTools_documentation extends TimberTools {
         // d. Copy images/ and css/ file from src/public/
         $Fs.copy(_contentSourceDir + '/public/css', _contentBase + '/css');
         $Fs.copy(_contentSourceDir + '/public/images', _contentBase + '/images');
+        console.log("Compiled " + Object.keys(_pageData).length + " pages.");
     }
 
     /**
