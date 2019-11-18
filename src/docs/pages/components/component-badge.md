@@ -96,5 +96,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

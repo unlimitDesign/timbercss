@@ -2,7 +2,7 @@
 title: Layout - Display Utility
 menu_label: Display
 layout: documentation
-category: ["Utilities","Layout"]
+category: ["Utilities", "Layout"]
 markup_language: html
 ---
 
@@ -207,5 +207,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

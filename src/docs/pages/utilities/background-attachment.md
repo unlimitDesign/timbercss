@@ -2,7 +2,7 @@
 title: Background - Background Attachment Utility
 menu_label: Background Attachment
 layout: documentation
-category: ["Utilities","Background"]
+category: ["Utilities", "Background"]
 markup_language: html
 ---
 
@@ -66,7 +66,7 @@ markup_language: html
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-local bg-center overflow-y-scroll h-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
-	<div class="h-400"></div>	
+	<div class="h-400"></div>
 </div>
 --></code></pre>
       </div>
@@ -114,5 +114,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

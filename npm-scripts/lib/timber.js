@@ -38,13 +38,14 @@ module.exports = class TimberTools {
             version: Package.version,
             copyright: 'Copyright © unlimit.design 2019',
             authorCredits: 'unlimit.design, Christian Lundgren, Shu Miyao',
-            // server configs
+            /* server configs */
             serverPort: '3000',
             serverHost: 'localhost',
             watchContentBaseEnabled: true,
-            contentBase: 'docs/',
-            // source, will be same as contentBase
-            htmlDir: './docs',
+            contentBase: 'docs',
+            serverPublicPath: 'docs/js/',
+            /* documentation configs */
+            contentSourceDir: 'src/docs',
             // output directories.  will be same as contentBase otherwise live preview does not work
             outputDir: 'dist/',
             // this is used for css / js to be distributed.

@@ -2,7 +2,7 @@
 title: Filesize
 menu_label: Managing File Size
 layout: documentation
-category: ["Gettings Started"]
+category: ["Getting Started"]
 markup_language: html
 ---
 
@@ -50,5 +50,6 @@ markup_language: html
       <!-- Classes End -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

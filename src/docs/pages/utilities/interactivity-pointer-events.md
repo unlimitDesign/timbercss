@@ -2,7 +2,7 @@
 title: Interactivity - Pointer Events Utility
 menu_label: Pointer Events
 layout: documentation
-category: ["Utilities","Interactivity"]
+category: ["Utilities", "Interactivity"]
 markup_language: html
 ---
 
@@ -91,5 +91,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

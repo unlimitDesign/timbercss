@@ -2,7 +2,7 @@
 title: Typography - Font Family
 menu_label: Font Family
 layout: documentation
-category: ["Utilities","Typography"]
+category: ["Utilities", "Typography"]
 markup_language: html
 ---
 
@@ -108,5 +108,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

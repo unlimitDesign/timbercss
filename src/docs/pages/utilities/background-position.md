@@ -2,7 +2,7 @@
 title: Background - Background Position Utility
 menu_label: Background Position
 layout: documentation
-category: ["Utilities","Background"]
+category: ["Utilities", "Background"]
 markup_language: html
 ---
 
@@ -72,7 +72,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-bottom h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-bottom h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -88,7 +88,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-center h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-center h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -105,7 +105,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-left h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-left h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -121,7 +121,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-left-bottom h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-left-bottom h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -137,7 +137,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-left-top h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-left-top h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -153,7 +153,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-right h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-right h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -169,7 +169,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-right-bottom h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-right-bottom h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -185,7 +185,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-right-top h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-right-top h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -201,7 +201,7 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-top h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">									
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-top h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
@@ -229,5 +229,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

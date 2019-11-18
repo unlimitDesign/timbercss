@@ -1,7 +1,7 @@
 ---
 title: Installing Timber
 menu_label: Installing Timber
-layout: documentation
+layout: index
 category: ["No Category"]
 markup_language: html
 ---

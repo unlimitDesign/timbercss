@@ -594,5 +594,6 @@ timber.module.lightbox.settings.navThumbnails = false;
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

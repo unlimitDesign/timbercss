@@ -55,8 +55,8 @@ module.exports = class TimberTools_library extends TimberTools {
             port: this.options.serverPort,
             host: this.options.serverHost,
             disableHostCheck: true,
-            contentBase: this.getAbsolutePath(this.options.contentBase),
-            publicPath: "dist/",// this.getAbsolutePath(this.options.outputDir),
+            contentBase: this.options.contentBase,
+            publicPath: this.options.serverPublicPath,
             watchContentBase: this.options.watchContentBaseEnabled,
             // inline: true,
             // compress: true,
@@ -195,10 +195,10 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getPlugin_purgecssPlugin() {
-        // find html files in the directories as set in this.options.htmlDir
-        const _paths = $Glob.sync(`${this.getAbsolutePath(this.options.htmlDir)}/**/*.html`, { nodir: true });
+        // Scan through the documentation directory
+        const _paths = $Glob.sync(`${this.getAbsolutePath(this.options.contentBase)}/**/*.html`, { nodir: true });
         if (!_paths.length > 0) {
-            console.log(`Error: there is not any html for purgeCSS to refer. Given path to the html directory was: ${this.getAbsolutePath(this.options.htmlDir)}/**/*.html`);
+            console.log(`Error: there is not any html for purgeCSS to refer. Given path to the html directory was: ${this.getAbsolutePath(this.options.contentBase)}/**/*.html`);
             process.exit(0);
         }
         // return at once

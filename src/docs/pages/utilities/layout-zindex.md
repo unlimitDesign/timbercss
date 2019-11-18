@@ -2,7 +2,7 @@
 title: Layout - Z-index Utility
 menu_label: Z-Index
 layout: documentation
-category: ["Utilities","Layout"]
+category: ["Utilities", "Layout"]
 markup_language: html
 ---
 
@@ -78,5 +78,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

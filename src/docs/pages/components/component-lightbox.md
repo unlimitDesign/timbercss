@@ -385,11 +385,12 @@ timber.module.lightbox.settings.navThumbnails = false;
 	<a class="lightbox" data-group="group-1" data-thumbnail="thumbnailURL" href="lightboxMediaURL">
 		<img src="imageURL" alt=""/>
 	</a>
-</div> 
+</div>
 --></code></pre>
       </div>
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

@@ -2,7 +2,7 @@
 title: Background - Background Repeat Utility
 menu_label: Background Repeat
 layout: documentation
-category: ["Utilities","Background"]
+category: ["Utilities", "Background"]
 markup_language: html
 ---
 
@@ -128,5 +128,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

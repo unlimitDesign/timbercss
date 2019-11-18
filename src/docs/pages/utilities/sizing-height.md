@@ -2,7 +2,7 @@
 title: Sizing - Height Utility
 menu_label: Height
 layout: documentation
-category: ["Utilities","Sizing"]
+category: ["Utilities", "Sizing"]
 markup_language: html
 ---
 
@@ -84,5 +84,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

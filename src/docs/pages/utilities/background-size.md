@@ -2,7 +2,7 @@
 title: Background - Background Size Utility
 menu_label: Background Size
 layout: documentation
-category: ["Utilities","Background"]
+category: ["Utilities", "Background"]
 markup_language: html
 ---
 
@@ -101,12 +101,13 @@ markup_language: html
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-auto bg-lg-cover bg-md-contain bg-sm-auto bg-center bg-no-repeat h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">	
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="bg-auto bg-lg-cover bg-md-contain bg-sm-auto bg-center bg-no-repeat h-min-250" style="background-image:url(https://images.unsplash.com/photo-1564928275797-a7ab0852021d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2341&q=80f1a522d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)">
 </div>
 --></code></pre>
       </div>
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

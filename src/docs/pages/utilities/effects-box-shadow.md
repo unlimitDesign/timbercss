@@ -2,7 +2,7 @@
 title: Effects - Box Shadow Utility
 menu_label: Box Shadow
 layout: documentation
-category: ["Utilities","Effects"]
+category: ["Utilities", "Effects"]
 markup_language: html
 ---
 
@@ -268,5 +268,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

@@ -111,8 +111,8 @@ parallax.method();
               <h6 class="uppercase">As a standalone plugin</h6>
               <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
                 <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--let parallax = new tmParallax('.parallax',{
-    direction: 'vertical',						
-	speed: 0.2,									
+    direction: 'vertical',
+	speed: 0.2,
 	duration: '0ms',
 	easing: 'swing'
 });
@@ -285,5 +285,6 @@ timber.module.lightbox.settings.navThumbnails = false;
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

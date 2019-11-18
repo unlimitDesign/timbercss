@@ -2,7 +2,7 @@
 title: JavaScript
 menu_label: JavaScript
 layout: documentation
-category: ["Gettings Started"]
+category: ["Getting Started"]
 markup_language: html
 ---
 
@@ -41,25 +41,26 @@ import tmOverlayNavigation from './components/_tm.overlaynavigation.js';
 import tmToggleSubMenu from './components/_tm.togglesubmenu.js';
 
 // Plugins
-/*import tmMasonryGrid from './plugins/_tm.masonrygrid.js';
-import tmFreeze from './plugins/_tm.freeze.js';
-import tmStickyHeader from './plugins/_tm.stickyheader.js';
-import tmLightbox from './plugins/_tm.lightbox.js';
-import tmHorizon from './plugins/_tm.horizon.js';
-import tmParallax from './plugins/_tm.parallax.js';
-import tmResponsiveVideo from './plugins/_tm.responsivevideo.js';*/--></code></pre>
-      </div>
-      <!-- code -->
-      <h5>Writing custom JS</h5>
-      <p>To add your own JS to Timber, open <code class="color-indigo font-bold">scustom.js</code> and add or import your modules after the initialization of the Timber core.</p>
-      <!-- code -->
-      <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--// Core
-import timberCore from './_tm.core.js';
+/_import tmMasonryGrid from './plugins/\_tm.masonrygrid.js';
+import tmFreeze from './plugins/\_tm.freeze.js';
+import tmStickyHeader from './plugins/\_tm.stickyheader.js';
+import tmLightbox from './plugins/\_tm.lightbox.js';
+import tmHorizon from './plugins/\_tm.horizon.js';
+import tmParallax from './plugins/\_tm.parallax.js';
+import tmResponsiveVideo from './plugins/\_tm.responsivevideo.js';_/--></code></pre>
+
+</div>
+<!-- code -->
+<h5>Writing custom JS</h5>
+<p>To add your own JS to Timber, open <code class="color-indigo font-bold">scustom.js</code> and add or import your modules after the initialization of the Timber core.</p>
+<!-- code -->
+<div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
+<pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--// Core
+import timberCore from './\_tm.core.js';
 
 // Core instance
 let timber = new timberCore({
-	initialize: false
+initialize: false
 });
 
 // Initialize all imported modules
@@ -68,24 +69,27 @@ let timber = new timberCore({
 // For callbacks: timber.module.moduleName.settings.callback = function(){};
 // console.log(timber.module.moduleName.settings) for module settings
 if (typeof timber.initialize != 'undefined') {
-	timber.initialize();
+timber.initialize();
 }
 
 // Add your JS here
 --></code></pre>
-      </div>
-      <!-- code -->
-      <h5>Fallbacks when JavaScript is disabled</h5>
-      <p>Timber's plugins do not provide a fallback for when JavaScript is disabled because 98% of users have JavaScript enabled. If you care about the user experience when JavaScript is disabled, use <code class="color-indigo font-bold">noscript</code> tag and let your users know and how to re-enable JavaScript and/or add your own custom fallbacks.</p>
-      <hr class="mt-50">
-      <a href="getting-started-theming.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
-        <span class="icon-material mr-0 ml-10">chevron_right</span>
-        <span class="mt-0 mr-20">
-          <span class="leading-none text-tiny uppercase">Next</span>
-          <span class="block text-large">Theming</span>
-        </span>
-      </a>
-    </div>
-    <!-- Content Inner End -->
+
+</div>
+<!-- code -->
+<h5>Fallbacks when JavaScript is disabled</h5>
+<p>Timber's plugins do not provide a fallback for when JavaScript is disabled because 98% of users have JavaScript enabled. If you care about the user experience when JavaScript is disabled, use <code class="color-indigo font-bold">noscript</code> tag and let your users know and how to re-enable JavaScript and/or add your own custom fallbacks.</p>
+<hr class="mt-50">
+<a href="getting-started-theming.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
+<span class="icon-material mr-0 ml-10">chevron_right</span>
+<span class="mt-0 mr-20">
+<span class="leading-none text-tiny uppercase">Next</span>
+<span class="block text-large">Theming</span>
+</span>
+</a>
+</div>
+<!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
+
   </div>
 </div>

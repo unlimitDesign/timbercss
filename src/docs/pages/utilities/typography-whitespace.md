@@ -2,7 +2,7 @@
 title: Typography - Whitespace
 menu_label: Whitespace
 layout: documentation
-category: ["Utilities","Typography"]
+category: ["Utilities", "Typography"]
 markup_language: html
 ---
 
@@ -90,7 +90,7 @@ markup_language: html
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<p class="whitespace-pre overflow-x-scroll">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
 --></code></pre>
       </div>
@@ -108,7 +108,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<p class="whitespace-pre-line overflow-x-scroll">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
 --></code></pre>
       </div>
@@ -126,7 +126,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<p class="whitespace-pre-wrap overflow-x-scroll">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
 --></code></pre>
       </div>
@@ -149,12 +149,13 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<p class="whitespace-normal whitespace-lg-no-wrap whitespace-md-pre-line whitespace-sm-pre-wrap">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+	 	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
 --></code></pre>
       </div>
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

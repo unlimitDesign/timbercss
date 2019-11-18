@@ -2,7 +2,7 @@
 title: Border - Border Radius Utility
 menu_label: Border Radius
 layout: documentation
-category: ["Utilities","Border"]
+category: ["Utilities", "Border"]
 markup_language: html
 ---
 
@@ -161,5 +161,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

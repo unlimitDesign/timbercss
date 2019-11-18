@@ -2365,5 +2365,6 @@ markup_language: html
       <!-- Demo Block End -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

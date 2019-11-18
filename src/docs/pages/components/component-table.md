@@ -673,44 +673,46 @@ markup_language: html
 				<td>
 					$20/100GB
 
-				</td>
-				<td>
-					$20/100GB
+    			</td>
+    			<td>
+    				$20/100GB
 
-				</td>
-				<td>
-					$20/100GB
+    			</td>
+    			<td>
+    				$20/100GB
 
-				</td>
-				<td>
-					custom
-				</td>
-			</tr>
-			<tr>
-				<th></th>
-				<td>
-					<a href="#" class="button size-sm rounded mb-0">Select Option</a>
+    			</td>
+    			<td>
+    				custom
+    			</td>
+    		</tr>
+    		<tr>
+    			<th></th>
+    			<td>
+    				<a href="#" class="button size-sm rounded mb-0">Select Option</a>
 
-				</td>
-				<td>
-					<a href="#" class="button size-sm rounded mb-0">Select Option</a>
+    			</td>
+    			<td>
+    				<a href="#" class="button size-sm rounded mb-0">Select Option</a>
 
-				</td>
-				<td>
-					<a href="#" class="button size-sm rounded mb-0">Select Option</a>
+    			</td>
+    			<td>
+    				<a href="#" class="button size-sm rounded mb-0">Select Option</a>
 
-				</td>
-				<td>
-					<a href="#" class="button size-sm rounded mb-0">Select Option</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+    			</td>
+    			<td>
+    				<a href="#" class="button size-sm rounded mb-0">Select Option</a>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+
 </div>
 --></code></pre>
       </div>
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

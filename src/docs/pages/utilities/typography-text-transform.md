@@ -2,7 +2,7 @@
 title: Typography - Text Transform
 menu_label: Text Transform
 layout: documentation
-category: ["Utilities","Typography"]
+category: ["Utilities", "Typography"]
 markup_language: html
 ---
 
@@ -128,5 +128,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

@@ -2,7 +2,7 @@
 title: Interactivity - Select Utility
 menu_label: Select
 layout: documentation
-category: ["Utilities","Interactivity"]
+category: ["Utilities", "Interactivity"]
 markup_language: html
 ---
 
@@ -128,5 +128,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

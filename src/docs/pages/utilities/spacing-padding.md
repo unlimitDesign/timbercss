@@ -2,7 +2,7 @@
 title: Spacing - Padding Utility
 menu_label: Padding
 layout: documentation
-category: ["Utilities","Spacing"]
+category: ["Utilities", "Spacing"]
 markup_language: html
 ---
 
@@ -110,5 +110,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

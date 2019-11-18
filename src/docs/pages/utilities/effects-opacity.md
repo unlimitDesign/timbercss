@@ -2,7 +2,7 @@
 title: Effects - Opacity Utility
 menu_label: Opacity
 layout: documentation
-category: ["Utilities","Effects"]
+category: ["Utilities", "Effects"]
 markup_language: html
 ---
 
@@ -134,5 +134,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

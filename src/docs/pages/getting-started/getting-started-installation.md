@@ -2,7 +2,7 @@
 title: Installing Timber
 menu_label: Installation &amp; Build Process
 layout: documentation
-category: ["Gettings Started"]
+category: ["Getting Started"]
 markup_language: html
 ---
 
@@ -87,5 +87,6 @@ markup_language: html
       </a>
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>

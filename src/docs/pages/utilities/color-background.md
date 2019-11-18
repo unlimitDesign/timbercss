@@ -2,7 +2,7 @@
 title: Color - Background Color Utility
 menu_label: Background Color
 layout: documentation
-category: ["Utilities","Color"]
+category: ["Utilities", "Color"]
 markup_language: html
 ---
 
@@ -148,5 +148,6 @@ markup_language: html
       <!-- code -->
     </div>
     <!-- Content Inner End -->
+		<!-- {{ sidebar }} -->
   </div>
 </div>
