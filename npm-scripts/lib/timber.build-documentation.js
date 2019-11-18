@@ -22,15 +22,22 @@ const $MetadataParser = require('markdown-yaml-metadata-parser');
 const { JSDOM } = require('jsdom'); // uninstall when done
 const $Beautify = require('js-beautify');
 
+const mode = (process.argv[process.argv.indexOf('--mode') + 1]) ? process.argv[process.argv.indexOf('--mode') + 1] : 'development';
+
 class TimberTools_documentation extends TimberTools {
 
     constructor() {
         // Must call super constructor in derived class before accessing 'this' or returning from derived constructor.
         super();
         // variable for this class
-        // used for caching
+        // used for caching layout templates and version number
         this.timberDocs = {
-            version: this.options.version
+            mode: mode,
+            version: this.options.version,
+            timberJsFileName: this.options.timberJsFileName,
+            timberJsMinFileName: this.options.timberJsMinFileName,
+            timberCssFilePath: this.options.timberCssFilePath,
+            timberCssFileMinPath: this.options.timberCssFileMinPath,
         };
     }
 
@@ -115,6 +122,14 @@ class TimberTools_documentation extends TimberTools {
         return _pageData;
     }
 
+    /**
+     * Gets layoute templates and caches them
+     *
+     * @param   {string}  contentSourceDir  Source directory
+     * @param   {string}  layoutId          Layout ID
+     *
+     * @return  {string}                    Layout templates html
+     */
     getPageLayoutTemplate(contentSourceDir, layoutId) {
         if (layoutId in this.timberDocs) {
             return this.timberDocs[layoutId];
@@ -122,7 +137,11 @@ class TimberTools_documentation extends TimberTools {
         const _layoutAbsolutePath = contentSourceDir + '/layouts/' + layoutId + '.html';
         if ($Fs.existsSync(_layoutAbsolutePath)) {
             let _layoutText = $Fs.readFileSync(_layoutAbsolutePath, 'utf8');
-            this.timberDocs[layoutId] = _layoutText.replace(/{{\s?library_version\s?}}/, this.timberDocs.version);
+            // making sure that the js file name is correct
+            _layoutText = _layoutText.replace(/{{\s?timber_js_filename\s?}}/, (this.timberDocs.mode === 'development') ? this.timberDocs.timberJsFileName : this.timberDocs.timberJsMinFileName);
+            _layoutText = _layoutText.replace(/{{\s?timber_css_filename\s?}}/, (this.timberDocs.mode === 'development') ? this.timberDocs.timberCssFilePath : this.timberDocs.timberCssFileMinPath);
+            // version name for documentation
+            this.timberDocs[layoutId] = (layoutId === 'documentation') ? _layoutText.replace(/{{\s?library_version\s?}}/, this.timberDocs.version) : _layoutText;
             return this.timberDocs[layoutId];
         } else {
             return false;

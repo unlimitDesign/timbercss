@@ -42,6 +42,7 @@ module.exports = class TimberTools {
             serverPort: '3000',
             serverHost: 'localhost',
             watchContentBaseEnabled: true,
+            disableHostCheck: true,
             contentBase: 'docs',
             serverPublicPath: '/js/',
             /* documentation configs */
@@ -56,8 +57,8 @@ module.exports = class TimberTools {
             // timber lib produt file paths
             timberJsFileName: 'tm.core.js',
             timberJsMinFileName: 'tm.core.min.js',
-            timberCssFilePath: 'css/timber.css',
-            timberCssFileMinPath: 'css/timber.min.css',
+            timberCssFilePath: 'timber.css',
+            timberCssFileMinPath: 'timber.min.css',
             // Image output options
             jpgProgressive: true,
             jpgQuality: '65',

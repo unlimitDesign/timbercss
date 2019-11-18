@@ -36,8 +36,7 @@ module.exports = class TimberTools_library extends TimberTools {
 
     getOutput() {
         // make minified version if it is not development env.
-        // const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
-        const _outputJsFileName = this.options.timberJsMinFileName;
+        const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
         return {
             path: this.getAbsolutePath(this.options.outputDir),
             filename: `./js/${_outputJsFileName}`,
@@ -55,7 +54,7 @@ module.exports = class TimberTools_library extends TimberTools {
         return {
             port: this.options.serverPort,
             host: this.options.serverHost,
-            disableHostCheck: true,
+            disableHostCheck: this.options.disableHostCheck,
             contentBase: this.options.contentBase,
             publicPath: this.options.serverPublicPath,
             watchContentBase: this.options.watchContentBaseEnabled,
@@ -121,14 +120,15 @@ module.exports = class TimberTools_library extends TimberTools {
                 {
                     loader: 'css-loader',
                     options: {
-                        sourceMap: true
+                        sourceMap: true,
+                        importLoaders: true
                     }
                 },
                 {
                     loader: 'sass-loader',
                     options: {
                         sourceMap: true,
-                        minimize: false,
+                        minimize: true,
                         outputStyle: 'expanded'
                     }
                 }
@@ -191,7 +191,7 @@ module.exports = class TimberTools_library extends TimberTools {
         // use settingsName is the settings name does not exist in the options.
         const _fileName = (settingsName in this.options) ? this.options[settingsName] : settingsName;
         return new $MiniCssExtractPlugin({
-            filename: `${_fileName}`
+            filename: `css/${_fileName}`
         });
     }
 
