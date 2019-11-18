@@ -72,7 +72,9 @@ module.exports = class TimberTools {
         this.options = Object.assign(_default_options, options);
         // convert purgeCSS_whitelistPatterns type RegExp
         this.options.purgeCSS_whitelistPatterns = this.preparePurgeCssWhiteListPatterns(this.options.purgeCSS_whitelistPatterns);
-        //console.log(JSON.stringify(this.options));
+        if (options.debug === true) {
+            console.log(JSON.stringify(this.options));
+        }
         // console.log(this.absoluteRootDir);
         // console.log(this.getEntries());
         // console.log(this.getOutput());

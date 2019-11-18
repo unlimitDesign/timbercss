@@ -20,7 +20,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --env timber",
     "build": "webpack --mode production --env timber",
-    "testTimberTools": "node ./npm-scripts/webpack.test.js",
+    "test_timber": "node ./npm-scripts/webpack.test.js",
     "docs": "node ./npm-scripts/lib/timber.build-documentation.js"
   },
   "devDependencies": {

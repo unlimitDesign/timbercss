@@ -1,19 +1,18 @@
 {
-    "copyright": "Copyright © unlimit.design 2019",
-    "authorCredits": "unlimit.design, Christian Lundgren, Shu Miyao",
-    "serverHost": "0.0.0.0",
     "serverPort": "3000",
-    "watchContentBaseEnabled": true,
-    "htmlDir": "./docs",
-    "contentBase": "src/docs",
-    "publicPath": "docs/js/",
-    "outputDir": "dist",
+    "serverHost": "0.0.0.0",
+    "disableHostCheck": true,
+    "contentBase": "docs",
+    "serverPublicPath": "/js/",
+    "contentSourceDir": "src/docs",
+    "outputDir": "docs",
+    "distDir": "dist/",
     "timberJsSrcFilePath": "./src/js/custom.js",
     "timberCssSrcFilePath": "./src/scss/timber.scss",
     "timberJsFileName": "tm.core.js",
     "timberJsMinFileName": "tm.core.min.js",
-    "timberCssFilePath": "./css/timber.css",
-    "timberCssFileMinPath": "./css/timber.min.css",
+    "timberCssFilePath": "timber.css",
+    "timberCssFileMinPath": "timber.min.css",
     "jpgProgressive": true,
     "jpgQuality": "65",
     "pngQuality": "5-90",
@@ -66,6 +65,6 @@
         "embed"
     ],
     "purgeCSS_whitelistPatterns": [
-        "/\bw-\b/"
+        {}
     ]
 }
