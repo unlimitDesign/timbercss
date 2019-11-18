@@ -43,11 +43,11 @@ module.exports = class TimberTools {
             serverHost: 'localhost',
             watchContentBaseEnabled: true,
             contentBase: 'docs',
-            serverPublicPath: 'docs/js/',
+            serverPublicPath: '/js/',
             /* documentation configs */
             contentSourceDir: 'src/docs',
             // output directories.  will be same as contentBase otherwise live preview does not work
-            outputDir: 'dist/',
+            outputDir: 'docs',
             // this is used for css / js to be distributed.
             distDir: 'dist/',
             // timber lib source file paths

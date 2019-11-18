@@ -7,8 +7,7 @@
  * Removes docs/ directory then create a blank docs/ directory. Then Compiles documentation under docs/. (timber.build-documentation.js)
  */
 
-// currently this script is not intended for use from webpack. Rather executed by npm script (npm run start)
-
+// currently this script is not intended for use from webpack.
 
 /**
  *  See the end of this file where the following class is instantiated.
@@ -30,7 +29,9 @@ class TimberTools_documentation extends TimberTools {
         super();
         // variable for this class
         // used for caching
-        this.timberDocs = {};
+        this.timberDocs = {
+            version: this.options.version
+        };
     }
 
     /**
@@ -120,7 +121,8 @@ class TimberTools_documentation extends TimberTools {
         }
         const _layoutAbsolutePath = contentSourceDir + '/layouts/' + layoutId + '.html';
         if ($Fs.existsSync(_layoutAbsolutePath)) {
-            this.timberDocs[layoutId] = $Fs.readFileSync(_layoutAbsolutePath, 'utf8');
+            let _layoutText = $Fs.readFileSync(_layoutAbsolutePath, 'utf8');
+            this.timberDocs[layoutId] = _layoutText.replace(/{{\s?library_version\s?}}/, this.timberDocs.version);
             return this.timberDocs[layoutId];
         } else {
             return false;
@@ -194,6 +196,8 @@ class TimberTools_documentation extends TimberTools {
             if (_currentData.metadata.layout === 'documentation') {
                 // <!-- {{ sidebar }} -->
                 _htmlToWriteAsFile = _htmlToWriteAsFile.replace(/(<\!--\s?)?{{\s?sidebar\s?}}(\s?-->)?/, htmlFragmentForSidenav);
+            } else if (_currentData.metadata.layout === 'index') {
+                _htmlToWriteAsFile = _htmlToWriteAsFile.replace(/{{\s?library_version\s?}}/, this.timberDocs.version);
             }
             // making sure that directory exists
             this.mkdirForFile(_outputUrl);

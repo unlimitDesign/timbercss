@@ -36,7 +36,8 @@ module.exports = class TimberTools_library extends TimberTools {
 
     getOutput() {
         // make minified version if it is not development env.
-        const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
+        // const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
+        const _outputJsFileName = this.options.timberJsMinFileName;
         return {
             path: this.getAbsolutePath(this.options.outputDir),
             filename: `./js/${_outputJsFileName}`,
