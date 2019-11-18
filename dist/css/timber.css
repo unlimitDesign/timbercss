@@ -1,11 +1,11 @@
 /*!
  * Copyright © unlimit.design 2019
  * Version: 0.1.7
- * Hash:4b5faf4b0ddb02264e64
- * Chunkhash:b3951f989baae24a1d7f
+ * Hash:1637c4f6dd3e46a3b683
+ * Chunkhash:70755ceda7d72e42fc2f
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Mon Nov 18 2019 13:24:22 GMT+0000 (Western European Standard Time)
+ * Timestamp: Mon Nov 18 2019 17:01:23 GMT+0100 (Central European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -5253,6 +5253,18 @@ iframe {
     float: left !important;
   }
 }
+
+/*------------------------------------------------------------------
+@section 48. Object Fit Classes
+*/
+
+/* Breakpoints */
+
+/*------------------------------------------------------------------
+@section 49. Object Position Classes
+*/
+
+/* Breakpoints */
 
 /*------------------------------------------------------------------
 @section 50. Overflow Classes
