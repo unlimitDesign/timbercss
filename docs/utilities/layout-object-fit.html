@@ -11,7 +11,7 @@
   <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <title>Component - Pagination</title>
+  <title>Layout - Object Fit</title>
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@unlimit.design">
   <meta name="twitter:title" content="Timber CSS Framework - Timber is a utility-first, desktop-first CSS framework built for fast prototyping">
@@ -69,268 +69,146 @@
           <div class="row pt-40 pt-md-40">
             <!-- Content Inner -->
             <div class="col w-9/12 w-md-full order-2 content-inner">
-              <h1 class="font-light">Component: Pagination</h1>
+              <h1 class="font-light">Utility: Object Fit</h1>
+              <p>Controls the how a replaced element's content shuold be resized.</p>
+              <!-- Classes -->
+              <div class="table-scrollable">
+                <table class="table size-md rounded bg-white">
+                  <thead>
+                    <tr>
+                      <th> Class </th>
+                      <th> Value </th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-mono">
+                    <tr>
+                      <th class="color-indigo">.object-contain</th>
+                      <td> object-fit: contain; </td>
+                    </tr>
+                    <tr>
+                      <th class="color-indigo">.object-cover</th>
+                      <td> object-fit: cover; </td>
+                    </tr>
+                    <tr>
+                      <th class="color-indigo">.object-fill</th>
+                      <td> object-fit: fill; </td>
+                    </tr>
+                    <tr>
+                      <th class="color-indigo">.object-none</th>
+                      <td> object-fit: none; </td>
+                    </tr>
+                    <tr>
+                      <th class="color-indigo">.object-scale-down</th>
+                      <td> object-fit: scale-down; </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Classes End -->
               <!-- Demo Block -->
               <div class="demo-block mt-80">
-                <h3 class="font-light">Basic</h3>
+                <h3 class="font-light">Contain</h3>
                 <div class="p-30 rounded bg-grey-ultralight">
-                  <div class="row pt-0">
-                    <div class="col w-full pagination justify-center">
-                      <a href="#" title="Previous Page" class="pagination-link button"><span class="icon-material">chevron_left</span></a>
-                      <span class="page-links hidden-sm">
-                        <a href="#" title="Page X" class="pagination-link button active"><span>1</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>2</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>3</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>4</span></a>
-                        <a href="#" title="More Pages" class="pagination-link button"><span>...</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>12</span></a>
-                      </span>
-                      <a href="#" title="Next Page" class="pagination-link button"><span class="icon-material">chevron_right</span></a>
-                    </div>
-                  </div>
+                  <img class="w-full h-200 object-contain" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
                 </div>
               </div>
               <!-- Demo Block End -->
               <!-- code -->
               <h6 class="uppercase">Html</h6>
               <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="row pt-0">
-	<div class="col w-full pagination justify-center">
-		<a href="#" title="Previous Page" class="pagination-link button"><span class="icon-material">chevron_left</span></a>
-		<span class="page-links hidden-sm">
-			<a href="#" title="Page X" class="pagination-link button active"><span>1</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>2</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>3</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>4</a>
-			<a href="#" title="More Pages" class="pagination-link button"><span>...</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>12</a>
-		</span>
-		<a href="#" title="Next Page" class="pagination-link button"><span class="icon-material">chevron_right</span></a>
-	</div>
+                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="p-30 rounded bg-grey-ultralight">
+      <img class="w-full h-200 object-contain" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
 </div>
 --></code></pre>
               </div>
               <!-- code -->
               <!-- Demo Block -->
               <div class="demo-block mt-80">
-                <h3 class="font-light">With Labels</h3>
+                <h3 class="font-light">Cover</h3>
                 <div class="p-30 rounded bg-grey-ultralight">
-                  <div class="row pt-0">
-                    <div class="col w-full pagination justify-between justify-sm-center">
-                      <a href="#" title="Previous Page" class="pagination-link button with-label"><span class="icon-material">chevron_left</span><span>Prev</span></a>
-                      <span class="page-links hidden-sm">
-                        <a href="#" title="Page X" class="pagination-link button active"><span>1</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>2</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>3</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>4</span></a>
-                        <a href="#" title="More Pages" class="pagination-link button"><span>...</span></a>
-                        <a href="#" title="Page X" class="pagination-link button"><span>12</span></a>
-                      </span>
-                      <a href="#" title="Next Page" class="pagination-link button with-label"><span>Next</span><span class="icon-material">chevron_right</span></a>
-                    </div>
-                  </div>
+                  <img class="w-full h-200 object-cover" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
                 </div>
               </div>
               <!-- Demo Block End -->
               <!-- code -->
               <h6 class="uppercase">Html</h6>
               <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="row pt-0">
-	<div class="col w-full pagination justify-between justify-sm-center">
-		<a href="#" title="Previous Page" class="pagination-link button with-label"><span class="icon-material">chevron_left</span><span>Prev</span></a>
-		<span class="page-links hidden-sm">
-			<a href="#" title="Page X" class="pagination-link button active"><span>1</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>2</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>3</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>4</a>
-			<a href="#" title="More Pages" class="pagination-link button"><span>...</a>
-			<a href="#" title="Page X" class="pagination-link button"><span>12</a>
-		</span>
-		<a href="#" title="Next Page" class="pagination-link button with-label"><span>Next</span><span class="icon-material">chevron_right</span></a>
-	</div>
+                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="p-30 rounded bg-grey-ultralight">
+      <img class="w-full h-200 object-cover" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
 </div>
 --></code></pre>
               </div>
               <!-- code -->
               <!-- Demo Block -->
               <div class="demo-block mt-80">
-                <h3 class="font-light">Customised With Utitlity Classes</h3>
+                <h3 class="font-light">Fill</h3>
                 <div class="p-30 rounded bg-grey-ultralight">
-                  <div class="row pt-0">
-                    <div class="col w-full pagination justify-center">
-                      <a href="#" title="Previous Page" class="pagination-link button m-0 rounded-l bg-grey-lightest color-grey bg-hover-green color-hover-white"><span class="icon-material">chevron_left</span></a>
-                      <span class="page-links">
-                        <a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white bg-active-indigo color-active-white active"><span>1</span></a>
-                        <a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>2</span></a>
-                        <a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>3</span></a>
-                        <a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>4</span></a>
-                        <a href="#" title="More Pages" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>...</span></a>
-                        <a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>12</span></a>
-                      </span>
-                      <a href="#" title="Next Page" class="pagination-link button m-0 rounded-r bg-grey-lightest color-grey bg-hover-green color-hover-white"><span class="icon-material">chevron_right</span></a>
-                    </div>
-                  </div>
+                  <img class="w-full h-200 object-fill" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
                 </div>
               </div>
               <!-- Demo Block End -->
               <!-- code -->
               <h6 class="uppercase">Html</h6>
               <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="row pt-0">
-	<div class="col w-full pagination justify-center">
-		<a href="#" title="Previous Page" class="pagination-link button m-0 rounded-l bg-grey-lightest color-grey bg-hover-green color-hover-white"><span class="icon-material">chevron_left</span></a>
-		<span class="page-links">
-			<a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white bg-active-indigo color-active-white active"><span>1</a>
-			<a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>2</a>
-			<a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>3</a>
-			<a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>4</a>
-			<a href="#" title="More Pages" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>...</a>
-			<a href="#" title="Page X" class="pagination-link button m-0 rounded-none bg-grey-lightest color-grey bg-hover-green color-hover-white"><span>12</a>
-		</span>
-		<a href="#" title="Next Page" class="pagination-link button m-0 rounded-r bg-grey-lightest color-grey bg-hover-green color-hover-white"><span class="icon-material">chevron_right</span></a>
-	</div>
+                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="p-30 rounded bg-grey-ultralight">
+      <img class="w-full h-200 object-fill" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
 </div>
 --></code></pre>
               </div>
               <!-- code -->
               <!-- Demo Block -->
               <div class="demo-block mt-80">
+                <h3 class="font-light">None</h3>
                 <div class="p-30 rounded bg-grey-ultralight">
-                  <div class="row">
-                    <div class="col w-full pagination py-40">
-                      <div class="row pt-0">
-                        <div class="col w-6/12">
-                          <a href="#" title="Previous Page" class="pagination-link button border-none flex flex-sm-row-reverse justify-start justify-sm-between w-auto m-0 left bg-transparent bg-hover-transparent color-grey color-hover-grey-darkest">
-                            <span class="icon-material">chevron_left</span>
-                            <span class="mt-0 ml-20 ml-sm-0">
-                              <span class="leading-none text-tiny uppercase">Previous</span>
-                              <span class="w-200 block text-large truncate">Discover the history of Paris</span>
-                            </span>
-                          </a>
-                        </div>
-                        <div class="col w-full hidden block-sm">
-                          <hr>
-                        </div>
-                        <div class="col w-6/12">
-                          <a href="#" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
-                            <span class="icon-material mr-0 ml-10">chevron_right</span>
-                            <span class="mt-0 mr-20">
-                              <span class="leading-none text-tiny uppercase">Next</span>
-                              <span class="w-200 block text-large truncate">What to do in stormy weather</span>
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <img class="w-full h-200 object-cover" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
                 </div>
               </div>
               <!-- Demo Block End -->
               <!-- code -->
               <h6 class="uppercase">Html</h6>
               <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="row">
-	<div class="col w-full pagination py-40">
-		<div class="row pt-0">
-			<div class="col w-6/12">
-				<a href="#" title="Previous Page" class="pagination-link button border-none flex flex-sm-row-reverse justify-start justify-sm-between w-auto m-0 left bg-transparent bg-hover-transparent color-grey color-hover-grey-darkest">
-					<span class="icon-material">chevron_left</span>
-					<span class="mt-0 ml-20 ml-sm-0">
-						<span class="leading-none text-tiny uppercase">Previous</span>
-						<span class="w-200 block text-large truncate">Discover the history of Paris</span>
-					</span>
-				</a>
-			</div>
-			<div class="col w-full hidden block-sm">
-				<hr>
-			</div>
-			<div class="col w-6/12">
-				<a href="#" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
-					<span class="icon-material mr-0 ml-10">chevron_right</span>
-					<span class="mt-0 mr-20">
-						<span class="leading-none text-tiny uppercase">Next</span>
-						<span class="w-200 block text-large truncate">What to do in stormy weather</span>
-					</span>
-				</a>
-			</div>
-		</div>
-	</div>
+                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="p-30 rounded bg-grey-ultralight">
+      <img class="w-full h-200 object-cover" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
 </div>
 --></code></pre>
               </div>
               <!-- code -->
               <!-- Demo Block -->
               <div class="demo-block mt-80">
-                <div class="bg-grey-ultralight">
-                  <div class="row">
-                    <div class="col w-full pagination">
-                      <div class="row fluid collapse">
-                        <div class="col w-5/12">
-                          <a href="#" title="Previous Page" class="pagination-link button rounded-none py-60 px-60 flex flex-sm-row-reverse justify-end justify-sm-between w-auto m-0 right left-sm bg-grey-ultralight bg-hover-grey-darkest color-grey-darker color-hover-white">
-                            <span class="icon-material">chevron_left</span>
-                            <span class="mt-0 ml-20 ml-sm-0">
-                              <span class="block text-small font-bold">Discover the history of Paris</span>
-                              <span class="opacity-60">Previous</span>
-                            </span>
-                          </a>
-                        </div>
-                        <div class="col w-2/12">
-                          <a href="#" title="Return Home" class="pagination-link button rounded-none py-60 px-60 flex w-full m-0 justify-sm-start bg-grey-lightest bg-hover-grey-darkest color-grey-darker color-hover-white">
-                            <span class="h3">
-                              <span class="block text-small font-bold">Return</span>
-                              <span class="opacity-60">Home</span>
-                            </span>
-                          </a>
-                        </div>
-                        <div class="col w-5/12">
-                          <a href="#" title="Next Page" class="pagination-link button rounded-none py-60 px-60 flex flex-row-reverse justify-end justify-sm-between w-auto m-0 left bg-grey-ultralight bg-hover-grey-darkest color-grey-darker color-hover-white">
-                            <span class="icon-material mr-0 ml-10">chevron_right</span>
-                            <span class="mt-0 mr-20">
-                              <span class="block text-small font-bold">Stormy weather practices</span>
-                              <span class="opacity-60">Next</span>
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <h3 class="font-light">Scale Down</h3>
+                <div class="p-30 rounded bg-grey-ultralight">
+                  <img class="w-full h-200 object-scale-down" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
                 </div>
               </div>
               <!-- Demo Block End -->
               <!-- code -->
               <h6 class="uppercase">Html</h6>
               <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="row">
-	<div class="col w-full pagination">
-		<div class="row fluid collapse">
-			<div class="col w-5/12">
-				<a href="#" title="Previous Page" class="pagination-link button rounded-none py-60 px-60 flex flex-sm-row-reverse justify-end justify-sm-between w-auto m-0 right left-sm bg-grey-ultralight bg-hover-indigo color-grey color-hover-white">
-					<span class="icon-material">chevron_left</span>
-					<span class="text-large mt-0 ml-20">
-						<small>Discover the history of Paris</small>
-						<span>Previous</span>
-					</span>
-				</a>
-			</div>
-			<div class="col w-2/12">
-				<a href="#" title="Return Home" class="pagination-link button rounded-none py-60 px-60 flex w-full m-0 justify-sm-start bg-grey-lightest bg-hover-indigo color-grey color-hover-white">
-					<span class="h3">
-						<small>Return</small>
-						Home
-					</span>
-				</a>
-			</div>
-			<div class="col w-5/12">
-				<a href="#" title="Next Page" class="pagination-link button rounded-none py-60 px-60 flex flex-row-reverse justify-end justify-sm-between w-auto m-0 left bg-grey-ultralight bg-hover-indigo color-grey color-hover-white">
-					<span class="icon-material mr-0 ml-10">chevron_right</span>
-					<span class="text-large mt-0 mr-20">
-						<small>What to do in stormy weather</small>
-						<span>Next</span>
-					</span>
-				</a>
-			</div>
-		</div>
-	</div>
+                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="p-30 rounded bg-grey-ultralight">
+      <img class="w-full h-200 object-scale-down" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
+</div>
+--></code></pre>
+              </div>
+              <!-- code -->
+              <!-- Demo Block -->
+              <div class="demo-block mt-80">
+                <h3 class="font-light">Responsive</h3>
+                <p>Use the obect fit responsive utility classes for specific breakpoints by adding the breakpoint name to the class, for example: <code class="color-indigo font-bold">.object-md-fit</code>. Object fit utitlity classes are created for the breakpoints listed below, but can be customised in <strong>_variables_timber.scss</strong> to include all breakpoints.</p>
+                <ul class="list-none">
+                  <li><strong>lg</strong>: 1200px,</li>
+                  <li><strong>md</strong>: 992px,</li>
+                  <li><strong>sm</strong>: 768px</li>
+                </ul>
+                <div class="p-30 rounded bg-grey-ultralight">
+                  <img class="w-full h-200 object-contain object-lg-fill object-md-contain object-sm-none" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
+                </div>
+              </div>
+              <!-- Demo Block End -->
+              <!-- code -->
+              <h6 class="uppercase">Html</h6>
+              <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
+                <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="p-30 rounded bg-grey-ultralight">
+      <img class="w-full h-200 object-contain object-lg-fill object-md-contain object-sm-none" src="https://images.unsplash.com/photo-1570023736098-515af38886ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="">
 </div>
 --></code></pre>
               </div>
