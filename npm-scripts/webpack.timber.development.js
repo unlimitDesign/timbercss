@@ -10,8 +10,6 @@
 
 const $TimberTools = require('./lib/timber.build-library.js');
 
-const $WebpackShellPluginNext = require('webpack-shell-plugin-next');
-
 const Tbs = new $TimberTools();
 
 let moduleExports = {
@@ -29,13 +27,6 @@ let moduleExports = {
         ]
     },
     plugins: [
-        new $WebpackShellPluginNext({
-            onBuildStart: {
-                scripts: ['node ./npm-scripts/lib/timber.build-documentation.js --mode development'],
-                blocking: true,
-                parallel: false
-            }
-        }),
         Tbs.getPlugin_writeFile(),
         Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
         Tbs.getPlugin_timberToolsUpdateDocPages()
