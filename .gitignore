@@ -4,7 +4,6 @@
 css/template.css.map
 package-lock.json
 .timbertools.json
-dist/
 
 # Created by https://www.gitignore.io/api/macos
 # Edit at https://www.gitignore.io/?templates=macos
