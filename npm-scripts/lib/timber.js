@@ -48,8 +48,6 @@ module.exports = class TimberTools {
             contentSourceDir: 'src/docs',
             // output directories.  will be same as contentBase otherwise live preview does not work
             outputDir: 'docs',
-            // this is used for css / js to be distributed.
-            distDir: 'dist/',
             // timber lib source file paths
             timberJsSrcFilePath: './src/js/custom.js',
             timberCssSrcFilePath: './src/scss/timber.scss',

@@ -6,7 +6,6 @@
     "serverPublicPath": "/js/",
     "contentSourceDir": "src/docs",
     "outputDir": "docs",
-    "distDir": "dist/",
     "timberJsSrcFilePath": "./src/js/custom.js",
     "timberCssSrcFilePath": "./src/scss/timber.scss",
     "timberJsFileName": "tm.core.js",

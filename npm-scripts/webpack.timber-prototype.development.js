@@ -8,7 +8,6 @@ const $TimberTools = require('./lib/timber.build-library.js');
 
 const Tbs = new $TimberTools({
     "outputDir": "public",
-    "distDir": "dist/",
 });
 
 let moduleExports = {
