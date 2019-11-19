@@ -1,7 +1,7 @@
 ---
 title: Component - Side Navigation
 menu_label: Side Navigation
-layout: documentation
+layout: documentation-sidenav-example
 category: ["Components"]
 markup_language: html
 ---

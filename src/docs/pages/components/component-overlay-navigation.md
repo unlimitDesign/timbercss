@@ -1,7 +1,7 @@
 ---
 title: Component - Ovelay Navigation
 menu_label: Overlay Navigation
-layout: documentation
+layout: documentation-overlay-example
 category: ["Components"]
 markup_language: html
 ---

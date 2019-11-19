@@ -146,7 +146,7 @@ class TimberTools_documentation extends TimberTools {
             _layoutText = _layoutText.replace(/{{\s?timber_js_filename\s?}}/, (this.timberDocs.mode === 'development') ? this.timberDocs.timberJsFileName : this.timberDocs.timberJsMinFileName);
             _layoutText = _layoutText.replace(/{{\s?timber_css_filename\s?}}/, (this.timberDocs.mode === 'development') ? this.timberDocs.timberCssFilePath : this.timberDocs.timberCssFileMinPath);
             // version name for documentation
-            this.timberDocs[layoutId] = (layoutId === 'documentation') ? _layoutText.replace(/{{\s?library_version\s?}}/, this.timberDocs.version) : _layoutText;
+            this.timberDocs[layoutId] = (layoutId.match(/documentation/)) ? _layoutText.replace(/{{\s?library_version\s?}}/, this.timberDocs.version) : _layoutText;
             return this.timberDocs[layoutId];
         } else {
             return false;
@@ -217,7 +217,7 @@ class TimberTools_documentation extends TimberTools {
             // content
             _htmlToWriteAsFile = _htmlToWriteAsFile.replace(/{{\s?page_content\s?}}/, _currentData.content);
             // inject sidenav
-            if (_currentData.metadata.layout === 'documentation') {
+            if (_currentData.metadata.layout.match(/documentation/)) {
                 // <!-- {{ sidebar }} -->
                 _htmlToWriteAsFile = _htmlToWriteAsFile.replace(/(<\!--\s?)?{{\s?sidebar\s?}}(\s?-->)?/, htmlFragmentForSidenav);
             } else if (_currentData.metadata.layout === 'index') {
