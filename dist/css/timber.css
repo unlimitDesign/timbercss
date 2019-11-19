@@ -5,7 +5,7 @@
  * Chunkhash:70755ceda7d72e42fc2f
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Mon Nov 18 2019 17:01:23 GMT+0100 (Central European Standard Time)
+ * Timestamp: Mon Nov 18 2019 20:43:06 GMT+0100 (Central European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -5257,12 +5257,79 @@ iframe {
 /*------------------------------------------------------------------
 @section 48. Object Fit Classes
 */
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-fill {
+  object-fit: fill;
+}
+
+.object-none {
+  object-fit: none;
+}
+
+.object-scale-down {
+  object-fit: scale-down;
+}
 
 /* Breakpoints */
+@media only screen and (max-width: 1200px) {
+  .object-lg-fill {
+    object-fit: fill;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .object-md-contain {
+    object-fit: contain;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .object-sm-none {
+    object-fit: none;
+  }
+}
 
 /*------------------------------------------------------------------
 @section 49. Object Position Classes
 */
+.object-bottom {
+  object-position: bottom;
+}
+
+.object-center {
+  object-position: center;
+}
+
+.object-left-bottom {
+  object-position: left bottom;
+}
+
+.object-left-top {
+  object-position: left top;
+}
+
+.object-right {
+  object-position: right;
+}
+
+.object-right-bottom {
+  object-position: right bottom;
+}
+
+.object-right-top {
+  object-position: right top;
+}
+
+.object-top {
+  object-position: top;
+}
 
 /* Breakpoints */
 
