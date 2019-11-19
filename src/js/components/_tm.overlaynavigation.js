@@ -102,7 +102,6 @@ const tmOverlayNavigation = (function () {
         }
 
         // Add reset animation class.
-        console.log(targetOverlayNav)
         classList(targetOverlayNav).addClass(getClasses(targetOverlayNav).animation + '-reset');
 
         // Add open events to nav show links
@@ -150,29 +149,38 @@ const tmOverlayNavigation = (function () {
     plugin.openNav = () => {
       event.preventDefault();
 
+      // Add active class to button
+      classList(event.target).addClass('active');
+
       // Get overlay nav target
       let overlayNavId = event.target.dataset.targetOverlayNav ? event.target.dataset.targetOverlayNav : event.target.href.substring(event.target.href.indexOf('#'));
       let targetOverlayNav = document.querySelector(overlayNavId);
 
-      // Nav now active add utility class to body
-      body.dataset.overlayNavActive = true;
-      classList(body).addClass('overflow-hidden');
+      // Check if target side nav is already active
+      if(!targetOverlayNav.classList.contains('active')){
 
-      // Add animation & state classes to wrapper
-      classList(siteWrapper).addClass('inactive');
+        // Nav now active add utility class to body
+        body.dataset.overlayNavActive = true;
+        classList(body).addClass('overflow-hidden');
 
-      // Add animation & state classes to overlay nav
-      classList(targetOverlayNav).addClass('active').addClass(getClasses(targetOverlayNav).animation);
-      targetOverlayNav.style.transitionTimingFunction = tmEasing[plugin.settings.easing];
+        // Add animation & state classes to wrapper
+        classList(siteWrapper).addClass('inactive');
 
-      // On transition end issue callack
-      targetOverlayNav.addEventListener('transitionend', function transition(event){
-        event.target.removeEventListener('transitionend', transition, false);
-        if(event.target != targetOverlayNav) return false;
+        // Add animation & state classes to overlay nav
+        classList(targetOverlayNav).addClass('active').addClass(getClasses(targetOverlayNav).animation);
+        targetOverlayNav.style.transitionTimingFunction = tmEasing[plugin.settings.easing];
 
-        // Callback
-        plugin.settings.overlayNavOpen();
-      });
+        // On transition end issue callack
+        targetOverlayNav.addEventListener('transitionend', function transition(event){
+          event.target.removeEventListener('transitionend', transition, false);
+          if(event.target != targetOverlayNav) return false;
+
+          // Callback
+          plugin.settings.overlayNavOpen();
+        });
+      }else{
+        plugin.closeNav();
+      }
     };
 
     /**
@@ -181,8 +189,21 @@ const tmOverlayNavigation = (function () {
     plugin.closeNav = () => {
       event.preventDefault();
 
-      let overlayNavId = event.target.closest('.overlay-navigation-wrapper').id;
-      let targetOverlayNav = document.querySelector('#'+overlayNavId);
+      // Remove active class to button
+      document.querySelectorAll(plugin.elements).forEach(function(overlayNavShow){
+        classList(overlayNavShow).removeClass('active');
+      });
+
+      // Get side nav from clicked link
+      let overlayNavId;
+      let targetOverlayNav;  
+      if(event.target.closest('.overlay-navigation-wrapper') != null){
+        overlayNavId = event.target.closest('.overlay-navigation-wrapper').id;
+        targetOverlayNav = document.querySelector('#'+overlayNavId);
+      }else{
+        overlayNavId = event.target.dataset.targetOverlayNav ? event.target.dataset.targetOverlayNav : event.target.href.substring(event.target.href.indexOf('#'));
+        targetOverlayNav = document.querySelector(overlayNavId);
+      }
 
       // Remove animation classes
       classList(targetOverlayNav).removeClass(getClasses(targetOverlayNav).animation);

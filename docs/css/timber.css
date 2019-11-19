@@ -5446,11 +5446,13 @@ iframe {
   transition: opacity 300ms, width 0ms, height 0ms;
 }
 
-.inactive.reveal-side-navigation > div:after {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transition: opacity 300ms ease-in-out 0ms;
+.inactive.reveal-side-navigation {
+  /*> div:after {
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		@include transition(opacity, 300ms);
+	}*/
 }
 
 .element-reveal-left {

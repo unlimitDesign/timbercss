@@ -173,6 +173,11 @@ sidenavigation.method();
         <p>Side navigation provides an animated container that slides next to the site content. Any number of instances can be created of the side navigation container.</p>
         <a href="#side-nav-1" class="button rounded side-nav-show">Launch side nav 1</a>
         <a href="#side-nav-2" class="button rounded side-nav-show">Launch side nav 2</a>
+        <a href="#side-nav-1" class="inline-block navigation-show side-nav-show">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
       </div>
       <!-- Demo Block End -->
       <!-- code -->

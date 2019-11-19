@@ -165,6 +165,11 @@ overlaynavigation.method();
         <p>Overlay navigation provides an animated container that overlays the site content. Any number of instances can be created of the overlay navigation container.</p>
         <a href="#overlay-nav-1" class="button rounded overlay-nav-show">Launch overlay nav 1</a>
         <a href="#overlay-nav-2" class="button rounded overlay-nav-show">Launch overlay nav 2</a>
+        <a href="#overlay-nav-1" class="inline-block navigation-show overlay-nav-show">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
       </div>
       <!-- Demo Block End -->
       <!-- code -->
