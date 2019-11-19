@@ -53,7 +53,7 @@ module.exports = class TimberTools_library extends TimberTools {
      * @return  {object}               devServer settings
      */
     getDevServer() {
-        return {
+        const _devServerConfig = {
             port: this.options.serverPort,
             host: this.options.serverHost,
             disableHostCheck: this.options.disableHostCheck,
@@ -62,12 +62,19 @@ module.exports = class TimberTools_library extends TimberTools {
             watchContentBase: false,
             // inline: true,
             // compress: true,
-            before(app, server) {
+            stats: {
+                children: false, // Hide children information
+                maxModules: 0 // Set the maximum number of modules to be shown
+            },
+        };
+        if (this.options.watchContentsSourceDirectory) {
+            const _options = this.options;
+            _devServerConfig.before = function (app, server) {
                 $Chokidar.watch([
-                    './src/docs/pages/**/*.md',
-                    './src/docs/public/**/*.css',
-                    './src/docs/public/images/*',
-                    './src/docs/layouts/**/*.html',
+                    _options.contentSourceDir + '/pages/**/*.md',
+                    _options.contentSourceDir + '/public/**/*.css',
+                    _options.contentSourceDir + '/public/images/*',
+                    _options.contentSourceDir + '/layouts/**/*.html',
                 ], { awaitWriteFinish: true, ignoreInitial: true }).on('all', function (eventName, path) {
                     // server.sockWrite(server.sockets, 'content-changed', path);
                     if (eventName === 'add' || eventName === 'change' || eventName === 'unlink') {
@@ -76,12 +83,11 @@ module.exports = class TimberTools_library extends TimberTools {
                         server.sockWrite(server.sockets, "content-changed");
                     }
                 })
-            },
-            stats: {
-                children: false, // Hide children information
-                maxModules: 0 // Set the maximum number of modules to be shown
-            },
-        };
+            }
+            // this option must be turned off or it causes heavy server load
+            _devServerConfig.watchContentBase = false;
+        }
+        return _devServerConfig;
     }
 
     getWatch() {

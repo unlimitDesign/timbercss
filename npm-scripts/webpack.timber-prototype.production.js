@@ -1,13 +1,14 @@
 'use strict';
 
 /**
- * npm-script "prototype": "webpack-dev-server --mode development --env timber-prototype",
+ * npm-script 'prototype': 'webpack-dev-server --mode development --env timber-prototype',
  */
 
 const $TimberTools = require('./lib/timber.build-library.js');
 
 const Tbs = new $TimberTools({
-    "outputDir": "public",
+    outputDir: 'public',
+    watchContentsSourceDirectory: false,
 });
 
 let moduleExports = {
@@ -16,6 +17,7 @@ let moduleExports = {
     output: Tbs.getOutput(),
     devServer: Tbs.getDevServer(),
     watch: Tbs.getWatch(),
+    devtool: 'source-map',
     module: {
         rules: [
             Tbs.getModuleRule_babel(),
@@ -24,10 +26,13 @@ let moduleExports = {
             Tbs.getModuleRule_images()
         ]
     },
+    optimization: Tbs.getOptimization(),
     plugins: [
         Tbs.getPlugin_writeFile(),
         Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
-        Tbs.getPlugin_timberToolsUpdateDocPages()
+        Tbs.getPlugin_miniCssExtract('timberCssFileMinPath'),
+        Tbs.getPlugin_purgecssPlugin(),
+        Tbs.getPlugin_banner()
     ]
 };
 

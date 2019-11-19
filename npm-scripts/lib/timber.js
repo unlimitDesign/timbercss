@@ -44,6 +44,8 @@ module.exports = class TimberTools {
             disableHostCheck: true,
             contentBase: 'docs',
             serverPublicPath: '/js/',
+            watchContentBase: false,
+            watchContentsSourceDirectory: (this.webpackMode === 'development') ? true : false,
             /* documentation configs */
             contentSourceDir: 'src/docs',
             // output directories.  will be same as contentBase otherwise live preview does not work

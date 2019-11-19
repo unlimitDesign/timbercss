@@ -28,8 +28,7 @@ let moduleExports = {
     },
     plugins: [
         Tbs.getPlugin_writeFile(),
-        Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
-        Tbs.getPlugin_timberToolsUpdateDocPages()
+        Tbs.getPlugin_miniCssExtract('timberCssFilePath')
     ]
 };
 
