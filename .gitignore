@@ -1,3 +1,8 @@
+# Copy this fils and rename as ".gitignore" in your local repository.
+
+# the following ignore .gitignore in the root directory only. so that you can prevent your local gitignore file to be pushed to the main repo.
+/.gitignore
+
 # Folders/files to ignore
 .sass-cache
 *node_modules/
