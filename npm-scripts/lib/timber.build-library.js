@@ -59,7 +59,7 @@ module.exports = class TimberTools_library extends TimberTools {
             disableHostCheck: this.options.disableHostCheck,
             contentBase: this.options.contentBase,
             publicPath: this.options.serverPublicPath,
-            watchContentBase: false,
+            watchContentBase: this.options.watchContentBase,
             // inline: true,
             // compress: true,
             stats: {

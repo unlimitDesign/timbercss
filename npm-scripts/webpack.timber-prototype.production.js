@@ -8,6 +8,8 @@ const $TimberTools = require('./lib/timber.build-library.js');
 
 const Tbs = new $TimberTools({
     outputDir: 'public',
+    contentBase: 'public',
+    watchContentBase: true,
     watchContentsSourceDirectory: false,
 });
 
