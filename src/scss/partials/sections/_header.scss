@@ -18,7 +18,7 @@
 	background-color: $header-bkg-color;
 	opacity: 1;
 	position: relative;
-	z-index: 100;
+	z-index: $header-z-index;
 	-webkit-transform: translateZ(0);
 	> .nav-bar{
 		margin-bottom: -1px;
