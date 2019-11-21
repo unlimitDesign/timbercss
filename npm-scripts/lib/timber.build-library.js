@@ -2,6 +2,7 @@
 
 const TimberTools = require('./timber.js');
 
+const $Fs = require('fs');
 const $Glob = require('glob');
 const $Webpack = require('webpack');
 
@@ -14,8 +15,6 @@ const $CopyWebpackPlugin = require('copy-webpack-plugin');
 const $WriteFilePlugin = require('write-file-webpack-plugin');
 const $TimberToolsUpdateDocPages = require('./TimberToolsUpdateDocPages.js');
 const $Chokidar = require('chokidar');
-
-const $ExecSync = require('child_process').execSync;
 
 /**
  * Timber CSS Tools Class for maintaining the library
@@ -57,10 +56,11 @@ module.exports = class TimberTools_library extends TimberTools {
             port: this.options.serverPort,
             host: this.options.serverHost,
             disableHostCheck: this.options.disableHostCheck,
-            contentBase: this.options.contentBase,
+            contentBase: this.getAbsolutePath(this.options.contentBase),
             publicPath: this.options.serverPublicPath,
             watchContentBase: this.options.watchContentBase,
             // inline: true,
+            // hot: true,
             // compress: true,
             stats: {
                 children: false, // Hide children information
@@ -68,19 +68,23 @@ module.exports = class TimberTools_library extends TimberTools {
             },
         };
         if (this.options.watchContentsSourceDirectory) {
-            const _options = this.options;
+            const _self = this;
+            const _theOptions = this.options.watchContentsSourceDirectory;
             _devServerConfig.before = function (app, server) {
-                $Chokidar.watch([
-                    _options.contentSourceDir + '/pages/**/*.md',
-                    _options.contentSourceDir + '/public/**/*.css',
-                    _options.contentSourceDir + '/public/images/*',
-                    _options.contentSourceDir + '/layouts/**/*.html',
-                ], { awaitWriteFinish: true, ignoreInitial: true }).on('all', function (eventName, path) {
+                $Chokidar.watch(_theOptions.paths, { awaitWriteFinish: true, ignoreInitial: true }).on('all', function (eventName, path) {
                     // server.sockWrite(server.sockets, 'content-changed', path);
                     if (eventName === 'add' || eventName === 'change' || eventName === 'unlink') {
                         console.log(eventName, path);
-                        $ExecSync('node ./npm-scripts/lib/timber.build-documentation.js --mode development');
+                        if (_theOptions.onChange) _theOptions.onChange();
                         server.sockWrite(server.sockets, "content-changed");
+                        // induce compilation manually
+                        const _filename = _self.getAbsolutePath(_self.options.timberJsSrcFilePath);
+                        const _time = new Date();
+                        try {
+                            $Fs.utimesSync(_filename, _time, _time);
+                        } catch (err) {
+                            $Fs.closeSync($Fs.openSync(_filename, 'w'));
+                        }
                     }
                 })
             }
@@ -91,7 +95,9 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getWatch() {
-        return (this.options.watchEnabled === true) ? true : false;
+        // watch needs to be explicityly defined.
+        // this.options.watchEnabled supercedes otherwise watch is enabled when the webpack mode is 'development'
+        return (this.options.watchEnabled === false) ? false : (this.options.watchEnabled === true) ? true : (this.webpackMode === 'development') ? true : false;
     }
 
     /**

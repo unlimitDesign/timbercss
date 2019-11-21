@@ -44,8 +44,24 @@ module.exports = class TimberTools {
             disableHostCheck: true,
             contentBase: 'docs',
             serverPublicPath: '/js/',
+            watchEnabled: null,
             watchContentBase: false,
-            watchContentsSourceDirectory: (this.webpackMode === 'development') ? true : false,
+            /**
+             * If watchContentsSourceDirectory is set, it monitors changes under certain paths and execute callback upon change. Set as follows (example)
+             *
+            */
+            // watchContentsSourceDirectory: {
+            //     paths: [
+            //         'src/docs/pages/**/*.md',
+            //         'src/docs/public/**/*.css',
+            //         'src/docs/public/images/*',
+            //         'src/docs/layouts/**/*.html',
+            //     ],
+            //     onChange: function () {
+            //         // callback tasks
+            //     },
+            // }
+            watchContentsSourceDirectory: null,
             /* documentation configs */
             contentSourceDir: 'src/docs',
             // output directories.  will be same as contentBase otherwise live preview does not work

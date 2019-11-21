@@ -5,6 +5,6 @@ npm-scripts
 Gruntfile.js
 gulpfile.js
 webpack.config.js
-webpack.dev.js
-webpack.prod.js
 _redirects
+.vscode
+.gitattributes

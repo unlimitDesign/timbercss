@@ -10,7 +10,21 @@
 
 const $TimberTools = require('./lib/timber.build-library.js');
 
-const Tbs = new $TimberTools();
+const $ExecSync = require('child_process').execSync;
+
+const Tbs = new $TimberTools({
+    watchContentsSourceDirectory: {
+        paths: [
+            'src/docs/pages/**/*.md',
+            'src/docs/public/**/*.css',
+            'src/docs/public/images/*',
+            'src/docs/layouts/**/*.html',
+        ],
+        onChange: function () {
+            $ExecSync('node ./npm-scripts/lib/timber.build-documentation.js --mode development');
+        },
+    }
+});
 
 let moduleExports = {
     context: Tbs.getContext(),

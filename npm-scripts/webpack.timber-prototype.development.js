@@ -6,11 +6,19 @@
 
 const $TimberTools = require('./lib/timber.build-library.js');
 
+const $ExecSync = require('child_process').execSync;
+
 const Tbs = new $TimberTools({
     outputDir: 'public',
     contentBase: 'public',
     watchContentBase: true,
-    watchContentsSourceDirectory: false,
+    watchEnabled: true,
+    watchContentsSourceDirectory: {
+        paths: [
+            'public/images/*',
+            'public/**/*.html',
+        ]
+    }
 });
 
 let moduleExports = {
@@ -37,5 +45,7 @@ let moduleExports = {
         Tbs.getPlugin_banner()
     ]
 };
+
+console.log(moduleExports);
 
 module.exports = moduleExports;
