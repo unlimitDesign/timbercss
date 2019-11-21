@@ -108,7 +108,7 @@ const tmOverlayNavigation = (function () {
         overlayNavShow.addEventListener(eventType, plugin.openNav, false);
 
         // Add close events to overlay nav hide links
-        targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, false);
+        if(targetOverlayNav.querySelector(overlayNavHide) != null) targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, false);
       });
       
       // Get body
