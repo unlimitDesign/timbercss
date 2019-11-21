@@ -18,7 +18,7 @@
 	background-color: $header-bkg-color;
 	opacity: 1;
 	position: relative;
-	z-index: $header-z-index;
+	z-index: 100;
 	-webkit-transform: translateZ(0);
 	> .nav-bar{
 		margin-bottom: -1px;
@@ -46,7 +46,7 @@
 	top: 0;
 	left: 0;
 	bottom: auto;
-	z-index: 100;
+	z-index: $header-z-index;
 }
 
 // Fixed width header
