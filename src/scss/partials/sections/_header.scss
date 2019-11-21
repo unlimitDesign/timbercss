@@ -280,11 +280,11 @@ body.boxed .header{
 			color: $header-nav-color-on-scroll-hover;
 			border-color: $header-nav-color-on-scroll-hover;
 			span{
-				background: $header-nav-color-on-scroll-hover;
+				background-color: $header-nav-color-on-scroll-hover;
 			}
 		}
 		span {
-			background: $header-nav-color-on-scroll;
+			background-color: $header-nav-color-on-scroll;
 		}
 	}
 	.swap-color{
