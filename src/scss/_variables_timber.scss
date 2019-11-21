@@ -996,6 +996,7 @@ $side-navigation-footer-font-size:                          1.4rem !default;    
 $header-height:                                             8rem !default;                                                                                   // Header starting height
 $header-compact-height:                                     6rem !default;                                                                                   // Height header receives upon scrolling down the page
 $header-pre-padding-y:                                      0.8rem !default;                                                                                 // Pre header vertical padding
+$header-z-index:                                            100 !default;                                                                                    // Header z-index
 
 $header-bkg-color:                                          $white !default;                                                                                 // Default background color header
 $header-bkg-color-on-scroll:                                $white !default;                                                                                 // Background color header receives upon scrolling down the page                    
