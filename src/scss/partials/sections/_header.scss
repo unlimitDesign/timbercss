@@ -275,8 +275,16 @@ body.boxed .header{
 	}
 	.navigation-show{
 		color: $header-nav-color-on-scroll;
+		border-color: $header-nav-color-on-scroll;
 		&:hover{
 			color: $header-nav-color-on-scroll-hover;
+			border-color: $header-nav-color-on-scroll-hover;
+			span{
+				background: $header-nav-color-on-scroll-hover;
+			}
+		}
+		span {
+			background: $header-nav-color-on-scroll;
 		}
 	}
 	.swap-color{

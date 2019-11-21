@@ -315,6 +315,11 @@
 		position: relative;
 		transform-origin: center center;
 	}
+	&:hover{
+		span{
+			background: $hamburger-nav-color-hover;
+		}
+	}
 	span:nth-child(1) {
 		animation: ease $hamburger-nav-animated-duration top-2 forwards;
 	}

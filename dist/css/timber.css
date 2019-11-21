@@ -1,11 +1,11 @@
 /*!
  * Copyright © unlimit.design 2019
  * Version: 0.1.8
- * Hash:93c97b04aa038bd97950
- * Chunkhash:d9701fd278f3a5eaba9a
+ * Hash:bf3785b51fee51be5223
+ * Chunkhash:fe0771118bf7e4a924ec
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Thu Nov 21 2019 15:31:59 GMT+0100 (Central European Standard Time)
+ * Timestamp: Thu Nov 21 2019 21:14:05 GMT+0100 (Central European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -2508,6 +2508,10 @@ iframe {
   background: #7D89A3;
   position: relative;
   transform-origin: center center;
+}
+
+.navigation-show:hover span {
+  background: #0096ff;
 }
 
 .navigation-show span:nth-child(1) {
@@ -8240,10 +8244,20 @@ small {
 
 .header-background .navigation-show {
   color: #9EA7BB;
+  border-color: #9EA7BB;
 }
 
 .header-background .navigation-show:hover {
   color: #1C2232;
+  border-color: #1C2232;
+}
+
+.header-background .navigation-show:hover span {
+  background: #1C2232;
+}
+
+.header-background .navigation-show span {
+  background: #9EA7BB;
 }
 
 .header {
