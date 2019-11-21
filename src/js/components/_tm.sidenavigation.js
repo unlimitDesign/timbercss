@@ -264,7 +264,7 @@ const tmSideNavigation = (function () {
         sideNavShow.removeEventListener(eventType, plugin.openNav, false);
 
         // Remove close events to side nav hide links
-        targetSideNav.querySelector(sideNavHide).removeEventListener(eventType, plugin.closeNav, false);
+        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).removeEventListener(eventType, plugin.closeNav, false);
       });
 
       // Callback

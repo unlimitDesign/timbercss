@@ -58,6 +58,8 @@
         "tml-thumbnails",
         "tml-exit",
         "tml-toolbar",
+        "tmh-perspective",
+        "close",
         "video",
         "iframe",
         "object",
