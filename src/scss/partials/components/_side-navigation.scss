@@ -16,14 +16,6 @@
 		transition: opacity 300ms, width 0ms, height 0ms;
 	}
 }
-.inactive.reveal-side-navigation {
-	/*> div:after {
-		width: 100%;
-		height: 100%;
-		opacity: 1;
-		@include transition(opacity, 300ms);
-	}*/
-}
 .element-reveal-left{
 	transform: translate3d($side-nav-wrapper-width,0,0);
 	&.slide-in{

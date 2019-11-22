@@ -512,9 +512,10 @@ $side-nav-sub-menu-font-weight-active:                      400 !default;       
 $side-nav-transition-duration:                              500ms !default;                                                                                  // Overlay navigation transition duration
 
 // Overlay navigation
-$overlay-navigation-max-width:                              30rem !default;                                                                                  // Overlay navigation menu max width
+$overlay-nav-max-width:                                     30rem !default;                                                                                  // Overlay navigation menu max width
+$overlay-nav-wrapper-padding:                               0 !default;                                                                                      // Overlay wrapper padding
 
-$overlay-nav-bkg-color:                                     rgba(255,255,255,0.95) !default;                                                                 // Overlay navigation background color
+$overlay-nav-bkg-color:                                     rgba(255,255,255,0.95) !default;                                                               // Overlay navigation background color
 
 $overlay-nav-link-padding:                                  0.8rem 0 !default;                                                                               // Overlay navigation padding
 $overlay-nav-font-size:                                     1.4rem !default;                                                                                 // Overlay navigation link font size
