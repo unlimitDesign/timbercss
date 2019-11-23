@@ -30,14 +30,15 @@ h3,
 h4,
 h5,
 h6{
-  font-size: inherit;
-  font-weight: inherit;
+	font-family: $font-family-headings;
+	font-size: inherit;
+	font-weight: inherit;
 }
 
 button,
 input,
 select{
-  margin: 0
+	margin: 0
 }
 
 img,
@@ -48,8 +49,8 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
-  vertical-align: middle;
+	display: block;
+	vertical-align: middle;
 }
 
 html{
