@@ -24,17 +24,6 @@ textarea{
 	margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-	font-family: $font-family-headings;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
 button,
 input,
 select{
@@ -78,12 +67,37 @@ body {
 		background-color: $body-boxed-bkg-color;
 	}
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	margin-top: $headings-margin-top;
+	margin-bottom: $headings-margin-bottom;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	color: $headings-color;
+}
+
+* h1:first-child,
+* h2:first-child,
+* h3:first-child,
+* h4:first-child,
+* h5:first-child,
+* h6:first-child{
+	margin-top: 0;
+}
+
 *,
 *:before,
 *:after {
 	border: 0 solid $component-border-color;
 	box-sizing: border-box;
 }
+
 a{
 	color: $link-color;
 	text-decoration: $link-decoration;
@@ -96,6 +110,19 @@ a{
 		pointer-events: none;
 	}
 }
+
+p{
+	margin-top: $paragraph-margin-top;
+	margin-bottom: $paragraph-margin-bottom;
+}
+
+hr {
+  margin-top: $hr-margin-top;
+  margin-bottom: $hr-margin-bottom;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+}
+
 .wrapper{
 	width: 100%;
 	margin-right: auto;
