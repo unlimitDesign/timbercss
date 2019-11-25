@@ -307,7 +307,8 @@ label{
 .checkbox-label, 
 .radio-label{
 	margin-bottom: $form-element-margin-bottom;;
-	vertical-align: middle;
+	display: inline-flex;
+	align-items: center;
 	cursor: pointer;
 }
 .checkbox,
