@@ -17,7 +17,9 @@ const Tbs = new $TimberTools({
         paths: [
             'public/images/*',
             'public/**/*.html',
-        ]
+        ],
+        onChange: null,
+        compileOnChange: true
     }
 });
 
