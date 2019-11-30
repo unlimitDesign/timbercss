@@ -1,11 +1,11 @@
 /*!
  * Copyright © unlimit.design 2019
  * Version: 0.1.8
- * Hash:d567a97485fb6de053dd
- * Chunkhash:9d3c50850c1327420998
+ * Hash:152c6485f4b167cb79e2
+ * Chunkhash:999e09b1173f8a5fd1d7
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Thu Nov 21 2019 21:20:57 GMT+0100 (Central European Standard Time)
+ * Timestamp: Fri Nov 22 2019 12:55:16 GMT+0100 (Central European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -2637,7 +2637,7 @@ iframe {
   width: 100vw;
   height: 100%;
   min-height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0;
   overflow-y: scroll;
   visibility: hidden;
   position: fixed;
@@ -3223,15 +3223,6 @@ iframe {
   opacity: 0;
   z-index: 110;
   transition: opacity 300ms, width 0ms, height 0ms;
-}
-
-.inactive.reveal-side-navigation {
-  /*> div:after {
-		width: 100%;
-		height: 100%;
-		opacity: 1;
-		@include transition(opacity, 300ms);
-	}*/
 }
 
 .element-reveal-left {
