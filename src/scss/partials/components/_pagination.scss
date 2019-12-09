@@ -1,23 +1,6 @@
 /*------------------------------------------------------------------
 @section 21. Pagination Section
 */
-// Shared attributes
-[class*="pagination-"]{
-	a{
-		margin: 0;
-		display: flex;
-		align-items: center;
-	}
-	[class*="icon-"]{
-		margin-bottom: 0;
-	}
-	small{
-		display: block;
-	}
-	.return-to-index span{
-		width: 100%;
-	}
-}
 
 // Pagination
 .pagination{
@@ -40,6 +23,7 @@
 	height: $pagination-link-size;
 	padding: $pagination-link-padding;
 	margin-bottom: 0;
+	align-items: center;
 	background-color: $pagination-link-bkg-color;
 	border-color: $pagination-link-border-color;
 	color: $pagination-link-color;

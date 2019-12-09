@@ -1,11 +1,11 @@
 /*!
  * Copyright © unlimit.design 2019
  * Version: 0.1.8
- * Hash:152c6485f4b167cb79e2
- * Chunkhash:999e09b1173f8a5fd1d7
+ * Hash:a570fa55b47afd4a6759
+ * Chunkhash:ecad9f27a511c77ad7f3
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Fri Nov 22 2019 12:55:16 GMT+0100 (Central European Standard Time)
+ * Timestamp: Mon Dec 09 2019 23:18:27 GMT+0100 (Central European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -36,16 +36,6 @@ ul,
 li,
 textarea {
   margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
 }
 
 button,
@@ -90,6 +80,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #45567C;
+}
+
+* h1:first-child,
+* h2:first-child,
+* h3:first-child,
+* h4:first-child,
+* h5:first-child,
+* h6:first-child {
+  margin-top: 0;
+}
+
 *,
 *:before,
 *:after {
@@ -110,6 +123,18 @@ a:hover {
 
 a > * {
   pointer-events: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 1px solid rgba(28, 34, 50, 0.1);
 }
 
 .wrapper {
@@ -1611,9 +1636,10 @@ label {
   justify-content: center;
   background: #ffffff;
   border: 1px solid #E1E4EA;
-  content: '';
+  content: '.';
   font-family: "Material Icons";
   text-align: center;
+  text-indent: -9999px;
   vertical-align: middle;
 }
 
@@ -1677,6 +1703,7 @@ label {
   content: "check_box";
   background: #ffffff;
   color: #0096ff;
+  text-indent: 0;
 }
 
 .radio + label:before {
@@ -1696,7 +1723,6 @@ label {
 .checkbox-label,
 .radio-label {
   margin-bottom: 1.5rem;
-  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -2804,20 +2830,6 @@ iframe {
 /*------------------------------------------------------------------
 @section 21. Pagination Section
 */
-[class*="pagination-"] a {
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-[class*="pagination-"] [class*="icon-"] {
-  margin-bottom: 0;
-}
-
-[class*="pagination-"] small {
-  display: block;
-}
-
 .pagination {
   display: inline-flex;
   text-align: center;
@@ -2842,6 +2854,7 @@ iframe {
   height: 4rem;
   padding: 1rem;
   margin-bottom: 0;
+  align-items: center;
   background-color: #ffffff;
   border-color: #E1E4EA;
   color: #9EA7BB;
@@ -6915,29 +6928,6 @@ iframe {
 /*------------------------------------------------------------------
 @section 60. Font Size Classes
 */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  font-family: inherit;
-  font-weight: 600;
-  line-height: 1.2;
-  color: #45567C;
-}
-
-* h1:first-child,
-* h2:first-child,
-* h3:first-child,
-* h4:first-child,
-* h5:first-child,
-* h6:first-child {
-  margin-top: 0;
-}
-
 h1 {
   font-size: 4.57rem;
 }
@@ -6960,18 +6950,6 @@ h5 {
 
 h6 {
   font-size: 1.231rem;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-hr {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  border: 0;
-  border-top: 1px solid rgba(28, 34, 50, 0.1);
 }
 
 small {
@@ -7598,7 +7576,7 @@ small {
   top: 0;
   left: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 1004;
   -webkit-backface-visibility: hidden;
 }
 
