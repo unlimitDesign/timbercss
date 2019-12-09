@@ -67,6 +67,9 @@ module.exports = class TimberTools_library extends TimberTools {
                 maxModules: 0 // Set the maximum number of modules to be shown
             },
         };
+        /**
+         * Watch option enables reloading and compilation upon any chagnes to files as set with its paths property. watchEnabled option needs to be set to true separately to enable the watch.
+         */
         if (this.options.watchContentsSourceDirectory) {
             const _self = this;
             const _theOptions = this.options.watchContentsSourceDirectory;
@@ -78,12 +81,14 @@ module.exports = class TimberTools_library extends TimberTools {
                         if (_theOptions.onChange) _theOptions.onChange();
                         server.sockWrite(server.sockets, "content-changed");
                         // induce compilation manually
-                        const _filename = _self.getAbsolutePath(_self.options.timberJsSrcFilePath);
-                        const _time = new Date();
-                        try {
-                            $Fs.utimesSync(_filename, _time, _time);
-                        } catch (err) {
-                            $Fs.closeSync($Fs.openSync(_filename, 'w'));
+                        if (_theOptions.compileOnChange === true) {
+                            const _filename = _self.getAbsolutePath(_self.options.timberJsSrcFilePath);
+                            const _time = new Date();
+                            try {
+                                $Fs.utimesSync(_filename, _time, _time);
+                            } catch (err) {
+                                $Fs.closeSync($Fs.openSync(_filename, 'w'));
+                            }
                         }
                     }
                 })
