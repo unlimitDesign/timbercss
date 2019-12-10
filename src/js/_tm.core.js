@@ -58,7 +58,7 @@ const timberCore = (function () {
       tabs: '.tabs',
       subMenus: '.toggle-sub-menus',
       parallax: '.parallax',
-      responsiveVideo: 'iframe, object'
+      responsiveVideo: '.video'
     };
 
     // Create an empty plugin object
