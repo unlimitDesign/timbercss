@@ -142,13 +142,13 @@ responsivevideo.method();
       <!-- Demo Block -->
       <div class="demo-block mt-80 relative">
         <h3 class="font-light">Responsive Video</h3>
-        <iframe src="https://player.vimeo.com/video/118640180?title=0∓byline=0&amp;portrait=0" width="500" height="280"></iframe>
+        <iframe src="https://player.vimeo.com/video/118640180?title=0∓byline=0&amp;portrait=0" class="video" width="500" height="280"></iframe>
       </div>
       <!-- Demo Block End -->
       <!-- code -->
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
-        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<iframe src="https://player.vimeo.com/video/118640180?title=0&mp;byline=0&amp;portrait=0" width="500" height="280"></iframe>
+        <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<iframe src="https://player.vimeo.com/video/118640180?title=0&mp;byline=0&amp;portrait=0" class="video" width="500" height="280"></iframe>
 --></code></pre>
       </div>
       <!-- code -->
@@ -156,7 +156,7 @@ responsivevideo.method();
       <div class="demo-block mt-80 relative overflow-hidden">
         <h3 class="font-light">Background Video</h3>
         <div class="relative overflow-hidden bg-repeat-none bg-cover" style="height:460px;background-image:url(https://images.unsplash.com/photo-1556742504-16b083241fab?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2100&amp;q=80);">
-          <iframe data-bg-video="" src="https://player.vimeo.com/video/118640180?title=0∓byline=0&amp;portrait=0&amp;background=1" width="500" height="280"></iframe>
+          <iframe data-bg-video src="https://player.vimeo.com/video/118640180?title=0∓byline=0&amp;portrait=0&amp;background=1" class="video" width="500" height="280"></iframe>
           <div class="media-overlay bg-black opacity-30"></div>
           <div class="content-over flex items-center center color-white">
             <div>
@@ -171,7 +171,7 @@ responsivevideo.method();
       <h6 class="uppercase">Html</h6>
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-html"><code class="inline-block scrolling-touch"><!--<div class="relative overflow-hidden bg-repeat-none bg-cover" style="height:460px;background-image:url(https://images.unsplash.com/photo-1556742504-16b083241fab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);">
-	<iframe data-bg-video src="https://player.vimeo.com/video/118640180?title=0&mp;byline=0&amp;portrait=0&amp;background=1" width="500" height="280"></iframe>
+	<iframe data-bg-video src="https://player.vimeo.com/video/118640180?title=0&mp;byline=0&amp;portrait=0&amp;background=1" class="video" width="500" height="280"></iframe>
 	<div class="media-overlay bg-black opacity-30"></div>
 	<div class="content-over flex items-center center color-white">
 		<div>
