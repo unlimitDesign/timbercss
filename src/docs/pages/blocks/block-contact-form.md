@@ -21,7 +21,7 @@ markup_language: html
               <form class="contact-form" action="#" method="post" novalidate="">
                 <div class="row row-form">
                   <div class="col w-6/12">
-                    <input type="text" name="fname" class="form-fname form-element rounded shadow-focus-outline size-md" placeholder="First Name*" required="">
+                    <input type="text" name="fname" class="form-fname form-element rounded shadow-focus-outline size-md" placeholder="First Name*" required>
                   </div>
                   <div class="col w-6/12">
                     <input type="text" name="lname" class="form-lname form-element rounded shadow-focus-outline size-md" placeholder="Last Name">
@@ -29,7 +29,7 @@ markup_language: html
                 </div>
                 <div class="row row-form">
                   <div class="col w-6/12">
-                    <input type="email" name="email" class="form-email form-element rounded shadow-focus-outline size-md" placeholder="Email address*" required="">
+                    <input type="email" name="email" class="form-email form-element rounded shadow-focus-outline size-md" placeholder="Email address*" required>
                   </div>
                   <div class="col w-6/12">
                     <input type="text" name="website" class="form-wesite form-element rounded shadow-focus-outline size-md" placeholder="Website">
@@ -37,7 +37,7 @@ markup_language: html
                 </div>
                 <div class="row row-form">
                   <div class="col w-full">
-                    <textarea name="message" class="form-message form-element rounded shadow-focus-outline size-md resize-none" placeholder="Message*" required=""></textarea>
+                    <textarea name="message" class="form-message form-element rounded shadow-focus-outline size-md resize-none" placeholder="Message*" required></textarea>
                     <input type="submit" value="Send Email" class="form-submit button rounded shadow-focus-outline size-md">
                   </div>
                 </div>
@@ -94,7 +94,7 @@ markup_language: html
               <form class="contact-form" action="php/send-email.php" method="post" novalidate="">
                 <div class="row row-form">
                   <div class="col w-6/12">
-                    <input type="text" name="fname" class="form-fname form-element rounded shadow-focus-outline size-md" placeholder="First Name*" required="">
+                    <input type="text" name="fname" class="form-fname form-element rounded shadow-focus-outline size-md" placeholder="First Name*" required>
                   </div>
                   <div class="col w-6/12">
                     <input type="text" name="lname" class="form-lname form-element rounded shadow-focus-outline size-md" placeholder="Last Name">
@@ -102,7 +102,7 @@ markup_language: html
                 </div>
                 <div class="row row-form">
                   <div class="col w-6/12">
-                    <input type="email" name="email" class="form-email form-element rounded shadow-focus-outline size-md" placeholder="Email address*" required="">
+                    <input type="email" name="email" class="form-email form-element rounded shadow-focus-outline size-md" placeholder="Email address*" required>
                   </div>
                   <div class="col w-6/12">
                     <input type="text" name="website" class="form-wesite form-element rounded shadow-focus-outline size-md" placeholder="Website">
@@ -126,11 +126,11 @@ markup_language: html
                 </div>
                 <div class="row row-form">
                   <div class="col w-full pt-10 pb-10">
-                    <input id="radio-1" class="form-element radio collapsable active" data-toggle-content="" data-include-margin="" data-target-content="#option" name="option-group" type="radio" checked="">
+                    <input id="radio-1" class="form-element radio collapsable active" data-toggle-content="" data-include-margin="" data-target-content="#option" name="option-group" type="radio"  value="Option 1" checked="">
                     <label for="radio-1" class="radio-label form-radio">I need my website reworked</label>
-                    <input id="radio-2" class="form-element radio collapsable" name="option-group" type="radio" data-toggle-content="" data-include-margin="" data-target-content="#option-2">
+                    <input id="radio-2" class="form-element radio collapsable" name="option-group" type="radio"  value="Option 2" data-toggle-content="" data-include-margin="" data-target-content="#option-2">
                     <label for="radio-2" class="radio-label form-radio">I need a new website</label>
-                    <input id="radio-3" class="form-element radio collapsable" name="option-group" type="radio" data-toggle-content="" data-include-margin="" data-target-content="#option-3">
+                    <input id="radio-3" class="form-element radio collapsable" name="option-group" type="radio"  value="Option 3" data-toggle-content="" data-include-margin="" data-target-content="#option-3">
                     <label for="radio-3" class="radio-label form-radio">Not sure what I need</label>
                     <div class="options mb-20">
                       <div id="option" class="collapsable-target active">
@@ -147,13 +147,13 @@ markup_language: html
                 </div>
                 <div class="row row-form">
                   <div class="col w-full">
-                    <textarea name="message" class="form-message form-element rounded shadow-focus-outline size-md resize-none" placeholder="Message*" required=""></textarea>
+                    <textarea name="message" class="form-message form-element rounded shadow-focus-outline size-md resize-none" placeholder="Message*" required></textarea>
                   </div>
                 </div>
                 <div class="row row-form">
                   <div class="col w-full mb-10">
-                    <input id="checkbox-1" class="form-element checkbox" name="checkbox-1" type="checkbox" required="">
-                    <label for="checkbox-1" class="checkbox-label">I agree that you store my information and get in touch. <a href="#">More on GDPR here</a>.</label>
+                    <input id="checkbox-1" class="form-element checkbox" name="checkbox-1" type="checkbox" required>
+                    <label for="checkbox-1" class="checkbox-label" value="Agreed">I agree that you store my information and get in touch. <a href="#">More on GDPR here</a>.</label>
                   </div>
                 </div>
                 <div class="row row-form">
