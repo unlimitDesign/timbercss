@@ -347,7 +347,7 @@ timber.module.lightbox.settings.navThumbnails = false;
               <div class="grid-item">
                 <div class="grid-item-inner">
                   <div class="thumbnail rounded overlay-fade-in" data-hover-easing="easeInOut" data-hover-speed="700" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.9">
-                    <a class="overlay-link lightbox" href="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" data-thumbnail="https://images.unsplash.com/photo-1568742802414-2918e2bdebe8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" data-video-max-width="800" data-group="group-1" data-caption="This is an HTML5 video">
+                    <a class="overlay-link lightbox" href="https://clips.vorwaerts-gmbh.de/VfE_html5.mp4" data-thumbnail="https://images.unsplash.com/photo-1568742802414-2918e2bdebe8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" data-video-max-width="800" data-group="group-1" data-caption="This is an HTML5 video">
                       <img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="https://images.unsplash.com/photo-1568742802414-2918e2bdebe8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1356&amp;q=80" alt="">
                       <span class="rollover-content items-center center">
                         <span> Caption Here </span>
