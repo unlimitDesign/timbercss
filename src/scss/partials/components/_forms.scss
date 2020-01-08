@@ -236,9 +236,10 @@ label{
 		justify-content: center;
 		background: $form-element-bkg-color;
 		border: $form-element-border-width solid $form-element-border-color;
-		content: '';
+		content: '.';
 		font-family: $component-font-library;
 		text-align: center;
+		text-indent: -9999px;
 		vertical-align: middle;
 	}
 	&.size-sm + label{
@@ -289,6 +290,7 @@ label{
 		content: $checkbox-icon;
 		background: $checkbox-radio-checked-bkg-color;
 		color: $checkbox-radio-checked-color;
+		text-indent: 0;
 	}
 }
 .radio{
@@ -306,8 +308,7 @@ label{
 }
 .checkbox-label, 
 .radio-label{
-	margin-bottom: $form-element-margin-bottom;;
-	vertical-align: middle;
+	margin-bottom: $form-element-margin-bottom;
 	cursor: pointer;
 }
 .checkbox,

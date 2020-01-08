@@ -158,7 +158,6 @@ const loadMedia = (function () {
       if(refItem.parentNode == null) return false;
       refItem.parentNode.insertBefore(media, refItem.nextSibling);
       media.style.cssText = refItem.style.cssText;
-      media.style.height = 'auto';
       refItem.parentNode.removeChild(refItem);
     };
 

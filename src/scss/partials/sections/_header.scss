@@ -46,7 +46,7 @@
 	top: 0;
 	left: 0;
 	bottom: auto;
-	z-index: 100;
+	z-index: $header-z-index;
 }
 
 // Fixed width header
@@ -275,8 +275,16 @@ body.boxed .header{
 	}
 	.navigation-show{
 		color: $header-nav-color-on-scroll;
+		border-color: $header-nav-color-on-scroll;
 		&:hover{
 			color: $header-nav-color-on-scroll-hover;
+			border-color: $header-nav-color-on-scroll-hover;
+			span{
+				background-color: $header-nav-color-on-scroll-hover;
+			}
+		}
+		span {
+			background-color: $header-nav-color-on-scroll;
 		}
 	}
 	.swap-color{

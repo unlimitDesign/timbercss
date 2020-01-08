@@ -1,5 +1,5 @@
 // Copyright © ThemeMountain 2019
-// Plugin: Timber core 
+// Plugin: Timber core
 // Version: 1.0.0
 // URL: @ThemeMountain
 // Author: Thememountain, Christian Lundgren, Shu Miyao
@@ -43,7 +43,7 @@ const timberCore = (function () {
       initialize: true,
       accordion: '.accordion',
       collapsable: '.collapsable',
-      dismissable: '.dismissable', 
+      dismissable: '.dismissable',
       dropdown: '.dropdown',
       freeze: '.freeze',
       horizon: '.horizon',
@@ -55,44 +55,44 @@ const timberCore = (function () {
       scrollto: '.scroll-to',
       sidenav: '.side-nav-show',
       stickyheader: '.header',
-      tabs: '.tabs', 
+      tabs: '.tabs',
       subMenus: '.toggle-sub-menus',
       parallax: '.parallax',
-      responsiveVideo: 'iframe, object'
+      responsiveVideo: '.video'
     };
 
     // Create an empty plugin object
-    let  plugin = {};
+    let plugin = {};
 
     // Instance references
 
-    try{
+    try {
       // Get defaults and merge with user options
       plugin.defaults = defaults;
       plugin.options = options;
       plugin.settings = Object.assign({}, defaults, options);
-      plugin.module = {accordion: null, collapsable: null, dismissable: null, dropdown: null, freeze: null, horizon: null, grid: null, inview: null, overlaynavigation: null, rollover: null, scrollto: null, sidenavigation: null, stickyheader: null, tabs: null, togglesubmenu: null };
+      plugin.module = { accordion: null, collapsable: null, dismissable: null, dropdown: null, freeze: null, horizon: null, grid: null, inview: null, overlaynavigation: null, rollover: null, scrollto: null, sidenavigation: null, stickyheader: null, tabs: null, togglesubmenu: null };
 
       // Create instances if module exists
-      if(typeof tmAccordion != 'undefined') plugin.module.accordion = new tmAccordion(plugin.settings.accordion);
-      if(typeof tmCollapsable != 'undefined') plugin.module.collapsable = new tmCollapsable(plugin.settings.collapsable);
-      if(typeof tmDismissable != 'undefined') plugin.module.dismissable = new tmDismissable(plugin.settings.dismissable);
-      if(typeof tmDropdown != 'undefined') plugin.module.dropdown = new tmDropdown(plugin.settings.dropdown);
-      if(typeof tmFreeze != 'undefined') plugin.module.freeze = new tmFreeze(plugin.settings.freeze);
-      if(typeof tmLightbox != 'undefined') plugin.module.lightbox = new tmLightbox(plugin.settings.lightbox);
-      if(typeof tmHorizon != 'undefined') plugin.module.horizon = new tmHorizon(plugin.settings.horizon);
-      if(typeof tmMasonryGrid != 'undefined') plugin.module.grid = new tmMasonryGrid(plugin.settings.grid);
-      if(typeof tmInView != 'undefined') plugin.module.inview = new tmInView(plugin.settings.inview);
-      if(typeof tmOverlayNavigation != 'undefined') plugin.module.overlaynavigation = new tmOverlayNavigation(plugin.settings.overlaynav);
-      if(typeof tmParallax != 'undefined') plugin.module.parallax = new tmParallax(plugin.settings.parallax);
-      if(typeof tmRollover != 'undefined') plugin.module.rollover = new tmRollover(plugin.settings.rollover);
-      if(typeof tmScrollTo != 'undefined') plugin.module.scrollto = new tmScrollTo(plugin.settings.scrollto);
-      if(typeof tmSideNavigation != 'undefined') plugin.module.sidenavigation = new tmSideNavigation(plugin.settings.sidenav);
-      if(typeof tmStickyHeader != 'undefined') plugin.module.stickyheader = new tmStickyHeader(plugin.settings.stickyheader);
-      if(typeof tmTabs != 'undefined') plugin.module.tabs = new tmTabs(plugin.settings.tabs);
-      if(typeof tmToggleSubMenu != 'undefined') plugin.module.togglesubmenu = new tmToggleSubMenu(plugin.settings.subMenus);
-      if(typeof tmResponsiveVideo != 'undefined') plugin.module.responsivevideo = new tmResponsiveVideo(plugin.settings.responsiveVideo);
-    }catch(error){
+      if (typeof tmAccordion != 'undefined') plugin.module.accordion = new tmAccordion(plugin.settings.accordion);
+      if (typeof tmCollapsable != 'undefined') plugin.module.collapsable = new tmCollapsable(plugin.settings.collapsable);
+      if (typeof tmDismissable != 'undefined') plugin.module.dismissable = new tmDismissable(plugin.settings.dismissable);
+      if (typeof tmDropdown != 'undefined') plugin.module.dropdown = new tmDropdown(plugin.settings.dropdown);
+      if (typeof tmFreeze != 'undefined') plugin.module.freeze = new tmFreeze(plugin.settings.freeze);
+      if (typeof tmLightbox != 'undefined') plugin.module.lightbox = new tmLightbox(plugin.settings.lightbox);
+      if (typeof tmHorizon != 'undefined') plugin.module.horizon = new tmHorizon(plugin.settings.horizon);
+      if (typeof tmMasonryGrid != 'undefined') plugin.module.grid = new tmMasonryGrid(plugin.settings.grid);
+      if (typeof tmInView != 'undefined') plugin.module.inview = new tmInView(plugin.settings.inview);
+      if (typeof tmOverlayNavigation != 'undefined') plugin.module.overlaynavigation = new tmOverlayNavigation(plugin.settings.overlaynav);
+      if (typeof tmParallax != 'undefined') plugin.module.parallax = new tmParallax(plugin.settings.parallax);
+      if (typeof tmRollover != 'undefined') plugin.module.rollover = new tmRollover(plugin.settings.rollover);
+      if (typeof tmScrollTo != 'undefined') plugin.module.scrollto = new tmScrollTo(plugin.settings.scrollto);
+      if (typeof tmSideNavigation != 'undefined') plugin.module.sidenavigation = new tmSideNavigation(plugin.settings.sidenav);
+      if (typeof tmStickyHeader != 'undefined') plugin.module.stickyheader = new tmStickyHeader(plugin.settings.stickyheader);
+      if (typeof tmTabs != 'undefined') plugin.module.tabs = new tmTabs(plugin.settings.tabs);
+      if (typeof tmToggleSubMenu != 'undefined') plugin.module.togglesubmenu = new tmToggleSubMenu(plugin.settings.subMenus);
+      if (typeof tmResponsiveVideo != 'undefined') plugin.module.responsivevideo = new tmResponsiveVideo(plugin.settings.responsiveVideo);
+    } catch (error) {
       console.log(`${error} - ensure module is imported or instantiate specific plugin instead of core, for example: plugin.module.moduleName.initialize();`);
     }
 
@@ -101,7 +101,7 @@ const timberCore = (function () {
     */
     plugin.initialize = () => {
       for (let module in plugin.module) {
-        if(plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].initialize();
+        if (plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].initialize();
       }
     };
 
@@ -110,7 +110,7 @@ const timberCore = (function () {
     */
     plugin.refresh = () => {
       for (let module in plugin.module) {
-        if(plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].refresh();
+        if (plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].refresh();
       }
     };
 
@@ -119,12 +119,12 @@ const timberCore = (function () {
     */
     plugin.destroy = () => {
       for (let module in plugin.module) {
-        if(plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].destroy();
+        if (plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].destroy();
       }
     };
 
     // Auto initialize
-    if(plugin.settings.initialize) plugin.initialize();
+    if (plugin.settings.initialize) plugin.initialize();
 
     // Return API
     return plugin;

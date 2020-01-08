@@ -269,10 +269,10 @@ $display-responsive:                                        (lg,md,sm) !default;
 $float-responsive:                                          (lg,md,sm) !default;                                                                            // Whether float utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 // Object Fit
-$object-fit-resonsive:                                      (lg,md,sm) !default;                                                                            // Whether object fit utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                            
+$object-fit-responsive:                                     (lg,md,sm) !default;                                                                            // Whether object fit utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                            
 
 // Object Position
-$object-position-resonsive:                                 (lg,md,sm) !default;                                                                            // Whether object position utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                            
+$object-position-responsive:                                (lg,md,sm) !default;                                                                            // Whether object position utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                            
 
 // Overflow
 $overflow-responsive:                                       (lg,md,sm) !default;                                                                            // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
@@ -512,9 +512,10 @@ $side-nav-sub-menu-font-weight-active:                      400 !default;       
 $side-nav-transition-duration:                              500ms !default;                                                                                  // Overlay navigation transition duration
 
 // Overlay navigation
-$overlay-navigation-max-width:                              30rem !default;                                                                                  // Overlay navigation menu max width
+$overlay-nav-max-width:                                     30rem !default;                                                                                  // Overlay navigation menu max width
+$overlay-nav-wrapper-padding:                               0 !default;                                                                                      // Overlay wrapper padding
 
-$overlay-nav-bkg-color:                                     rgba(255,255,255,0.95) !default;                                                                 // Overlay navigation background color
+$overlay-nav-bkg-color:                                     rgba(255,255,255,0.95) !default;                                                               // Overlay navigation background color
 
 $overlay-nav-link-padding:                                  0.8rem 0 !default;                                                                               // Overlay navigation padding
 $overlay-nav-font-size:                                     1.4rem !default;                                                                                 // Overlay navigation link font size
@@ -936,6 +937,7 @@ $plugin-preloader-color-2:                                  $black !default;    
 $plugin-preloader-color-3:                                  $black !default;                                                                                 // Plugin loader color 3                        
 
 // Summit Lightbox
+$summit-z-index:                                            1004 !default;                                                                                   // Lightbox z-index
 $summit-wrapper-padding:                                    6rem 0 8rem 0 !default;                                                                          // Lightbox vertical padding, determines the position of the image from the top/bottom of the viewport
 $summit-thumbnail-wrapper-height:                           10rem !default;                                                                                  // Lightbox thumbnail wrapper height
 $summmit-thumbnail-wrapper-padding:                         0 1rem !default;
@@ -996,6 +998,7 @@ $side-navigation-footer-font-size:                          1.4rem !default;    
 $header-height:                                             8rem !default;                                                                                   // Header starting height
 $header-compact-height:                                     6rem !default;                                                                                   // Height header receives upon scrolling down the page
 $header-pre-padding-y:                                      0.8rem !default;                                                                                 // Pre header vertical padding
+$header-z-index:                                            100 !default;                                                                                    // Header z-index
 
 $header-bkg-color:                                          $white !default;                                                                                 // Default background color header
 $header-bkg-color-on-scroll:                                $white !default;                                                                                 // Background color header receives upon scrolling down the page                    
@@ -1086,6 +1089,7 @@ $masthead-min-height:                                       35rem !default;     
 
 // Logos
 $logo-grid-item-height:                                     16rem !default;                                                                                  // Logo link padding - forms the box around logos
+
 // Footer
 $footer-top-padding-top:                                    7rem !default;                                                                                   // Top footer top padding
 $footer-top-padding-bottom:                                 4rem !default;                                                                                   // Top footer bottom padding

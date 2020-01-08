@@ -1,5 +1,9 @@
-const TimberTools = require("./lib/TimberTools.js");
+const $Fs = require('fs');
+const $Path = require('path');
+const $Glob = require('glob');
+const { JSDOM } = require('jsdom'); // uninstall when done
+const $Beautify = require('js-beautify');
 
-const Tbs = new TimberTools({});
+const $TimberTools = require('./lib/timber.build-library.js');
 
-console.log(Tbs);
+const Tbs = new $TimberTools({ debug: true });

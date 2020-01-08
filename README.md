@@ -2,6 +2,8 @@
 
 `A CSS Framework for Rapid Website Prototyping`
 
+- Documentation site: (https://timbercss.com)
+
 ## Quick start
 
 ### Through NPM
@@ -19,10 +21,11 @@
 
 - Download the latest release from [GitHub](https://github.com/unlimitDesign/timbercss/).
 - Install dependencies with npm: `npm install`
-- Run `npx gulp` to see the site live as you work on the source. Please modify the gulpfile to suit to your needs.
+- Run `npm run start` to see the site live as you work on the source.
+- Please copy `.timbertools.sample.json` as `.timbertools.json` and then modify the environment file to suit to your needs. You do not have to set every one of config settings.
 - Do anything with ours as you please. The only limit is as written in the MIT license.
 
-Read [the documentation site](https://timbercss.com) on the framework contents, templates and examples, and more.
+Read [the documentation site](https://timbercss.com) on the framework contents, templates and examples, and more. The documentation hosted at the website is as same as the one under the `docs` directory.
 
 ## Bugs and feature requests
 
@@ -36,8 +39,8 @@ Timber CSS's documentation covers pretty much eveyrthing that the framework is c
 
 - You need to be in the root of this project in the terminal.
 - Run `npm install` to install the dependencies of Node.js.
-- Run `npx gulp` to see the site live as you work on the source. Please modify the gulpfile to suit to your needs.
-- Open `http://localhost:3000/` in your web browser.
+- Run `npm run start` to see the site live as you work on the source. Please modify the gulpfile to suit to your needs.
+- Open `http://localhost:3000/` in your web browser. Please be advised that you might need to change the serverHost environmental configuration value to `0.0.0.0`.
 
 ## Contributing and Community and Versioning
 

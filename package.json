@@ -1,6 +1,6 @@
 {
   "name": "timbercss",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "unlimitdesign",
   "description": "A CSS Framework for Rapid Website Prototyping",
   "keywords": [],
@@ -18,19 +18,27 @@
   "copyright": "Copyright © unlimit.design 2019",
   "authorCredits": "unlimit.design, Christian Lundgren, Shu Miyao",
   "scripts": {
-    "start": "webpack-dev-server --mode development --env updateTimberLibs",
-    "build": "rm -rf dist;webpack --mode production --env updateTimberLibs",
-    "testTimberTools": "node ./npm-scripts/webpack.test.js"
+    "start": "node ./npm-scripts/lib/timber.build-documentation.js --mode development;webpack-dev-server --mode development --env timber",
+    "build": "rm -rf dist;node ./npm-scripts/lib/timber.build-documentation.js --mode production;webpack --mode production --env timber;mkdir dist;cp -rf docs/css dist/css;rm dist/css/skin.css;cp -rf docs/js dist/js;cp -rf docs/icons dist/icons",
+    "prototype": "webpack-dev-server --mode development --env timber-prototype",
+    "test_timber": "node ./npm-scripts/webpack.test.js",
+    "docs": "node ./npm-scripts/lib/timber.build-documentation.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-prismjs": "^1.1.1",
     "babel-preset-env": "^1.7.0",
+    "child_process": "^1.0.2",
+    "chokidar": "^3.3.0",
     "copy-webpack-plugin": "^5.0.5",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
+    "fs-extra": "^8.1.0",
     "image-webpack-loader": "^4.6.0",
+    "js-beautify": "^1.10.2",
+    "jsdom": "^15.2.1",
+    "markdown-yaml-metadata-parser": "^2.0.3",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",

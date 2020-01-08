@@ -1,0 +1,6 @@
+{
+    "markdown.styles": [
+        "docs-backup/css/skin.css",
+        "docs-backup/css/timber.css"
+    ]
+}

@@ -116,7 +116,7 @@ const tmSideNavigation = (function () {
         sideNavShow.addEventListener(eventType, plugin.openNav, false);
 
         // Add close events to side nav hide links
-        targetSideNav.querySelector(sideNavHide).addEventListener(eventType, plugin.closeNav, false);
+        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).addEventListener(eventType, plugin.closeNav, false);
       });
 
       // Get body
@@ -157,6 +157,9 @@ const tmSideNavigation = (function () {
     plugin.openNav = function(){
       event.preventDefault();
 
+      // Add active class to button
+      classList(event.target).addClass('active');
+
       // Get side nav target
       let sideNavId = event.target.dataset.targetSideNav ? event.target.dataset.targetSideNav : event.target.href.substring(event.target.href.indexOf('#'));
       let targetSideNav = document.querySelector(sideNavId);
@@ -194,10 +197,22 @@ const tmSideNavigation = (function () {
     */
     plugin.closeNav = function(){
       event.preventDefault();
+
+      // Remove active class to button
+      document.querySelectorAll(plugin.elements).forEach(function(sideNavShow){
+        classList(sideNavShow).removeClass('active');
+      });
       
       // Get side nav from clicked link
-      let sideNavId = event.target.closest('.side-navigation-wrapper').id;
-      let targetSideNav = document.querySelector('#'+sideNavId);                          
+      let sideNavId;
+      let targetSideNav;  
+      if(event.target.closest('.side-navigation-wrapper') != null){
+        sideNavId = event.target.closest('.side-navigation-wrapper').id;
+        targetSideNav = document.querySelector('#'+sideNavId);
+      }else{
+        sideNavId = event.target.dataset.targetSideNav ? event.target.dataset.targetSideNav : event.target.href.substring(event.target.href.indexOf('#'));
+        targetSideNav = document.querySelector(sideNavId);
+      }                          
       
       // Remove direction & animation classes
       classList(siteWrapper).removeClass(getClasses(targetSideNav).direction).removeClass(getClasses(targetSideNav).animation);
@@ -249,7 +264,7 @@ const tmSideNavigation = (function () {
         sideNavShow.removeEventListener(eventType, plugin.openNav, false);
 
         // Remove close events to side nav hide links
-        targetSideNav.querySelector(sideNavHide).removeEventListener(eventType, plugin.closeNav, false);
+        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).removeEventListener(eventType, plugin.closeNav, false);
       });
 
       // Callback
