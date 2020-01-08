@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="240px" height="80px" viewBox="0 0 240 80" enable-background="new 0 0 240 80" xml:space="preserve">
 <g>
 	<g>
@@ -64,9 +64,9 @@
 			c0-2.04,0.887-3.903,2.308-5.234l3.016-2.661"/>
 		<path fill="none" stroke="#333333" stroke-width="4" stroke-miterlimit="10" d="M51.614,59.275v-5.681
 			c0-2.04-0.885-3.903-2.308-5.234L36.263,36.646c-1.509-1.33-2.308-3.281-2.308-5.234v-9.406"/>
-		<polyline fill="none" stroke="#333333" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" points="46.29,27.33 
+		<polyline fill="none" stroke="#333333" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" points="46.29,27.33
 			51.614,22.005 56.938,27.33 		"/>
-		<polyline fill="none" stroke="#333333" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" points="39.19,27.33 
+		<polyline fill="none" stroke="#333333" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" points="39.19,27.33
 			33.867,22.005 28.543,27.33 		"/>
 	</g>
 </g>
