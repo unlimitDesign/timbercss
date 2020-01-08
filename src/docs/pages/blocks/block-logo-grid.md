@@ -22,42 +22,42 @@ markup_language: html
           <div class="col w-full grid logo-grid grid-cols-5 grid-lg-cols-3 grid-xs-cols-2">
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/dropfile-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/dropfile-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/berry-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/berry-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#">
-                <img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
               </a>
             </div>
           </div>
@@ -75,42 +75,42 @@ markup_language: html
 		<div class="col w-full grid logo-grid grid-cols-5 grid-lg-cols-3 grid-xs-cols-2">
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/dropfile-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/dropfile-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/berry-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/berry-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#">
-					<img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 		</div>
@@ -126,52 +126,52 @@ markup_language: html
           <div class="col w-full grid grid-cols-5 grid-lg-cols-3 grid-xs-cols-2 grid-gutter-3">
             <div class="grid-item span-cols-2 span-rows-2">
               <a href="#" class="bg-black opacity-50 opacity-hover-100">
-                <img src="../images/logos/froogle-logo-grid-white.svg" alt="">
+                <img src="/images/logos/froogle-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black opacity-60 opacity-hover-100">
-                <img src="../images/logos/squidbit-logo-grid-white.svg" alt="">
+                <img src="/images/logos/squidbit-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black bg-hover-pink opacity-60 opacity-hover-100">
-                <img src="../images/logos/achillian-logo-grid-white.svg" alt="">
+                <img src="/images/logos/achillian-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black opacity-60 opacity-hover-100">
-                <img src="../images/logos/dropfile-logo-grid-white.svg" alt="">
+                <img src="/images/logos/dropfile-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black bg-hover-green opacity-60 opacity-hover-100">
-                <img src="../images/logos/berry-logo-grid-white.svg" alt="">
+                <img src="/images/logos/berry-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black opacity-60 opacity-hover-100">
-                <img src="../images/logos/froogle-logo-grid-white.svg" alt="">
+                <img src="/images/logos/froogle-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item span-cols-2">
               <a href="#" class="bg-black bg-hover-teal opacity-60 opacity-hover-100">
-                <img src="../images/logos/squidbit-logo-grid-white.svg" alt="">
+                <img src="/images/logos/squidbit-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black opacity-60 opacity-hover-100">
-                <img src="../images/logos/achillian-logo-grid-white.svg" alt="">
+                <img src="/images/logos/achillian-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-black bg-hover-indigo opacity-60 opacity-hover-100">
-                <img src="../images/logos/dropfile-logo-grid-white.svg" alt="">
+                <img src="/images/logos/dropfile-logo-grid-white.svg" alt="">
               </a>
             </div>
             <div class="grid-item span-cols-2">
               <a href="#" class="bg-black opacity-60 opacity-hover-100">
-                <img src="../images/logos/berry-logo-grid-white.svg" alt="">
+                <img src="/images/logos/berry-logo-grid-white.svg" alt="">
               </a>
             </div>
           </div>
@@ -189,52 +189,52 @@ markup_language: html
 		<div class="col w-full grid grid-cols-5 grid-lg-cols-3 grid-xs-cols-2 grid-gutter-3">
 			<div class="grid-item span-cols-2 span-rows-2">
 				<a href="#" class="bg-black opacity-50 opacity-hover-100">
-					<img src="../images/logos/froogle-logo-grid-white.svg" alt="">
+					<img src="/images/logos/froogle-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black opacity-60 opacity-hover-100">
-					<img src="../images/logos/squidbit-logo-grid-white.svg" alt="">
+					<img src="/images/logos/squidbit-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black bg-hover-pink opacity-60 opacity-hover-100">
-					<img src="../images/logos/achillian-logo-grid-white.svg" alt="">
+					<img src="/images/logos/achillian-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black opacity-60 opacity-hover-100">
-					<img src="../images/logos/dropfile-logo-grid-white.svg" alt="">
+					<img src="/images/logos/dropfile-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black bg-hover-green opacity-60 opacity-hover-100">
-					<img src="../images/logos/berry-logo-grid-white.svg" alt="">
+					<img src="/images/logos/berry-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black opacity-60 opacity-hover-100">
-					<img src="../images/logos/froogle-logo-grid-white.svg" alt="">
+					<img src="/images/logos/froogle-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item span-cols-2">
 				<a href="#" class="bg-black bg-hover-teal opacity-60 opacity-hover-100">
-					<img src="../images/logos/squidbit-logo-grid-white.svg" alt="">
+					<img src="/images/logos/squidbit-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black opacity-60 opacity-hover-100">
-					<img src="../images/logos/achillian-logo-grid-white.svg" alt="">
+					<img src="/images/logos/achillian-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-black bg-hover-indigo opacity-60 opacity-hover-100">
-					<img src="../images/logos/dropfile-logo-grid-white.svg" alt="">
+					<img src="/images/logos/dropfile-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item span-cols-2">
 				<a href="#" class="bg-black opacity-60 opacity-hover-100">
-					<img src="../images/logos/berry-logo-grid-white.svg" alt="">
+					<img src="/images/logos/berry-logo-grid-white.svg" alt="">
 				</a>
 			</div>
 		</div>
@@ -254,52 +254,52 @@ markup_language: html
           <div class="col w-full grid grid-cols-5 grid-lg-cols-3 grid-xs-cols-2 grid-gutter-0">
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-grey-ultralight">
-                <img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-pink">
-                <img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-grey-ultralight">
-                <img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-green">
-                <img src="../images/logos/dropfile-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/dropfile-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-grey-ultralight">
-                <img src="../images/logos/berry-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/berry-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-yellow">
-                <img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-grey-ultralight">
-                <img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-teal">
-                <img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-grey-ultralight">
-                <img src="../images/logos/dropfile-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/dropfile-logo-grid-grey.svg" alt="">
               </a>
             </div>
             <div class="grid-item">
               <a href="#" class="bg-white bg-hover-indigo">
-                <img src="../images/logos/berry-logo-grid-grey.svg" alt="">
+                <img src="/images/logos/berry-logo-grid-grey.svg" alt="">
               </a>
             </div>
           </div>
@@ -317,52 +317,52 @@ markup_language: html
 		<div class="col w-full grid grid-cols-5 grid-lg-cols-3 grid-xs-cols-2 grid-gutter-0">
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-grey-ultralight">
-					<img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-pink">
-					<img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-grey-ultralight">
-					<img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-green">
-					<img src="../images/logos/dropfile-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/dropfile-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-grey-ultralight">
-					<img src="../images/logos/berry-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/berry-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-yellow">
-					<img src="../images/logos/froogle-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/froogle-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-grey-ultralight">
-					<img src="../images/logos/squidbit-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/squidbit-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-teal">
-					<img src="../images/logos/achillian-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/achillian-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-grey-ultralight">
-					<img src="../images/logos/dropfile-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/dropfile-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 			<div class="grid-item">
 				<a href="#" class="bg-white bg-hover-indigo">
-					<img src="../images/logos/berry-logo-grid-grey.svg" alt="">
+					<img src="/images/logos/berry-logo-grid-grey.svg" alt="">
 				</a>
 			</div>
 		</div>

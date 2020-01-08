@@ -19,7 +19,7 @@ markup_language: html
             <div class="col w-3/12 w-md-full">
               <div class="footer-block">
                 <div class="footer-logo">
-                  <a href="index.html"><img src="../images/logo-dark.png" alt="Boilerplate Logo"></a>
+                  <a href="index.html"><img src="/images/logo-dark.svg" alt="Boilerplate Logo"></a>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ markup_language: html
 			<div class="col w-3/12 w-md-full">
 				<div class="footer-block">
 					<div class="footer-logo">
-						<a href="index.html"><img src="../images/logo-dark.png" alt="Boilerplate Logo" /></a>
+						<a href="index.html"><img src="/images/logo-dark.svg" alt="Boilerplate Logo" /></a>
 					</div>
 				</div>
 			</div>
@@ -164,7 +164,7 @@ markup_language: html
             <div class="col w-2/12 w-md-full order-2 order-md-1 center left-md">
               <div class="footer-block">
                 <div class="footer-logo">
-                  <a href="index.html"><img src="../images/logo.png" alt="Boilerplate Logo"></a>
+                  <a href="index.html"><img src="/images/logo.svg" alt="Boilerplate Logo"></a>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ markup_language: html
 			<div class="col w-2/12 w-md-full order-2 order-md-1 center left-md">
 				<div class="footer-block">
 					<div class="footer-logo">
-						<a href="index.html"><img src="../images/logo.png" alt="Boilerplate Logo" /></a>
+						<a href="index.html"><img src="/images/logo.svg" alt="Boilerplate Logo" /></a>
 					</div>
 				</div>
 			</div>
@@ -317,7 +317,7 @@ markup_language: html
             <div class="col w-3/12 w-md-full order-2 order-md-1 right left-md">
               <div class="footer-block">
                 <div class="footer-logo">
-                  <a href="index.html"><img src="../images/logo-dark.png" alt="Boilerplate Logo"></a>
+                  <a href="index.html"><img src="/images/logo-dark.svg" alt="Boilerplate Logo"></a>
                 </div>
               </div>
             </div>
@@ -391,7 +391,7 @@ markup_language: html
 			<div class="col w-3/12 w-md-full order-2 order-md-1 right left-md">
 				<div class="footer-block">
 					<div class="footer-logo">
-						<a href="index.html"><img src="../images/logo-dark.png" alt="Boilerplate Logo" /></a>
+						<a href="index.html"><img src="/images/logo-dark.svg" alt="Boilerplate Logo" /></a>
 					</div>
 				</div>
 			</div>
@@ -462,7 +462,7 @@ markup_language: html
             <div class="col w-2/12 w-lg-12">
               <div class="footer-block">
                 <div class="footer-logo">
-                  <a href="index.html"><img src="../images/logo.png" alt="Boilerplate Logo"></a>
+                  <a href="index.html"><img src="/images/logo.svg" alt="Boilerplate Logo"></a>
                 </div>
               </div>
             </div>
@@ -556,7 +556,7 @@ markup_language: html
 			<div class="col w-2/12 w-lg-12">
 				<div class="footer-block">
 					<div class="footer-logo">
-						<a href="index.html"><img src="../images/logo.png" alt="Boilerplate Logo" /></a>
+						<a href="index.html"><img src="/images/logo.svg" alt="Boilerplate Logo" /></a>
 					</div>
 				</div>
 			</div>

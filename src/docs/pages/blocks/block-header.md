@@ -22,7 +22,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -88,7 +88,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation">
 					<ul class="inline-flex">
@@ -159,7 +159,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -230,7 +230,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation">
 					<ul class="inline-flex">
@@ -306,7 +306,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -377,7 +377,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation">
 					<ul class="inline-flex">
@@ -453,7 +453,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation order-2 order-md-1">
                       <ul class="flex items-stretch h-inherit">
@@ -540,7 +540,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation order-2 order-md-1">
 					<ul class="flex items-stretch h-inherit">
@@ -632,7 +632,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation order-2 order-md-1">
                       <ul class="flex items-stretch h-inherit">
@@ -789,7 +789,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation order-2 order-md-1">
 					<ul class="flex items-stretch h-inherit">
@@ -953,7 +953,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation order-2 order-md-1">
                       <ul class="flex items-stretch h-inherit">
@@ -1024,7 +1024,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation order-2 order-md-1">
 					<ul class="flex items-stretch h-inherit">
@@ -1170,7 +1170,7 @@ markup_language: html
                     </nav>
                     <div class="logo order-2 order-md-1">
                       <div class="logo-inner">
-                        <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                        <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                       </div>
                     </div>
                     <nav class="navigation collapsable-target w-md-full block-md ml-auto ml-md-0 mr-md-auto sub-menu-indicator overflow-visible overflow-md-hidden active-md inactive-md order-3">
@@ -1303,7 +1303,7 @@ markup_language: html
 				</nav>
 				<div class="logo order-2 order-md-1">
 					<div class="logo-inner">
-						<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+						<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 					</div>
 				</div>
 				<nav class="navigation collapsable-target w-md-full block-md ml-auto ml-md-0 mr-md-auto sub-menu-indicator overflow-visible overflow-md-hidden active-md inactive-md order-3">
@@ -1357,7 +1357,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -1438,7 +1438,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation">
 					<ul class="inline-flex">
@@ -1522,7 +1522,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation order-2 order-md-1">
                       <ul class="flex items-stretch h-inherit">
@@ -1631,7 +1631,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation order-2 order-md-1">
 					<ul class="flex items-stretch h-inherit">
@@ -1746,7 +1746,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -1817,7 +1817,7 @@ markup_language: html
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
 					<div class="logo-inner">
-						<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+						<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 					</div>
 				</div>
 				<nav class="navigation">
@@ -1919,7 +1919,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -2013,7 +2013,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation">
 					<ul class="inline-flex">
@@ -2084,7 +2084,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation order-2 order-md-1">
                       <ul class="flex items-stretch h-inherit">
@@ -2163,7 +2163,7 @@ markup_language: html
 		<div class="row nav-bar">
 			<div class="col w-full nav-bar-inner">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation primary-navigation nav-block ml-auto mr-auto sub-menu-indicator">
 					<ul class="inline-flex">
@@ -2233,7 +2233,7 @@ markup_language: html
                 <div class="nav-bar row">
                   <div class="col w-full nav-bar-inner items-md-center">
                     <div class="logo mr-30">
-                      <a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo"></a>
+                      <a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo"></a>
                     </div>
                     <nav class="navigation">
                       <ul class="inline-flex">
@@ -2300,7 +2300,7 @@ markup_language: html
 		<div class="nav-bar row">
 			<div class="col w-full nav-bar-inner items-md-center">
 				<div class="logo mr-30">
-					<a href="../index.html"><img src="../images/logo-dark.svg" alt="Logo" /></a>
+					<a href="../index.html"><img src="/images/logo-dark.svg" alt="Logo" /></a>
 				</div>
 				<nav class="navigation">
 					<ul class="inline-flex">
