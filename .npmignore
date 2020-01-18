@@ -8,3 +8,8 @@ webpack.config.js
 _redirects
 .vscode
 .gitattributes
+.timbertools.json
+.timbertools.sample.json
+package-lock.json
+_redirects
+.vscode

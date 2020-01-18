@@ -64,7 +64,7 @@ markup_language: html
       </div>
       <!-- code -->
       <h3 class="font-light">Development</h3>
-      <p>Running the following command to launches the development server at <code class="color-indigo font-bold">http://localhost:3000/</code> and allows for live reloading in your browser. To change port, open webpack.dev.js and check the variable <code class="color-indigo font-bold">devServerPort</code> to your preferred port.</p>
+      <p>Running the following command to launches the development server at <code class="color-indigo font-bold">https://localhost:3000/</code> and allows for live reloading in your browser. To change port, open webpack.dev.js and check the variable <code class="color-indigo font-bold">devServerPort</code> to your preferred port.</p>
       <!-- code -->
       <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
         <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--npm run start--></code></pre>

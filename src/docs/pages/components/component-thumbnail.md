@@ -334,7 +334,7 @@ timber.module.lightbox.settings.navThumbnails = false;
 		<div>
 			<div class="flex items-center">
 				<div class="thumbnail w-80 rounded-full mr-10 mb-0">
-					<img src="../images/blog/bio-avatar.jpg" alt="Avatar">
+					<img src="/images/blog/bio-avatar.jpg" alt="Avatar">
 				</div>
 				<div>
 					<div class="name text-large">by <a href="#">John Adams</a></div>
