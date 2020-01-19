@@ -14,11 +14,11 @@
 
 - Download the latest release from [GitHub](https://github.com/unlimitDesign/timbercss/).
 - You can either:
-  1. import Javascript source and scss
-    - The best way to find out is to refer to [timber-gridsome-boilerplate](https://github.com/unlimitDesign/timber-gridsome-boilerplate) git repository. The boilerplate demonstrates how to integrate timbercss with [gridsome](https://gridsome.org/) vue.js framework.
-    - Timbercss Javascript in the boilerplate is imported as a prototype definition (see ``Vue.prototype.$timberCore = require("timbercss");`` in [main.js](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/main.js)). Then the timbercss javascript core is initialized with `mounted` and `updated` vue instance lifecycle hooks in the [src/layouts/Default.vue](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/layouts/Default.vue).
-    - Timbercss styles are compiled from scss. Find the scss files under `src/assets/scss`. You can customize the styles by modifying the [_variables_custom.scss](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/assets/scss/_variables_custom.scss) file.
-  2. Copy compiled codes under `dist/js` and `dist/css` into your project. And load them  in your html5 page as necessary.
+    - import Javascript source and scss
+        - The best way to find out is to refer to [timber-gridsome-boilerplate](https://github.com/unlimitDesign/timber-gridsome-boilerplate) git repository. The boilerplate demonstrates how to integrate timbercss with [gridsome](https://gridsome.org/) vue.js framework.
+        - Timbercss Javascript in the boilerplate is imported as a prototype definition (see ``Vue.prototype.$timberCore = require("timbercss");`` in [main.js](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/main.js)). Then the timbercss javascript core is initialized with `mounted` and `updated` vue instance lifecycle hooks in the [src/layouts/Default.vue](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/layouts/Default.vue).
+        - Timbercss styles are compiled from scss. Find the scss files under `src/assets/scss`. You can customize the styles by modifying the [_variables_custom.scss](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/assets/scss/_variables_custom.scss) file.
+    - Copy compiled codes under `dist/js` and `dist/css` into your project. And load them  in your html5 page as necessary.
 
 ### If you want to play with Timber CSS
 
