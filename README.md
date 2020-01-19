@@ -29,7 +29,7 @@ Timbercss styles are compiled from scss. Find the scss files under `src/assets/s
 - Install dependencies with npm: `npm install`
 - Run `npm run start` to see the site live as you work on the source.
 - Please copy `.timbertools.sample.json` as `.timbertools.json` and then modify the environment file to suit to your needs. You do not have to set every one of config settings.
-- Please explore what can be done with the timebrcss framework as the framework is published under the MIT license.
+- Please freely explore what can be done with the timebrcss framework as the framework is published under the MIT license.
 
 Read [the documentation site](https://timbercss.com) on the framework contents, templates and examples, and more. The documentation hosted at the website is as same as the one under the `docs` directory.
 
