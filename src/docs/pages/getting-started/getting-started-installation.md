@@ -77,6 +77,8 @@ markup_language: html
         <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--npm run build--></code></pre>
       </div>
       <!-- code -->
+      <h3 class="font-light">NPM Package</h3>
+      <p>You can also import timbercss into your project by using <a href="https://www.npmjs.com/package/timbercss">npm package</a>. Please refer to <a href="https://github.com/unlimitDesign/timber-gridsome-boilerplate">timber-gridsome-boilerplate</a> git repository to find out how to integrate timbercss with <a href="https://gridsome.org/">gridsome</a> projects.</p>
       <hr class="mt-50">
       <a href="getting-started-javascript.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
         <span class="icon-material mr-0 ml-10">chevron_right</span>
