@@ -163,6 +163,7 @@ module.exports = class TimberTools {
             ],
             purgeCSS_whitelistPatterns: [/\bw-\b/]
         }
+        console.log(JSON.stringify(_default_options));
         // merge with default options
         this.options = Object.assign(_default_options, options);
         // convert purgeCSS_whitelistPatterns type RegExp
