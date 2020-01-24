@@ -41,22 +41,22 @@ import tmOverlayNavigation from './components/_tm.overlaynavigation.js';
 import tmToggleSubMenu from './components/_tm.togglesubmenu.js';
 
 // Plugins
-/_import tmMasonryGrid from './plugins/\_tm.masonrygrid.js';
-import tmFreeze from './plugins/\_tm.freeze.js';
-import tmStickyHeader from './plugins/\_tm.stickyheader.js';
-import tmLightbox from './plugins/\_tm.lightbox.js';
-import tmHorizon from './plugins/\_tm.horizon.js';
-import tmParallax from './plugins/\_tm.parallax.js';
-import tmResponsiveVideo from './plugins/\_tm.responsivevideo.js';_/--></code></pre>
+import tmMasonryGrid from './plugins/_tm.masonrygrid.js';
+import tmFreeze from './plugins/_tm.freeze.js';
+import tmStickyHeader from './plugins/_tm.stickyheader.js';
+import tmLightbox from './plugins/_tm.lightbox.js';
+import tmHorizon from './plugins/_tm.horizon.js';
+import tmParallax from './plugins/_tm.parallax.js';
+import tmResponsiveVideo from './plugins/_tm.responsivevideo.js';_/--></code></pre>
 
 </div>
 <!-- code -->
 <h5>Writing custom JS</h5>
-<p>To add your own JS to Timber, open <code class="color-indigo font-bold">scustom.js</code> and add or import your modules after the initialization of the Timber core.</p>
+<p>To add your own JS to Timber, open <code class="color-indigo font-bold">custom.js</code> and add or import your modules after the initialization of the Timber core.</p>
 <!-- code -->
 <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
 <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--// Core
-import timberCore from './\_tm.core.js';
+import timberCore from './_tm.core.js';
 
 // Core instance
 let timber = new timberCore({
