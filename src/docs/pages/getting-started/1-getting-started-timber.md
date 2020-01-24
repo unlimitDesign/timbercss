@@ -19,7 +19,7 @@ markup_language: html
         <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--<link rel="stylesheet" href="css/timber.min.css"">--></code></pre>
       </div>
       <!-- code -->
-      <p>To customise the Timber Sass variables, have a look at <a href="getting-started-theming.html">theming</a>.</p>
+      <p>To customise the Timber Sass variables, have a look at <a href="4-getting-started-theming.html">theming</a>.</p>
       <h2 class="font-light text-huge">JavaScript</h2>
       <p>Copy and paste the following before the closing <code class="color-indigo font-bold">body</code> tag to load the Timber JavaScript components and plugins.</p>
       <!-- code -->
@@ -27,7 +27,7 @@ markup_language: html
         <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--<script src="js/tm.core.min.js"></script>--></code></pre>
       </div>
       <!-- code -->
-      <p>To add/remove Timber JavaScript components and plugins, have a look at <a href="getting-started-javascript.html">javascript</a>.</p>
+      <p>To add/remove Timber JavaScript components and plugins, have a look at <a href="3-getting-started-javascript.html">javascript</a>.</p>
       <h2 class="font-light text-huge">HTML5 doctype</h2>
       <p>Timber requires the use of the HTML5 doctype. Without it, you’ll see some funky incomplete styling, but including it shouldn’t cause any considerable hiccups.</p>
       <!-- code -->
@@ -46,7 +46,7 @@ markup_language: html
       </div>
       <!-- code -->
       <hr class="mt-50">
-      <a href="getting-started-installation.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
+      <a href="2-getting-started-installation.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
         <span class="icon-material mr-0 ml-10">chevron_right</span>
         <span class="mt-0 mr-20">
           <span class="leading-none text-tiny uppercase">Next</span>
