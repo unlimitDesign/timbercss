@@ -21,7 +21,7 @@ let moduleExports = {
         TimberTools.getPlugin_writeFile(),
         TimberTools.getPlugin_miniCssExtract('timberCssFilePath'),
         TimberTools.getPlugin_miniCssExtract('timberCssFileMinPath'),
-        (TimberTools.options.enablePurgeCSS === true) ? TimberTools.getPlugin_purgecssPlugin() : function () { },
+        TimberTools.getPlugin_purgecssPlugin(),
         TimberTools.getPlugin_banner()
     ],
 };
