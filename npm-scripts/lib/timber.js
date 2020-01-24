@@ -36,8 +36,8 @@ module.exports = class TimberTools {
         const _default_options = {
             // choose among documentation, production and development.
             version: Package.version,
-            copyright: 'Copyright © unlimit.design 2019',
-            authorCredits: 'unlimit.design, Christian Lundgren, Shu Miyao',
+            copyright: 'Copyright © UnlimitDesign 2019',
+            authorCredits: 'UnlimitDesign, Christian Lundgren, Shu Miyao',
             /* server configs */
             serverPort: '3000',
             serverHost: 'localhost',
@@ -83,7 +83,7 @@ module.exports = class TimberTools {
             webpQuality: '75',
             purgeCSS_whitelist: [
 
-            /* Timber dynamic classes & elements */
+              /* Timber dynamic classes & elements */
               'video',
               'iframe',
               'object',
