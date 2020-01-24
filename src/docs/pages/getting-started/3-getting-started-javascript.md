@@ -41,7 +41,7 @@ import tmOverlayNavigation from './components/_tm.overlaynavigation.js';
 import tmToggleSubMenu from './components/_tm.togglesubmenu.js';
 
 // Plugins
-/_import tmMasonryGrid from './plugins/\_tm.masonrygrid.js';
+import tmMasonryGrid from './plugins/_tm.masonrygrid.js';
 import tmFreeze from './plugins/\_tm.freeze.js';
 import tmStickyHeader from './plugins/\_tm.stickyheader.js';
 import tmLightbox from './plugins/\_tm.lightbox.js';
@@ -52,11 +52,11 @@ import tmResponsiveVideo from './plugins/\_tm.responsivevideo.js';_/--></code></
 </div>
 <!-- code -->
 <h5>Writing custom JS</h5>
-<p>To add your own JS to Timber, open <code class="color-indigo font-bold">scustom.js</code> and add or import your modules after the initialization of the Timber core.</p>
+<p>To add your own JS to Timber, open <code class="color-indigo font-bold">custom.js</code> and add or import your modules after the initialization of the Timber core.</p>
 <!-- code -->
 <div class="rounded p-20 overflow-y-scroll mb-0 bg-gradient-grey-ultralight border-l border-4 border-solid border-indigo">
 <pre class="m-0 language-js"><code class="inline-block scrolling-touch"><!--// Core
-import timberCore from './\_tm.core.js';
+import timberCore from './_tm.core.js';
 
 // Core instance
 let timber = new timberCore({
@@ -80,7 +80,7 @@ timber.initialize();
 <h5>Fallbacks when JavaScript is disabled</h5>
 <p>Timber's plugins do not provide a fallback for when JavaScript is disabled because 98% of users have JavaScript enabled. If you care about the user experience when JavaScript is disabled, use <code class="color-indigo font-bold">noscript</code> tag and let your users know and how to re-enable JavaScript and/or add your own custom fallbacks.</p>
 <hr class="mt-50">
-<a href="getting-started-theming.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
+<a href="4-getting-started-theming.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
 <span class="icon-material mr-0 ml-10">chevron_right</span>
 <span class="mt-0 mr-20">
 <span class="leading-none text-tiny uppercase">Next</span>

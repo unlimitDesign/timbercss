@@ -1,8 +1,8 @@
-// Copyright © ThemeMountain 2019
+// Copyright © UnlimitDesign 2019
 // Plugin: Freeze elements - fallback for browser not supporting position: sticky 
 // Version: 1.0.0
-// URL: @ThemeMountain
-// Author: Thememountain, Christian Lundgren, Shu Miyao
+// URL: @UnlimitDesign
+// Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
 // License: MIT
 

@@ -1,11 +1,11 @@
 /*!
  * Copyright © unlimit.design 2019
  * Version: 0.1.10
- * Hash:0c9c0ce0cea56975a4f5
- * Chunkhash:82e91b83bf6191d16e9b
+ * Hash:79dea3e3841798e20809
+ * Chunkhash:93968ff6f19af60857d5
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Sun Jan 19 2020 21:46:36 GMT+0000 (Western European Standard Time)
+ * Timestamp: Fri Jan 24 2020 21:08:09 GMT+0000 (Western European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -1262,6 +1262,62 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   padding-bottom: 1px;
   background: #f8f8f8;
   border: 1px solid #dddddd;
+}
+
+.token.comment,
+.token.doctype {
+  color: #999988;
+  font-style: italic;
+}
+
+.token.string,
+.token.attr-value {
+  color: #e3116c;
+}
+
+
+.token.operator {
+  color: #393A34;
+  /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name {
+  color: #00a4db;
+}
+
+.token.function,
+.token.deleted {
+  color: #9a050f;
+}
+
+.token.tag,
+.token.selector {
+  color: #00009f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
 }
 
 /*------------------------------------------------------------------

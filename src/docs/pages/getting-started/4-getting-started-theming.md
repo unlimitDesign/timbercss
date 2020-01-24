@@ -51,14 +51,14 @@ markup_language: html
 @import 'mixins/\_transition.scss';
 @import 'mixins/\_uncode.scss';
 
-@import 'partials/components/\_base.scss';
+@import 'partials/components/_base.scss';
 @import 'partials/components/\_grid-flexbox.scss';
 @import 'partials/components/\_grid-css.scss';
 @import 'partials/components/\_accordion.scss';
 @import 'partials/components/\_badge.scss';
 //@import 'partials/components/\_breadcrumb.scss';
-@import 'partials/components/\_button.scss';
-@import 'partials/components/\_card.scss';
+//@import 'partials/components/\_button.scss';
+//@import 'partials/components/\_card.scss';
 @import 'partials/components/\_code.scss';
 @import 'partials/components/\_collapsable.scss';
 @import 'partials/components/\_dropdown.scss';
@@ -71,10 +71,10 @@ markup_language: html
 @import 'partials/components/\_navigation.scss';
 @import 'partials/components/\_overlay-navigation.scss';
 @import 'partials/components/\_pagination.scss';
-/_@import 'partials/components/\_pricing-table.scss';
+@import 'partials/components/\_pricing-table.scss';
 @import 'partials/components/\_progress-bar.scss';
 @import 'partials/components/\_progressline.scss';
-@import 'partials/components/\_side-navigation.scss';_/
+@import 'partials/components/\_side-navigation.scss';_
 @import 'partials/components/\_table.scss';
 @import 'partials/components/\_tabs.scss';
 
@@ -146,7 +146,7 @@ markup_language: html
 </div>
 <!-- code -->
 <hr class="mt-50">
-<a href="getting-started-file-size.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
+<a href="5-getting-started-file-size.html" title="Next Page" class="pagination-link button border-none flex flex-row-reverse justify-start justify-sm-between w-auto pr-0 m-0 right bg-transparent bg-hover-transparent left-sm color-grey color-hover-grey-darkest">
 <span class="icon-material mr-0 ml-10">chevron_right</span>
 <span class="mt-0 mr-20">
 <span class="leading-none text-tiny uppercase">Next</span>
