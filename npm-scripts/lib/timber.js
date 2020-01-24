@@ -42,14 +42,14 @@ module.exports = class TimberTools {
             serverPort: '3000',
             serverHost: 'localhost',
             disableHostCheck: true,
-            contentBase: 'docs',
+            contentBase: 'dist',
             serverPublicPath: '/js/',
-            watchEnabled: null,
-            watchContentBase: false,
+            watchEnabled: true,
+            watchContentBase: true,
             /* documentation configs */
             contentSourceDir: 'src/',
             // output directories.  will be same as contentBase otherwise live preview does not work
-            outputDir: 'docs',
+            outputDir: 'dist',
             // timber lib source file paths
             timberJsSrcFilePath: './src/js/custom.js',
             timberCssSrcFilePath: './src/scss/timber.scss',

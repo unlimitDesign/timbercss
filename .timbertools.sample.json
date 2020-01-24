@@ -5,7 +5,7 @@
     "contentBase": "docs",
     "serverPublicPath": "/js/",
     "contentSourceDir": "src/docs",
-    "outputDir": "docs",
+    "outputDir": "dist",
     "timberJsSrcFilePath": "./src/js/custom.js",
     "timberCssSrcFilePath": "./src/scss/timber.scss",
     "timberJsFileName": "tm.core.js",
@@ -19,6 +19,7 @@
     "gifInterlaced": false,
     "webpQuality": "75",
     "purgeCSS_whitelist": [
+        /* Timber dynamic classes & elements */
         "video",
         "iframe",
         "object",
@@ -32,7 +33,7 @@
         "bg-image",
         "fixed-dimension",
         "active",
-        "inactive",
+        "inactive", 
         "disabled",
         "no-transition",
         "freeze",
@@ -63,6 +64,7 @@
         "tml-thumbnails",
         "tml-exit",
         "tml-toolbar",
+        
         /* Code blocks & PrismJs */
         "gridsome-highlight",
         "p-20",
@@ -106,7 +108,7 @@
         "important",
         "variable",
         "important",
-        "bold",
+        "bold" ,
         "italic",
         "entity"
     ],
