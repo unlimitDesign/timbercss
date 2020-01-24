@@ -2,28 +2,33 @@
 
 const $TimberTools = require('./lib/timber.webpack-config.js');
 
-const Tbs = new $TimberTools();
+const TimberTools = new $TimberTools();
 
 let moduleExports = {
-    context: Tbs.getContext(),
-    entry: Tbs.getEntries(),
-    output: Tbs.getOutput(),
+    context: TimberTools.getContext(),
+    entry: TimberTools.getEntries(),
+    output: TimberTools.getOutput(),
     devtool: 'source-map',
     module: {
         rules: [
-            Tbs.getModuleRule_babel(),
-            Tbs.getModuleRule_scss(),
-            Tbs.getModuleRule_fontFiles(),
+            TimberTools.getModuleRule_babel(),
+            TimberTools.getModuleRule_scss(),
+            TimberTools.getModuleRule_fontFiles(),
         ]
     },
-    optimization: Tbs.getOptimization(),
+    optimization: TimberTools.getOptimization(),
     plugins: [
-        Tbs.getPlugin_writeFile(),
-        Tbs.getPlugin_miniCssExtract('timberCssFilePath'),
-        Tbs.getPlugin_miniCssExtract('timberCssFileMinPath'),
-        Tbs.getPlugin_purgecssPlugin(),
-        Tbs.getPlugin_banner()
+        TimberTools.getPlugin_writeFile(),
+        TimberTools.getPlugin_miniCssExtract('timberCssFilePath'),
+        TimberTools.getPlugin_miniCssExtract('timberCssFileMinPath'),
     ],
 };
+
+if (TimberTools.options.enablePurgeCSS === true) {
+    moduleExports.plugins.push(TimberTools.getPlugin_purgecssPlugin());
+}
+
+// addingthe banner plugin in the end
+moduleExports.plugins.push(TimberTools.getPlugin_banner());
 
 module.exports = moduleExports;
