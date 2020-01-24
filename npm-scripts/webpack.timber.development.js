@@ -8,23 +8,9 @@
  * 4. Chokidar is launched at the same time to monitor any changes under the src/doc directory. If any of those documentation files are updated, it compiles only the ones necessary.
  */
 
-const $TimberTools = require('./lib/timber.build-library.js');
+const $TimberTools = require('./lib/timber.webpack-config.js');
 
-const $ExecSync = require('child_process').execSync;
-
-const Tbs = new $TimberTools({
-    watchContentsSourceDirectory: {
-        paths: [
-            'src/docs/pages/**/*.md',
-            'src/docs/public/**/*.css',
-            'src/docs/public/images/*',
-            'src/docs/layouts/**/*.html',
-        ],
-        onChange: function () {
-            $ExecSync('node ./npm-scripts/lib/timber.build-documentation.js --mode development');
-        },
-    }
-});
+const Tbs = new $TimberTools();
 
 let moduleExports = {
     context: Tbs.getContext(),

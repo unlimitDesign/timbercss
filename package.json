@@ -18,11 +18,8 @@
   "copyright": "Copyright © UnlimitDesign 2019",
   "authorCredits": "UnlimitDesign, Christian Lundgren, Shu Miyao",
   "scripts": {
-    "start": "node ./npm-scripts/lib/timber.build-documentation.js --mode development;webpack-dev-server --mode development --env timber",
-    "build": "rm -rf dist;node ./npm-scripts/lib/timber.build-documentation.js --mode production;webpack --mode production --env timber;mkdir dist;cp -rf docs/css dist/css;rm dist/css/skin.css;cp -rf docs/js dist/js;cp -rf docs/icons dist/icons",
-    "prototype": "webpack-dev-server --mode development --env timber-prototype",
-    "test_timber": "node ./npm-scripts/webpack.test.js",
-    "docs": "node ./npm-scripts/lib/timber.build-documentation.js"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

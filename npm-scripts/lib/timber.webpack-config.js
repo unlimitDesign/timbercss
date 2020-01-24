@@ -13,8 +13,6 @@ const $PurgecssPlugin = require('purgecss-webpack-plugin');
 const $OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const $CopyWebpackPlugin = require('copy-webpack-plugin');
 const $WriteFilePlugin = require('write-file-webpack-plugin');
-const $TimberToolsUpdateDocPages = require('./TimberToolsUpdateDocPages.js');
-const $Chokidar = require('chokidar');
 
 /**
  * Timber CSS Tools Class for maintaining the library
@@ -67,35 +65,6 @@ module.exports = class TimberTools_library extends TimberTools {
                 maxModules: 0 // Set the maximum number of modules to be shown
             },
         };
-        /**
-         * Watch option enables reloading and compilation upon any chagnes to files as set with its paths property. watchEnabled option needs to be set to true separately to enable the watch.
-         */
-        if (this.options.watchContentsSourceDirectory) {
-            const _self = this;
-            const _theOptions = this.options.watchContentsSourceDirectory;
-            _devServerConfig.before = function (app, server) {
-                $Chokidar.watch(_theOptions.paths, { awaitWriteFinish: true, ignoreInitial: true }).on('all', function (eventName, path) {
-                    // server.sockWrite(server.sockets, 'content-changed', path);
-                    if (eventName === 'add' || eventName === 'change' || eventName === 'unlink') {
-                        console.log(eventName, path);
-                        if (_theOptions.onChange) _theOptions.onChange();
-                        server.sockWrite(server.sockets, "content-changed");
-                        // induce compilation manually
-                        if (_theOptions.compileOnChange === true) {
-                            const _filename = _self.getAbsolutePath(_self.options.timberJsSrcFilePath);
-                            const _time = new Date();
-                            try {
-                                $Fs.utimesSync(_filename, _time, _time);
-                            } catch (err) {
-                                $Fs.closeSync($Fs.openSync(_filename, 'w'));
-                            }
-                        }
-                    }
-                })
-            }
-            // this option must be turned off or it causes heavy server load
-            _devServerConfig.watchContentBase = false;
-        }
         return _devServerConfig;
     }
 
@@ -263,10 +232,6 @@ module.exports = class TimberTools_library extends TimberTools {
         );
     }
     getPlugin_writeFile() { return new $WriteFilePlugin(); }
-
-    getPlugin_timberToolsUpdateDocPages() {
-        return new $TimberToolsUpdateDocPages();
-    }
 
     /**
      * Documentaion
