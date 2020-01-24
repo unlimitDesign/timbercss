@@ -13,7 +13,7 @@ markup_language: html
       <h1 class="font-light">File Size</h1>
       <h3 class="font-light">Reducing File Size</h3>
       <h5>Remove utilities, components &amp; blocks</h5>
-      <p>It's highly unlikely that you'll require all utilities, components, and blocks for your project. As such, simply remove those you do not require. Read more about this under <a href="getting-started-theming.html">theming</a> and <a href="getting-started-javascript.html">JavaScript</a>.</p>
+      <p>It's highly unlikely that you'll require all utilities, components, and blocks for your project. As such, simply remove those you do not require. Read more about this under <a href="4-getting-started-theming.html">theming</a> and <a href="3-getting-started-javascript.html">JavaScript</a>.</p>
       <h5>Minification</h5>
       <p>For production, all CSS files and JavaScript files are minfied and ouput in the dist folder.</p>
       <h5>Purge CSS</h5>
