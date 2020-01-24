@@ -1,12 +1,7 @@
 {
   "name": "timbercss",
-<<<<<<< HEAD
-  "version": "0.1.9",
-  "author": "UnlimitDesign",
-=======
   "version": "0.1.10",
-  "author": "unlimitdesign",
->>>>>>> fffda48bcaf1e375a0e72c8e3668d3a331dc3d3a
+  "author": "UnlimitDesign",
   "description": "A CSS Framework for Rapid Website Prototyping",
   "keywords": [],
   "repository": {
@@ -20,8 +15,8 @@
   },
   "main": "src/js/index.js",
   "style": "src/scss/timber.scss",
-  "copyright": "Copyright © unlimit.design 2019",
-  "authorCredits": "unlimit.design, Christian Lundgren, Shu Miyao",
+  "copyright": "Copyright © UnlimitDesign 2019",
+  "authorCredits": "UnlimitDesign, Christian Lundgren, Shu Miyao",
   "scripts": {
     "start": "node ./npm-scripts/lib/timber.build-documentation.js --mode development;webpack-dev-server --mode development --env timber",
     "build": "rm -rf dist;node ./npm-scripts/lib/timber.build-documentation.js --mode production;webpack --mode production --env timber;mkdir dist;cp -rf docs/css dist/css;rm dist/css/skin.css;cp -rf docs/js dist/js;cp -rf docs/icons dist/icons",
