@@ -1,7 +1,12 @@
 {
   "name": "timbercss",
+<<<<<<< HEAD
   "version": "0.1.9",
   "author": "UnlimitDesign",
+=======
+  "version": "0.1.10",
+  "author": "unlimitdesign",
+>>>>>>> fffda48bcaf1e375a0e72c8e3668d3a331dc3d3a
   "description": "A CSS Framework for Rapid Website Prototyping",
   "keywords": [],
   "repository": {

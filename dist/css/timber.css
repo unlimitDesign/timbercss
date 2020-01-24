@@ -1,11 +1,11 @@
 /*!
  * Copyright © unlimit.design 2019
- * Version: 0.1.9
- * Hash:9fa5a70f2ecf709f73cb
- * Chunkhash:c59c5bbd38848e77ff1c
+ * Version: 0.1.10
+ * Hash:0c9c0ce0cea56975a4f5
+ * Chunkhash:82e91b83bf6191d16e9b
  * Filebase:timber.css
  * Author: unlimit.design, Christian Lundgren, Shu Miyao
- * Timestamp: Sat Jan 18 2020 09:46:01 GMT-0600 (Central Standard Time)
+ * Timestamp: Sun Jan 19 2020 21:46:36 GMT+0000 (Western European Standard Time)
  * 
  */
 /* Fallback, in case JS does not run, to ensure the code is at least visible */
@@ -1866,6 +1866,10 @@ label {
   content: "\f417";
 }
 
+.git:before {
+  content: "\f1d3";
+}
+
 .github:before {
   content: "\f09b";
 }
@@ -1896,6 +1900,10 @@ label {
 
 .linkedin:before {
   content: "\f08c";
+}
+
+.npm:before {
+  content: "\f3d4";
 }
 
 .php:before {

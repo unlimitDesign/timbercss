@@ -10,12 +10,18 @@
 
 `npm install timbercss --save`
 
+#### Importing Javascript source and scss into your project.
+
+The best way to find out is to refer to [timber-gridsome-boilerplate](https://github.com/unlimitDesign/timber-gridsome-boilerplate) git repository. The boilerplate demonstrates how to integrate timbercss with [gridsome](https://gridsome.org/) vue.js framework.
+
+Timbercss Javascript in the boilerplate is imported as a prototype definition (see ``Vue.prototype.$timberCore = require("timbercss");`` in [main.js](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/main.js)). Then the timbercss javascript core is initialized with `mounted` and `updated` vue instance lifecycle hooks in the [src/layouts/Default.vue](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/layouts/Default.vue).
+
+Timbercss styles are compiled from scss. Find the scss files under `src/assets/scss`. You can customize the styles by modifying the [_variables_custom.scss](https://github.com/unlimitDesign/timber-gridsome-boilerplate/blob/master/src/assets/scss/_variables_custom.scss) file.
+
 ### Using the compiled codes as is
 
 - Download the latest release from [GitHub](https://github.com/unlimitDesign/timbercss/).
-- You can either:
-  - import Javascript source and scss
-  - Copy compiled codes under `dist/js` and `dist/css` into your project. And load them up in your html5 page as necessary.
+- Copy compiled codes under `dist/js` and `dist/css` into your project. And load them  in your html5 page as necessary.
 
 ### If you want to play with Timber CSS
 
@@ -23,7 +29,7 @@
 - Install dependencies with npm: `npm install`
 - Run `npm run start` to see the site live as you work on the source.
 - Please copy `.timbertools.sample.json` as `.timbertools.json` and then modify the environment file to suit to your needs. You do not have to set every one of config settings.
-- Do anything with ours as you please. The only limit is as written in the MIT license.
+- Please freely explore what can be done with the timebrcss framework as the framework is published under the MIT license.
 
 Read [the documentation site](https://timbercss.com) on the framework contents, templates and examples, and more. The documentation hosted at the website is as same as the one under the `docs` directory.
 
