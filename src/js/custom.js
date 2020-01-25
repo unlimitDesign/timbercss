@@ -14,7 +14,3 @@ let timber = new timberCore({
 if (typeof timber.initialize != 'undefined') {
   timber.initialize();
 }
-
-// Syntax highlighter for docs only
-import Prism from 'prismjs';
-Prism.highlightAll();
