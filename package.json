@@ -24,7 +24,6 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
-    "babel-plugin-prismjs": "^1.1.1",
     "babel-preset-env": "^1.7.0",
     "child_process": "^1.0.2",
     "copy-webpack-plugin": "^5.0.5",
@@ -46,29 +45,5 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "write-file-webpack-plugin": "^4.5.1"
-  },
-  "babel": {
-    "plugins": [
-      [
-        "prismjs",
-        {
-          "languages": [
-            "javascript",
-            "css",
-            "markup",
-            "scss"
-          ],
-          "plugins": [
-            "line-numbers",
-            "unescaped-markup"
-          ],
-          "theme": "",
-          "css": true
-        }
-      ]
-    ]
-  },
-  "dependencies": {
-    "prismjs": "^1.17.1"
   }
 }

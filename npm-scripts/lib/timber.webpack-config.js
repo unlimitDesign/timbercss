@@ -6,7 +6,7 @@ const $Fs = require('fs');
 const $Glob = require('glob');
 const $Webpack = require('webpack');
 
-// webpack plugins
+// Webpack plugins
 const $TerserJSPlugin = require('terser-webpack-plugin');
 const $MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const $PurgecssPlugin = require('purgecss-webpack-plugin');
@@ -15,13 +15,11 @@ const $CopyWebpackPlugin = require('copy-webpack-plugin');
 const $WriteFilePlugin = require('write-file-webpack-plugin');
 
 /**
- * Timber CSS Tools Class for maintaining the library
- */
+* Timber CSS Tools Class for maintaining the library
+*/
 module.exports = class TimberTools_library extends TimberTools {
-    /**
-     * Webpack Settings
-     */
-
+    
+    // Webpack Settings
     getContext() {
         return this.absoluteRootDir;
     }
@@ -34,7 +32,8 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getOutput() {
-        // make minified version if it is not development env.
+        
+        // Output minified version development env is false
         const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
         return {
             path: this.getAbsolutePath(this.options.outputDir),
@@ -43,12 +42,10 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     /**
-     * Set up development server
-     *
-     * @param   {string}  contentBase  The server root path
-     *
-     * @return  {object}               devServer settings
-     */
+    * Set up development server
+    * @param   {string}  contentBase  The server root path
+    * @return  {object}               devServer settings
+    */
     getDevServer() {
         const _devServerConfig = {
             port: this.options.serverPort,
@@ -69,16 +66,15 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getWatch() {
-        // watch needs to be explicityly defined.
+        // Watch needs to be explicityly defined.
         // this.options.watchEnabled supercedes otherwise watch is enabled when the webpack mode is 'development'
         return (this.options.watchEnabled === false) ? false : (this.options.watchEnabled === true) ? true : (this.webpackMode === 'development') ? true : false;
     }
 
     /**
-     * Get all the optimization options.-keyboard
-     *
-     * @return  {object}  Object with array inside. Only minimizer configuration is included for now.
-     */
+    * Get all the optimization options.-keyboard
+    * @return  {object}  Object with array inside. Only minimizer configuration is included for now.
+    */
     getOptimization() {
         return {
             minimize: true,
@@ -90,8 +86,8 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     /**
-     * Optimization / Minimiers options
-     */
+    * Optimization / Minimiers options
+    */
     getOptimization_minimizer_teaserJs() {
         return new $TerserJSPlugin({
             parallel: true,
@@ -105,8 +101,8 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     /**
-     * Module Rules
-     */
+    * Module Rules
+    */
     getModuleRule_babel() {
         return {
             test: /\.js$/,
@@ -166,6 +162,7 @@ module.exports = class TimberTools_library extends TimberTools {
                             progressive: this.options.jpgProgressive,
                             quality: this.options.jpgQuality
                         },
+                        
                         // optipng.enabled: false will disable optipng
                         optipng: {
                             enabled: false,
@@ -177,7 +174,8 @@ module.exports = class TimberTools_library extends TimberTools {
                         gifsicle: {
                             interlaced: this.options.gifInterlaced,
                         },
-                        // the webp option will enable WEBP
+                        
+                        // The webp option will enable WEBP
                         webp: {
                             quality: this.options.webpQuality
                         }
@@ -188,10 +186,11 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     /**
-     * Plugins
-     */
+    * Plugins
+    */
     getPlugin_miniCssExtract(settingsName) {
-        // use settingsName is the settings name does not exist in the options.
+        
+        // Use settingsName is the settings name does not exist in the options.
         const _fileName = (settingsName in this.options) ? this.options[settingsName] : settingsName;
         return new $MiniCssExtractPlugin({
             filename: `css/${_fileName}`
@@ -199,17 +198,19 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getPlugin_purgecssPlugin() {
-        // skip if enablePurgeCSS is not set to true (boolean)
+        
+        // Skip if enablePurgeCSS is not set to true (boolean)
         if (this.options.enablePurgeCSS !== true) {
             return function () { };
         }
-        // Scan through the documentation directory
+        // Scan through the contentBase directory
         const _paths = $Glob.sync(`${this.getAbsolutePath(this.options.contentBase)}/**/*.html`, { nodir: true });
         if (!_paths.length > 0) {
             console.log(`Error: there is not any html for purgeCSS to refer. Given path to the html directory was: ${this.getAbsolutePath(this.options.contentBase)}/**/*.html`);
             process.exit(0);
         }
-        // return at once
+        
+        // Return at once
         return new $PurgecssPlugin({
             paths: _paths,
             whitelist: this.options.purgeCSS_whitelist,
@@ -223,7 +224,7 @@ module.exports = class TimberTools_library extends TimberTools {
         });
     }
 
-    // used for copying the icons folder in updateTimberLibs
+    // Used for copying the icons folder in updateTimberLibs
     getPlugin_copyWebpack(originalLocation = '', targetLocation = 'dist/icons', sourceDirectory = 'src/icons') {
         return new $CopyWebpackPlugin(
             [
@@ -236,8 +237,4 @@ module.exports = class TimberTools_library extends TimberTools {
         );
     }
     getPlugin_writeFile() { return new $WriteFilePlugin(); }
-
-    /**
-     * Documentaion
-     */
 }

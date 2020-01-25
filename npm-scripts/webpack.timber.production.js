@@ -1,7 +1,6 @@
 'use strict';
 
 const $TimberTools = require('./lib/timber.webpack-config.js');
-
 const TimberTools = new $TimberTools();
 
 let moduleExports = {

@@ -4,7 +4,7 @@
 * For NPM module
 */
 
-// Core
+// Core JS plugins
 import timberCoreLibrary from './_tm.core.js';
 
 // Core instance

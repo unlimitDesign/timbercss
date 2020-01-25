@@ -3,9 +3,10 @@
 const $Fs = require('fs');
 
 module.exports = (env) => {
-    // get mode
+    // Get mode
     const mode = (process.argv[process.argv.indexOf('--mode') + 1]) ? process.argv[process.argv.indexOf('--mode') + 1] : 'development';
-    // get env
+    
+    // Get environment
     if (!env) {
         env = 'timber';
     }

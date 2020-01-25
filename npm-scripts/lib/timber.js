@@ -5,24 +5,25 @@ const Package = require('../../package.json');
 const $Path = require('path');
 
 /**
- * Timber CSS Maintanance Tools Class
- *
- * Use `.timbercss.json` config file for your local environment. Copy .timbercss.sample.json as `.timbercss.json` and modify to suit to your needs.
- */
+* Timber CSS Maintanance Tools Class
+* Use `.timber.env.json` config file for your local environment. Copy .timber.env.sample.json as `.timber.env.json` and modify to suit to your needs.
+*/
 module.exports = class TimberTools {
+
     /**
-     * Defines all the vairables and constants used in this class
-     *
-     * You can override the default settings by passing a paramter or by .timbercss.json config file
-     *
-     * @param   Object options  options values to override default settings.
-     */
+    * Defines all the vairables and constants used in this class
+    * You can override the default settings by passing a paramter or by .timbercss.json config file
+    * @param   Object options  options values to override default settings.
+    */
     constructor(options = {}) {
+        
         // Get the root directory without a trailing slash.
         this.absoluteRootDir = $Path.join(__dirname, '../..');
+       
         // Get the current mode. Choices: "development", "production", "none"
         this.webpackMode = (process.argv[process.argv.indexOf('--mode') + 1]) ? process.argv[process.argv.indexOf('--mode') + 1] : 'development';
-        // load env file and merge with options sent as parameter. Settings in the env file is overwirtten by those from the paramter.
+        
+        // Load env file and merge with options sent as parameter. Settings in the env file is overwirtten by those from the paramter.
         if ($Fs.existsSync(this.getAbsolutePath('.timbertools.json'))) {
             const _configFileOptions = require(this.getAbsolutePath('.timbertools.json'));
             if ('version' in _configFileOptions) {
@@ -32,13 +33,15 @@ module.exports = class TimberTools {
             options = Object.assign(_configFileOptions, options);
         }
 
-        // default option values
+        // Default option values
         const _default_options = {
-            // choose among documentation, production and development.
+            
+            // Choose between production or development.
             version: Package.version,
             copyright: 'Copyright © UnlimitDesign 2020',
             authorCredits: 'UnlimitDesign, Christian Lundgren, Shu Miyao',
-            /* server configs */
+            
+            // Server configs
             serverPort: '3000',
             serverHost: 'localhost',
             disableHostCheck: true,
@@ -46,18 +49,23 @@ module.exports = class TimberTools {
             serverPublicPath: '/js/',
             watchEnabled: true,
             watchContentBase: true,
-            /* documentation configs */
+            
+            // Source directory
             contentSourceDir: 'src/',
-            // output directories.  will be same as contentBase otherwise live preview does not work
+
+            // Output directory.  Must be the same as contentBase otherwise live preview does not work
             outputDir: 'dist',
-            // timber lib source file paths
+            
+            // Timber lib source file paths
             timberJsSrcFilePath: './src/js/custom.js',
             timberCssSrcFilePath: './src/scss/timber.scss',
-            // timber lib produt file paths
+
+            // Timber lib production file names
             timberJsFileName: 'tm.core.js',
             timberJsMinFileName: 'tm.core.min.js',
             timberCssFilePath: 'timber.css',
             timberCssFileMinPath: 'timber.min.css',
+
             // Image output options
             jpgProgressive: true,
             jpgQuality: '65',
@@ -116,26 +124,21 @@ module.exports = class TimberTools {
             purgeCSS_whitelistPatterns: [/\bw-\b/]
         }
 
-        // merge with default options
+        // Mrge with default options
         this.options = Object.assign(_default_options, options);
-        // convert purgeCSS_whitelistPatterns type RegExp
+        
+        // Convert purgeCSS_whitelistPatterns type RegExp
         this.options.purgeCSS_whitelistPatterns = this.preparePurgeCssWhiteListPatterns(this.options.purgeCSS_whitelistPatterns);
         if (options.debug === true) {
             console.log(JSON.stringify(this.options));
         }
-        // console.log(this.absoluteRootDir);
-        // console.log(this.getEntries());
-        // console.log(this.getOutput());
-        // console.log(this.options.purgeCSS_whitelistPatterns);
     }
 
     /**
-     * Get option settings by settings name.
-     *
-     * @param   {string}  settingsName      The settings name
-     *
-     * @return  {mixed}                Settings value or null in case settings by the settings name is not found.
-     */
+    * Get option settings by settings name.
+    * @param   {string}  settingsName   The settings name
+    * @return  {mixed}                  Settings value or null in case settings by the settings name is not found.
+    */
     getSettings(settingsName) {
         if (settingsName in this.options) {
             return this.options[settingsName];
@@ -145,12 +148,10 @@ module.exports = class TimberTools {
     }
 
     /**
-     * Convert string value to RegExpt
-     *
-     * @param   {string}  regexpString  Regexp in string
-     *
-     * @return  {RegExp}                Object in RegExp type
-     */
+    * Convert string value to RegExpt
+    * @param   {string}  regexpString  Regexp in string
+    * @return  {RegExp}                Object in RegExp type
+    */
     preparePurgeCssWhiteListPatterns(regexpArray = []) {
         if (Array.isArray(regexpArray)) {
             for (const _index in regexpArray) {
@@ -177,22 +178,18 @@ module.exports = class TimberTools {
     }
 
     /**
-     * Utility class method to return relative path
-     *
-     * @param   {string}  relativePath  relative path
-     *
-     * @return  {string}                A full absolute path
-     */
+    * Utility class method to return relative path
+    * @param   {string}  relativePath  Relative path
+    * @return  {string}                A full absolute path
+    */
     getAbsolutePath(relativePath = '') {
         return $Path.resolve(this.absoluteRootDir, relativePath);
     }
 
     /**
-     * Webpack Settings
-     */
-
+    * Webpack Settings
+    */
     getContext() {
         return this.absoluteRootDir;
     }
-
 }
