@@ -55,13 +55,8 @@ module.exports = class TimberTools_library extends TimberTools {
             contentBase: this.getAbsolutePath(this.options.contentBase),
             publicPath: this.options.serverPublicPath,
             watchContentBase: this.options.watchContentBase,
-<<<<<<< HEAD
-            // inline: true,
-            hot: true,
-=======
             inline: this.options.enableHotModuleReplacement === true ? true : false,
             hot: this.options.enableHotModuleReplacement === true ? true : false,
->>>>>>> e3027b0f595e9329d5e9bf3dc6925a1d1ce382ff
             // compress: true,
             stats: {
                 children: false, // Hide children information
