@@ -192,7 +192,7 @@ module.exports = class TimberTools_library extends TimberTools {
 
     getPlugin_HotModuleReplacement() {
         // Skip if enableHotModuleReplacement is not set to true (boolean)
-        if (this.options.enableHotModuleReplacement !== true) {
+        if (this.options.watchEnabled == true && this.options.enableHotModuleReplacement !== true) {
             return function () { };
         }
         return new Webpack.HotModuleReplacementPlugin();
