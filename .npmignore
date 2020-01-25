@@ -1,15 +1,8 @@
-docs
 dist
-src/docs
 npm-scripts
-Gruntfile.js
-gulpfile.js
 webpack.config.js
 _redirects
 .vscode
 .gitattributes
-.timbertools.json
-.timbertools.sample.json
+.timber.env.json
 package-lock.json
-_redirects
-.vscode
