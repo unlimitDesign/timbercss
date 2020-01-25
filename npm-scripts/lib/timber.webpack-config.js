@@ -199,6 +199,10 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getPlugin_purgecssPlugin() {
+        // skip if enablePurgeCSS is not set to true (boolean)
+        if (this.options.enablePurgeCSS !== true) {
+            return function () { };
+        }
         // Scan through the documentation directory
         const _paths = $Glob.sync(`${this.getAbsolutePath(this.options.contentBase)}/**/*.html`, { nodir: true });
         if (!_paths.length > 0) {

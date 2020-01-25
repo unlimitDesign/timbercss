@@ -21,14 +21,9 @@ let moduleExports = {
         TimberTools.getPlugin_writeFile(),
         TimberTools.getPlugin_miniCssExtract('timberCssFilePath'),
         TimberTools.getPlugin_miniCssExtract('timberCssFileMinPath'),
+        TimberTools.getPlugin_purgecssPlugin(),
+        TimberTools.getPlugin_banner()
     ],
 };
-
-if (TimberTools.options.enablePurgeCSS === true) {
-    moduleExports.plugins.push(TimberTools.getPlugin_purgecssPlugin());
-}
-
-// addingthe banner plugin in the end
-moduleExports.plugins.push(TimberTools.getPlugin_banner());
 
 module.exports = moduleExports;
