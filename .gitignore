@@ -1,11 +1,9 @@
-
-
 # Folders/files to ignore
 .sass-cache
 *node_modules/
 css/template.css.map
 package-lock.json
-.timbertools.json
+.timber.env.json
 
 # Created by https://www.gitignore.io/api/macos
 # Edit at https://www.gitignore.io/?templates=macos

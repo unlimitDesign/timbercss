@@ -1,49 +1,32 @@
 'use strict';
 
-/**
- * This config is for development mode.
- * 1. Removes docs/ directory then create a blank docs/ diretory/ Then Compiles documentation under docs/. (timber.build-documentation.js)
- * 2. Webpack compiles in memory, and publish the documentaion under docs/. The javascript is hosted within the memory.
- * 3. Watch is left running. It re-compiles js / scss in memory when js / scss or any contents hosted under docs/ is updated.
- * 4. Chokidar is launched at the same time to monitor any changes under the src/doc directory. If any of those documentation files are updated, it compiles only the ones necessary.
- */
-
-const $TimberTools = require('./lib/timber.build-library.js');
-
-const $ExecSync = require('child_process').execSync;
-
-const Tbs = new $TimberTools({
-    watchContentsSourceDirectory: {
-        paths: [
-            'src/docs/pages/**/*.md',
-            'src/docs/public/**/*.css',
-            'src/docs/public/images/*',
-            'src/docs/layouts/**/*.html',
-        ],
-        onChange: function () {
-            $ExecSync('node ./npm-scripts/lib/timber.build-documentation.js --mode development');
-        },
-    }
-});
+const $TimberTools = require('./lib/timber.webpack-config.js');
+const TimberTools = new $TimberTools();
 
 let moduleExports = {
-    context: Tbs.getContext(),
-    entry: Tbs.getEntries(),
-    output: Tbs.getOutput(),
-    devServer: Tbs.getDevServer(),
-    watch: Tbs.getWatch(),
+    context: TimberTools.getContext(),
+    entry: TimberTools.getEntries(),
+    output: TimberTools.getOutput(),
+    devServer: TimberTools.getDevServer(),
+    watch: TimberTools.getWatch(),
     module: {
         rules: [
-            Tbs.getModuleRule_babel(),
-            Tbs.getModuleRule_scss(),
-            Tbs.getModuleRule_fontFiles(),
-            Tbs.getModuleRule_images()
+            TimberTools.getModuleRule_babel(),
+            TimberTools.getModuleRule_scss(),
+            TimberTools.getModuleRule_fontFiles(),
+            TimberTools.getModuleRule_images()
         ]
     },
     plugins: [
-        Tbs.getPlugin_writeFile(),
-        Tbs.getPlugin_miniCssExtract('timberCssFilePath')
+        TimberTools.getPlugin_HotModuleReplacement(),
+        TimberTools.getPlugin_writeFile(),
+        TimberTools.getPlugin_miniCssExtract('timberCssFilePath')
     ]
 };
+
+if (TimberTools.options.debug === true) {
+    console.log("DEBUG: The followings are webpack config settings.");
+    console.log(JSON.stringify(TimberTools.options, null, 2));
+}
 
 module.exports = moduleExports;
