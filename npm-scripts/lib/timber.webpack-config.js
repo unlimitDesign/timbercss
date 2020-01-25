@@ -244,5 +244,10 @@ module.exports = class TimberTools_library extends TimberTools {
             { context: sourceDirectory }
         );
     }
-    getPlugin_writeFile() { return new $WriteFilePlugin(); }
+    getPlugin_writeFile() {
+        return new $WriteFilePlugin({
+            // exclude hot-update files
+            test: /^(?!.*(hot)).*/
+        });
+    }
 }
