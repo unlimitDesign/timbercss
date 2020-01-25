@@ -1,6 +1,7 @@
 const Package = require('../../package.json');
 
 module.exports = {
+    
     // Choose between production or development.
     version: Package.version,
     copyright: 'Copyright © UnlimitDesign 2020',
