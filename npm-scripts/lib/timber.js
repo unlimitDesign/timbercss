@@ -23,8 +23,8 @@ module.exports = class TimberTools {
         // Get the current mode. Choices: "development", "production", "none"
         this.webpackMode = (process.argv[process.argv.indexOf('--mode') + 1]) ? process.argv[process.argv.indexOf('--mode') + 1] : 'development';
         // load env file and merge with options sent as parameter. Settings in the env file is overwirtten by those from the paramter.
-        if ($Fs.existsSync(this.getAbsolutePath('.timber.env.json'))) {
-            const _configFileOptions = require(this.getAbsolutePath('.timber.env.json'));
+        if ($Fs.existsSync(this.getAbsolutePath('.timbertools.json'))) {
+            const _configFileOptions = require(this.getAbsolutePath('.timbertools.json'));
             if ('version' in _configFileOptions) {
                 delete (_configFileOptions.version);
                 console.log('Info: "version" in .timbercss.json is ignored.');
@@ -65,7 +65,6 @@ module.exports = class TimberTools {
             pngSpeed: '4',
             gifInterlaced: false,
             webpQuality: '75',
-            enablePurgeCSS: false,
             purgeCSS_whitelist: [
 
                 /* Timber dynamic classes & elements */
@@ -112,57 +111,11 @@ module.exports = class TimberTools {
                 'tml-zoom',
                 'tml-thumbnails',
                 'tml-exit',
-                'tml-toolbar',
-
-                /* Code blocks & PrismJs */
-                'gridsome-highlight',
-                'p-20',
-                'mb-20',
-                'overflow-y-scroll',
-                'bg-white',
-                'border-l',
-                'border-4',
-                'border-solid',
-                'border-grey-darker',
-                'text-normal',
-                'code',
-                'pre',
-                'token',
-                'property',
-                'tag',
-                'boolean',
-                'number',
-                'constant',
-                'symbol',
-                'deleted',
-                'selector',
-                'attr-name',
-                'string',
-                'char',
-                'builtin',
-                'inserted',
-                'operator',
-                'entity',
-                'url',
-                'language-css',
-                'string',
-                'style',
-                'string',
-                'atrule',
-                'attr-value',
-                'keyword',
-                'function',
-                'class-name',
-                'regex',
-                'important',
-                'variable',
-                'important',
-                'bold',
-                'italic',
-                'entity'
+                'tml-toolbar'
             ],
             purgeCSS_whitelistPatterns: [/\bw-\b/]
         }
+
         // merge with default options
         this.options = Object.assign(_default_options, options);
         // convert purgeCSS_whitelistPatterns type RegExp
@@ -170,6 +123,10 @@ module.exports = class TimberTools {
         if (options.debug === true) {
             console.log(JSON.stringify(this.options));
         }
+        // console.log(this.absoluteRootDir);
+        // console.log(this.getEntries());
+        // console.log(this.getOutput());
+        // console.log(this.options.purgeCSS_whitelistPatterns);
     }
 
     /**
