@@ -13,12 +13,13 @@ const $PurgecssPlugin = require('purgecss-webpack-plugin');
 const $OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const $CopyWebpackPlugin = require('copy-webpack-plugin');
 const $WriteFilePlugin = require('write-file-webpack-plugin');
+const Webpack = require('webpack');
 
 /**
 * Timber CSS Tools Class for maintaining the library
 */
 module.exports = class TimberTools_library extends TimberTools {
-    
+
     // Webpack Settings
     getContext() {
         return this.absoluteRootDir;
@@ -32,7 +33,7 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getOutput() {
-        
+
         // Output minified version development env is false
         const _outputJsFileName = (this.webpackMode !== 'development') ? this.options.timberJsMinFileName : this.options.timberJsFileName;
         return {
@@ -54,8 +55,13 @@ module.exports = class TimberTools_library extends TimberTools {
             contentBase: this.getAbsolutePath(this.options.contentBase),
             publicPath: this.options.serverPublicPath,
             watchContentBase: this.options.watchContentBase,
+<<<<<<< HEAD
             // inline: true,
             hot: true,
+=======
+            inline: this.options.enableHotModuleReplacement === true ? true : false,
+            hot: this.options.enableHotModuleReplacement === true ? true : false,
+>>>>>>> e3027b0f595e9329d5e9bf3dc6925a1d1ce382ff
             // compress: true,
             stats: {
                 children: false, // Hide children information
@@ -162,7 +168,7 @@ module.exports = class TimberTools_library extends TimberTools {
                             progressive: this.options.jpgProgressive,
                             quality: this.options.jpgQuality
                         },
-                        
+
                         // optipng.enabled: false will disable optipng
                         optipng: {
                             enabled: false,
@@ -174,7 +180,7 @@ module.exports = class TimberTools_library extends TimberTools {
                         gifsicle: {
                             interlaced: this.options.gifInterlaced,
                         },
-                        
+
                         // The webp option will enable WEBP
                         webp: {
                             quality: this.options.webpQuality
@@ -188,8 +194,16 @@ module.exports = class TimberTools_library extends TimberTools {
     /**
     * Plugins
     */
+
+    getPlugin_HotModuleReplacement() {
+        // Skip if enableHotModuleReplacement is not set to true (boolean)
+        if (this.options.enableHotModuleReplacement !== true) {
+            return function () { };
+        }
+        return new Webpack.HotModuleReplacementPlugin();
+    }
+
     getPlugin_miniCssExtract(settingsName) {
-        
         // Use settingsName is the settings name does not exist in the options.
         const _fileName = (settingsName in this.options) ? this.options[settingsName] : settingsName;
         return new $MiniCssExtractPlugin({
@@ -198,7 +212,6 @@ module.exports = class TimberTools_library extends TimberTools {
     }
 
     getPlugin_purgecssPlugin() {
-        
         // Skip if enablePurgeCSS is not set to true (boolean)
         if (this.options.enablePurgeCSS !== true) {
             return function () { };
@@ -209,7 +222,7 @@ module.exports = class TimberTools_library extends TimberTools {
             console.log(`Error: there is not any html for purgeCSS to refer. Given path to the html directory was: ${this.getAbsolutePath(this.options.contentBase)}/**/*.html`);
             process.exit(0);
         }
-        
+
         // Return at once
         return new $PurgecssPlugin({
             paths: _paths,

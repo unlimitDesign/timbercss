@@ -18,9 +18,15 @@ let moduleExports = {
         ]
     },
     plugins: [
+        TimberTools.getPlugin_HotModuleReplacement(),
         TimberTools.getPlugin_writeFile(),
         TimberTools.getPlugin_miniCssExtract('timberCssFilePath')
     ]
 };
+
+if (TimberTools.options.debug === true) {
+    console.log("DEBUG: The followings are webpack config settings.");
+    console.log(JSON.stringify(TimberTools.options, null, 2));
+}
 
 module.exports = moduleExports;

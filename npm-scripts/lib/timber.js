@@ -1,31 +1,29 @@
 'use strict';
 
 const $Fs = require('fs');
-const Package = require('../../package.json');
 const $Path = require('path');
 
 /**
 * Timber CSS Maintanance Tools Class
-* Use `.timber.env.json` config file for your local environment. Copy .timber.env.sample.json as `.timber.env.json` and modify to suit to your needs.
+* Use `.timber.env.json` config file for your local environment. Refer to README for more information.
 */
 module.exports = class TimberTools {
 
     /**
     * Defines all the vairables and constants used in this class
-    * You can override the default settings by passing a paramter or by .timbercss.json config file
+    * You can override the default settings by passing a paramter or by ".timber.env.json" config file in the project root.
     * @param   Object options  options values to override default settings.
     */
     constructor(options = {}) {
-        
+
         // Get the root directory without a trailing slash.
         this.absoluteRootDir = $Path.join(__dirname, '../..');
-       
+
         // Get the current mode. Choices: "development", "production", "none"
         this.webpackMode = (process.argv[process.argv.indexOf('--mode') + 1]) ? process.argv[process.argv.indexOf('--mode') + 1] : 'development';
-        
         // Load env file and merge with options sent as parameter. Settings in the env file is overwirtten by those from the paramter.
-        if ($Fs.existsSync(this.getAbsolutePath('.timbertools.json'))) {
-            const _configFileOptions = require(this.getAbsolutePath('.timbertools.json'));
+        if ($Fs.existsSync(this.getAbsolutePath('.timber.env.json'))) {
+            const _configFileOptions = require(this.getAbsolutePath('.timber.env.json'));
             if ('version' in _configFileOptions) {
                 delete (_configFileOptions.version);
                 console.log('Info: "version" in .timbercss.json is ignored.');
@@ -34,104 +32,13 @@ module.exports = class TimberTools {
         }
 
         // Default option values
-        const _default_options = {
-            
-            // Choose between production or development.
-            version: Package.version,
-            copyright: 'Copyright © UnlimitDesign 2020',
-            authorCredits: 'UnlimitDesign, Christian Lundgren, Shu Miyao',
-            
-            // Server configs
-            serverPort: '3000',
-            serverHost: 'localhost',
-            disableHostCheck: true,
-            contentBase: 'dist',
-            serverPublicPath: '/js/',
-            watchEnabled: true,
-            watchContentBase: true,
-            
-            // Source directory
-            contentSourceDir: 'src/',
-
-            // Output directory.  Must be the same as contentBase otherwise live preview does not work
-            outputDir: 'dist',
-            
-            // Timber lib source file paths
-            timberJsSrcFilePath: './src/js/custom.js',
-            timberCssSrcFilePath: './src/scss/timber.scss',
-
-            // Timber lib production file names
-            timberJsFileName: 'tm.core.js',
-            timberJsMinFileName: 'tm.core.min.js',
-            timberCssFilePath: 'timber.css',
-            timberCssFileMinPath: 'timber.min.css',
-
-            // Image output options
-            jpgProgressive: true,
-            jpgQuality: '65',
-            pngQuality: '5-90',
-            pngSpeed: '4',
-            gifInterlaced: false,
-            webpQuality: '75',
-            purgeCSS_whitelist: [
-
-                /* Timber dynamic classes & elements */
-                'video',
-                'iframe',
-                'object',
-                'embed',
-                'img',
-                'video-container',
-                'bg-video-container',
-                'loaded',
-                'in-view',
-                'out-of-view',
-                'bg-image',
-                'fixed-dimension',
-                'active',
-                'inactive',
-                'disabled',
-                'no-transition',
-                'freeze',
-                'header-compact',
-                'header-background',
-                'header-positioned',
-                'header-in',
-                'header-out',
-                'element-reveal-right',
-                'element-reveal-left',
-                'slide-in-reset',
-                'scale-in-reset',
-                'tm-lightbox',
-                'tml-content-wrapper',
-                'tml-content-wrapper.zoomed',
-                'tml-inner',
-                'tml-thumbnail-wrapper',
-                'tml-thumb-active',
-                'play',
-                'tml-content',
-                'tml-content.error',
-                'tml-caption',
-                'tml-nav',
-                'tml-nav.active',
-                'tml-nav.tml-next',
-                'tml-nav.tml-prev',
-                'tml-zoom',
-                'tml-thumbnails',
-                'tml-exit',
-                'tml-toolbar'
-            ],
-            purgeCSS_whitelistPatterns: [/\bw-\b/]
-        }
+        const _default_options = require("./timber.env.default");
 
         // Mrge with default options
         this.options = Object.assign(_default_options, options);
-        
+
         // Convert purgeCSS_whitelistPatterns type RegExp
         this.options.purgeCSS_whitelistPatterns = this.preparePurgeCssWhiteListPatterns(this.options.purgeCSS_whitelistPatterns);
-        if (options.debug === true) {
-            console.log(JSON.stringify(this.options));
-        }
     }
 
     /**
