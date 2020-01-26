@@ -2,7 +2,6 @@
 
 const TimberTools = require('./timber.js');
 
-const $Fs = require('fs');
 const $Glob = require('glob');
 const $Webpack = require('webpack');
 
@@ -63,6 +62,9 @@ module.exports = class TimberTools_library extends TimberTools {
                 maxModules: 0 // Set the maximum number of modules to be shown
             },
         };
+        if (this.options.devServerCallback && this.options.devServerCallback.callback) {
+            this.options.devServerCallback.callback(_devServerConfig);
+        }
         return _devServerConfig;
     }
 
