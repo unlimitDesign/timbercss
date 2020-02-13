@@ -1,6 +1,6 @@
 {
   "name": "timbercss",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "author": "UnlimitDesign",
   "description": "A CSS Framework for Rapid Website Prototyping",
   "keywords": [],
@@ -15,7 +15,7 @@
   },
   "main": "src/js/index.js",
   "style": "src/scss/timber.scss",
-  "copyright": "Copyright © UnlimitDesign 2019",
+  "copyright": "Copyright © UnlimitDesign 2020",
   "authorCredits": "UnlimitDesign, Christian Lundgren, Shu Miyao",
   "scripts": {
     "start": "webpack-dev-server --mode development",
