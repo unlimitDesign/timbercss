@@ -25693,42 +25693,42 @@ body.boxed .header .header-inner {
   border-bottom: 0px solid #F2F3F6;
 }
 
-.header-background .navigation > ul > li > a:not(.button),
-.header-background .navigation > ul .dropdown-list:not(.custom-content) li a {
-  color: #9EA7BB;
+.header-background .navigation .main-menu-item,
+.header-background .navigation .dropdown-list:not(.custom-content) li a {
+  color: #45567C;
 }
 
-.header-background .navigation > ul > li > a:not(.button):hover,
-.header-background .navigation > ul > li .dropdown-list li > a:not(.button):hover {
-  color: #1C2232;
+.header-background .navigation .main-menu-item:hover,
+.header-background .navigation .dropdown-list li > a:not(.button):hover {
+  color: #0096ff;
 }
 
-.header-background .navigation > ul > .active > a:not(.button) {
+.header-background .navigation .main-menu-item.active {
   background-color: transparent;
-  color: #1C2232;
+  color: #0096ff;
 }
 
-.header-background .navigation > ul > .active > a:not(.button):not(.button):hover {
+.header-background .navigation .main-menu-item.active:hover {
   background-color: transparent;
-  color: #1C2232;
+  color: #0096ff;
 }
 
 .header-background .navigation-show {
-  color: #9EA7BB;
-  border-color: #9EA7BB;
+  color: #45567C;
+  border-color: #45567C;
 }
 
 .header-background .navigation-show:hover {
-  color: #1C2232;
-  border-color: #1C2232;
+  color: #0096ff;
+  border-color: #0096ff;
 }
 
 .header-background .navigation-show:hover span {
-  background-color: #1C2232;
+  background-color: #0096ff;
 }
 
 .header-background .navigation-show span {
-  background-color: #9EA7BB;
+  background-color: #45567C;
 }
 
 .header-background .swap-color {

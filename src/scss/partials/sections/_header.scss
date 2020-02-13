@@ -250,26 +250,20 @@ body.boxed .header{
 		border-bottom: $header-border-bottom-on-scroll;
 	}
 	.navigation{
-		> ul{
-			> li > a:not(.button),
-			.dropdown-list:not(.custom-content) li a{
-				color: $header-nav-color-on-scroll;
-			}
-			> li{ 
-				> a:not(.button):hover,
-				.dropdown-list li > a:not(.button):hover{
-					color: $header-nav-color-on-scroll-hover;
-				}
-			}
-			> .active{
-				> a:not(.button){
-					background-color: $header-nav-bkg-color-active-on-scroll;
-					color: $header-nav-color-on-scroll-active;
-					&:not(.button):hover{
-						background-color: $header-nav-bkg-color-active-on-scroll;
-						color: $header-nav-color-on-scroll-active;
-					}
-				}
+		.main-menu-item,
+		.dropdown-list:not(.custom-content) li a{
+			color: $header-nav-color-on-scroll;
+		}
+		.main-menu-item:hover,
+		.dropdown-list li > a:not(.button):hover{
+			color: $header-nav-color-on-scroll-hover;
+		}
+		.main-menu-item.active{
+			background-color: $header-nav-bkg-color-active-on-scroll;
+			color: $header-nav-color-on-scroll-active;
+			&:hover{
+				background-color: $header-nav-bkg-color-active-on-scroll;
+				color: $header-nav-color-on-scroll-active;
 			}
 		}
 	}
