@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Masonry Grid 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -273,7 +273,7 @@ const tmMasonryGrid = (function () {
           let gridItem = gridItems[i];
           gridItem.style.width = 'auto';
           if(element.hasAttribute('data-set-grid-item-height')) gridItem.style.height = calcGridItemHeight(gridItemSizer,gridItem) + 'px';
-          gridItem.style.minHeight = 'auto'; 
+          if(gridItem.hasClass('loaded')) gridItem.style.minHeight = 'auto'; 
         }
       });
     };
