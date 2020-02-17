@@ -273,7 +273,7 @@ const tmMasonryGrid = (function () {
           let gridItem = gridItems[i];
           gridItem.style.width = 'auto';
           if(element.hasAttribute('data-set-grid-item-height')) gridItem.style.height = calcGridItemHeight(gridItemSizer,gridItem) + 'px';
-          if(gridItem.hasClass('loaded')) gridItem.style.minHeight = 'auto'; 
+          if(gridItem.classList.contains('loaded')) gridItem.style.minHeight = 'auto'; 
         }
       });
     };
