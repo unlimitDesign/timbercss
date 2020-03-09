@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Load media 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -59,12 +59,12 @@ const loadMedia = (function () {
           let image = media;
           let proxyImage = new Image();
           proxyImage.src = image.dataset.src;
+          proxyImage.alt = image.alt;
           proxyImage.classList = image.classList;
           
           // Only set srcset if it's not a background image and it has srcset
           if(!plugin.settings.backgroundImage && image.srcset){
             proxyImage.srcset = image.dataset.srcset;
-            proxyImage.alt = image.alt;
           }
 
           // Use decode for modern browsers
