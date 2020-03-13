@@ -1055,7 +1055,7 @@ $sidebar-block-link-nested-margin:                          0.4rem 0 1rem 1rem !
 // Grids
 $grid-item-width-start:                                     100% !default;                                                                                   // Grid item width start animation position
 $grid-item-width-end:                                       100% !default;                                                                                   // Grid item width  end animation positio
-$grid-item-height-start:                                    0 !default;                                                                                      // Grid item height start animation position
+$grid-item-height-start:                                    100% !default;                                                                                      // Grid item height start animation position
 $grid-item-height-end:                                      100% !default;                                                                                   // Grid item height end animation positio
 $grid-item-transform-start:                                 scale(1.3) !default;                                                                             // Grid item transform start animation position
 $grid-item-transform-end:                                   scale(1) !default;                                                                               // Grid item transform end animation positio

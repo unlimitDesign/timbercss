@@ -41,10 +41,9 @@
 	.grid-item-inner{
 		width: $grid-item-width-start;
 		height: $grid-item-height-start;
-		transition-duration: 400ms;
 		opacity: 0;
 		transform: $grid-item-transform-start;
-		transition-property: all;
+		@include transition(width height opacity rotate transform, 400ms);
 		will-change: all;
 	}
 	.grid-item.loaded .grid-item-inner{
