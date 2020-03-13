@@ -86,14 +86,10 @@
 /* Breakpoints */
 @each $breakpoint in map-keys($breakpoints) {
 	@include breakpoint-max($breakpoint){
-		
-		// Container width
 		.boxed .wrapper-inner,
 		.row{
 			max-width: map-get($container-max-widths, $breakpoint);
 		}
-
-		// Force widths in smallest breakpoints
 		@if $breakpoint == 'sm'{
 			[class*="offset-"]{ margin-left: 0; }
 			.w-1\/12,
@@ -116,7 +112,9 @@
 		}
 		@each $column-breakpoint in $column-responsive {
 			@if $column-breakpoint == $breakpoint{
-				// Column widths
+				.fluid-#{$breakpoint}{
+					max-width: 100%;
+				}
 				@for $i from 1 through 12{
 					@if $i != 12 {
 						.w-#{$breakpoint}-#{$i}\/12{
@@ -134,7 +132,6 @@
 						}
 					}
 				}
-				// Order
 				@for $i from 0 through 12{
 					.order-#{$breakpoint}-#{$i} {
 						-webkit-box-ordinal-group: $i + 1;
@@ -142,8 +139,6 @@
 						order: $i;
 					}
 				}
-
-				// Offset
 				@for $i from 0 through 11{
 					.offset-#{$breakpoint}-#{$i} {
 						margin-left: map-get($column-widths, $i);
