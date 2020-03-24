@@ -89,7 +89,8 @@ module.exports = {
         'tml-zoom',
         'tml-thumbnails',
         'tml-exit',
-        'tml-toolbar'
+        'tml-toolbar',
+        'preloader'
     ],
     purgeCSS_whitelistPatterns: [/\bw-\b/]
 }
