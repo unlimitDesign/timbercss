@@ -28,6 +28,7 @@
 	visibility: hidden;
 	list-style: none;
 	overflow: hidden;
+	pointer-events: none;
 	@include transition();
 	position: absolute;
 	top: 100%;
@@ -35,6 +36,7 @@
 	&.active{
 		opacity: 1 !important;
 		visibility: visible !important;
+		pointer-events: auto;
 	}
 }
 .dropdown-item{
