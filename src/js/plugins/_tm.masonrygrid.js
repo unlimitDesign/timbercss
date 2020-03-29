@@ -87,6 +87,9 @@ const tmMasonryGrid = (function () {
             // Show loaded grid item by adding the loaded class to it
             classList(itemParent).addClass('loaded');
 
+            // Clear any min-height set
+            if(gridItem.classList.contains('loaded')) gridItem.style.minHeight = 'auto'; 
+
             // Callback
             plugin.settings.gridItemLoaded(loadedItem);
           },
@@ -273,7 +276,6 @@ const tmMasonryGrid = (function () {
           let gridItem = gridItems[i];
           gridItem.style.width = 'auto';
           if(element.hasAttribute('data-set-grid-item-height')) gridItem.style.height = calcGridItemHeight(gridItemSizer,gridItem) + 'px';
-          if(gridItem.classList.contains('loaded')) gridItem.style.minHeight = 'auto'; 
         }
       });
     };
