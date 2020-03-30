@@ -43,11 +43,19 @@
 	> div{
 		height: 0;
 		visibility: hidden;
+		pointer-events: none;
 		background: none;
+		input{
+			visibility: inherit;
+		}
 	}
 	> .active{
 		height: auto;
 		visibility: visible;
+		pointer-events: auto;
+		input{
+			visibility: inherit;
+		}
 	}
 	.tab-content{
 		opacity: 0;

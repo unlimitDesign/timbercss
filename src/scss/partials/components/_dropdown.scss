@@ -34,14 +34,14 @@
 	top: 100%;
 	z-index: 1000;
 	input{
-		visibility: hidden;
+		visibility: inherit;
 	}
 	&.active{
 		opacity: 1 !important;
 		visibility: visible !important;
 		pointer-events: auto;
 		input{
-			visibility: visible;
+			visibility: inherit;
 		}
 	}
 }
