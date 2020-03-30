@@ -40,22 +40,16 @@
 	margin-top: -1px;
 	padding: $component-medium-padding-x;
 	border: $tabs-border-width solid $tabs-border-color;
+	position: relative;
 	> div{
 		height: 0;
 		visibility: hidden;
-		pointer-events: none;
 		background: none;
-		input{
-			visibility: inherit;
-		}
 	}
 	> .active{
 		height: auto;
 		visibility: visible;
-		pointer-events: auto;
-		input{
-			visibility: inherit;
-		}
+		z-index: 1;
 	}
 	.tab-content{
 		opacity: 0;
