@@ -40,11 +40,11 @@
 	margin-top: -1px;
 	padding: $component-medium-padding-x;
 	border: $tabs-border-width solid $tabs-border-color;
-	position: relative;
 	> div{
 		height: 0;
 		visibility: hidden;
 		background: none;
+		position: relative;
 	}
 	> .active{
 		height: auto;
