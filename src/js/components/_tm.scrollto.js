@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Scroll To 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -28,8 +28,9 @@ const tmScrollTo = (function () {
   const defaults = {
     scrollBehaviour: 'smooth',
     navItemClass: 'nav-item',
-    initialized: function(){},      // Callback - tabs initialized
-    destroyed: function(){}       // Callback - tabs destroyed
+    initialized: function(){},      // Callback - scrolling initialized
+    doneScrolling: function(){},    // Callback - scroling done - works only with window
+    destroyed: function(){}         // Callback - scrolling destroyed
   };
   
   /**
@@ -68,6 +69,7 @@ const tmScrollTo = (function () {
       let amountX = event.target.dataset.scrollX ? parseInt(event.target.dataset.scrollX,10) : 0;
       let amountY = event.target.dataset.scrollY ? parseInt(event.target.dataset.scrollY,10) : 0;
       let element = event.target.tagName == 'A' ? event.target.href.substring(event.target.href.indexOf('#')) : event.target.dataset.element;
+      let windowScroll = true;
 
       // Switch based on scroll types
       try{  
@@ -82,25 +84,28 @@ const tmScrollTo = (function () {
           case 'window-scroll-by':
 
             window.scrollBy({top: amountY, left: amountX, behavior: plugin.settings.scrollBehaviour});
-
+          
           break;
 
           case 'element-scroll-to':
 
             document.querySelector(element).scroll({top: amountY, left: amountX, behavior: plugin.settings.scrollBehaviour});
-      
+            windowScroll = false;
+
           break;
 
           case 'element-scroll-by':
 
             document.querySelector(element).scrollBy({top: amountY, left: amountX, behavior: plugin.settings.scrollBehaviour});
+            windowScroll = false;
 
           break;
 
           case 'element-scroll-into-view':
 
             document.querySelector(element).scrollIntoView({behavior: plugin.settings.scrollBehaviour});
-
+            windowScroll = false;
+            
           break;
 
           default:
@@ -110,6 +115,52 @@ const tmScrollTo = (function () {
       }catch(error){
         console.log(`${error} - Check that section exists: ${element}`);
       }
+
+      // Check if scrolling is done
+      scrollingDone(amountY,amountX, windowScroll);
+
+    };
+
+    /**
+    * Check when scrolling has completed
+    * @param  {number}  number  Amount to scroll on y axis.
+    * @param  {number}  number  Amount to scroll on x axis.
+    * @param  {boolean}  boolean  Window scrolling or element.
+    */
+    const scrollingDone = (amountY, amountX, windowScroll) => {
+      
+      let scrollDoneTimer;
+      let winYPos = window.scrollY;
+      let winXPos = window.scrollX;
+      let newWinYPos = winYPos + amountY;
+      let newWinXPos = winXPos + amountX;
+      let scrollY = window.scrollY != amountY || window.scrollY != newWinYPos ? true : false;
+      let scrollX = winXPos != amountX || winXPos != newWinXPos ? true : false;
+
+      // Clear timeout
+      clearTimeout(scrollDoneTimer);
+
+      // Set timeout
+      scrollDoneTimer = setTimeout(function checkPosition() {
+        if(windowScroll){
+          scrollDoneTimer = setTimeout(checkPosition, 200);
+          if(scrollY){
+            if(window.scrollY == amountY || window.scrollY == newWinYPos){
+              clearTimeout(scrollDoneTimer);
+
+              // Callback
+              plugin.settings.doneScrolling();
+            }
+          }else if(scrollX){
+            if(winXPos == amountX || winXPos == newWinXPos){
+              clearTimeout(scrollDoneTimer);
+
+              // Callback
+              plugin.settings.doneScrolling();
+            }
+          }
+        }
+      }, 200);
     };
 
     /**
