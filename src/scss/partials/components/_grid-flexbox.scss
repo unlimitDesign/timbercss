@@ -109,6 +109,9 @@
 				flex: 0 0 100%;
 				max-width: 100%;
 			}
+			.row .row{
+				max-width: none;
+			}
 		}
 		@each $column-breakpoint in $column-responsive {
 			@if $column-breakpoint == $breakpoint{
