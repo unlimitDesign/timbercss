@@ -36,7 +36,7 @@ input[type="checkbox"]{
 }
 input[type="checkbox"],
 input[type="radio"]{
-	visibility: hidden;
+	visibility: hidden !important;
 }
 input:focus,
 textarea:focus,
