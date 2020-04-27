@@ -52,7 +52,8 @@ $base-colors:(
     transparent:                                            transparent,                                                                                    // Color states for base and theme specific colors - provides color, :hover color, :focus color
     primary:                                                $primary,
     secondary:                                              $secondary,
-    black:                                                  $grey-ultradark,
+    black:                                                  $black,
+    grey-ultradark:                                         $grey-ultradark,
     grey-darkest:                                           $grey-darkest,
     grey-darker:                                            $grey-darker,
     grey-dark:                                              $grey-dark,

@@ -34,8 +34,8 @@ input[type="checkbox"]{
 	   -moz-appearance:	checkbox;
 			appearance: checkbox;
 }
-input[type="checkbox"],
-input[type="radio"]{
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled{
 	visibility: hidden !important;
 }
 input:focus,
