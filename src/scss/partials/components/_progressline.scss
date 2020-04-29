@@ -39,9 +39,12 @@
 			top: $progressline-bullet-size + $progressline-bullet-margin-y*2;
 			bottom: 0;
 			left: -1px;
-		}
+    }
+    &:last-child:after {
+      height: 0;
+    }
 		&:last-child .progressline-content{
-			padding-bottom: 0;
+			padding-bottom: 0 !important;
 		}
 	}
 	.progressline-section {
@@ -85,6 +88,7 @@
 			display: block;
 		}
 		&.center{
+      margin-left: 0;
 			.progressline-item {
 				padding-left: 0;
 		 	}
