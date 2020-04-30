@@ -27,7 +27,7 @@ $grey:                                                      #848C93 !default;
 $grey-light:                                                #9CA3A9 !default;
 $grey-lighter:                                              #B5BABE !default;
 $grey-lightest:                                             #E6E8E9 !default;
-$grey-ultralight:                                           #F0F1F1 !default;
+$grey-ultralight:                                           #f1f2f3 !default;
 $white:                                                     #ffffff !default;
 
 $blue:                                                      #0096ff !default;
@@ -676,13 +676,28 @@ $button-hover-box-shadow:                                   none !default;      
 
 // Code
 $code-font-size:                                            1.4rem !default;
-$code-color:                                                pink !default;
+
+$code-color:                                                $indigo !default;
+$pre-color:                                                 $grey !default;
+
+$code-inline-padding:                                       .125rem .5rem !default;
+$code-inline-bkg-color:                                     $grey-ultralight !default;
+$code-inline-border:                                        1px solid $grey-lightest !default;
+$code-inline-border-radius:                                 $border-rounded !default;
+$code-inline-color:                                         $indigo !default;
+
+$code-block-padding:                                        2rem !default;
+$code-block-bkg-color:                                      $grey-ultralight !default;
+$code-block-border-width:                                   0 0 0 0.4rem !default;
+$code-block-border-color:                                   $green !default;
+$code-block-border-radius:                                  $border-rounded !default;
+$code-block-color:                                          $grey !default;
+
 $kbd-padding-y:                                             .2rem !default;
 $kbd-padding-x:                                             .4rem !default;
 $kbd-font-size:                                             $code-font-size !default;
-$kbd-color:                                                 white !default;
-$kbd-bkg-color:                                             grey !default;
-$pre-color:                                                 grey !default;
+$kbd-color:                                                 $white !default;
+$kbd-bkg-color:                                             $grey !default;
 
 // Dropdown
 $dropdown-menu-min-width:                                   18rem !default;                                                                                  // Dropdown medium list width                                           
