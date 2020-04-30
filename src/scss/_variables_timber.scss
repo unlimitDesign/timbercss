@@ -172,7 +172,7 @@ $flexbox-responsive:                                        (lg,md,sm) !default;
 // CSS Grid
 //
 
-$grid-col-spans:                                            (2,3) !default;                                                                                 // The number of columns a grid item can span
+$grid-col-spans:                                            (2,3,4,5,6,7,8) !default;                                                                                 // The number of columns a grid item can span
 $grid-row-spans:                                            (2,3) !default;                                                                                 // The number of rows a grid item can span
 $grid-col-start:                                            (1,2,3,4,5,6,7,8) !default;                                                                     // Determines a grid item’s start location within the grid where numbers refers to specific columns            
 $grid-col-end:                                              (1,2,3,4,5,6,7,8) !default;                                                                     // Determines a grid item’s end location within the grid where numbers refers to specific columns
