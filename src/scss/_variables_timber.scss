@@ -18,35 +18,36 @@ $font-base-size: 62.5% !default;                                                
 // Colors
 //
 
-$black:                                                     #07090C !default;                                                                               // Base colors
-$grey-ultradark:                                            #1C2232 !default;
-$grey-darkest:                                              #303C57 !default;
-$grey-darker:                                               #45567C !default;
-$grey-dark:                                                 #7D89A3 !default;
-$grey:                                                      #9EA7BB !default;
-$grey-light:                                                #AFB6C7 !default;
-$grey-lighter:                                              #C0C6D2 !default;
-$grey-lightest:                                             #E1E4EA !default;
-$grey-ultralight:                                           #F2F3F6 !default;
+$black:                                                     #091a28 !default;                                                                               // Base colors
+$grey-ultradark:                                            #21303D !default;
+$grey-darkest:                                              #3A4753 !default;
+$grey-darker:                                               #525E68 !default;
+$grey-dark:                                                 #6B757E !default;
+$grey:                                                      #848C93 !default;
+$grey-light:                                                #9CA3A9 !default;
+$grey-lighter:                                              #B5BABE !default;
+$grey-lightest:                                             #E6E8E9 !default;
+$grey-ultralight:                                           #F0F1F1 !default;
 $white:                                                     #ffffff !default;
 
 $blue:                                                      #0096ff !default;
+$blue-light:                                                #e5f4ff !default;
 $indigo:                                                    #6574cd !default;
 $purple:                                                    #9561e2 !default;
 $pink:                                                      #f44f7f !default;
 $red:                                                       #f14844 !default;
-$orange:                                                    #f6993f !default;
-$yellow:                                                    #ffed4a !default;
-$green:                                                     #38c172 !default;
+$orange:                                                    #fc8842 !default;
+$yellow:                                                    #fedb5c !default;
+$green:                                                     #37cd8f !default;
 $teal:                                                      #48d2c5 !default;
 $cyan:                                                      #1ec4de !default;
 
-$primary:                                                   $blue !default;                                                                                 // Theme specific colors
+$primary:                                                   $green !default;                                                                                 // Theme specific colors
 $secondary:                                                 $grey-darker !default;
-$success:                                                   $green !default;
-$info:                                                      $blue !default;
-$warning:                                                   $yellow !default;
-$danger:                                                    $red !default;
+$success:                                                   #37cd8f !default;
+$info:                                                      #0096ff !default;
+$warning:                                                   #f6993f !default;
+$danger:                                                    #f14844 !default;
 
 $base-colors:(  
     transparent:                                            transparent,                                                                                    // Color states for base and theme specific colors - provides color, :hover color, :focus color
@@ -63,9 +64,9 @@ $base-colors:(
     grey-lightest:                                          $grey-lightest,
     grey-ultralight:                                        $grey-ultralight,
     white:                                                  $white,
-    blue:                                                   $primary,
+    blue:                                                   $blue,
     indigo:                                                 $indigo,
-    purple:                                                 $purple,
+    purple:                                                 $purple,     
     pink:                                                   $pink,
     red:                                                    $red,
     orange:                                                 $orange,
@@ -73,10 +74,10 @@ $base-colors:(
     green:                                                  $green,
     teal:                                                   $teal,
     cyan:                                                   $cyan,
-    success:                                                $green,
-    info:                                                   $blue,
-    warning:                                                $orange,
-    danger:                                                 $red,
+    success:                                                $success,
+    info:                                                   $info,
+    warning:                                                $warning,
+    danger:                                                 $danger,
 ) !default;
 
 $gradient-colors:(
@@ -298,7 +299,7 @@ $z-index-responsive:                                        (lg,md,sm) !default;
 // Font Family
 $font-family-sans-serif:                                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:                                         Georgia, Cambria, "Times New Roman", Times, serif !default;
-$font-family-monospace:                                     "Courier New", Courier, monospace, sans-serif !default;
+$font-family-monospace:                                     Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-responsive:                                    (lg,md,sm) !default;
 
 // Font Size
@@ -674,7 +675,7 @@ $button-box-shadow:                                         none !default;      
 $button-hover-box-shadow:                                   none !default;                                                                                   // Button shadow on hover - for when the class .shadow-on-hover is added to a.button or button
 
 // Code
-$code-font-size:                                            inherit !default;
+$code-font-size:                                            1.4rem !default;
 $code-color:                                                pink !default;
 $kbd-padding-y:                                             .2rem !default;
 $kbd-padding-x:                                             .4rem !default;

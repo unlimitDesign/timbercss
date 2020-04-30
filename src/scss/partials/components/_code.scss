@@ -39,13 +39,12 @@ kbd {
 }
 
 /**
- * GHColors theme by Avi Aryan (http://aviaryan.in)
- * Inspired by Github syntax coloring
+ * Timber Code Theme
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: #393A34;
+    color: $grey-darkest;
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -64,32 +63,37 @@ pre[class*="language-"] {
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    background: #b3d4fc;
+    background: $black;
+    color: $white;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    background: #b3d4fc;
+    background: $black;
+    color: $white;
 }
 
-/* Code blocks */
+/* Code blocks
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-}
+} */
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    padding: .2em;
-    padding-top: 1px; padding-bottom: 1px;
-    background: #f8f8f8;
-    border: 1px solid #dddddd;
+  padding: .2em;
+  padding-top: 1px; padding-bottom: 1px;
+  background: $grey-ultralight;
+  border: 1px solid $grey-lightest;
+  border-radius: $border-rounded;
+  color: $grey;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #999988; font-style: italic;
+    color: $grey-light; 
+    font-style: italic;
 }
 
 .token.namespace {
@@ -98,11 +102,11 @@ pre[class*="language-"] {
 
 .token.string,
 .token.attr-value {
-    color: #e3116c;
+    color: $pink;
 }
 .token.punctuation,
 .token.operator {
-    color: #393A34; /* no highlight */
+    color: $grey-dark;
 }
 
 .token.entity,
@@ -115,26 +119,26 @@ pre[class*="language-"] {
 .token.property,
 .token.regex,
 .token.inserted {
-    color: #36acaa;
+    color: $teal;
 }
 
 .token.atrule,
 .token.keyword,
 .token.attr-name,
 .language-autohotkey .token.selector {
-    color: #00a4db;
+    color: $cyan;
 }
 
 .token.function,
 .token.deleted,
 .language-autohotkey .token.tag {
-    color: #9a050f;
+    color: $indigo;
 }
 
 .token.tag,
 .token.selector,
 .language-autohotkey .token.keyword {
-    color: #00009f;
+    color: $green;
 }
 
 .token.important,
