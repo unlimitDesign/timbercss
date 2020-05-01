@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Scroll To 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -28,6 +28,7 @@ const tmScrollTo = (function () {
   const defaults = {
     scrollBehaviour: 'smooth',
     navItemClass: 'nav-item',
+    swapActiveClass: 'swap-active',
     initialized: function(){},      // Callback - scrolling initialized
     doneScrolling: function(){},    // Callback - scroling done - works only with window
     destroyed: function(){}         // Callback - scrolling destroyed
@@ -66,10 +67,14 @@ const tmScrollTo = (function () {
 
       // Defines some variales
       let scrollType = event.target.dataset.scrollType;
-      let amountX = event.target.dataset.scrollX ? parseInt(event.target.dataset.scrollX,10) : 0;
-      let amountY = event.target.dataset.scrollY ? parseInt(event.target.dataset.scrollY,10) : 0;
       let element = event.target.tagName == 'A' ? event.target.href.substring(event.target.href.indexOf('#')) : event.target.dataset.element;
+      let buffer = event.target.dataset.buffer ? parseInt(event.target.dataset.buffer,10) : 0;
+      let amountX = event.target.dataset.scrollX == 'targetOffset' ? document.querySelector(element).offsetLeft + buffer : event.target.dataset.scrollX ? parseInt(event.target.dataset.scrollX,10) : 0;
+      let amountY = event.target.dataset.scrollY == 'targetOffset' ? document.querySelector(element).offsetTop + buffer : event.target.dataset.scrollY ? parseInt(event.target.dataset.scrollY,10) : 0;
       let windowScroll = true;
+
+      // Update window URL
+      if(event.target.hasAttribute('data-update-url')) history.pushState({extraData: `Section ${element}`}, '', element);
 
       // Switch based on scroll types
       try{  
@@ -119,6 +124,8 @@ const tmScrollTo = (function () {
       // Check if scrolling is done
       scrollingDone(amountY,amountX, windowScroll);
 
+      // Update nav state
+      updateNavigationState(false, event.target);
     };
 
     /**
@@ -186,15 +193,23 @@ const tmScrollTo = (function () {
     };
 
     /**
-    * Observe on interset - modern browsers
+    * Update nav link
     * @param  {object}  element  The current section in or out of view.
     */
-    const updateNavigationState = (section) => {
-      let navItem = document.querySelector('a[href="#' + section.id + '"]') ? document.querySelector('a[href="#' + section.id + '"]') : document.querySelector('[data-element="#' + section.id + '"]');
-      if(section.classList.contains('out-of-view')){
-        classList(navItem).removeClass('active');
+    const updateNavigationState = (section, navItem) => {
+      if(section){
+        navItem = document.querySelector(`a[href="#${section.id}"]`) ? document.querySelector(`a[href="#${section.id}"]`) : document.querySelector(`[data-element="#${section.id}"]`);
+        if(section.classList.contains('out-of-view')){
+          classList(navItem).removeClass('active');
+        }else{
+          classList(navItem).addClass('active');
+        }
       }else{
-        classList(navItem).addClass('active');
+        let swapActive = navItem.classList.contains(plugin.settings.swapActiveClass) ? plugin.settings.swapActiveClass : navItem.dataset.swapActive;
+        document.querySelectorAll(`.${swapActive}`).forEach(function(element){
+          classList(element).removeClass('active');
+        });
+        classList(event.target).addClass('active');
       }
     };
 
@@ -213,13 +228,13 @@ const tmScrollTo = (function () {
       polyfill();
 
       // Get nav elements length
-      let navItemLength = document.querySelectorAll(plugin.elements + '.nav-item').length;
+      let navItemLength = document.querySelectorAll(plugin.elements + `.${plugin.settings.navItemClass}`).length;
       let i = 0;
 
       // Add link event 
       document.querySelectorAll(plugin.elements).forEach(function(element){
         element.addEventListener(eventType, initiateScroll, false);
-
+        
         // Find associated nav items
         let isNavItem = element.classList.contains(plugin.settings.navItemClass);
         if(isNavItem){
