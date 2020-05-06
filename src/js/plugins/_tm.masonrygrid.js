@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Masonry Grid 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -242,6 +242,9 @@ const tmMasonryGrid = (function () {
         
         // Find grid items
         let gridItems = element.querySelectorAll('.grid-item:not(.loaded)');
+
+        // Check preloader option
+        plugin.settings.usePreloader = element.hasAttribute('data-no-preloader') ? false : plugin.settings.usePreloader;
 
         // Create instance of inView to observe grid items and load their images
         // upon entering the viewport
