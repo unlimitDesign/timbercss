@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Toggle Sub Menu 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -10,6 +10,7 @@
 import classList from '../utilities/_chaining.js';
 import getParents from '../utilities/_getparents.js';
 import tmEasing from '../utilities/_tm.easing.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmToggleSubMenu = (function () {
 
@@ -26,17 +27,17 @@ const tmToggleSubMenu = (function () {
   const eventType = mobile ? 'touchstart' : 'click';
 
   // Sub menu references
-  let subMenu = '.sub-menu';                // Sub menu
+  let subMenu = '.sub-menu';                        // Sub menu
   let subMenuParentLink = '.contains-sub-menu';     // Sub menu parent link
 
   // Set the plugin defaults
   const defaults = {
-    easing: 'easeInOutQuint',             // Sub menu  easing
-    multipleMenusOpen: false,             // Whether multiple top level sub menus should be open simultaneously
-    initialized: function(){},              // Callback - side nav initialized
-    subMenuOpen: function(){},              // Callback - side nav open
-    subMenuClosed: function(){},            // Callback - side nav closed
-    destroyed: function(){}               // Callback - side nav destroyed
+    easing: 'easeInOutQuint',                       // Sub menu  easing
+    multipleMenusOpen: false,                       // Whether multiple top level sub menus should be open simultaneously
+    initialized: function(){},                      // Callback - side nav initialized
+    subMenuOpen: function(){},                      // Callback - side nav open
+    subMenuClosed: function(){},                    // Callback - side nav closed
+    destroyed: function(){}                         // Callback - side nav destroyed
   };
 
   /**
@@ -99,7 +100,7 @@ const tmToggleSubMenu = (function () {
     * Toggle sub menu
     */
     const toggleSubMenu = (event) =>{
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       
       // Get link subling
       subMenu = event.target.nextElementSibling;
@@ -162,9 +163,10 @@ const tmToggleSubMenu = (function () {
         
         // Add events to parent links
         for (var i = 0; i < links.length; i++) {
+          let options = links[i].tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
           links[i].addEventListener(eventType, function(){
             toggleSubMenu(event);
-          }, false);
+          }, options);
 
           // If active, trigger click so sub menu height is set on startup
           if(links[i].classList.contains('active')){

@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Accordion 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,6 +9,7 @@
 // Import utilities 
 import classList from '../utilities/_chaining.js';
 import locationHash from '../utilities/_locationHash.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmAccordion = (function () {
 
@@ -38,7 +39,7 @@ const tmAccordion = (function () {
   * @param  {object}   options  The plugin options.
   */
   function Accordion(element, options) {
-
+    
     // Create an empty plugin object
     const plugin = {};
     
@@ -57,7 +58,8 @@ const tmAccordion = (function () {
     * @param  {accLink}  element  The accordion tab link(s).
     */
     const addLinkEvents = (acclink) =>{
-      acclink.addEventListener(eventType, updateAccordionState, false);
+      let options = acclink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      acclink.addEventListener(eventType, updateAccordionState, options);
     };
 
     /**
@@ -72,11 +74,11 @@ const tmAccordion = (function () {
     * Update accordion
     */
     const updateAccordionState = () =>{
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       let linkClicked = event.target;
-      let linkClickedTarget = linkClicked.getAttribute('href');
+      let linkClickedTarget = linkClicked.getAttribute('href') ? linkClicked.getAttribute('href') : linkClicked.dataset.target;
       let linkActive = linkClicked.closest('.accordion').querySelector('.accordion-nav.active');
       let allPanes = linkClicked.closest('.accordion').querySelectorAll('.accordion-pane');
       let targetPane = linkClicked.parentNode.querySelector(linkClickedTarget);
@@ -123,6 +125,7 @@ const tmAccordion = (function () {
           plugin.settings.paneVisible();
         }, 50 );
       }
+      return false;
     };
 
     /**
@@ -152,7 +155,8 @@ const tmAccordion = (function () {
       let hashExists = location[0];
       let itemID = location[1];
       if(hashExists){
-        plugin.triggerLinkClick('a[href="' + itemID + '"]');
+        let target = document.getElementsByTagName('a[href="' + itemID + '"]').length === 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
+        plugin.triggerLinkClick(target);
       }
 
       // Add window resize event

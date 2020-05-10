@@ -175,7 +175,7 @@ const tmLightbox = (function () {
     * Build the Lightbox
     */
     const buildLightbox = (lightboxLink) => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       // Check lightbox doesn't already exist
@@ -744,7 +744,7 @@ const tmLightbox = (function () {
     * Load next content
     */
     plugin.nextContent = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading')) return false;
@@ -766,7 +766,7 @@ const tmLightbox = (function () {
     * Load previous content
     */
     plugin.prevContent = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading')) return false;
@@ -788,7 +788,7 @@ const tmLightbox = (function () {
     * Load content
     */
     plugin.getContent = (thumbnailLink) => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading') || thumbnailLink.classList.contains('tml-thumb-active')) return false;

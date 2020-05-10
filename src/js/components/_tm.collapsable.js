@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Collapsable 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -10,6 +10,7 @@
 import classList from '../utilities/_chaining.js';
 import locationHash from '../utilities/_locationHash.js';
 import getParents from '../utilities/_getparents.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmCollapsable = (function () {
 
@@ -60,7 +61,8 @@ const tmCollapsable = (function () {
     * @param  {element}  The collapsable link(s).
     */
     const addLinkEvents = (collapsableLink, eventType) => {
-      collapsableLink.addEventListener(eventType, toggleTimeout, false);
+      let options = collapsableLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      collapsableLink.addEventListener(eventType, toggleTimeout, options);
     };
 
     /**
@@ -78,7 +80,8 @@ const tmCollapsable = (function () {
     const getCollapsableTarget = (element) =>{
       let radio = element.type == 'radio';
       let checkbox = element.type == 'checkbox';
-      let collapsableTarget = radio || checkbox ? document.querySelector(element.dataset.targetContent) : document.querySelector(element.getAttribute('href'));
+      let button = element.tagName == 'BUTTON';
+      let collapsableTarget = radio || checkbox || button ? document.querySelector(element.dataset.target) : document.querySelector(element.getAttribute('href'));
       return collapsableTarget;
     };
 
@@ -87,7 +90,7 @@ const tmCollapsable = (function () {
     * @param  {event} click event.
     */
     const toggleTimeout = (event) => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       // Clear height of any collapsable parents in the event that the
@@ -179,9 +182,9 @@ const tmCollapsable = (function () {
 
         // Set active based on hash
         if(hashExists){
-          if(radio && element.dataset.targetContent == itemID) getCollapsableTarget(element).style.height = '0px';
-          if(element.dataset.targetContent == itemID){
-            plugin.triggerClick('[data-target-content="' + itemID + '"]');
+          if(radio && element.dataset.target == itemID) getCollapsableTarget(element).style.height = '0px';
+          if(element.dataset.target == itemID){
+            plugin.triggerClick('[data-target="' + itemID + '"]');
           }else if(element.href && element.href.substring(element.href.indexOf('#')) == itemID){
             getCollapsableTarget(element).style.height = '0px';
             plugin.triggerClick('a[href="' + itemID + '"]');

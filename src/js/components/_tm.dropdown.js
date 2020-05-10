@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Dropdown 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -8,6 +8,7 @@
 
 // Import utilities 
 import classList from '../utilities/_chaining.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmDropdown = (function () {
 
@@ -86,7 +87,7 @@ const tmDropdown = (function () {
     * Toggle dropdown
     */
     const updateDropdownState = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       // Define some variables
@@ -122,7 +123,7 @@ const tmDropdown = (function () {
     * Toggle dropdown link items
     */
     const updateDropdownLinkState = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       // Define some variables
@@ -163,11 +164,13 @@ const tmDropdown = (function () {
         let dropdownMenuLinks = dropdown.querySelectorAll('.dropdown-item');
 
         // Add link events
-        dropdownLink.addEventListener(eventType, updateDropdownState, false);
+        let options = dropdownLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+        dropdownLink.addEventListener(eventType, updateDropdownState, options);
 
         // Add events to dropdown menu links
         for (var i = 0; i < dropdownMenuLinks.length; i++) {
-          dropdownMenuLinks[i].addEventListener(eventType, updateDropdownLinkState, false);
+          let options = dropdownMenuLinks[i].tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+          dropdownMenuLinks[i].addEventListener(eventType, updateDropdownLinkState, options);
         }
 
         // Set height of dropdown list if it's to open upwards

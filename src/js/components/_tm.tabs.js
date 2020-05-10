@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Tabs 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,6 +9,7 @@
 // Import utilities
 import classList from '../utilities/_chaining.js';
 import locationHash from '../utilities/_locationHash.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmTabs = (function () {
 
@@ -58,7 +59,8 @@ const tmTabs = (function () {
     * @param  {accLink}  element  The tab tab link(s).
     */
     const addLinkEvents = (tabLink) =>{
-      tabLink.addEventListener(eventType, updateTabsState, false);
+      let options = tabLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      tabLink.addEventListener(eventType, updateTabsState, options);
     };
 
     /**
@@ -73,11 +75,11 @@ const tmTabs = (function () {
     * Update tab
     */
     const updateTabsState = () =>{
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       let linkClicked = event.target;
-      let linkClickedTarget = linkClicked.getAttribute('href');
+      let linkClickedTarget = linkClicked.getAttribute('href') ? linkClicked.getAttribute('href') : linkClicked.dataset.target;
       let linkActive = linkClicked.closest('.tab-nav').querySelector('.active');
       let paneActive = linkClicked.closest('.tabs').querySelector('.tab-panes > .active');
       let targetPane = linkClicked.closest('.tabs').querySelector(linkClickedTarget);
@@ -119,7 +121,7 @@ const tmTabs = (function () {
 
       // Loop through each item and check active tab link
       document.querySelectorAll(plugin.elements).forEach(function(tabs){
-        let links = tabs.querySelectorAll('.tab-nav');
+        let links = tabs.querySelectorAll('.tab-nav *');
         let linksActive = tabs.querySelector('.tab-nav .active');
         let location = locationHash(tabs);
         let hashExists = location[0];
@@ -127,7 +129,8 @@ const tmTabs = (function () {
         
         // Set active based on hash
         if( hashExists ){
-          plugin.triggerLinkClick('a[href="' + itemID + '"]');
+          let target = document.getElementsByTagName('a[href="' + itemID + '"]').length === 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
+          plugin.triggerLinkClick(target);
         }else{
           classList(tabs.querySelector('.tab-panes > .active')).addClass( 'animate-in' );
         }

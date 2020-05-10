@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Scroll To 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -10,6 +10,7 @@
 import classList from '../utilities/_chaining.js';
 import polyfill from '../utilities/_smoothscrollpolyfill.js';
 import tmInView from '../utilities/_tm.inview.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmScrollTo = (function () {
 
@@ -63,11 +64,11 @@ const tmScrollTo = (function () {
     * Initiate scroll event
     */
     const initiateScroll = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       // Defines some variales
       let scrollType = event.target.dataset.scrollType;
-      let element = event.target.tagName == 'A' ? event.target.href.substring(event.target.href.indexOf('#')) : event.target.dataset.element;
+      let element = event.target.tagName == 'A' ? event.target.href.substring(event.target.href.indexOf('#')) : event.target.dataset.target;
       let buffer = event.target.dataset.buffer ? parseInt(event.target.dataset.buffer,10) : 0;
       let amountX = event.target.dataset.scrollX == 'targetOffset' ? document.querySelector(element).offsetLeft + buffer : event.target.dataset.scrollX ? parseInt(event.target.dataset.scrollX,10) : 0;
       let amountY = event.target.dataset.scrollY == 'targetOffset' ? document.querySelector(element).offsetTop + buffer : event.target.dataset.scrollY ? parseInt(event.target.dataset.scrollY,10) : 0;
@@ -198,7 +199,7 @@ const tmScrollTo = (function () {
     */
     const updateNavigationState = (section, navItem) => {
       if(section){
-        navItem = document.querySelector(`a[href="#${section.id}"]`) ? document.querySelector(`a[href="#${section.id}"]`) : document.querySelector(`[data-element="#${section.id}"]`);
+        navItem = document.querySelector(`a[href="#${section.id}"]`) ? document.querySelector(`a[href="#${section.id}"]`) : document.querySelector(`[data-target="#${section.id}"]`);
         if(section.classList.contains('out-of-view')){
           classList(navItem).removeClass('active');
         }else{
@@ -233,7 +234,8 @@ const tmScrollTo = (function () {
 
       // Add link event 
       document.querySelectorAll(plugin.elements).forEach(function(element){
-        element.addEventListener(eventType, initiateScroll, false);
+        let options = element.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+        element.addEventListener(eventType, initiateScroll, options);
         
         // Find associated nav items
         let isNavItem = element.classList.contains(plugin.settings.navItemClass);
@@ -241,7 +243,7 @@ const tmScrollTo = (function () {
           i++;
 
           // Get referenced section and observe it
-          element.tagName == 'A' ? sectionArray.push(element.href.substring(element.href.indexOf('#'))) : sectionArray.push(element.dataset.element);
+          element.tagName == 'A' ? sectionArray.push(element.href.substring(element.href.indexOf('#'))) : sectionArray.push(element.dataset.target);
           if(i == navItemLength) observeSections(sectionArray);
         }
       });
