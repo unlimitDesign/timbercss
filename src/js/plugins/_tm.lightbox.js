@@ -9,7 +9,7 @@
 // Import utilities
 import classList from '../utilities/_chaining.js';
 import loadMedia from '../utilities/_tm.loadmedia.js';
-import tmEasing from '../utilities/_tm.easing.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmLightbox = (function () {
 
@@ -268,7 +268,6 @@ const tmLightbox = (function () {
           // Set active
           if(thumbnailIndex == galleryIndex) classList(thumbnail).addClass('tml-thumb-active');
           
-          //let options = thumbnail.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
           thumbnail.addEventListener(eventType, function(){
             plugin.getContent(thumbnail);
           }, options);

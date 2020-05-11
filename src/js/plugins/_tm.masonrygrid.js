@@ -10,6 +10,7 @@
 import classList from '../utilities/_chaining.js';
 import tmInView from '../utilities/_tm.inview.js';
 import loadMedia from '../utilities/_tm.loadmedia.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmMasonryGrid = (function () {
 
