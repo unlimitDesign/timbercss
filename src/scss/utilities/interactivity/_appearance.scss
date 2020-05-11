@@ -3,6 +3,8 @@
 */
 
 .appearance-none{
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -12,7 +14,9 @@
 		@each $appearance-breakpoint in $appearance-responsive {
 			@if $appearance-breakpoint == $breakpoint{
 				.appearance-#{$breakpoint}-none{
-					appearance: none;
+					-webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
 				}
 			}
 		}
