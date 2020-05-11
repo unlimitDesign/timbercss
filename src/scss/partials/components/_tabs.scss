@@ -7,7 +7,7 @@
 	.tab-nav{
 		padding: 0;
 		display: flex;
-		a{
+		*{
 			margin: 0 !important;
 		}
 		&.center{
@@ -25,7 +25,7 @@
 			&:not([class*="w-"]){
 				width: $tabs-tab-nav-width;
 			}
-			a{
+			*{
 				width: 100%;
 			}
 		}
@@ -79,7 +79,7 @@
 		.tab-nav{
 			display: flex;
 			flex-wrap: wrap;
-			a{
+			*{
 				width: 100%;
 			}
 		}

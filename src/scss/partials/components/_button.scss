@@ -1,7 +1,6 @@
 /*------------------------------------------------------------------
 @section 7. Button
 */
-button, 
 .button{
 	width: auto;
 	padding: $component-medium-padding-y $component-medium-padding-x;
@@ -88,7 +87,6 @@ button,
 
 // Alignment inheritance
 [class*="left-"]{
-	button,
 	.button{
 		margin-right: $button-margin-x !important;
 		margin-left: 0 !important;
@@ -96,7 +94,6 @@ button,
 }
 .center,
 [class*="center-"]{
-	button,
 	.button{
 		margin-right: $button-margin-x/2;
 		margin-left: $button-margin-x/2;
@@ -104,7 +101,6 @@ button,
 }
 .right,
 [class*="right-"]{
-	button,
 	.button{
 		margin-right: 0;
 		margin-left: $button-margin-x;
