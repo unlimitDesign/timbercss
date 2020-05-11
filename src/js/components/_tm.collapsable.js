@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Collapsable 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -61,7 +61,7 @@ const tmCollapsable = (function () {
     * @param  {element}  The collapsable link(s).
     */
     const addLinkEvents = (collapsableLink, eventType) => {
-      let options = collapsableLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      let options = collapsableLink.tagName === 'A' || eventType == 'click' || eventType == 'change' ? false : passiveSupported() ? { passive: true } : false;
       collapsableLink.addEventListener(eventType, toggleTimeout, options);
     };
 

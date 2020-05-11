@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Overlay Navigation 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -42,8 +42,8 @@ const tmOverlayNavigation = (function () {
   function OverlayNavigation(element, options) {
 
     // Some aliases and classes used thruoghout
-    let body;                       // Body alias
-    let siteWrapper;                    // Site wrapper alias
+    let body;                                       // Body alias
+    let siteWrapper;                                // Site wrapper alias
     let overlayNavShow = '.overlay-nav-show';       // Side nav show button.
     let overlayNavHide = '.overlay-nav-hide';       // Side nav hide button.
 
@@ -79,6 +79,15 @@ const tmOverlayNavigation = (function () {
     };
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let options = target.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      return options;
+    };
+
+    /**
     * Public variables and methods.
     */
 
@@ -106,11 +115,10 @@ const tmOverlayNavigation = (function () {
         classList(targetOverlayNav).addClass(getClasses(targetOverlayNav).animation + '-reset');
 
         // Add open events to nav show links
-        let options = overlayNavShow.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-        overlayNavShow.addEventListener(eventType, plugin.openNav, options);
+        overlayNavShow.addEventListener(eventType, plugin.openNav, checkEventOptions(overlayNavShow));
 
         // Add close events to overlay nav hide links
-        if(targetOverlayNav.querySelector(overlayNavHide) != null) targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, false);
+        if(targetOverlayNav.querySelector(overlayNavHide) != null) targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, checkEventOptions(overlayNavHide));
       });
       
       // Get body

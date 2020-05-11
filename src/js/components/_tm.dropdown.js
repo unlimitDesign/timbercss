@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Dropdown 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -120,6 +120,15 @@ const tmDropdown = (function () {
     };
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let options = target.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      return options;
+    };
+
+    /**
     * Toggle dropdown link items
     */
     const updateDropdownLinkState = () => {
@@ -162,15 +171,13 @@ const tmDropdown = (function () {
         let dropdownLink = dropdown.querySelector('a, .button, button');
         let dropdownList = dropdown.querySelector('.dropdown-menu');
         let dropdownMenuLinks = dropdown.querySelectorAll('.dropdown-item');
-
+        
         // Add link events
-        let options = dropdownLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-        dropdownLink.addEventListener(eventType, updateDropdownState, options);
+        dropdownLink.addEventListener(eventType, updateDropdownState, checkEventOptions(dropdownLink));
 
         // Add events to dropdown menu links
         for (var i = 0; i < dropdownMenuLinks.length; i++) {
-          let options = dropdownMenuLinks[i].tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-          dropdownMenuLinks[i].addEventListener(eventType, updateDropdownLinkState, options);
+          dropdownMenuLinks[i].addEventListener(eventType, updateDropdownLinkState, checkEventOptions(dropdownMenuLinks[i]));
         }
 
         // Set height of dropdown list if it's to open upwards
@@ -181,7 +188,8 @@ const tmDropdown = (function () {
       });
 
       // Add document and window events
-      document.querySelector('.wrapper-inner').addEventListener(eventType, plugin.closeAllDropdowns, false);
+      let wrapperInner = document.querySelector('.wrapper-inner');
+      wrapperInner.addEventListener(eventType, plugin.closeAllDropdowns,checkEventOptions(wrapperInner));
       window.addEventListener('scroll', plugin.closeAllDropdowns, false);
       
       // Callback

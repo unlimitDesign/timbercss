@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Lightbox 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -292,12 +292,12 @@ const tmLightbox = (function () {
         toolbar.appendChild(exit);
 
         // Add Events
-        exit.addEventListener('click', plugin.closeLightbox, options);
+        exit.addEventListener(eventType, plugin.closeLightbox, options);
       }
 
       // Overlay exit
       if(plugin.settings.overlayClickClose){
-        lightbox.addEventListener('click', addOverlayEvent, options);
+        lightbox.addEventListener(eventType, addOverlayEvent, options);
       }
 
       // Add arrow nav
@@ -317,8 +317,8 @@ const tmLightbox = (function () {
         lightboxInner.appendChild(next);
 
         // Add Events
-        prev.addEventListener('click', plugin.prevContent, options);
-        next.addEventListener('click', plugin.nextContent, options);
+        prev.addEventListener(eventType, plugin.prevContent, options);
+        next.addEventListener(eventType, plugin.nextContent, options);
       }
 
       // Add window listener for resize events
@@ -822,11 +822,11 @@ const tmLightbox = (function () {
 
       // Remove event listeners
       if(galleryGroup.length >= 2){
-        document.querySelector('.tml-next').removeEventListener('click', plugin.prevContent, false);
-        document.querySelector('.tml-prev').removeEventListener('click', plugin.nextContent, false);
-        document.querySelector('.tml-thumbnails').removeEventListener('click', plugin.nextContent, false);
+        document.querySelector('.tml-next').removeEventListener(eventType, plugin.prevContent, false);
+        document.querySelector('.tml-prev').removeEventListener(eventType, plugin.nextContent, false);
+        document.querySelector('.tml-thumbnails').removeEventListener(eventType, plugin.nextContent, false);
       }
-      document.querySelector('.tml-exit').removeEventListener('click', plugin.nextContent, false);
+      document.querySelector('.tml-exit').removeEventListener(eventType, plugin.nextContent, false);
       document.removeEventListener('keyup', addKeyboardEvent, false);
       window.removeEventListener('resize', resizeContent, false);
 

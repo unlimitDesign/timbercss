@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Accordion 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport

@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Side Navigation 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -90,6 +90,15 @@ const tmSideNavigation = (function () {
     };
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let options = target.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+      return options;
+    };
+
+    /**
     * Public variables and methods.
     */
 
@@ -114,11 +123,10 @@ const tmSideNavigation = (function () {
         }
 
         // Add open events to nav show links
-        let options = sideNavShow.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-        sideNavShow.addEventListener(eventType, plugin.openNav, options);
+        sideNavShow.addEventListener(eventType, plugin.openNav, checkEventOptions(sideNavShow));
 
         // Add close events to side nav hide links
-        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).addEventListener(eventType, plugin.closeNav, false);
+        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).addEventListener(eventType, plugin.closeNav, checkEventOptions(sideNavHide));
       });
 
       // Get body
