@@ -257,7 +257,9 @@ $shadow-responsive:                                         (lg,md,sm) !default;
 // Interactivity
 //
 
+$appearance-responsive:                                     (lg,md,sm) !default;                                                                            // Whether apperance utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $cursor-responsive:                                         (lg,md,sm) !default;                                                                            // Whether cursor utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$outline-responsive:                                        (lg,md,sm) !default;                                                                            // Whether outline utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $pointer-events-responsive:                                 (lg,md,sm) !default;                                                                            // Whether pointer event utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $resize-responsive:                                         (lg,md,sm) !default;                                                                            // Whether resize utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $select-responsive:                                         (lg,md,sm) !default;                                                                            // Whether select utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)

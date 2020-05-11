@@ -201,7 +201,7 @@ const tmMasonryGrid = (function () {
         for (let i = 0; i < menuItems.length; i++) {
           let menuItem = menuItems[i];
           menuItem.addEventListener('click', function(event){
-            event.preventDefault();
+            if(event.target.tagName === 'A') event.preventDefault();
             filterSelection(gridTarget,event.target.getAttribute('data-filter'));
             let current = filterMenu.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
