@@ -1146,6 +1146,26 @@ hr {
   grid-column: span 3 / span 3;
 }
 
+.span-cols-4 {
+  grid-column: span 4 / span 4;
+}
+
+.span-cols-5 {
+  grid-column: span 5 / span 5;
+}
+
+.span-cols-6 {
+  grid-column: span 6 / span 6;
+}
+
+.span-cols-7 {
+  grid-column: span 7 / span 7;
+}
+
+.span-cols-8 {
+  grid-column: span 8 / span 8;
+}
+
 .span-rows-2 {
   grid-row: span 2 / span 2;
 }
@@ -1225,6 +1245,21 @@ hr {
   .span-lg-cols-3 {
     grid-column: span 3 / span 3;
   }
+  .span-lg-cols-4 {
+    grid-column: span 4 / span 4;
+  }
+  .span-lg-cols-5 {
+    grid-column: span 5 / span 5;
+  }
+  .span-lg-cols-6 {
+    grid-column: span 6 / span 6;
+  }
+  .span-lg-cols-7 {
+    grid-column: span 7 / span 7;
+  }
+  .span-lg-cols-8 {
+    grid-column: span 8 / span 8;
+  }
   .span-lg-rows-2 {
     grid-row: span 2 / span 2;
   }
@@ -1267,6 +1302,21 @@ hr {
   .span-md-cols-3 {
     grid-column: span 3 / span 3;
   }
+  .span-md-cols-4 {
+    grid-column: span 4 / span 4;
+  }
+  .span-md-cols-5 {
+    grid-column: span 5 / span 5;
+  }
+  .span-md-cols-6 {
+    grid-column: span 6 / span 6;
+  }
+  .span-md-cols-7 {
+    grid-column: span 7 / span 7;
+  }
+  .span-md-cols-8 {
+    grid-column: span 8 / span 8;
+  }
   .span-md-rows-2 {
     grid-row: span 2 / span 2;
   }
@@ -1308,6 +1358,21 @@ hr {
   }
   .span-sm-cols-3 {
     grid-column: span 3 / span 3;
+  }
+  .span-sm-cols-4 {
+    grid-column: span 4 / span 4;
+  }
+  .span-sm-cols-5 {
+    grid-column: span 5 / span 5;
+  }
+  .span-sm-cols-6 {
+    grid-column: span 6 / span 6;
+  }
+  .span-sm-cols-7 {
+    grid-column: span 7 / span 7;
+  }
+  .span-sm-cols-8 {
+    grid-column: span 8 / span 8;
   }
   .span-sm-rows-2 {
     grid-row: span 2 / span 2;
@@ -1446,7 +1511,6 @@ hr {
 /*------------------------------------------------------------------
 @section 7. Button
 */
-button,
 .button {
   width: auto;
   padding: 1.3rem 2.5rem;
@@ -1469,12 +1533,10 @@ button,
   transition: background-color 300ms ease-in-out 0ms , border 300ms ease-in-out 0ms , box-shadow 300ms ease-in-out 0ms , color 300ms ease-in-out 0ms , height 300ms ease-in-out 0ms , max-height 300ms ease-in-out 0ms , width 300ms ease-in-out 0ms , line-height 300ms ease-in-out 0ms , margin 300ms ease-in-out 0ms , opacity 300ms ease-in-out 0ms , padding 300ms ease-in-out 0ms , rotate 300ms ease-in-out 0ms , scale 300ms ease-in-out 0ms , transform 300ms ease-in-out 0ms , translate 300ms ease-in-out 0ms , visibility 300ms ease-in-out 0ms;
 }
 
-button [class*="icon"],
 .button [class*="icon"] {
   margin-bottom: 0;
 }
 
-button:hover,
 .button:hover {
   background-color: #2eb87f;
   border-color: #2eb87f;
@@ -1482,64 +1544,53 @@ button:hover,
   text-decoration: none;
 }
 
-button:focus,
 .button:focus {
   outline: none;
 }
 
-button.size-sm,
 .button.size-sm {
   padding: 1rem 1.5rem !important;
   font-size: 1.1rem !important;
 }
 
-button.size-md,
 .button.size-md {
   padding: 1.3rem 2.5rem !important;
   font-size: 1.3rem !important;
 }
 
-button.size-lg,
 .button.size-lg {
   padding: 1.6rem 3rem !important;
   font-size: 1.4rem !important;
 }
 
-button.size-xl,
 .button.size-xl {
   padding: 1.9rem 3.5rem !important;
   font-size: 1.5rem !important;
 }
 
-button [class*="icon-"],
 .button [class*="icon-"] {
   font-size: 140%;
 }
 
-button [class*="icon-"].left,
 .button [class*="icon-"].left {
   margin-left: 0;
   margin-right: 0.5rem;
 }
 
-button [class*="icon-"].right,
 .button [class*="icon-"].right {
   margin-left: 0.5rem;
   margin-right: 0;
 }
 
-button .button-content,
 .button .button-content {
   display: flex;
   align-items: center;
 }
 
-button .button-content small,
 .button .button-content small {
   display: block;
 }
 
-button.loading .preloader,
 .button.loading .preloader {
   width: 2rem;
   height: 2rem;
@@ -1549,33 +1600,26 @@ button.loading .preloader,
   left: auto;
 }
 
-button > *,
 .button > * {
   pointer-events: none;
 }
 
-button .badge,
 .button .badge {
   line-height: inherit;
 }
 
-[class*="left-"] button,
 [class*="left-"] .button {
   margin-right: 1rem !important;
   margin-left: 0 !important;
 }
 
-.center button,
 .center .button,
-[class*="center-"] button,
 [class*="center-"] .button {
   margin-right: 0.5rem;
   margin-left: 0.5rem;
 }
 
-.right button,
 .right .button,
-[class*="right-"] button,
 [class*="right-"] .button {
   margin-right: 0;
   margin-left: 1rem;
@@ -4752,6 +4796,7 @@ iframe {
   height: 0.2rem;
   margin-bottom: 0.5rem !important;
   background-color: #6B757E;
+  pointer-events: none;
   transition: background-color 300ms ease-in-out 0ms;
   position: relative;
   transform-origin: center center;
@@ -5894,7 +5939,7 @@ iframe {
   display: flex;
 }
 
-.tabs .tab-nav a {
+.tabs .tab-nav * {
   margin: 0 !important;
 }
 
@@ -5919,7 +5964,7 @@ iframe {
   width: 25%;
 }
 
-.tabs.vertical .tab-nav a {
+.tabs.vertical .tab-nav * {
   width: 100%;
 }
 
@@ -5975,7 +6020,7 @@ iframe {
     display: flex;
     flex-wrap: wrap;
   }
-  .tabs .tab-nav a {
+  .tabs .tab-nav * {
     width: 100%;
   }
   .tabs .tab-panes {
@@ -12686,7 +12731,32 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 42. Cursor
+@section 42. Appearance
+*/
+.appearance-none {
+  appearance: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .appearance-lg-none {
+    appearance: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .appearance-md-none {
+    appearance: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .appearance-sm-none {
+    appearance: none;
+  }
+}
+
+/*------------------------------------------------------------------
+@section 43. Cursor
 */
 .cursor-auto {
   cursor: auto;
@@ -12789,7 +12859,32 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 43. Pointer Events
+@section 44. Outline
+*/
+.outline-none {
+  outline: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .outline-lg-none {
+    outline: 0;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .outline-md-none {
+    outline: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .outline-sm-none {
+    outline: 0;
+  }
+}
+
+/*------------------------------------------------------------------
+@section 45. Pointer Events
 */
 .pointer-events-none {
   pointer-events: none;
@@ -12827,7 +12922,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 44. Resize
+@section 46. Resize
 */
 .resize-none {
   resize: none;
@@ -12891,7 +12986,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 45. Select
+@section 47. Select
 */
 .select-none {
   user-select: none;
@@ -12955,7 +13050,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 46. Display Classes
+@section 48. Display Classes
 */
 .hidden {
   display: none !important;
@@ -13046,7 +13141,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 47. Float Classes
+@section 49. Float Classes
 */
 .float-l {
   float: left !important;
@@ -13119,7 +13214,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 48. Object Fit Classes
+@section 50. Object Fit Classes
 */
 .object-contain {
   object-fit: contain;
@@ -13197,7 +13292,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 49. Object Position Classes
+@section 51. Object Position Classes
 */
 .object-bottom {
   object-position: bottom;
@@ -13327,7 +13422,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 50. Overflow Classes
+@section 52. Overflow Classes
 */
 .overflow-visible {
   overflow: visible !important;
@@ -13522,7 +13617,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 51. Position Classes
+@section 53. Position Classes
 */
 .static {
   position: static;
@@ -15961,7 +16056,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 52. Float Classes
+@section 54. Float Classes
 */
 .visible {
   visibility: visible;
@@ -16000,7 +16095,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 53. Zindex Classes
+@section 55. Zindex Classes
 */
 .z-auto {
   z-index: auto;
@@ -16091,7 +16186,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 54. Height Classes
+@section 56. Height Classes
 */
 .h-inherit {
   height: inherit;
@@ -16482,7 +16577,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 55. Width Classes
+@section 57. Width Classes
 */
 .w-inherit {
   width: inherit;
@@ -16903,7 +16998,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 57. Padding Classes
+@section 59. Padding Classes
 */
 .p-0 {
   padding: 0rem !important;
@@ -19093,7 +19188,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 56. Margin Classes
+@section 58. Margin Classes
 */
 .mx-auto {
   margin-right: auto !important;
@@ -23998,7 +24093,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 58. Disabled States
+@section 60. Disabled States
 */
 .disabled,
 :disabled,
@@ -24012,7 +24107,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 59. Font Family Classes
+@section 61. Font Family Classes
 */
 .font-sans {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -24064,7 +24159,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 60. Font Size Classes
+@section 62. Font Size Classes
 */
 h1 {
   font-size: 4.57rem;
@@ -24245,7 +24340,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 61. Text Classes
+@section 63. Text Classes
 */
 .italic {
   font-style: italic;
@@ -24284,7 +24379,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 62. Text Classes
+@section 64. Text Classes
 */
 .font-thin {
   font-weight: 100 !important;
@@ -24414,7 +24509,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 63. Letter Spacing Classes
+@section 65. Letter Spacing Classes
 */
 .tracking-tighter {
   letter-spacing: -0.05em;
@@ -24505,7 +24600,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 64. Line Height Classes
+@section 66. Line Height Classes
 */
 .leading-none {
   line-height: 1;
@@ -24596,7 +24691,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 65. Text Classes
+@section 67. Text Classes
 */
 .left {
   text-align: left;
@@ -24661,7 +24756,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 66. Text Decoration
+@section 68. Text Decoration
 */
 .underline {
   text-decoration: underline;
@@ -24713,7 +24808,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 67. Text Transform
+@section 69. Text Transform
 */
 .normalcase {
   text-transform: none !important;
@@ -24778,7 +24873,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 68. Alignment Classes
+@section 70. Alignment Classes
 */
 .align-baseline {
   vertical-align: baseline !important;
@@ -24869,7 +24964,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 69. Text Classes
+@section 71. Text Classes
 */
 .whitespace-normal {
   white-space: normal;
@@ -24947,7 +25042,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 70. Word Break Classes
+@section 72. Word Break Classes
 */
 .break-normal {
   word-break: normal;
