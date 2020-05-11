@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Lightbox 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -98,9 +98,10 @@ const tmLightbox = (function () {
     * @param  {element}  The lightbox link.
     */
     const addLinkEvent = (lightboxLink) => {
+      let options = lightboxLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
       lightboxLink.addEventListener(eventType, function(){
         buildLightbox(lightboxLink);
-      }, false);
+      }, options);
     };
 
     /**
@@ -204,19 +205,21 @@ const tmLightbox = (function () {
       let contentWrapper = document.querySelector('.tml-content-wrapper');
       let toolbar = document.querySelector('.tml-toolbar');
       let content = document.querySelector('.tml-content');
+      let options = eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
 
       // Add zoom button
       if(plugin.settings.navZoom){
 
         // Construct
-        let zoom = document.createElement('a');
-        classList(zoom).addClass('tml-nav').addClass('tml-zoom');
+        let zoom = document.createElement('button');
+        classList(zoom).addClass('tml-nav').addClass('tml-zoom').addClass('outline-none');
+        zoom.setAttribute('aria-label', 'Zoom');
 
         // Add to lightbox
         toolbar.appendChild(zoom);
 
         // Add Events
-        zoom.addEventListener('click', zoomContent, false);
+        zoom.addEventListener(eventType, zoomContent, options);
       }
 
       // Add thumbnails button
@@ -228,17 +231,18 @@ const tmLightbox = (function () {
         thumbnailWrapper.innerHTML += '<ul class="list-none list-horizontal center"/>';
         lightbox.appendChild(thumbnailWrapper);
 
-        // Construct and thumbnail button to toolbar 
-        let showThumbnails = document.createElement('a');
-        classList(showThumbnails).addClass('tml-nav').addClass('tml-thumbnails');
+        // Construct and add thumbnail button to toolbar 
+        let showThumbnails = document.createElement('button');
+        classList(showThumbnails).addClass('tml-nav').addClass('tml-thumbnails').addClass('outline-none');
         toolbar.appendChild(showThumbnails);
+        showThumbnails.setAttribute('aria-label', 'Show Thumbnails');
 
         //Add Events for show thumbnail button
-        showThumbnails.addEventListener('click', function(){
+        showThumbnails.addEventListener(eventType, function(){
           toggleActiveClass();
           toggleActiveClass(document.querySelector('.tml-thumbnail-wrapper'));
           toggleStageHeight();
-        }, false);
+        }, options);
         
         // Loop through gallery group and build thumbnails based on gallery array
         galleryGroup.forEach(function(groupLink, i){
@@ -248,7 +252,7 @@ const tmLightbox = (function () {
           let mediaSrc = checkMedia(groupLink);
           let play = mediaSrc.type == 'iframe' || mediaSrc.type == 'html5video' ? `<span class="content-over p-0 items-center center"><span><span class="play flex mx-auto"><i class="icon-material size-sm self-center mx-auto mb-0">play_arrow</i></span></span></span>` : '';
           thumbnailGroup.push(`tml-thumbnail-${i}`);
-          thumbnailWrapper.querySelector('ul').innerHTML += `<li><div class="thumbnail"><a href="${mediaSrc.url}" id="tml-thumbnail-${i}" data-group-link-id="${groupLink.id}" class="overlay-link tml-thumbnail"><img src="${thumbnailURL}"/>${play}</a></div></li>`;
+          thumbnailWrapper.querySelector('ul').innerHTML += `<li><div class="thumbnail"><button data-url="${mediaSrc.url}" id="tml-thumbnail-${i}" data-group-link-id="${groupLink.id}" class="overlay-link tml-thumbnail"><img src="${thumbnailURL}"/>${play}</button></div></li>`;
         });
 
         // Get thumbnails and 
@@ -264,9 +268,10 @@ const tmLightbox = (function () {
           // Set active
           if(thumbnailIndex == galleryIndex) classList(thumbnail).addClass('tml-thumb-active');
           
-          thumbnail.addEventListener('click', function(){
+          //let options = thumbnail.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+          thumbnail.addEventListener(eventType, function(){
             plugin.getContent(thumbnail);
-          }, false);
+          }, options);
         });
       }
 
@@ -279,38 +284,41 @@ const tmLightbox = (function () {
       if(plugin.settings.navExit){
 
         // Construct
-        let exit = document.createElement('a');
-        classList(exit).addClass('tml-nav').addClass('tml-exit');
+        let exit = document.createElement('button');
+        classList(exit).addClass('tml-nav').addClass('tml-exit').addClass('outline-none');
+        exit.setAttribute('aria-label', 'Exit');
 
         // Add to lightbox
         toolbar.appendChild(exit);
 
         // Add Events
-        exit.addEventListener('click', plugin.closeLightbox, false);
+        exit.addEventListener('click', plugin.closeLightbox, options);
       }
 
       // Overlay exit
       if(plugin.settings.overlayClickClose){
-        lightbox.addEventListener('click', addOverlayEvent, false);
+        lightbox.addEventListener('click', addOverlayEvent, options);
       }
 
       // Add arrow nav
       if(plugin.settings.navArrows && galleryGroup.length >= 2){
         
         // Construct
-        let prev = document.createElement('a');
-        classList(prev).addClass('tml-nav').addClass('tml-prev');
+        let prev = document.createElement('button');
+        classList(prev).addClass('tml-nav').addClass('tml-prev').addClass('outline-none');
+        prev.setAttribute('aria-label', 'Previous');
 
-        let next = document.createElement('a');
-        classList(next).addClass('tml-nav').addClass('tml-next');
+        let next = document.createElement('button');
+        classList(next).addClass('tml-nav').addClass('tml-next').addClass('outline-none');
+        next.setAttribute('aria-label', 'Next');
 
         // Add them to lightbox
         lightboxInner.appendChild(prev);
         lightboxInner.appendChild(next);
 
         // Add Events
-        prev.addEventListener('click', plugin.prevContent, false);
-        next.addEventListener('click', plugin.nextContent, false);
+        prev.addEventListener('click', plugin.prevContent, options);
+        next.addEventListener('click', plugin.nextContent, options);
       }
 
       // Add window listener for resize events
@@ -376,7 +384,6 @@ const tmLightbox = (function () {
     const checkMedia = (link) => {
       let url = link.tagName == 'A' ? link.getAttribute('href') : '#' + link.dataset.url;
       let mediaType = url.match(/\.(jpeg|jpg|png|gif)/i) || link.dataset.content == 'image' ? 'image' : url.match(/\.(vimeo\.com|youtu(be\.com|\.be))\/(watch\?v=)?([A-Za-z0-9._%-]*)(\&\S+)?/) || link.dataset.content == 'iframe' ? 'iframe' : url.match(/\.(mp4|webm)$/) ? 'html5video' : 'inline';
-      console.log(mediaType)
       return {url:url, type:mediaType};
     };
 
@@ -744,7 +751,6 @@ const tmLightbox = (function () {
     * Load next content
     */
     plugin.nextContent = () => {
-      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading')) return false;
@@ -766,7 +772,6 @@ const tmLightbox = (function () {
     * Load previous content
     */
     plugin.prevContent = () => {
-      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading')) return false;
@@ -788,7 +793,6 @@ const tmLightbox = (function () {
     * Load content
     */
     plugin.getContent = (thumbnailLink) => {
-      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading') || thumbnailLink.classList.contains('tml-thumb-active')) return false;
