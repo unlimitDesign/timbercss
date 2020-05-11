@@ -39,6 +39,10 @@ button{
   background-color: transparent;
   background-image: none;
 }
+[role=button], 
+button {
+  cursor: pointer;
+}
 
 img,
 svg,
