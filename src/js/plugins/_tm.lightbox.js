@@ -94,14 +94,22 @@ const tmLightbox = (function () {
     }
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
+      return eventOptions;
+    };
+
+    /**
     * Add lightbox link events.
     * @param  {element}  The lightbox link.
     */
     const addLinkEvent = (lightboxLink) => {
-      let options = lightboxLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
       lightboxLink.addEventListener(eventType, function(){
         buildLightbox(lightboxLink);
-      }, options);
+      }, checkEventOptions(lightboxLink));
     };
 
     /**
@@ -219,7 +227,7 @@ const tmLightbox = (function () {
         toolbar.appendChild(zoom);
 
         // Add Events
-        zoom.addEventListener(eventType, zoomContent, options);
+        zoom.addEventListener(eventType, zoomContent, checkEventOptions(zoom));
       }
 
       // Add thumbnails button
@@ -242,7 +250,7 @@ const tmLightbox = (function () {
           toggleActiveClass();
           toggleActiveClass(document.querySelector('.tml-thumbnail-wrapper'));
           toggleStageHeight();
-        }, options);
+        }, checkEventOptions(showThumbnails));
         
         // Loop through gallery group and build thumbnails based on gallery array
         galleryGroup.forEach(function(groupLink, i){
@@ -270,7 +278,7 @@ const tmLightbox = (function () {
           
           thumbnail.addEventListener(eventType, function(){
             plugin.getContent(thumbnail);
-          }, options);
+          }, checkEventOptions(thumbnail));
         });
       }
 
@@ -291,12 +299,12 @@ const tmLightbox = (function () {
         toolbar.appendChild(exit);
 
         // Add Events
-        exit.addEventListener(eventType, plugin.closeLightbox, options);
+        exit.addEventListener(eventType, plugin.closeLightbox, checkEventOptions(exit));
       }
 
       // Overlay exit
       if(plugin.settings.overlayClickClose){
-        lightbox.addEventListener(eventType, addOverlayEvent, options);
+        lightbox.addEventListener(eventType, addOverlayEvent, checkEventOptions(lightbox));
       }
 
       // Add arrow nav
@@ -316,8 +324,8 @@ const tmLightbox = (function () {
         lightboxInner.appendChild(next);
 
         // Add Events
-        prev.addEventListener(eventType, plugin.prevContent, options);
-        next.addEventListener(eventType, plugin.nextContent, options);
+        prev.addEventListener(eventType, plugin.prevContent, checkEventOptions(prev));
+        next.addEventListener(eventType, plugin.nextContent, checkEventOptions(next));
       }
 
       // Add window listener for resize events

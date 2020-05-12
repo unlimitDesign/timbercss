@@ -201,14 +201,14 @@ const tmMasonryGrid = (function () {
         var menuItems = element.getElementsByTagName('li');
         for (let i = 0; i < menuItems.length; i++) {
           let menuItem = menuItems[i];
-          let options = menuItem.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+          let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
           menuItem.addEventListener(eventType, function(event){
             if(event.target.tagName === 'A') event.preventDefault();
             filterSelection(gridTarget,event.target.getAttribute('data-filter'));
             let current = filterMenu.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
             event.target.className += ' active';
-          }, options);
+          }, eventOptions);
         }
       });
     };

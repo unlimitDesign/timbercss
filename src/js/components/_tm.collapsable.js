@@ -61,8 +61,8 @@ const tmCollapsable = (function () {
     * @param  {element}  The collapsable link(s).
     */
     const addLinkEvents = (collapsableLink, eventType) => {
-      let options = collapsableLink.tagName === 'A' || eventType == 'click' || eventType == 'change' ? false : passiveSupported() ? { passive: true } : false;
-      collapsableLink.addEventListener(eventType, toggleTimeout, options);
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && collapsableLink.tagName != 'A' ? {passive: true} : {passive: false};
+      collapsableLink.addEventListener(eventType, toggleTimeout, eventOptions);
     };
 
     /**

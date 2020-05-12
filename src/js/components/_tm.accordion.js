@@ -58,8 +58,8 @@ const tmAccordion = (function () {
     * @param  {accLink}  element  The accordion tab link(s).
     */
     const addLinkEvents = (acclink) =>{
-      let options = acclink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-      acclink.addEventListener(eventType, updateAccordionState, options);
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && acclink.tagName != 'A' ? {passive: true} : {passive: false};
+      acclink.addEventListener(eventType, updateAccordionState, eventOptions);
     };
 
     /**

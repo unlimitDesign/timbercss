@@ -234,7 +234,7 @@ const tmScrollTo = (function () {
 
       // Add link event 
       document.querySelectorAll(plugin.elements).forEach(function(element){
-        let eventOptions = eventType == 'click' ? false : passiveSupported() && element.tagName != 'A' ? { passive: true } : { passive: false };
+        let eventOptions = eventType == 'click' ? false : passiveSupported() && element.tagName != 'A' ? {passive: true} : {passive: false};
         element.addEventListener(eventType, initiateScroll, eventOptions);
         
         // Find associated nav items

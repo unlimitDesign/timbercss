@@ -163,10 +163,10 @@ const tmToggleSubMenu = (function () {
         
         // Add events to parent links
         for (var i = 0; i < links.length; i++) {
-          let options = links[i].tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
+          let eventOptions = eventType == 'click' ? false : passiveSupported() && links[i].tagName != 'A' ? {passive: true} : {passive: false};
           links[i].addEventListener(eventType, function(){
             toggleSubMenu(event);
-          }, options);
+          }, eventOptions);
 
           // If active, trigger click so sub menu height is set on startup
           if(links[i].classList.contains('active')){

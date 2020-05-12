@@ -59,8 +59,8 @@ const tmTabs = (function () {
     * @param  {accLink}  element  The tab tab link(s).
     */
     const addLinkEvents = (tabLink) =>{
-      let options = tabLink.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-      tabLink.addEventListener(eventType, updateTabsState, options);
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && tabLink.tagName != 'A' ? {passive: true} : {passive: false};
+      tabLink.addEventListener(eventType, updateTabsState, eventOptions);
     };
 
     /**

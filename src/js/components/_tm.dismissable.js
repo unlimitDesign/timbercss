@@ -70,8 +70,8 @@ const tmDismissale = (function () {
         * @param  {object}  element  The dismissable element.
         */
         const addLinkEvents = (element) => {
-          let options = eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-          element.addEventListener(eventType, deleteParent, options);
+          let eventOptions = eventType == 'click' ? false : passiveSupported() && element.tagName != 'A' ? {passive: true} : {passive: false};
+          element.addEventListener(eventType, deleteParent, eventOptions);
         };
 
         /**

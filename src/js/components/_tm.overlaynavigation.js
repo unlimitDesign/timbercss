@@ -83,8 +83,8 @@ const tmOverlayNavigation = (function () {
     * @param  {object}  element  The clickable item to check.
     */
     const checkEventOptions = (target) =>{
-      let options = target.tagName === 'A' || eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
-      return options;
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
+      return eventOptions;
     };
 
     /**
