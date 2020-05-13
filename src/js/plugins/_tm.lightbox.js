@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Lightbox 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -260,7 +260,7 @@ const tmLightbox = (function () {
           let mediaSrc = checkMedia(groupLink);
           let play = mediaSrc.type == 'iframe' || mediaSrc.type == 'html5video' ? `<span class="content-over p-0 items-center center"><span><span class="play flex mx-auto"><i class="icon-material size-sm self-center mx-auto mb-0">play_arrow</i></span></span></span>` : '';
           thumbnailGroup.push(`tml-thumbnail-${i}`);
-          thumbnailWrapper.querySelector('ul').innerHTML += `<li><div class="thumbnail"><button data-url="${mediaSrc.url}" id="tml-thumbnail-${i}" data-group-link-id="${groupLink.id}" class="overlay-link tml-thumbnail"><img src="${thumbnailURL}"/>${play}</button></div></li>`;
+          thumbnailWrapper.querySelector('ul').innerHTML += `<li><div class="thumbnail"><a href="${mediaSrc.url}" id="tml-thumbnail-${i}" data-group-link-id="${groupLink.id}" class="overlay-link tml-thumbnail"><img src="${thumbnailURL}"/>${play}</a></div></li>`;
         });
 
         // Get thumbnails and 
@@ -800,6 +800,7 @@ const tmLightbox = (function () {
     * Load content
     */
     plugin.getContent = (thumbnailLink) => {
+      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading') || thumbnailLink.classList.contains('tml-thumb-active')) return false;
