@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Inview 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -73,7 +73,8 @@ const tmInView = (function () {
     */ 
     const delayCallbackInView = (element,elementObserver) => {
       let timeoutId = getTimeoutData(element);
-      
+      let unObserveViewed = element.hasAttribute('data-unobserve-viewed') ? true : plugin.settings.unObserveViewed;
+        
       // Timeout was already set, do nothing
       if (timeoutId) {
         return;
@@ -84,7 +85,7 @@ const tmInView = (function () {
         plugin.settings.inView(element);
 
         // Unobserve item once in view
-        if(iObserve && plugin.settings.unObserveViewed) elementObserver.unobserve(element);
+        if(iObserve && unObserveViewed) elementObserver.unobserve(element);
 
         // Delete timeout
         cancelDelayCallbackInView(element);
@@ -114,7 +115,7 @@ const tmInView = (function () {
     /**
     * Observe on intersect - modern browsers
     */
-    const observeOnIntersect = (element,threshold) =>{
+    const observeOnIntersect = (element, threshold, detectionBuffer) =>{
       let elementObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
           let item = entry.target;
@@ -139,7 +140,7 @@ const tmInView = (function () {
         });
       },{
           threshold: threshold,
-          rootMargin: `0px 0px ${plugin.settings.detectionBuffer + 'px'} 0px`
+          rootMargin: detectionBuffer
       });
       elementObservers.push(elementObserver);
       elementObserver.observe(element);
@@ -234,8 +235,9 @@ const tmInView = (function () {
       if(iObserve){
         plugin.elements.forEach(function(element) {
           let threshold = element.dataset.threshold ? element.dataset.threshold : plugin.settings.threshold;
+          let detectionBuffer = element.dataset.detectionBuffer ? element.dataset.detectionBuffer : `0px 0px ${plugin.settings.detectionBuffer + 'px'} 0px`;
           if(plugin.settings.observeParent) element = element.parentNode;
-          observeOnIntersect(element,threshold);
+          observeOnIntersect(element, threshold, detectionBuffer);
         });
         
       // Fallback
