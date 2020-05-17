@@ -43,7 +43,6 @@ const timberCore = (function () {
       initialize: true,
       inview: '.observe',
       loadmedia: '.preload-media',
-  
       accordion: '.accordion',
       collapsable: '.collapsable',
       dismissable: '.dismissable',
@@ -54,7 +53,6 @@ const timberCore = (function () {
       sidenav: '.side-nav-show',
       togglesubmenu: '.toggle-sub-menus',
       tabs: '.tabs',
-
       horizon: '.horizon',
       lightbox: '.lightbox',
       masonrygrid: '.grid.preload',
