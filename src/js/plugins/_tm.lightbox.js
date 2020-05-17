@@ -8,7 +8,7 @@
 
 // Import utilities
 import classList from '../utilities/_chaining.js';
-import loadMedia from '../utilities/_tm.loadmedia.js';
+import tmLoadMedia from '../utilities/_tm.loadmedia.js';
 import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmLightbox = (function () {
@@ -463,8 +463,8 @@ const tmLightbox = (function () {
       // Hide/show toolbar buttons based on type
       showHideZoom(mediaSrc.type);
 
-      // Create instance of loadMedia
-      lightboxItemToLoad = new loadMedia(mediaToLoad,{
+      // Create instance of tmLoadMedia
+      lightboxItemToLoad = new tmLoadMedia(mediaToLoad,{
         backgroundImage: false,
         onLoaded: function(loadedMedia){
           

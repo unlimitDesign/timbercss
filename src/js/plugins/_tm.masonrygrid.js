@@ -9,7 +9,7 @@
 // Import utilities and required plugins
 import classList from '../utilities/_chaining.js';
 import tmInView from '../utilities/_tm.inview.js';
-import loadMedia from '../utilities/_tm.loadmedia.js';
+import tmLoadMedia from '../utilities/_tm.loadmedia.js';
 import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmMasonryGrid = (function () {
@@ -72,9 +72,9 @@ const tmMasonryGrid = (function () {
       // Add preloader 
       if(plugin.settings.usePreloader && !loaded && itemToLoad != null) addPreloader(gridItem);
 
-      // Create instance of loadMedia if there is an item to preload
+      // Create instance of tmLoadMedia if there is an item to preload
       if(itemToLoad != null){
-        gridItemsLazyload = new loadMedia(itemToLoad,{
+        gridItemsLazyload = new tmLoadMedia(itemToLoad,{
           backgroundImage: asBgImages, 
           onLoaded: function(loadedItem){
 

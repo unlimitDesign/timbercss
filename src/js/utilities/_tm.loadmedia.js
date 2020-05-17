@@ -9,7 +9,7 @@
 // Import classList utility 
 import classList from './_chaining.js';
 
-const loadMedia = (function () {
+const tmLoadMedia = (function () {
 
   'use strict';
 
@@ -238,4 +238,4 @@ const loadMedia = (function () {
 })();
 
 // Export plugin
-export default loadMedia;
+export default tmLoadMedia;
