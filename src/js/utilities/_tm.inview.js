@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Inview 
-// Version: 1.0.1
+// Version: 1.0.2
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -120,14 +120,14 @@ const tmInView = (function () {
         entries.forEach(function(entry) {
           let item = entry.target;
           if(entry.isIntersecting){
-            
+           
             // Swap classes
             classList(item).removeClass('out-of-view').addClass('in-view');
             
             // Test if item is still in the viewport
             delayCallbackInView(item, elementObserver);
           }else{
-
+           
             // Swap classes
             classList(item).removeClass('in-view').addClass('out-of-view');
             
@@ -226,7 +226,7 @@ const tmInView = (function () {
       if(plugin.elements == null) return false;
       
       // Check element
-      plugin.elements = NodeList.prototype.isPrototypeOf(plugin.elements) ? plugin.elements : document.querySelectorAll(plugin.elements);
+      plugin.elements = !NodeList.prototype.isPrototypeOf(plugin.elements) ? document.querySelectorAll(plugin.elements) : plugin.elements[0].classList.contains('observe') ? document.querySelectorAll('.observe') : plugin.elements;
 
       // Check force option
       iObserve = plugin.settings.forceObserveOnScroll ? false : iObserve;
@@ -236,7 +236,8 @@ const tmInView = (function () {
         plugin.elements.forEach(function(element) {
           let threshold = element.dataset.threshold ? element.dataset.threshold : plugin.settings.threshold;
           let detectionBuffer = element.dataset.detectionBuffer ? element.dataset.detectionBuffer : `0px 0px ${plugin.settings.detectionBuffer + 'px'} 0px`;
-          if(plugin.settings.observeParent) element = element.parentNode;
+          plugin.settings.observeParent = element.hasAttribute('data-observe-parent') ? true : plugin.settings.observeParent;
+          element = plugin.settings.observeParent ? element.parentNode : element;
           observeOnIntersect(element, threshold, detectionBuffer);
         });
         
@@ -268,15 +269,16 @@ const tmInView = (function () {
     * Destroy an existing initialization.
     */
     plugin.destroy = () => {
-
       if (!plugin.settings) return;
 
       // Remove intersect and window listener
-      if(iObserve)
+      plugin.elements = !NodeList.prototype.isPrototypeOf(plugin.elements) ? document.querySelectorAll(plugin.elements) : plugin.elements;
+      if(iObserve){
         plugin.elements.forEach(function (element,i) {
-          elementObservers[i].unobserve(element);
+          if(elementObservers.length > 0) elementObservers[i].unobserve(element);
+          elementObservers = [];
         });
-      else{
+      }else{
         window.removeEventListener('scroll', observeOnScroll, false);
       }
 

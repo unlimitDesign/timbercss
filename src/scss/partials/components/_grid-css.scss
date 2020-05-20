@@ -36,7 +36,7 @@
 .grid-item-inner{
 	height: 100%;
 }
-.grid.preload{
+.grid.masonry{
 	position: relative;
 	.grid-item-inner{
 		width: $grid-item-width-start;

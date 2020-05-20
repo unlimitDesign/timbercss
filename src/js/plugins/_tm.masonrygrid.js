@@ -224,7 +224,7 @@ const tmMasonryGrid = (function () {
     plugin.initialize = () => {
 
       if(plugin.elements == null) return false;
-
+     
       // Loop through grid and add inview instance
       document.querySelectorAll(plugin.elements).forEach(function(element){
 

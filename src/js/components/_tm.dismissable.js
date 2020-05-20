@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Dismissable 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -59,7 +59,7 @@ const tmDismissale = (function () {
         */
         const addCloseLink = (dismissible) => {
             const closeLink = document.createElement('button');
-            closeLink.className = `close p-0 bg-transparent bg-hover-transparent border-none ${plugin.settings.fontLibrary}`;
+            closeLink.className = `close p-0 outline-none bg-transparent bg-hover-transparent border-none ${plugin.settings.fontLibrary}`;
             closeLink.innerHTML = plugin.settings.iconClose;
             dismissible.appendChild(closeLink);
             addLinkEvents(closeLink);
@@ -105,7 +105,7 @@ const tmDismissale = (function () {
         * Initialize the plugin.
         */
         plugin.initialize = () => {
-
+            
             if(plugin.elements == null) return false;
 
             // Loop through each item and check each dismissable element
@@ -138,7 +138,7 @@ const tmDismissale = (function () {
 
             // Loop through each item and check each dismissable element
             document.querySelectorAll(plugin.elements).forEach(function(dismissible){
-                removeLinkEvents(dismissible.querySelector('.close'));
+                if(dismissible.querySelector('.close')) removeLinkEvents(dismissible.querySelector('.close'));
             });
                 
             // Callback

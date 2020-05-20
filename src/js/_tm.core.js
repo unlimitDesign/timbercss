@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Timber core
-// Version: 1.0.1
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Creates instances of timber plugins
@@ -41,24 +41,24 @@ const timberCore = (function () {
     // Set the plugin defaults
     const defaults = {
       initialize: true,
-      inview: '.observe',
-      loadmedia: '.preload-media',
       accordion: '.accordion',
       collapsable: '.collapsable',
       dismissable: '.dismissable',
       dropdown: '.dropdown',
-      overlaynav: '.overlay-nav-show',
+      lightbox: '.lightbox',
+      horizon: '.horizon',
+      inview: '.observe',
+      loadmedia: '.preload-media',
+      masonrygrid: '.masonry',
+      overlaynavigation: '.overlay-nav-show',
+      parallax: '.parallax',
       rollover: '.thumbnail',
       scrollto: '.scroll-to',
-      sidenav: '.side-nav-show',
+      sidenavigation: '.side-nav-show',
+      stickyheader: '.header',
       togglesubmenu: '.toggle-sub-menus',
       tabs: '.tabs',
-      horizon: '.horizon',
-      lightbox: '.lightbox',
-      masonrygrid: '.grid.preload',
-      parallax: '.parallax',
-      responsiveVideo: '.video',
-      stickyheader: '.header'
+      responsivevideo: '.video'
     };
 
     // Create an empty plugin object
@@ -71,8 +71,27 @@ const timberCore = (function () {
       plugin.defaults = defaults;
       plugin.options = options;
       plugin.settings = Object.assign({}, defaults, options);
-      plugin.module = { inview: null, loadmedia: null, accordion: null, collapsable: null, dismissable: null, dropdown: null, horizon: null, masonrygrid: null, overlaynavigation: null, rollover: null, scrollto: null, sidenavigation: null, stickyheader: null, tabs: null, togglesubmenu: null };
-
+      plugin.module = { 
+         accordion: null,
+         collapsable: null,
+         dismissable: null,
+         dropdown: null,
+         lightbox: null, 
+         horizon: null,
+         inview: null,
+         loadmedia: null,
+         masonrygrid: null,
+         overlaynavigation: null,
+         parallax: null,
+         rollover: null,
+         scrollto: null,
+         sidenavigation: null,
+         stickyheader: null,
+         tabs: null,
+         togglesubmenu: null,
+         responsivevideo: null,
+      };
+      
       // Create instances if module exists
       if (typeof tmAccordion != 'undefined') plugin.module.accordion = new tmAccordion(plugin.settings.accordion);
       if (typeof tmCollapsable != 'undefined') plugin.module.collapsable = new tmCollapsable(plugin.settings.collapsable);
@@ -80,28 +99,28 @@ const timberCore = (function () {
       if (typeof tmDropdown != 'undefined') plugin.module.dropdown = new tmDropdown(plugin.settings.dropdown);
       if (typeof tmLightbox != 'undefined') plugin.module.lightbox = new tmLightbox(plugin.settings.lightbox);
       if (typeof tmHorizon != 'undefined') plugin.module.horizon = new tmHorizon(plugin.settings.horizon);
-      if (typeof tmMasonryGrid != 'undefined') plugin.module.masonrygrid = new tmMasonryGrid(plugin.settings.masonrygrid);
       if (typeof tmInView != 'undefined') plugin.module.inview = new tmInView(plugin.settings.inview);
       if (typeof tmLoadMedia != 'undefined') plugin.module.loadmedia = new tmLoadMedia(plugin.settings.loadmedia);
-      if (typeof tmOverlayNavigation != 'undefined') plugin.module.overlaynavigation = new tmOverlayNavigation(plugin.settings.overlaynav);
+      if (typeof tmMasonryGrid != 'undefined') plugin.module.masonrygrid = new tmMasonryGrid(plugin.settings.masonrygrid);
+      if (typeof tmOverlayNavigation != 'undefined') plugin.module.overlaynavigation = new tmOverlayNavigation(plugin.settings.overlaynavigation);
       if (typeof tmParallax != 'undefined') plugin.module.parallax = new tmParallax(plugin.settings.parallax);
       if (typeof tmRollover != 'undefined') plugin.module.rollover = new tmRollover(plugin.settings.rollover);
       if (typeof tmScrollTo != 'undefined') plugin.module.scrollto = new tmScrollTo(plugin.settings.scrollto);
-      if (typeof tmSideNavigation != 'undefined') plugin.module.sidenavigation = new tmSideNavigation(plugin.settings.sidenav);
+      if (typeof tmSideNavigation != 'undefined') plugin.module.sidenavigation = new tmSideNavigation(plugin.settings.sidenavigation);
       if (typeof tmStickyHeader != 'undefined') plugin.module.stickyheader = new tmStickyHeader(plugin.settings.stickyheader);
       if (typeof tmTabs != 'undefined') plugin.module.tabs = new tmTabs(plugin.settings.tabs);
       if (typeof tmToggleSubMenu != 'undefined') plugin.module.togglesubmenu = new tmToggleSubMenu(plugin.settings.togglesubmenu);
-      if (typeof tmResponsiveVideo != 'undefined') plugin.module.responsivevideo = new tmResponsiveVideo(plugin.settings.responsiveVideo);
+      if (typeof tmResponsiveVideo != 'undefined') plugin.module.responsivevideo = new tmResponsiveVideo(plugin.settings.responsivevideo);
     } catch (error) {
       console.log(`${error} - ensure module is imported or instantiate specific plugin instead of core, for example: plugin.module.moduleName.initialize();`);
     }
-
+    
     /**
     * Initialize the plugin.
     */
     plugin.initialize = () => {
       for (let module in plugin.module) {
-        if (plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].initialize();
+        if (plugin.module[module] != null && document.querySelector(plugin.settings[module])) plugin.module[module].initialize();
       }
     };
 
@@ -110,7 +129,7 @@ const timberCore = (function () {
     */
     plugin.refresh = () => {
       for (let module in plugin.module) {
-        if (plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].refresh();
+        if (plugin.module[module] != null && document.querySelector(plugin.settings[module])) plugin.module[module].refresh();
       }
     };
 
@@ -119,7 +138,7 @@ const timberCore = (function () {
     */
     plugin.destroy = () => {
       for (let module in plugin.module) {
-        if (plugin.module[module] != null && document.querySelector(plugin.module[module].elements)) plugin.module[module].destroy();
+        if (plugin.module[module] != null && document.querySelector(plugin.settings[module])) plugin.module[module].destroy();
       }
     };
 
