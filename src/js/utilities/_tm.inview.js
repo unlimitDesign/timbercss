@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Inview 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -164,8 +164,10 @@ const tmInView = (function () {
 
         // Check element state
         plugin.elements.forEach(function (element) {
-
-          if(plugin.settings.observeParent) element = element.parentNode;
+          
+          // Check elements to observe
+          let observeParent = element.hasAttribute('data-observe-parent') ? true : plugin.settings.observeParent;
+          element = observeParent ? element.parentNode : element;
 
           // Callback flag to stop repeated callbacks
           let callbackInFlag = element.classList.contains('in-view') && !plugin.settings.loopCallbackOnScroll ? true : false;
@@ -236,8 +238,9 @@ const tmInView = (function () {
         plugin.elements.forEach(function(element) {
           let threshold = element.dataset.threshold ? element.dataset.threshold : plugin.settings.threshold;
           let detectionBuffer = element.dataset.detectionBuffer ? element.dataset.detectionBuffer : `0px 0px ${plugin.settings.detectionBuffer + 'px'} 0px`;
-          plugin.settings.observeParent = element.hasAttribute('data-observe-parent') ? true : plugin.settings.observeParent;
-          element = plugin.settings.observeParent ? element.parentNode : element;
+          let observeParent = element.hasAttribute('data-observe-parent') ? true : plugin.settings.observeParent;
+          element = observeParent ? element.parentNode : element;
+
           observeOnIntersect(element, threshold, detectionBuffer);
         });
         

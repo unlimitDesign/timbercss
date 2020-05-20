@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Load media 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -226,7 +226,7 @@ const tmLoadMedia = (function () {
             detectionBuffer: 100,
             unObserveViewed: true,
             inView: function(visibleMedia){
-              visibleMedia = visibleMedia.classList.contains(plugin.elements) ? visibleMedia : visibleMedia.querySelector(plugin.elements);
+              visibleMedia = visibleMedia.querySelector('[data-observe-parent]') ? visibleMedia.querySelector(plugin.elements) : visibleMedia;
               processMedia(visibleMedia, checkMediaType(visibleMedia));
             }
           });
