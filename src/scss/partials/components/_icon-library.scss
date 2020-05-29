@@ -9,8 +9,8 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
-  src: url(#{$font-icon-path}/MaterialIcons-Regular.eot);
+  font-display: swap;
+  src: local(sans-serif), url(#{$font-icon-path}/MaterialIcons-Regular.eot);
   /* For IE6-8 */
   src: local('Material Icons'),
   local('MaterialIcons-Regular'),
@@ -42,8 +42,8 @@
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: normal;
-  font-display: auto;
-  src: url(#{$font-icon-path}/Brands.eot);
+  font-display: swap;
+  src: local(sans-serif), url(#{$font-icon-path}/Brands.eot);
   src: url(#{$font-icon-path}/Brands.eot?#iefix) format('embedded-opentype'),
   url(#{$font-icon-path}/Brands.woff2) format('woff2'),
   url(#{$font-icon-path}/Brands.woff) format('woff'),
