@@ -252,6 +252,12 @@ $shadow-outline:                                            0 0 0 0.3rem rgba(52
 $shadow-states:                                             (base, hover, focus, active) !default;                                                          // Determines for which states (base or default, hover, focus, active) color classes should be created
 $shadow-responsive:                                         (lg,md,sm) !default;                                                                            // Whether shadow utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
+//
+// Transitions
+//
+
+$transition-duration-increments:                            (0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000) !default;                                // Transition duration increments - defines duration amount in milliseconds                     
+$transition-delay-increments:                               (0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000) !default;                                // Transition delay increments - defines delay amount in milliseconds                          
 
 //
 // Interactivity

@@ -18,14 +18,29 @@ pre,
 ol,
 ul,
 li,
-textarea {
+textarea,
+button,
+input,
+select {
   margin: 0;
 }
 
 button,
 input,
-select {
-  margin: 0;
+optgroup,
+select,
+textarea {
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+}
+
+[role=button],
+button {
+  cursor: pointer;
 }
 
 img,
@@ -1070,11 +1085,11 @@ hr {
   height: 100%;
 }
 
-.grid.preload {
+.grid.masonry {
   position: relative;
 }
 
-.grid.preload .grid-item-inner {
+.grid.masonry .grid-item-inner {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -1083,7 +1098,7 @@ hr {
   will-change: all;
 }
 
-.grid.preload .grid-item.loaded .grid-item-inner {
+.grid.masonry .grid-item.loaded .grid-item-inner {
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -2448,8 +2463,8 @@ label {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
-  src: url(../icons/MaterialIcons-Regular.eot);
+  font-display: swap;
+  src: local(sans-serif), url(../icons/MaterialIcons-Regular.eot);
   /* For IE6-8 */
   src: local("Material Icons"), local("MaterialIcons-Regular"), url(../icons/MaterialIcons-Regular.woff2) format("woff2"), url(../icons/MaterialIcons-Regular.woff) format("woff"), url(../icons/MaterialIcons-Regular.ttf) format("truetype");
 }
@@ -2476,8 +2491,8 @@ label {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: normal;
-  font-display: auto;
-  src: url(../icons/Brands.eot);
+  font-display: swap;
+  src: local(sans-serif), url(../icons/Brands.eot);
   src: url(../icons/Brands.eot?#iefix) format("embedded-opentype"), url(../icons/Brands.woff2) format("woff2"), url(../icons/Brands.woff) format("woff"), url(../icons/Brands.ttf) format("truetype");
 }
 
@@ -12734,23 +12749,31 @@ iframe {
 @section 42. Appearance
 */
 .appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
 @media only screen and (max-width: 1200px) {
   .appearance-lg-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
   }
 }
 
 @media only screen and (max-width: 992px) {
   .appearance-md-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .appearance-sm-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
   }
 }
@@ -24107,7 +24130,98 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 61. Font Family Classes
+@section 61. Transition Classes
+*/
+.transition-duration-0 {
+  transition-duration: 0ms;
+}
+
+.transition-duration-100 {
+  transition-duration: 100ms;
+}
+
+.transition-duration-200 {
+  transition-duration: 200ms;
+}
+
+.transition-duration-300 {
+  transition-duration: 300ms;
+}
+
+.transition-duration-400 {
+  transition-duration: 400ms;
+}
+
+.transition-duration-500 {
+  transition-duration: 500ms;
+}
+
+.transition-duration-600 {
+  transition-duration: 600ms;
+}
+
+.transition-duration-700 {
+  transition-duration: 700ms;
+}
+
+.transition-duration-800 {
+  transition-duration: 800ms;
+}
+
+.transition-duration-900 {
+  transition-duration: 900ms;
+}
+
+.transition-duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.transition-delay-0 {
+  transition-delay: 0ms;
+}
+
+.transition-delay-100 {
+  transition-delay: 100ms;
+}
+
+.transition-delay-200 {
+  transition-delay: 200ms;
+}
+
+.transition-delay-300 {
+  transition-delay: 300ms;
+}
+
+.transition-delay-400 {
+  transition-delay: 400ms;
+}
+
+.transition-delay-500 {
+  transition-delay: 500ms;
+}
+
+.transition-delay-600 {
+  transition-delay: 600ms;
+}
+
+.transition-delay-700 {
+  transition-delay: 700ms;
+}
+
+.transition-delay-800 {
+  transition-delay: 800ms;
+}
+
+.transition-delay-900 {
+  transition-delay: 900ms;
+}
+
+.transition-delay-1000 {
+  transition-delay: 1000ms;
+}
+
+/*------------------------------------------------------------------
+@section 62. Font Family Classes
 */
 .font-sans {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -24159,7 +24273,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 62. Font Size Classes
+@section 63. Font Size Classes
 */
 h1 {
   font-size: 4.57rem;
@@ -24340,7 +24454,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 63. Text Classes
+@section 64. Text Classes
 */
 .italic {
   font-style: italic;
@@ -24379,7 +24493,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 64. Text Classes
+@section 65. Text Classes
 */
 .font-thin {
   font-weight: 100 !important;
@@ -24509,7 +24623,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 65. Letter Spacing Classes
+@section 66. Letter Spacing Classes
 */
 .tracking-tighter {
   letter-spacing: -0.05em;
@@ -24600,7 +24714,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 66. Line Height Classes
+@section 67. Line Height Classes
 */
 .leading-none {
   line-height: 1;
@@ -24691,7 +24805,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 67. Text Classes
+@section 68. Text Classes
 */
 .left {
   text-align: left;
@@ -24756,7 +24870,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 68. Text Decoration
+@section 69. Text Decoration
 */
 .underline {
   text-decoration: underline;
@@ -24808,7 +24922,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 69. Text Transform
+@section 70. Text Transform
 */
 .normalcase {
   text-transform: none !important;
@@ -24873,7 +24987,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 70. Alignment Classes
+@section 71. Alignment Classes
 */
 .align-baseline {
   vertical-align: baseline !important;
@@ -24964,7 +25078,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 71. Text Classes
+@section 72. Text Classes
 */
 .whitespace-normal {
   white-space: normal;
@@ -25042,7 +25156,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 72. Word Break Classes
+@section 73. Word Break Classes
 */
 .break-normal {
   word-break: normal;
