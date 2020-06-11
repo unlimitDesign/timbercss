@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Collapsable 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -207,12 +207,14 @@ const tmCollapsable = (function () {
     plugin.triggerClick = (element) => {
       try{
         element = document.querySelector(element);
-        let event = new MouseEvent('click', {
+        let newEvent;
+        let event = !mobile ?  MouseEvent : TouchEvent;
+        newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
-        let canceled = !element.dispatchEvent(event);
+        let canceled = !element.dispatchEvent(newEvent);
       }catch(error) {
         console.log(`${error} - selector not entered or does not exist`);
       }

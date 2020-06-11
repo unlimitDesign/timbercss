@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Accordion 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -173,12 +173,14 @@ const tmAccordion = (function () {
     plugin.triggerLinkClick = (link) => {
       try{
         link = document.querySelector(link);
-        let event = new MouseEvent('click', {
+        let newEvent;
+        let event = !mobile ?  MouseEvent : TouchEvent;
+        newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
-        let canceled = !link.dispatchEvent(event);
+        let canceled = !link.dispatchEvent(newEvent);
       }catch(error) {
         console.log(`${error} - selector not entered or does not exist`);
       }
