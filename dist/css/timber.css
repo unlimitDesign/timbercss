@@ -24130,7 +24130,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 61. Transition Classes
+@section 62. Transition Classes
 */
 .transition-duration-0 {
   transition-duration: 0ms;
@@ -24221,7 +24221,34 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 62. Font Family Classes
+@section 61. SVG Classes
+*/
+.fill-current-color {
+  fill: currentColor;
+}
+
+.stroke-current-color {
+  stroke: currentColor;
+}
+
+.stroke-1 {
+  stroke-width: 1;
+}
+
+.stroke-2 {
+  stroke-width: 2;
+}
+
+.stroke-4 {
+  stroke-width: 4;
+}
+
+.stroke-8 {
+  stroke-width: 8;
+}
+
+/*------------------------------------------------------------------
+@section 63. Font Family Classes
 */
 .font-sans {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -24273,7 +24300,7 @@ iframe {
 }
 
 /*------------------------------------------------------------------
-@section 63. Font Size Classes
+@section 64. Font Size Classes
 */
 h1 {
   font-size: 4.57rem;
@@ -24454,7 +24481,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 64. Text Classes
+@section 65. Text Classes
 */
 .italic {
   font-style: italic;
@@ -24493,7 +24520,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 65. Text Classes
+@section 66. Text Classes
 */
 .font-thin {
   font-weight: 100 !important;
@@ -24623,7 +24650,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 66. Letter Spacing Classes
+@section 67. Letter Spacing Classes
 */
 .tracking-tighter {
   letter-spacing: -0.05em;
@@ -24714,7 +24741,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 67. Line Height Classes
+@section 68. Line Height Classes
 */
 .leading-none {
   line-height: 1;
@@ -24805,7 +24832,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 68. Text Classes
+@section 69. Text Classes
 */
 .left {
   text-align: left;
@@ -24870,7 +24897,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 69. Text Decoration
+@section 70. Text Decoration
 */
 .underline {
   text-decoration: underline;
@@ -24922,7 +24949,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 70. Text Transform
+@section 71. Text Transform
 */
 .normalcase {
   text-transform: none !important;
@@ -24987,7 +25014,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 71. Alignment Classes
+@section 72. Alignment Classes
 */
 .align-baseline {
   vertical-align: baseline !important;
@@ -25078,7 +25105,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 72. Text Classes
+@section 73. Text Classes
 */
 .whitespace-normal {
   white-space: normal;
@@ -25156,7 +25183,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 73. Word Break Classes
+@section 74. Word Break Classes
 */
 .break-normal {
   word-break: normal;
@@ -25233,7 +25260,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 70. Horizon
+@section 75. Horizon
 */
 .horizon {
   opacity: 0;
@@ -25245,7 +25272,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 71. Preloader
+@section 77. Preloader
 */
 .preloader {
   width: 5rem;
@@ -25337,7 +25364,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 72. Parallax
+@section 76. Parallax
 */
 .parallax {
   background-size: cover;
@@ -25347,7 +25374,7 @@ small {
 }
 
 /*------------------------------------------------------------------
-@section 73. Summit Lightbox
+@section 78. Summit Lightbox
 */
 /*
 @section 50.1. Lightbox Wrappers
@@ -25620,7 +25647,7 @@ embed.media-source {
 }
 
 /*------------------------------------------------------------------
-@section 77. Feature Section
+@section 79. Feature Section
 */
 .feature .row {
   height: 100%;
@@ -25648,7 +25675,7 @@ embed.media-source {
 }
 
 /*------------------------------------------------------------------
-@section 78. Footer Section
+@section 80. Footer Section
 */
 .footer {
   width: 100%;
@@ -25783,7 +25810,7 @@ body.boxed .footer .footer-bottom {
 }
 
 /*------------------------------------------------------------------
-@section 79. Grid Section
+@section 81. Grid Section
 */
 .grid-filter-menu {
   text-align: center;
@@ -25886,7 +25913,7 @@ body.boxed .footer .footer-bottom {
 }
 
 /*------------------------------------------------------------------
-@section 80. Header Section
+@section 82. Header Section
 */
 .header {
   width: 100%;
@@ -26227,7 +26254,7 @@ body.boxed .header .header-inner {
 }
 
 /*------------------------------------------------------------------
-@section 81. Hero Section
+@section 83. Hero Section
 */
 .hero {
   min-height: 50rem;
@@ -26276,7 +26303,7 @@ body.boxed .header .header-inner {
 }
 
 /*------------------------------------------------------------------
-@section 82. Logo Section
+@section 84. Logo Section
 */
 .logo-grid .grid {
   grid-auto-rows: minmax(16rem, auto);
@@ -26332,7 +26359,7 @@ body.boxed .header .header-inner {
 }
 
 /*------------------------------------------------------------------
-@section 84. Masthead Section
+@section 86. Masthead Section
 */
 .masthead {
   min-height: 35rem;
@@ -26343,7 +26370,7 @@ body.boxed .header .header-inner {
 }
 
 /*------------------------------------------------------------------
-@section 85. Sidebar Section
+@section 87. Sidebar Section
 */
 .sidebar .sidebar-block {
   margin-bottom: 3rem;

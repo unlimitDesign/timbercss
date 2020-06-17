@@ -1,0 +1,16 @@
+/*------------------------------------------------------------------
+@section 61. SVG Classes
+*/
+
+.fill-current-color{
+  fill: currentColor;
+}
+.stroke-current-color{
+  stroke: currentColor;
+}
+
+@each $width in $stroke-width-increment{
+	.stroke-#{$width} {
+    stroke-width: $width;
+  }
+}
