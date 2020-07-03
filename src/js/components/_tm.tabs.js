@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Tabs 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -121,7 +121,7 @@ const tmTabs = (function () {
 
       // Loop through each item and check active tab link
       document.querySelectorAll(plugin.elements).forEach(function(tabs){
-        let links = tabs.querySelectorAll('.tab-nav *');
+        let links = tabs.querySelectorAll('.tab-nav');
         let linksActive = tabs.querySelector('.tab-nav .active');
         let location = locationHash(tabs);
         let hashExists = location[0];
