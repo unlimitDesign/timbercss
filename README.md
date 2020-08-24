@@ -118,4 +118,4 @@ We do not yet have a guideline for it yet. Please give a shout in [the issue boa
 
 ## Copyright and license
 
-Copyright 2019 [unlimitDesign](https://unlimit.design). Codes are released under [the MIT license](https://github.com/unlimitDesign/timbercss/blob/master/LICENSE).
+Copyright 2020 and beyond [unlimitDesign](https://unlimit.design). Codes are released under [the MIT license](https://github.com/unlimitDesign/timbercss/blob/master/LICENSE).
