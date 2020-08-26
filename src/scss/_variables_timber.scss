@@ -18,41 +18,43 @@ $font-base-size: 62.5% !default;                                                
 // Colors
 //
 
-$black:                                                     #07090C !default;                                                                               // Base colors
-$grey-ultradark:                                            #1C2232 !default;
-$grey-darkest:                                              #303C57 !default;
-$grey-darker:                                               #45567C !default;
-$grey-dark:                                                 #7D89A3 !default;
-$grey:                                                      #9EA7BB !default;
-$grey-light:                                                #AFB6C7 !default;
-$grey-lighter:                                              #C0C6D2 !default;
-$grey-lightest:                                             #E1E4EA !default;
-$grey-ultralight:                                           #F2F3F6 !default;
+$black:                                                     #091a28 !default;                                                                               // Base colors
+$grey-ultradark:                                            #21303D !default;
+$grey-darkest:                                              #3A4753 !default;
+$grey-darker:                                               #525E68 !default;
+$grey-dark:                                                 #6B757E !default;
+$grey:                                                      #848C93 !default;
+$grey-light:                                                #9CA3A9 !default;
+$grey-lighter:                                              #B5BABE !default;
+$grey-lightest:                                             #E6E8E9 !default;
+$grey-ultralight:                                           #f1f2f3 !default;
 $white:                                                     #ffffff !default;
 
 $blue:                                                      #0096ff !default;
+$blue-light:                                                #e5f4ff !default;
 $indigo:                                                    #6574cd !default;
 $purple:                                                    #9561e2 !default;
 $pink:                                                      #f44f7f !default;
 $red:                                                       #f14844 !default;
-$orange:                                                    #f6993f !default;
-$yellow:                                                    #ffed4a !default;
-$green:                                                     #38c172 !default;
+$orange:                                                    #fc8842 !default;
+$yellow:                                                    #fedb5c !default;
+$green:                                                     #37cd8f !default;
 $teal:                                                      #48d2c5 !default;
 $cyan:                                                      #1ec4de !default;
 
-$primary:                                                   $blue !default;                                                                                 // Theme specific colors
+$primary:                                                   $green !default;                                                                                 // Theme specific colors
 $secondary:                                                 $grey-darker !default;
-$success:                                                   $green !default;
-$info:                                                      $blue !default;
-$warning:                                                   $yellow !default;
-$danger:                                                    $red !default;
+$success:                                                   #37cd8f !default;
+$info:                                                      #0096ff !default;
+$warning:                                                   #f6993f !default;
+$danger:                                                    #f14844 !default;
 
 $base-colors:(  
     transparent:                                            transparent,                                                                                    // Color states for base and theme specific colors - provides color, :hover color, :focus color
     primary:                                                $primary,
     secondary:                                              $secondary,
-    black:                                                  $grey-ultradark,
+    black:                                                  $black,
+    grey-ultradark:                                         $grey-ultradark,
     grey-darkest:                                           $grey-darkest,
     grey-darker:                                            $grey-darker,
     grey-dark:                                              $grey-dark,
@@ -62,9 +64,9 @@ $base-colors:(
     grey-lightest:                                          $grey-lightest,
     grey-ultralight:                                        $grey-ultralight,
     white:                                                  $white,
-    blue:                                                   $primary,
+    blue:                                                   $blue,
     indigo:                                                 $indigo,
-    purple:                                                 $purple,
+    purple:                                                 $purple,     
     pink:                                                   $pink,
     red:                                                    $red,
     orange:                                                 $orange,
@@ -72,10 +74,10 @@ $base-colors:(
     green:                                                  $green,
     teal:                                                   $teal,
     cyan:                                                   $cyan,
-    success:                                                $green,
-    info:                                                   $blue,
-    warning:                                                $orange,
-    danger:                                                 $red,
+    success:                                                $success,
+    info:                                                   $info,
+    warning:                                                $warning,
+    danger:                                                 $danger,
 ) !default;
 
 $gradient-colors:(
@@ -123,7 +125,7 @@ $breakpoints: (
     md: 992px,
     sm: 768px,                                                                                                                                              // Grid breakpoints
     xs: 576px,  
-)!default;
+) !default;
 
 //
 // Container Widths
@@ -135,7 +137,7 @@ $container-max-widths: (
     md: 72rem,
     sm: 54rem,
     xs: 100%,
-)!default;
+) !default;
 
 //
 // Column Widths
@@ -155,7 +157,7 @@ $column-widths: (                                                               
     10: 83.333333%,
     11: 91.666667%,
     12: 100%,
-)!default;
+) !default;
 $column-gutter:                                             3rem !default;                                                                                  // Column gutter size
 $column-responsive:                                         (lg,md,sm) !default;                                                                            // Whether column utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)                   
 
@@ -170,11 +172,14 @@ $flexbox-responsive:                                        (lg,md,sm) !default;
 // CSS Grid
 //
 
-$grid-col-row-spans:                                        (2,3) !default;                                                                                 // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$grid-col-row-responsive:                                   (lg,md,sm) !default;                                                                            // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
-$grid-gutters:                                              (0, 3, 15, 30) !default;                                                                        // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-col-spans:                                            (2,3,4,5,6,7,8) !default;                                                                                 // The number of columns a grid item can span
+$grid-row-spans:                                            (2,3) !default;                                                                                 // The number of rows a grid item can span
+$grid-col-start:                                            (1,2,3,4,5,6,7,8) !default;                                                                     // Determines a grid item’s start location within the grid where numbers refers to specific columns            
+$grid-col-end:                                              (1,2,3,4,5,6,7,8) !default;                                                                     // Determines a grid item’s end location within the grid where numbers refers to specific columns
+$grid-col-row-responsive:                                   (lg,md,sm) !default;                                                                            // Whether grid span classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-gutters:                                              (0, 3, 15, 30) !default;                                                                        // Defines the number of different grid gutter classes 
 $grid-max-colums:                                           8 !default;                                                                                     // Defines the number of max columns for a CSS grid
-$grid-responsive:                                           (lg,md,sm) !default;                                                                            // Whether display utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$grid-responsive:                                           (lg,md,sm) !default;                                                                            // Whether grid column classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 
 
 //
@@ -249,10 +254,20 @@ $shadow-responsive:                                         (lg,md,sm) !default;
 
 
 //
+// Transitions
+//
+
+$transition-duration-increments:                            (0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000) !default;                                // Transition duration increments - defines duration amount in milliseconds                     
+$transition-delay-increments:                               (0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000) !default;                                // Transition delay increments - defines delay amount in milliseconds                          
+
+
+//
 // Interactivity
 //
 
+$appearance-responsive:                                     (lg,md,sm) !default;                                                                            // Whether apperance utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $cursor-responsive:                                         (lg,md,sm) !default;                                                                            // Whether cursor utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
+$outline-responsive:                                        (lg,md,sm) !default;                                                                            // Whether outline utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $pointer-events-responsive:                                 (lg,md,sm) !default;                                                                            // Whether pointer event utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $resize-responsive:                                         (lg,md,sm) !default;                                                                            // Whether resize utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
 $select-responsive:                                         (lg,md,sm) !default;                                                                            // Whether select utitlity classes should be added for breakpoints - list breakopints to include (xl,lg,md,sm,xs)
@@ -290,6 +305,13 @@ $visibility-responsive:                                     (lg,md,sm) !default;
 $z-index-increments:                                        (auto, 0, 10, 20, 30, 40) !default;
 $z-index-responsive:                                        (lg,md,sm) !default;
 
+
+//
+// SVG
+//
+$stroke-width-increment:                                    (1, 2, 4, 8) !default;                                                                            // Stroke widths - defines stroke widths for svgs
+
+
 //
 // Typography
 //
@@ -297,7 +319,7 @@ $z-index-responsive:                                        (lg,md,sm) !default;
 // Font Family
 $font-family-sans-serif:                                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:                                         Georgia, Cambria, "Times New Roman", Times, serif !default;
-$font-family-monospace:                                     "Courier New", Courier, monospace, sans-serif !default;
+$font-family-monospace:                                     Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-responsive:                                    (lg,md,sm) !default;
 
 // Font Size
@@ -311,7 +333,7 @@ $font-sizes: (                                              // Font sizes for fo
     normal: 1.6rem,
     small: 1.231rem,
     tiny: 0.947rem,
-)!default;
+) !default;
 $font-size-responsive:                                      (lg,md,sm) !default;
 
 // Font Style
@@ -453,6 +475,7 @@ $headings-margin-bottom:                                    2rem !default;      
 $headings-font-family:                                      inherit !default;                                                                                // H tag font family
 $headings-font-weight:                                      $font-weight-demi-bold !default;                                                                 // H tag font weight    
 $headings-line-height:                                      1.2 !default;                                                                                    // H tag line height
+$headings-letter-spacing:                                   none !default;
 $headings-color:                                            $secondary !default;                                                                             // H tag color
 
 $paragraph-margin-top:                                      0 !default;                                                                                      // P tag margin top
@@ -622,14 +645,14 @@ $blockquote-cite-margin-top:                                2rem !default;      
 
 $blockquote-color:                                          $secondary !default;                                                                             // Blockquote color
 $blockquote-line-height:                                    1.5 !default;                                                                                    // Blockquote line height
-$blockquote-cite-font-size:                                 70%;                                                                                             // Blockquote cite font size
+$blockquote-cite-font-size:                                 70% !default;                                                                                             // Blockquote cite font size
 
 $blockquote-small-font-size:                                1.8rem !default;                                                                                 // Blockquote small font size
 $blockquote-medium-font-size:                               2rem !default;                                                                                   // Blockquote medium font size
 $blockquote-large-font-size:                                2.2rem !default;                                                                                 // Blockquote large font size
 $blockquote-xlarge-font-size:                               2.4rem !default;                                                                                 // Blockquote xlarge font size
 
-$blockquote-avatar-border-radius:                           $component-border-style-full;                                                                    // Blockquote avatar border style
+$blockquote-avatar-border-radius:                           $component-border-style-full !default;                                                                    // Blockquote avatar border style
 
 // Card
 $card-border-width:                                         $component-border-width !default;                                                                // Box border width
@@ -672,14 +695,29 @@ $button-box-shadow:                                         none !default;      
 $button-hover-box-shadow:                                   none !default;                                                                                   // Button shadow on hover - for when the class .shadow-on-hover is added to a.button or button
 
 // Code
-$code-font-size:                                            inherit !default;
-$code-color:                                                pink !default;
+$code-font-size:                                            1.4rem !default;
+
+$code-color:                                                $indigo !default;
+$pre-color:                                                 $grey !default;
+
+$code-inline-padding:                                       .125rem .5rem !default;
+$code-inline-bkg-color:                                     $grey-ultralight !default;
+$code-inline-border:                                        1px solid $grey-lightest !default;
+$code-inline-border-radius:                                 $border-rounded !default;
+$code-inline-color:                                         $indigo !default;
+
+$code-block-padding:                                        2rem !default;
+$code-block-bkg-color:                                      $grey-ultralight !default;
+$code-block-border-width:                                   0 0 0 0.4rem !default;
+$code-block-border-color:                                   $green !default;
+$code-block-border-radius:                                  $border-rounded !default;
+$code-block-color:                                          $grey !default;
+
 $kbd-padding-y:                                             .2rem !default;
 $kbd-padding-x:                                             .4rem !default;
 $kbd-font-size:                                             $code-font-size !default;
-$kbd-color:                                                 white !default;
-$kbd-bkg-color:                                             grey !default;
-$pre-color:                                                 grey !default;
+$kbd-color:                                                 $white !default;
+$kbd-bkg-color:                                             $grey !default;
 
 // Dropdown
 $dropdown-menu-min-width:                                   18rem !default;                                                                                  // Dropdown medium list width                                           
@@ -1005,9 +1043,9 @@ $header-bkg-color-on-scroll:                                $white !default;    
 $header-border-bottom-on-scroll:                            0px solid $grey-ultralight !default;                                                             // Border color header receives upon scrolling down the page
 $header-mobile-bkg-color:                                   $white !default;                                                                                 // Mobile header background color
 
-$header-nav-color-on-scroll:                                $grey !default;                                                                                  // Navigation color items receives upon scrolling down the page
-$header-nav-color-on-scroll-hover:                          $grey-ultradark !default;                                                                        // Navigation hover color items receives upon scrolling down the page
-$header-nav-color-on-scroll-active:                         $grey-ultradark !default;                                                                        // Navigation active color items receives upon scrolling down the page
+$header-nav-color-on-scroll:                                $secondary !default;                                                                                  // Navigation color items receives upon scrolling down the page
+$header-nav-color-on-scroll-hover:                          $primary !default;                                                                        // Navigation hover color items receives upon scrolling down the page
+$header-nav-color-on-scroll-active:                         $primary !default;                                                                        // Navigation active color items receives upon scrolling down the page
 $header-nav-bkg-color-active-on-scroll:                     transparent !default;                                                                            // Navigation background color active item receives upon scrolling down the page
 
 $header-swap-color:                                         $secondary !default;                                                                             // Text color of items given the class .swap-color  
@@ -1026,7 +1064,7 @@ $header-logo-compact-width:                                 10rem !default;     
 $header-logo-font-size:                                     2rem !default;                                                                                   // Logo font size if image is not used
 $header-logo-font-size-mobile:                              1.3rem !default;                                                                                 // Logo font size on mobile
 $header-logo-compact-font-size:                             1.5rem !default;                                                                                 // Font size logo receives upon scrolling down the page
-$header-logo-color:                                         $grey-ultradark;                                                                                 // Logo color if image is not used
+$header-logo-color:                                         $grey-ultradark !default;                                                                                 // Logo color if image is not used
 $header-logo-hover-opacity:                                 0.6 !default;                                                                                    // Logo hover opacity
 
 $header-logo-1-animate-end:                                 translateY(-8rem) !default;                                                                      // Top logo ending animation position
@@ -1055,7 +1093,7 @@ $sidebar-block-link-nested-margin:                          0.4rem 0 1rem 1rem !
 // Grids
 $grid-item-width-start:                                     100% !default;                                                                                   // Grid item width start animation position
 $grid-item-width-end:                                       100% !default;                                                                                   // Grid item width  end animation positio
-$grid-item-height-start:                                    0 !default;                                                                                      // Grid item height start animation position
+$grid-item-height-start:                                    100% !default;                                                                                      // Grid item height start animation position
 $grid-item-height-end:                                      100% !default;                                                                                   // Grid item height end animation positio
 $grid-item-transform-start:                                 scale(1.3) !default;                                                                             // Grid item transform start animation position
 $grid-item-transform-end:                                   scale(1) !default;                                                                               // Grid item transform end animation positio

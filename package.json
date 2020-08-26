@@ -1,6 +1,6 @@
 {
   "name": "timbercss",
-  "version": "0.1.12",
+  "version": "0.1.68",
   "author": "UnlimitDesign",
   "description": "A CSS Framework for Rapid Website Prototyping",
   "keywords": [],
@@ -15,7 +15,7 @@
   },
   "main": "src/js/index.js",
   "style": "src/scss/timber.scss",
-  "copyright": "Copyright © UnlimitDesign 2019",
+  "copyright": "Copyright © UnlimitDesign 2020",
   "authorCredits": "UnlimitDesign, Christian Lundgren, Shu Miyao",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -36,9 +36,9 @@
     "purgecss-webpack-plugin": "^1.6.0",
     "sass-loader": "^7.3.1",
     "terser-webpack-plugin": "^1.4.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
     "write-file-webpack-plugin": "^4.5.1"
   }
 }

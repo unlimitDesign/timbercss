@@ -311,7 +311,8 @@
 		width: $hamburger-nav-animated-border-width;
 		height: $hamburger-nav-animated-border-height;
 		margin-bottom: $hamburger-nav-animated-border-spacing !important;
-		background-color: $hamburger-nav-color;
+    background-color: $hamburger-nav-color;
+    pointer-events: none;
 		@include transition(background-color);
 		position: relative;
 		transform-origin: center center;

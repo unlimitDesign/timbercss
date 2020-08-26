@@ -28,13 +28,21 @@
 	visibility: hidden;
 	list-style: none;
 	overflow: hidden;
+	pointer-events: none;
 	@include transition();
 	position: absolute;
 	top: 100%;
 	z-index: 1000;
+	input{
+		visibility: inherit;
+	}
 	&.active{
 		opacity: 1 !important;
 		visibility: visible !important;
+		pointer-events: auto;
+		input{
+			visibility: inherit;
+		}
 	}
 }
 .dropdown-item{

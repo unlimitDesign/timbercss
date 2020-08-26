@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Masonry Grid 
-// Version: 1.0.0
+// Version: 1.0.5
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,7 +9,8 @@
 // Import utilities and required plugins
 import classList from '../utilities/_chaining.js';
 import tmInView from '../utilities/_tm.inview.js';
-import loadMedia from '../utilities/_tm.loadmedia.js';
+import tmLoadMedia from '../utilities/_tm.loadmedia.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmMasonryGrid = (function () {
 
@@ -71,9 +72,9 @@ const tmMasonryGrid = (function () {
       // Add preloader 
       if(plugin.settings.usePreloader && !loaded && itemToLoad != null) addPreloader(gridItem);
 
-      // Create instance of loadMedia if there is an item to preload
+      // Create instance of tmLoadMedia if there is an item to preload
       if(itemToLoad != null){
-        gridItemsLazyload = new loadMedia(itemToLoad,{
+        gridItemsLazyload = new tmLoadMedia(itemToLoad,{
           backgroundImage: asBgImages, 
           onLoaded: function(loadedItem){
 
@@ -86,6 +87,9 @@ const tmMasonryGrid = (function () {
 
             // Show loaded grid item by adding the loaded class to it
             classList(itemParent).addClass('loaded');
+
+            // Clear any min-height set
+            if(gridItem.classList.contains('loaded')) gridItem.style.minHeight = 'auto'; 
 
             // Callback
             plugin.settings.gridItemLoaded(loadedItem);
@@ -197,13 +201,14 @@ const tmMasonryGrid = (function () {
         var menuItems = element.getElementsByTagName('li');
         for (let i = 0; i < menuItems.length; i++) {
           let menuItem = menuItems[i];
-          menuItem.addEventListener('click', function(event){
-            event.preventDefault();
+          let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
+          menuItem.addEventListener(eventType, function(event){
+            if(event.target.tagName === 'A') event.preventDefault();
             filterSelection(gridTarget,event.target.getAttribute('data-filter'));
             let current = filterMenu.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
             event.target.className += ' active';
-          });
+          }, eventOptions);
         }
       });
     };
@@ -219,7 +224,7 @@ const tmMasonryGrid = (function () {
     plugin.initialize = () => {
 
       if(plugin.elements == null) return false;
-
+     
       // Loop through grid and add inview instance
       document.querySelectorAll(plugin.elements).forEach(function(element){
 
@@ -239,6 +244,9 @@ const tmMasonryGrid = (function () {
         
         // Find grid items
         let gridItems = element.querySelectorAll('.grid-item:not(.loaded)');
+
+        // Check preloader option
+        plugin.settings.usePreloader = element.hasAttribute('data-no-preloader') ? false : plugin.settings.usePreloader;
 
         // Create instance of inView to observe grid items and load their images
         // upon entering the viewport
@@ -273,7 +281,6 @@ const tmMasonryGrid = (function () {
           let gridItem = gridItems[i];
           gridItem.style.width = 'auto';
           if(element.hasAttribute('data-set-grid-item-height')) gridItem.style.height = calcGridItemHeight(gridItemSizer,gridItem) + 'px';
-          gridItem.style.minHeight = 'auto'; 
         }
       });
     };

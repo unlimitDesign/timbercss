@@ -9,8 +9,8 @@ let timber = new timberCore({
 // Initialize all imported modules
 // Or intialize a select number of modules as follows:
 // timber.module.modulename.initialize();
-// For callbacks: timber.module.modlename.settings.callback = function(){};
-// console.log(timber.module.modlename.settings) for module settings
+// For callbacks: timber.module.modulename.settings.callback = function(){};
+// console.log(timber.module.modulename.settings) for module settings
 if (typeof timber.initialize != 'undefined') {
   timber.initialize();
 }

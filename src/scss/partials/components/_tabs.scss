@@ -7,7 +7,7 @@
 	.tab-nav{
 		padding: 0;
 		display: flex;
-		a{
+		*{
 			margin: 0 !important;
 		}
 		&.center{
@@ -25,7 +25,7 @@
 			&:not([class*="w-"]){
 				width: $tabs-tab-nav-width;
 			}
-			a{
+			*{
 				width: 100%;
 			}
 		}
@@ -44,10 +44,12 @@
 		height: 0;
 		visibility: hidden;
 		background: none;
+		position: relative;
 	}
 	> .active{
 		height: auto;
 		visibility: visible;
+		z-index: 1;
 	}
 	.tab-content{
 		opacity: 0;
@@ -77,7 +79,7 @@
 		.tab-nav{
 			display: flex;
 			flex-wrap: wrap;
-			a{
+			*{
 				width: 100%;
 			}
 		}

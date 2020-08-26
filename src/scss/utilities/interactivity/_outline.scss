@@ -1,0 +1,20 @@
+/*------------------------------------------------------------------
+@section 44. Outline
+*/
+
+.outline-none{
+  outline: 0;
+}
+
+// Breaktpoints
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $outline-breakpoint in $outline-responsive {
+			@if $outline-breakpoint == $breakpoint{
+				.outline-#{$breakpoint}-none{
+					outline: 0;
+				}
+			}
+		}
+	}
+}

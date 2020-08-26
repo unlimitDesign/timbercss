@@ -1,0 +1,14 @@
+/*------------------------------------------------------------------
+@section 62. Transition Classes
+*/
+
+@each $increment in $transition-duration-increments {
+	.transition-duration-#{$increment} {
+    transition-duration: $increment + ms;
+  }
+}
+@each $increment in $transition-delay-increments {
+	.transition-delay-#{$increment} {
+    transition-delay: $increment + ms;
+  }
+}

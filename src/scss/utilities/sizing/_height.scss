@@ -1,11 +1,14 @@
 /*------------------------------------------------------------------
-@section 54. Height Classes
+@section 56. Height Classes
 */
 .h-inherit{
 	height: inherit;
 }
 .h-min-inherit{
 	min-height: inherit;
+}
+.h-min-inherit{
+	max-height: inherit;
 }
 .h-full{
 	height: 100%;
@@ -15,6 +18,9 @@
 }
 .h-min-screen{
 	min-height: 100vh;
+}
+.h-max-screen{
+	max-height: 100vh;
 }
 @each $height in $height-increments {
 	@each $dimension in $height-dimensions {

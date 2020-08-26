@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Overlay Navigation 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,6 +9,7 @@
 // Import utilities
 import classList from '../utilities/_chaining.js';
 import tmEasing from '../utilities/_tm.easing.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmOverlayNavigation = (function () {
 
@@ -41,8 +42,8 @@ const tmOverlayNavigation = (function () {
   function OverlayNavigation(element, options) {
 
     // Some aliases and classes used thruoghout
-    let body;                       // Body alias
-    let siteWrapper;                    // Site wrapper alias
+    let body;                                       // Body alias
+    let siteWrapper;                                // Site wrapper alias
     let overlayNavShow = '.overlay-nav-show';       // Side nav show button.
     let overlayNavHide = '.overlay-nav-hide';       // Side nav hide button.
 
@@ -78,6 +79,15 @@ const tmOverlayNavigation = (function () {
     };
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
+      return eventOptions;
+    };
+
+    /**
     * Public variables and methods.
     */
 
@@ -92,7 +102,7 @@ const tmOverlayNavigation = (function () {
       document.querySelectorAll(plugin.elements).forEach(function(overlayNavShow){
         
         // Get overlay nav target
-        let overlayNavId = overlayNavShow.dataset.targetOverlayNav ? overlayNavShow.dataset.targetOverlayNav : overlayNavShow.href.substring(overlayNavShow.href.indexOf('#'));
+        let overlayNavId = overlayNavShow.dataset.target ? overlayNavShow.dataset.target : overlayNavShow.href.substring(overlayNavShow.href.indexOf('#'));
         let targetOverlayNav;
         try{
           targetOverlayNav = document.querySelector(overlayNavId);
@@ -105,10 +115,10 @@ const tmOverlayNavigation = (function () {
         classList(targetOverlayNav).addClass(getClasses(targetOverlayNav).animation + '-reset');
 
         // Add open events to nav show links
-        overlayNavShow.addEventListener(eventType, plugin.openNav, false);
+        overlayNavShow.addEventListener(eventType, plugin.openNav, checkEventOptions(overlayNavShow));
 
         // Add close events to overlay nav hide links
-        if(targetOverlayNav.querySelector(overlayNavHide) != null) targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, false);
+        if(targetOverlayNav.querySelector(overlayNavHide) != null) targetOverlayNav.querySelector(overlayNavHide).addEventListener(eventType, plugin.closeNav, checkEventOptions(overlayNavHide));
       });
       
       // Get body
@@ -131,12 +141,14 @@ const tmOverlayNavigation = (function () {
     plugin.triggerLinkClick = (link) => {
       try{
         link = document.querySelector(link);
-        let event = new MouseEvent('click', {
+        let newEvent;
+        let event = !mobile ?  MouseEvent : TouchEvent;
+        newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
-        let canceled = !link.dispatchEvent(event);
+        let canceled = !link.dispatchEvent(newEvent);
       }catch(error) {
         console.log(`${error} - selector not entered or does not exist`);
       }
@@ -147,13 +159,13 @@ const tmOverlayNavigation = (function () {
     * @param  {object}  element  The target overlay nav. 
     */
     plugin.openNav = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       // Add active class to button
       classList(event.target).addClass('active');
 
       // Get overlay nav target
-      let overlayNavId = event.target.dataset.targetOverlayNav ? event.target.dataset.targetOverlayNav : event.target.href.substring(event.target.href.indexOf('#'));
+      let overlayNavId = event.target.dataset.target ? event.target.dataset.target : event.target.href.substring(event.target.href.indexOf('#'));
       let targetOverlayNav = document.querySelector(overlayNavId);
 
       // Check if target side nav is already active
@@ -187,7 +199,7 @@ const tmOverlayNavigation = (function () {
     * Close overlay navigation.
     */
     plugin.closeNav = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       // Remove active class to button
       document.querySelectorAll(plugin.elements).forEach(function(overlayNavShow){
@@ -201,7 +213,7 @@ const tmOverlayNavigation = (function () {
         overlayNavId = event.target.closest('.overlay-navigation-wrapper').id;
         targetOverlayNav = document.querySelector('#'+overlayNavId);
       }else{
-        overlayNavId = event.target.dataset.targetOverlayNav ? event.target.dataset.targetOverlayNav : event.target.href.substring(event.target.href.indexOf('#'));
+        overlayNavId = event.target.dataset.target ? event.target.dataset.target : event.target.href.substring(event.target.href.indexOf('#'));
         targetOverlayNav = document.querySelector(overlayNavId);
       }
 
@@ -247,7 +259,7 @@ const tmOverlayNavigation = (function () {
       document.querySelectorAll(plugin.elements).forEach(function(overlayNavShow){
         
         // Get overlay nav target
-        let overlayNavId = overlayNavShow.dataset.targetOverlayNav ? overlayNavShow.dataset.targetOverlayNav : overlayNavShow.href.substring(overlayNavShow.href.indexOf('#'));
+        let overlayNavId = overlayNavShow.dataset.target ? overlayNavShow.dataset.target : overlayNavShow.href.substring(overlayNavShow.href.indexOf('#'));
         let targetOverlayNav = document.querySelector(overlayNavId);
 
         // Add open events to nav show links

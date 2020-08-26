@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Scroll To 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -10,6 +10,7 @@
 import classList from '../utilities/_chaining.js';
 import polyfill from '../utilities/_smoothscrollpolyfill.js';
 import tmInView from '../utilities/_tm.inview.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmScrollTo = (function () {
 
@@ -28,8 +29,10 @@ const tmScrollTo = (function () {
   const defaults = {
     scrollBehaviour: 'smooth',
     navItemClass: 'nav-item',
-    initialized: function(){},      // Callback - tabs initialized
-    destroyed: function(){}       // Callback - tabs destroyed
+    swapActiveClass: 'swap-active',
+    initialized: function(){},      // Callback - scrolling initialized
+    doneScrolling: function(){},    // Callback - scroling done - works only with window
+    destroyed: function(){}         // Callback - scrolling destroyed
   };
   
   /**
@@ -61,13 +64,18 @@ const tmScrollTo = (function () {
     * Initiate scroll event
     */
     const initiateScroll = () => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       // Defines some variales
       let scrollType = event.target.dataset.scrollType;
-      let amountX = event.target.dataset.scrollX ? parseInt(event.target.dataset.scrollX,10) : 0;
-      let amountY = event.target.dataset.scrollY ? parseInt(event.target.dataset.scrollY,10) : 0;
-      let element = event.target.tagName == 'A' ? event.target.href.substring(event.target.href.indexOf('#')) : event.target.dataset.element;
+      let element = event.target.tagName == 'A' ? event.target.href.substring(event.target.href.indexOf('#')) : event.target.dataset.target;
+      let buffer = event.target.dataset.buffer ? parseInt(event.target.dataset.buffer,10) : 0;
+      let amountX = event.target.dataset.scrollX == 'targetOffset' ? document.querySelector(element).offsetLeft + buffer : event.target.dataset.scrollX ? parseInt(event.target.dataset.scrollX,10) : 0;
+      let amountY = event.target.dataset.scrollY == 'targetOffset' ? document.querySelector(element).offsetTop + buffer : event.target.dataset.scrollY ? parseInt(event.target.dataset.scrollY,10) : 0;
+      let windowScroll = true;
+
+      // Update window URL
+      if(event.target.hasAttribute('data-update-url')) history.pushState({extraData: `Section ${element}`}, '', element);
 
       // Switch based on scroll types
       try{  
@@ -82,25 +90,28 @@ const tmScrollTo = (function () {
           case 'window-scroll-by':
 
             window.scrollBy({top: amountY, left: amountX, behavior: plugin.settings.scrollBehaviour});
-
+          
           break;
 
           case 'element-scroll-to':
 
             document.querySelector(element).scroll({top: amountY, left: amountX, behavior: plugin.settings.scrollBehaviour});
-      
+            windowScroll = false;
+
           break;
 
           case 'element-scroll-by':
 
             document.querySelector(element).scrollBy({top: amountY, left: amountX, behavior: plugin.settings.scrollBehaviour});
+            windowScroll = false;
 
           break;
 
           case 'element-scroll-into-view':
 
             document.querySelector(element).scrollIntoView({behavior: plugin.settings.scrollBehaviour});
-
+            windowScroll = false;
+            
           break;
 
           default:
@@ -110,6 +121,54 @@ const tmScrollTo = (function () {
       }catch(error){
         console.log(`${error} - Check that section exists: ${element}`);
       }
+
+      // Check if scrolling is done
+      scrollingDone(amountY,amountX, windowScroll);
+
+      // Update nav state
+      updateNavigationState(false, event.target);
+    };
+
+    /**
+    * Check when scrolling has completed
+    * @param  {number}  number  Amount to scroll on y axis.
+    * @param  {number}  number  Amount to scroll on x axis.
+    * @param  {boolean}  boolean  Window scrolling or element.
+    */
+    const scrollingDone = (amountY, amountX, windowScroll) => {
+      
+      let scrollDoneTimer;
+      let winYPos = window.scrollY;
+      let winXPos = window.scrollX;
+      let newWinYPos = winYPos + amountY;
+      let newWinXPos = winXPos + amountX;
+      let scrollY = window.scrollY != amountY || window.scrollY != newWinYPos ? true : false;
+      let scrollX = winXPos != amountX || winXPos != newWinXPos ? true : false;
+
+      // Clear timeout
+      clearTimeout(scrollDoneTimer);
+
+      // Set timeout
+      scrollDoneTimer = setTimeout(function checkPosition() {
+        if(windowScroll){
+          scrollDoneTimer = setTimeout(checkPosition, 200);
+          if(scrollY){
+            if(window.scrollY == amountY || window.scrollY == newWinYPos){
+              clearTimeout(scrollDoneTimer);
+
+              // Callback
+              plugin.settings.doneScrolling();
+            }
+          }else if(scrollX){
+            if(winXPos == amountX || winXPos == newWinXPos){
+              clearTimeout(scrollDoneTimer);
+
+              // Callback
+              plugin.settings.doneScrolling();
+            }
+          }
+        }
+      }, 200);
     };
 
     /**
@@ -135,15 +194,23 @@ const tmScrollTo = (function () {
     };
 
     /**
-    * Observe on interset - modern browsers
+    * Update nav link
     * @param  {object}  element  The current section in or out of view.
     */
-    const updateNavigationState = (section) => {
-      let navItem = document.querySelector('a[href="#' + section.id + '"]') ? document.querySelector('a[href="#' + section.id + '"]') : document.querySelector('[data-element="#' + section.id + '"]');
-      if(section.classList.contains('out-of-view')){
-        classList(navItem).removeClass('active');
+    const updateNavigationState = (section, navItem) => {
+      if(section){
+        navItem = document.querySelector(`a[href="#${section.id}"]`) ? document.querySelector(`a[href="#${section.id}"]`) : document.querySelector(`[data-target="#${section.id}"]`);
+        if(section.classList.contains('out-of-view')){
+          classList(navItem).removeClass('active');
+        }else{
+          classList(navItem).addClass('active');
+        }
       }else{
-        classList(navItem).addClass('active');
+        let swapActive = navItem.classList.contains(plugin.settings.swapActiveClass) ? plugin.settings.swapActiveClass : navItem.dataset.swapActive;
+        document.querySelectorAll(`.${swapActive}`).forEach(function(element){
+          classList(element).removeClass('active');
+        });
+        classList(event.target).addClass('active');
       }
     };
 
@@ -162,20 +229,21 @@ const tmScrollTo = (function () {
       polyfill();
 
       // Get nav elements length
-      let navItemLength = document.querySelectorAll(plugin.elements + '.nav-item').length;
+      let navItemLength = document.querySelectorAll(plugin.elements + `.${plugin.settings.navItemClass}`).length;
       let i = 0;
 
       // Add link event 
       document.querySelectorAll(plugin.elements).forEach(function(element){
-        element.addEventListener(eventType, initiateScroll, false);
-
+        let eventOptions = eventType == 'click' ? false : passiveSupported() && element.tagName != 'A' ? {passive: true} : {passive: false};
+        element.addEventListener(eventType, initiateScroll, eventOptions);
+        
         // Find associated nav items
         let isNavItem = element.classList.contains(plugin.settings.navItemClass);
         if(isNavItem){
           i++;
 
           // Get referenced section and observe it
-          element.tagName == 'A' ? sectionArray.push(element.href.substring(element.href.indexOf('#'))) : sectionArray.push(element.dataset.element);
+          element.tagName == 'A' ? sectionArray.push(element.href.substring(element.href.indexOf('#'))) : sectionArray.push(element.dataset.target);
           if(i == navItemLength) observeSections(sectionArray);
         }
       });

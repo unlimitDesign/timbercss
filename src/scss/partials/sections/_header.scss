@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-@section 80. Header Section
+@section 82. Header Section
 */
 
 // Wrappers
@@ -157,6 +157,14 @@ body.boxed .header{
 		}
 	}
 }
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+    .logo.animate-#{$breakpoint}-none a {
+      transform: translateY(0) !important;
+      position: relative !important;
+    }
+  }
+}
 
 // Text color swap
 .header{
@@ -250,26 +258,20 @@ body.boxed .header{
 		border-bottom: $header-border-bottom-on-scroll;
 	}
 	.navigation{
-		> ul{
-			> li > a:not(.button),
-			.dropdown-list:not(.custom-content) li a{
-				color: $header-nav-color-on-scroll;
-			}
-			> li{ 
-				> a:not(.button):hover,
-				.dropdown-list li > a:not(.button):hover{
-					color: $header-nav-color-on-scroll-hover;
-				}
-			}
-			> .active{
-				> a:not(.button){
-					background-color: $header-nav-bkg-color-active-on-scroll;
-					color: $header-nav-color-on-scroll-active;
-					&:not(.button):hover{
-						background-color: $header-nav-bkg-color-active-on-scroll;
-						color: $header-nav-color-on-scroll-active;
-					}
-				}
+		.main-menu-item,
+		.dropdown-list:not(.custom-content) li a{
+			color: $header-nav-color-on-scroll;
+		}
+		.main-menu-item:hover,
+		.dropdown-list li > a:not(.button):hover{
+			color: $header-nav-color-on-scroll-hover;
+		}
+		.main-menu-item.active{
+			background-color: $header-nav-bkg-color-active-on-scroll;
+			color: $header-nav-color-on-scroll-active;
+			&:hover{
+				background-color: $header-nav-bkg-color-active-on-scroll;
+				color: $header-nav-color-on-scroll-active;
 			}
 		}
 	}
@@ -290,6 +292,55 @@ body.boxed .header{
 	.swap-color{
 		color: $header-swap-color-on-scroll;
 	}
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+    .header-#{$breakpoint}-background{
+      .header-inner{
+        background: $header-bkg-color-on-scroll;
+        box-shadow: $header-box-shadow-on-scroll;
+      }
+      .header-inner{
+        border-bottom: $header-border-bottom-on-scroll;
+      }
+      .navigation{
+        .main-menu-item,
+        .dropdown-list:not(.custom-content) li a{
+          color: $header-nav-color-on-scroll;
+        }
+        .main-menu-item:hover,
+        .dropdown-list li > a:not(.button):hover{
+          color: $header-nav-color-on-scroll-hover;
+        }
+        .main-menu-item.active{
+          background-color: $header-nav-bkg-color-active-on-scroll;
+          color: $header-nav-color-on-scroll-active;
+          &:hover{
+            background-color: $header-nav-bkg-color-active-on-scroll;
+            color: $header-nav-color-on-scroll-active;
+          }
+        }
+      }
+      .navigation-show{
+        color: $header-nav-color-on-scroll;
+        border-color: $header-nav-color-on-scroll;
+        &:hover{
+          color: $header-nav-color-on-scroll-hover;
+          border-color: $header-nav-color-on-scroll-hover;
+          span{
+            background-color: $header-nav-color-on-scroll-hover;
+          }
+        }
+        span {
+          background-color: $header-nav-color-on-scroll;
+        }
+      }
+      .swap-color{
+        color: $header-swap-color-on-scroll;
+      }
+    }
+  }
 }
 
 // Header transition properties and duration

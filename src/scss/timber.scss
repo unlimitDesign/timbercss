@@ -54,7 +54,9 @@
 @import 'utilities/effects/_shadow.scss';
 @import 'utilities/effects/_transition.scss';
 @import 'utilities/flexbox/_flex.scss';
+@import 'utilities/interactivity/_appearance.scss';
 @import 'utilities/interactivity/_cursor.scss';
+@import 'utilities/interactivity/_outline.scss';
 @import 'utilities/interactivity/_pointer-events.scss';
 @import 'utilities/interactivity/_resize.scss';
 @import 'utilities/interactivity/_select.scss';
@@ -71,6 +73,8 @@
 @import 'utilities/spacing/_padding.scss';
 @import 'utilities/spacing/_margin.scss';
 @import 'utilities/states/_disabled.scss';
+@import 'utilities/transition/_transition.scss';
+@import 'utilities/svg/_svg.scss';
 @import 'utilities/typography/_font-family.scss';
 @import 'utilities/typography/_font-size.scss';
 @import 'utilities/typography/_font-style.scss';
@@ -89,7 +93,6 @@
 @import 'partials/plugins/_parallax.scss';
 @import 'partials/plugins/_summit.scss';
 
-@import 'partials/sections/_base.scss';
 @import 'partials/sections/_feature.scss';
 @import 'partials/sections/_footer.scss';
 @import 'partials/sections/_grid.scss';

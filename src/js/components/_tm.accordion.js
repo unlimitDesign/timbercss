@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Accordion 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,6 +9,7 @@
 // Import utilities 
 import classList from '../utilities/_chaining.js';
 import locationHash from '../utilities/_locationHash.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmAccordion = (function () {
 
@@ -38,7 +39,7 @@ const tmAccordion = (function () {
   * @param  {object}   options  The plugin options.
   */
   function Accordion(element, options) {
-
+    
     // Create an empty plugin object
     const plugin = {};
     
@@ -57,7 +58,8 @@ const tmAccordion = (function () {
     * @param  {accLink}  element  The accordion tab link(s).
     */
     const addLinkEvents = (acclink) =>{
-      acclink.addEventListener(eventType, updateAccordionState, false);
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && acclink.tagName != 'A' ? {passive: true} : {passive: false};
+      acclink.addEventListener(eventType, updateAccordionState, eventOptions);
     };
 
     /**
@@ -72,13 +74,13 @@ const tmAccordion = (function () {
     * Update accordion
     */
     const updateAccordionState = () =>{
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       let linkClicked = event.target;
-      let linkClickedTarget = linkClicked.getAttribute('href');
+      let linkClickedTarget = linkClicked.getAttribute('href') ? linkClicked.getAttribute('href') : linkClicked.dataset.target;
       let linkActive = linkClicked.closest('.accordion').querySelector('.accordion-nav.active');
-      let allPanes = linkClicked.parentNode.querySelectorAll('.accordion-pane');
+      let allPanes = linkClicked.closest('.accordion').querySelectorAll('.accordion-pane');
       let targetPane = linkClicked.parentNode.querySelector(linkClickedTarget);
       let multiplePane = linkClicked.closest('.accordion').hasAttribute('data-toggle-multiple');
       let toggleTimer = null;
@@ -123,6 +125,7 @@ const tmAccordion = (function () {
           plugin.settings.paneVisible();
         }, 50 );
       }
+      return false;
     };
 
     /**
@@ -152,7 +155,8 @@ const tmAccordion = (function () {
       let hashExists = location[0];
       let itemID = location[1];
       if(hashExists){
-        plugin.triggerLinkClick('a[href="' + itemID + '"]');
+        let target = document.getElementsByTagName('a[href="' + itemID + '"]').length === 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
+        plugin.triggerLinkClick(target);
       }
 
       // Add window resize event
@@ -169,12 +173,14 @@ const tmAccordion = (function () {
     plugin.triggerLinkClick = (link) => {
       try{
         link = document.querySelector(link);
-        let event = new MouseEvent('click', {
+        let newEvent;
+        let event = !mobile ?  MouseEvent : TouchEvent;
+        newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
-        let canceled = !link.dispatchEvent(event);
+        let canceled = !link.dispatchEvent(newEvent);
       }catch(error) {
         console.log(`${error} - selector not entered or does not exist`);
       }

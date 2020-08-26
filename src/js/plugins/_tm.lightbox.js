@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Lightbox 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -8,8 +8,8 @@
 
 // Import utilities
 import classList from '../utilities/_chaining.js';
-import loadMedia from '../utilities/_tm.loadmedia.js';
-import tmEasing from '../utilities/_tm.easing.js';
+import tmLoadMedia from '../utilities/_tm.loadmedia.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmLightbox = (function () {
 
@@ -94,13 +94,22 @@ const tmLightbox = (function () {
     }
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
+      return eventOptions;
+    };
+
+    /**
     * Add lightbox link events.
     * @param  {element}  The lightbox link.
     */
     const addLinkEvent = (lightboxLink) => {
       lightboxLink.addEventListener(eventType, function(){
         buildLightbox(lightboxLink);
-      }, false);
+      }, checkEventOptions(lightboxLink));
     };
 
     /**
@@ -175,7 +184,7 @@ const tmLightbox = (function () {
     * Build the Lightbox
     */
     const buildLightbox = (lightboxLink) => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       // Check lightbox doesn't already exist
@@ -204,19 +213,21 @@ const tmLightbox = (function () {
       let contentWrapper = document.querySelector('.tml-content-wrapper');
       let toolbar = document.querySelector('.tml-toolbar');
       let content = document.querySelector('.tml-content');
+      let options = eventType == 'click' ? false : passiveSupported() ? { passive: true } : false;
 
       // Add zoom button
       if(plugin.settings.navZoom){
 
         // Construct
-        let zoom = document.createElement('a');
-        classList(zoom).addClass('tml-nav').addClass('tml-zoom');
+        let zoom = document.createElement('button');
+        classList(zoom).addClass('tml-nav').addClass('tml-zoom').addClass('outline-none');
+        zoom.setAttribute('aria-label', 'Zoom');
 
         // Add to lightbox
         toolbar.appendChild(zoom);
 
         // Add Events
-        zoom.addEventListener('click', zoomContent, false);
+        zoom.addEventListener(eventType, zoomContent, checkEventOptions(zoom));
       }
 
       // Add thumbnails button
@@ -228,17 +239,18 @@ const tmLightbox = (function () {
         thumbnailWrapper.innerHTML += '<ul class="list-none list-horizontal center"/>';
         lightbox.appendChild(thumbnailWrapper);
 
-        // Construct and thumbnail button to toolbar 
-        let showThumbnails = document.createElement('a');
-        classList(showThumbnails).addClass('tml-nav').addClass('tml-thumbnails');
+        // Construct and add thumbnail button to toolbar 
+        let showThumbnails = document.createElement('button');
+        classList(showThumbnails).addClass('tml-nav').addClass('tml-thumbnails').addClass('outline-none');
         toolbar.appendChild(showThumbnails);
+        showThumbnails.setAttribute('aria-label', 'Show Thumbnails');
 
         //Add Events for show thumbnail button
-        showThumbnails.addEventListener('click', function(){
+        showThumbnails.addEventListener(eventType, function(){
           toggleActiveClass();
           toggleActiveClass(document.querySelector('.tml-thumbnail-wrapper'));
           toggleStageHeight();
-        }, false);
+        }, checkEventOptions(showThumbnails));
         
         // Loop through gallery group and build thumbnails based on gallery array
         galleryGroup.forEach(function(groupLink, i){
@@ -264,9 +276,9 @@ const tmLightbox = (function () {
           // Set active
           if(thumbnailIndex == galleryIndex) classList(thumbnail).addClass('tml-thumb-active');
           
-          thumbnail.addEventListener('click', function(){
+          thumbnail.addEventListener(eventType, function(){
             plugin.getContent(thumbnail);
-          }, false);
+          }, checkEventOptions(thumbnail));
         });
       }
 
@@ -279,38 +291,41 @@ const tmLightbox = (function () {
       if(plugin.settings.navExit){
 
         // Construct
-        let exit = document.createElement('a');
-        classList(exit).addClass('tml-nav').addClass('tml-exit');
+        let exit = document.createElement('button');
+        classList(exit).addClass('tml-nav').addClass('tml-exit').addClass('outline-none');
+        exit.setAttribute('aria-label', 'Exit');
 
         // Add to lightbox
         toolbar.appendChild(exit);
 
         // Add Events
-        exit.addEventListener('click', plugin.closeLightbox, false);
+        exit.addEventListener(eventType, plugin.closeLightbox, checkEventOptions(exit));
       }
 
       // Overlay exit
       if(plugin.settings.overlayClickClose){
-        lightbox.addEventListener('click', addOverlayEvent, false);
+        lightbox.addEventListener(eventType, addOverlayEvent, checkEventOptions(lightbox));
       }
 
       // Add arrow nav
       if(plugin.settings.navArrows && galleryGroup.length >= 2){
         
         // Construct
-        let prev = document.createElement('a');
-        classList(prev).addClass('tml-nav').addClass('tml-prev');
+        let prev = document.createElement('button');
+        classList(prev).addClass('tml-nav').addClass('tml-prev').addClass('outline-none');
+        prev.setAttribute('aria-label', 'Previous');
 
-        let next = document.createElement('a');
-        classList(next).addClass('tml-nav').addClass('tml-next');
+        let next = document.createElement('button');
+        classList(next).addClass('tml-nav').addClass('tml-next').addClass('outline-none');
+        next.setAttribute('aria-label', 'Next');
 
         // Add them to lightbox
         lightboxInner.appendChild(prev);
         lightboxInner.appendChild(next);
 
         // Add Events
-        prev.addEventListener('click', plugin.prevContent, false);
-        next.addEventListener('click', plugin.nextContent, false);
+        prev.addEventListener(eventType, plugin.prevContent, checkEventOptions(prev));
+        next.addEventListener(eventType, plugin.nextContent, checkEventOptions(next));
       }
 
       // Add window listener for resize events
@@ -376,7 +391,6 @@ const tmLightbox = (function () {
     const checkMedia = (link) => {
       let url = link.tagName == 'A' ? link.getAttribute('href') : '#' + link.dataset.url;
       let mediaType = url.match(/\.(jpeg|jpg|png|gif)/i) || link.dataset.content == 'image' ? 'image' : url.match(/\.(vimeo\.com|youtu(be\.com|\.be))\/(watch\?v=)?([A-Za-z0-9._%-]*)(\&\S+)?/) || link.dataset.content == 'iframe' ? 'iframe' : url.match(/\.(mp4|webm)$/) ? 'html5video' : 'inline';
-      console.log(mediaType)
       return {url:url, type:mediaType};
     };
 
@@ -449,8 +463,8 @@ const tmLightbox = (function () {
       // Hide/show toolbar buttons based on type
       showHideZoom(mediaSrc.type);
 
-      // Create instance of loadMedia
-      lightboxItemToLoad = new loadMedia(mediaToLoad,{
+      // Create instance of tmLoadMedia
+      lightboxItemToLoad = new tmLoadMedia(mediaToLoad,{
         backgroundImage: false,
         onLoaded: function(loadedMedia){
           
@@ -744,7 +758,6 @@ const tmLightbox = (function () {
     * Load next content
     */
     plugin.nextContent = () => {
-      event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading')) return false;
@@ -766,7 +779,6 @@ const tmLightbox = (function () {
     * Load previous content
     */
     plugin.prevContent = () => {
-      event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading')) return false;
@@ -788,7 +800,7 @@ const tmLightbox = (function () {
     * Load content
     */
     plugin.getContent = (thumbnailLink) => {
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       let content = document.querySelector('.tml-content');
       if(content.hasAttribute('loading') || thumbnailLink.classList.contains('tml-thumb-active')) return false;
@@ -818,11 +830,11 @@ const tmLightbox = (function () {
 
       // Remove event listeners
       if(galleryGroup.length >= 2){
-        document.querySelector('.tml-next').removeEventListener('click', plugin.prevContent, false);
-        document.querySelector('.tml-prev').removeEventListener('click', plugin.nextContent, false);
-        document.querySelector('.tml-thumbnails').removeEventListener('click', plugin.nextContent, false);
+        document.querySelector('.tml-next').removeEventListener(eventType, plugin.prevContent, false);
+        document.querySelector('.tml-prev').removeEventListener(eventType, plugin.nextContent, false);
+        document.querySelector('.tml-thumbnails').removeEventListener(eventType, plugin.nextContent, false);
       }
-      document.querySelector('.tml-exit').removeEventListener('click', plugin.nextContent, false);
+      document.querySelector('.tml-exit').removeEventListener(eventType, plugin.nextContent, false);
       document.removeEventListener('keyup', addKeyboardEvent, false);
       window.removeEventListener('resize', resizeContent, false);
 

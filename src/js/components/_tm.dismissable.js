@@ -1,10 +1,13 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Dismissable 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
 // License: MIT
+
+// Import utilities
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmDismissale = (function () {
 
@@ -55,24 +58,24 @@ const tmDismissale = (function () {
         * @param  {object}  element  The dismissable element.
         */
         const addCloseLink = (dismissible) => {
-            const closeLink = document.createElement('a');
-            closeLink.className = `close ${plugin.settings.fontLibrary}`;
-            closeLink.href = '#';
+            const closeLink = document.createElement('button');
+            closeLink.className = `close p-0 outline-none bg-transparent bg-hover-transparent border-none ${plugin.settings.fontLibrary}`;
             closeLink.innerHTML = plugin.settings.iconClose;
             dismissible.appendChild(closeLink);
             addLinkEvents(closeLink);
         };
 
         /**
-        * Set the rollover color properties.
+        * Add link events.
         * @param  {object}  element  The dismissable element.
         */
         const addLinkEvents = (element) => {
-            element.addEventListener(eventType, deleteParent, false);
+          let eventOptions = eventType == 'click' ? false : passiveSupported() && element.tagName != 'A' ? {passive: true} : {passive: false};
+          element.addEventListener(eventType, deleteParent, eventOptions);
         };
 
         /**
-        * Set the rollover color properties.
+        * Remove link events.
         * @param  {object}  element  The dismissable element.
         */
         const removeLinkEvents = (element) => {
@@ -84,7 +87,6 @@ const tmDismissale = (function () {
         * @param  {object}  element  The dismissable element.
         */
         const deleteParent = (event) => {
-            event.preventDefault();
             event.stopPropagation();
             let parent = event.target.parentNode;
             parent.style.cssText = `max-height: 0px; padding-top: 0px; padding-bottom: 0px; opacity: 0; transition-duration: ${plugin.settings.speed}; transition-timing-function: ${plugin.settings.easing};`;
@@ -103,7 +105,7 @@ const tmDismissale = (function () {
         * Initialize the plugin.
         */
         plugin.initialize = () => {
-
+            
             if(plugin.elements == null) return false;
 
             // Loop through each item and check each dismissable element
@@ -136,7 +138,7 @@ const tmDismissale = (function () {
 
             // Loop through each item and check each dismissable element
             document.querySelectorAll(plugin.elements).forEach(function(dismissible){
-                removeLinkEvents(dismissible.querySelector('.close'));
+                if(dismissible.querySelector('.close')) removeLinkEvents(dismissible.querySelector('.close'));
             });
                 
             // Callback

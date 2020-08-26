@@ -20,14 +20,29 @@ pre,
 ol,
 ul,
 li,
-textarea{
-	margin: 0;
-}
-
+textarea,
 button,
 input,
 select{
-	margin: 0
+	margin: 0;
+}
+
+button, 
+input, 
+optgroup, 
+select, 
+textarea {
+  padding: 0;
+  font-family: inherit;
+}
+
+button{
+  background-color: transparent;
+  background-image: none;
+}
+[role=button], 
+button {
+  cursor: pointer;
 }
 
 img,
@@ -79,6 +94,7 @@ h6{
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
 	line-height: $headings-line-height;
+	letter-spacing: $headings-letter-spacing;
 	color: $headings-color;
 }
 
@@ -127,7 +143,8 @@ hr {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-	-webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: relative;
 	.wrapper-inner{
 		max-width: 100%;
 		margin-right: auto;

@@ -36,15 +36,14 @@
 .grid-item-inner{
 	height: 100%;
 }
-.grid.preload{
+.grid.masonry{
 	position: relative;
 	.grid-item-inner{
 		width: $grid-item-width-start;
 		height: $grid-item-height-start;
-		transition-duration: 400ms;
 		opacity: 0;
 		transform: $grid-item-transform-start;
-		transition-property: all;
+		@include transition(width height opacity rotate transform, 400ms);
 		will-change: all;
 	}
 	.grid-item.loaded .grid-item-inner{
@@ -75,13 +74,31 @@
 	}
 }
 
-// Spans
-@each $span in $grid-col-row-spans {
+// Spans Cols
+@each $span in $grid-col-spans {
 	.span-cols-#{$span} {
-		grid-column-end: span #{$span};
+		grid-column: span #{$span} / span #{$span};
 	}
+}
+
+// Spans Rows
+@each $span in $grid-row-spans {
 	.span-rows-#{$span} {
-		grid-row-end: span #{$span};
+		grid-row: span #{$span} / span #{$span};
+	}
+}
+
+// Start Position
+@each $start in $grid-col-start {
+	.col-start-#{$start} {
+		grid-column-start: #{$start};
+	}
+}
+
+// End Position
+@each $end in $grid-col-end {
+	.col-end-#{$end} {
+		grid-column-end: #{$end};
 	}
 }
 
@@ -90,14 +107,16 @@
 	@include breakpoint-max($breakpoint){
 		@each $grid-col-row-breakpoint in $grid-col-row-responsive {
 			@if $grid-col-row-breakpoint == $breakpoint{
-				@each $span in $grid-col-row-spans {
-					.span-#{$breakpoint}-cols-#{$span} {
-						grid-column-end: span #{$span};
-					}
-					.span-#{$breakpoint}-rows-#{$span} {
-						grid-row-end: span #{$span};
-					}
-				}
+        @each $span in $grid-col-spans {
+          .span-#{$breakpoint}-cols-#{$span} {
+            grid-column: span #{$span} / span #{$span};
+          }
+        }
+        @each $span in $grid-row-spans {
+          .span-#{$breakpoint}-rows-#{$span} {
+            grid-row: span #{$span} / span #{$span};
+          }
+        }
 			}
 		}
 		@each $grid-breakpoint in $grid-responsive {

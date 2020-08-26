@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Load media 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -8,15 +8,20 @@
 
 // Import classList utility 
 import classList from './_chaining.js';
+import tmInView from '../utilities/_tm.inview.js';
 
-const loadMedia = (function () {
+const tmLoadMedia = (function () {
 
   'use strict';
 
   if (typeof document == 'undefined') return false;
 
+  // InView for lazyload instance
+  let mediaInView;
+
   // Set the plugin defaults
   const defaults = {
+    lazyLoad: true,                   // Whether items should be lazyloaded using inView
     backgroundImage: false,           // Preload background image set in CSS
     onLoaded: function(){},           // Callback - tabs initialized
     onError: function(){},            // Callback - element in view
@@ -49,7 +54,7 @@ const loadMedia = (function () {
     * @param  {string}  The media tag type.
     */
     const processMedia = (media, mediaType) =>{
-
+     
       if(media.classList.contains('loaded')) return false;
 
       switch(mediaType){
@@ -59,14 +64,14 @@ const loadMedia = (function () {
           let image = media;
           let proxyImage = new Image();
           proxyImage.src = image.dataset.src;
+          proxyImage.alt = image.alt;
           proxyImage.classList = image.classList;
           
           // Only set srcset if it's not a background image and it has srcset
           if(!plugin.settings.backgroundImage && image.srcset){
             proxyImage.srcset = image.dataset.srcset;
-            proxyImage.alt = image.alt;
           }
-
+          
           // Use decode for modern browsers
           if('decode' in proxyImage){
             proxyImage.decode().then(() => {
@@ -94,7 +99,7 @@ const loadMedia = (function () {
               source.src = source.dataset.src;
               video.load();
             }
-          })
+          });
 
           // Add events
           addEventListeners(video);
@@ -119,7 +124,7 @@ const loadMedia = (function () {
     * @param  {element}  For images only, reference to old image for insertion.
     */
     const addEventListeners = (media, refItem) =>{
-
+      
       // Check load event
       let loadEvent = media.tagName == 'VIDEO' ? 'loadeddata' : 'load';
       
@@ -185,6 +190,16 @@ const loadMedia = (function () {
     };
 
     /**
+    * Check media type
+    * @param  {element}  defaults  The event or image that failed to load.
+    */
+    const checkMediaType = (element) => {
+      let tagName = element.tagName;
+      let mediaType = tagName == 'IMG' ? 'image' : tagName == 'DIV' ? 'image' : tagName == 'SPAN' ? 'image' : tagName == 'SOURCE' ? 'video' : 'iframe';
+      return mediaType;
+    };
+
+    /**
     * Public variables and methods.
     */
 
@@ -192,30 +207,44 @@ const loadMedia = (function () {
     * Initialize the plugin.
     */
     plugin.initialize = () => {
-
+      
       if(plugin.elements == null) return false;
 
-      // Check if data src exists on element
-      let elementDataSrc = !plugin.elements.dataset ? false : plugin.elements.dataset.src ? true : false;
-      
-      // Check tag type
-      let tagName = plugin.elements.tagName;
-      let mediaType = tagName == 'IMG' ? 'image' : tagName == 'DIV' ? 'image' : tagName == 'SPAN' ? 'image' : tagName == 'SOURCE' ? 'video' : 'iframe';
+      // HTML element passed used commonly when integrated into other plugins
+      if(plugin.elements instanceof Element){
+        processMedia(plugin.elements, checkMediaType(plugin.elements));
 
-      // Single item
-      if(elementDataSrc){
-        processMedia(plugin.elements, mediaType);
-
-      // Look for multiple items in container
       }else{
-        document.querySelectorAll(plugin.elements).forEach(function(element){
-          let images = element.querySelectorAll(mediaType);
-          for (let i=0; i < images.length; i++) {
-            let image = images[i];
-            processMedia(image, mediaType);
-          }
-        });
+        if(!plugin.settings.lazyLoad){
+          let images = document.querySelectorAll(plugin.elements);
+          images.forEach(function(element){
+            processMedia(element, checkMediaType(element));
+          });
+        }else{
+          mediaInView = new tmInView(plugin.elements,{
+            threshold: 0.5,
+            detectionBuffer: 100,
+            unObserveViewed: true,
+            inView: function(visibleMedia){
+              visibleMedia = visibleMedia.querySelector('[data-observe-parent]') ? visibleMedia.querySelector(plugin.elements) : visibleMedia;
+              processMedia(visibleMedia, checkMediaType(visibleMedia));
+            }
+          });
+          mediaInView.initialize();
+        }
       }
+    };
+
+    /**
+    * Refresh the plugin.
+    */
+    plugin.refresh = () => {
+      // Destroy the existing initialization
+      plugin.destroy();
+
+      // Initialize the plugin
+      plugin.settings = Object.assign({}, defaults, options);
+      plugin.initialize();
     };
 
     /**
@@ -238,4 +267,4 @@ const loadMedia = (function () {
 })();
 
 // Export plugin
-export default loadMedia;
+export default tmLoadMedia;

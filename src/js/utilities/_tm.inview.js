@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Inview 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -73,7 +73,8 @@ const tmInView = (function () {
     */ 
     const delayCallbackInView = (element,elementObserver) => {
       let timeoutId = getTimeoutData(element);
-      
+      let unObserveViewed = element.hasAttribute('data-unobserve-viewed') ? true : plugin.settings.unObserveViewed;
+        
       // Timeout was already set, do nothing
       if (timeoutId) {
         return;
@@ -84,7 +85,7 @@ const tmInView = (function () {
         plugin.settings.inView(element);
 
         // Unobserve item once in view
-        if(iObserve && plugin.settings.unObserveViewed) elementObserver.unobserve(element);
+        if(iObserve && unObserveViewed) elementObserver.unobserve(element);
 
         // Delete timeout
         cancelDelayCallbackInView(element);
@@ -114,19 +115,19 @@ const tmInView = (function () {
     /**
     * Observe on intersect - modern browsers
     */
-    const observeOnIntersect = (element,threshold) =>{
+    const observeOnIntersect = (element, threshold, detectionBuffer) =>{
       let elementObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
           let item = entry.target;
           if(entry.isIntersecting){
-            
+           
             // Swap classes
             classList(item).removeClass('out-of-view').addClass('in-view');
             
             // Test if item is still in the viewport
             delayCallbackInView(item, elementObserver);
           }else{
-
+           
             // Swap classes
             classList(item).removeClass('in-view').addClass('out-of-view');
             
@@ -139,7 +140,7 @@ const tmInView = (function () {
         });
       },{
           threshold: threshold,
-          rootMargin: `0px 0px ${plugin.settings.detectionBuffer + 'px'} 0px`
+          rootMargin: detectionBuffer
       });
       elementObservers.push(elementObserver);
       elementObserver.observe(element);
@@ -163,8 +164,10 @@ const tmInView = (function () {
 
         // Check element state
         plugin.elements.forEach(function (element) {
-
-          if(plugin.settings.observeParent) element = element.parentNode;
+          
+          // Check elements to observe
+          let observeParent = element.hasAttribute('data-observe-parent') ? true : plugin.settings.observeParent;
+          element = observeParent ? element.parentNode : element;
 
           // Callback flag to stop repeated callbacks
           let callbackInFlag = element.classList.contains('in-view') && !plugin.settings.loopCallbackOnScroll ? true : false;
@@ -225,7 +228,7 @@ const tmInView = (function () {
       if(plugin.elements == null) return false;
       
       // Check element
-      plugin.elements = NodeList.prototype.isPrototypeOf(plugin.elements) ? plugin.elements : document.querySelectorAll(plugin.elements);
+      plugin.elements = !NodeList.prototype.isPrototypeOf(plugin.elements) ? document.querySelectorAll(plugin.elements) : plugin.elements[0].classList.contains('observe') ? document.querySelectorAll('.observe') : plugin.elements;
 
       // Check force option
       iObserve = plugin.settings.forceObserveOnScroll ? false : iObserve;
@@ -234,8 +237,11 @@ const tmInView = (function () {
       if(iObserve){
         plugin.elements.forEach(function(element) {
           let threshold = element.dataset.threshold ? element.dataset.threshold : plugin.settings.threshold;
-          if(plugin.settings.observeParent) element = element.parentNode;
-          observeOnIntersect(element,threshold);
+          let detectionBuffer = element.dataset.detectionBuffer ? element.dataset.detectionBuffer : `0px 0px ${plugin.settings.detectionBuffer + 'px'} 0px`;
+          let observeParent = element.hasAttribute('data-observe-parent') ? true : plugin.settings.observeParent;
+          element = observeParent ? element.parentNode : element;
+
+          observeOnIntersect(element, threshold, detectionBuffer);
         });
         
       // Fallback
@@ -266,15 +272,16 @@ const tmInView = (function () {
     * Destroy an existing initialization.
     */
     plugin.destroy = () => {
-
       if (!plugin.settings) return;
 
       // Remove intersect and window listener
-      if(iObserve)
+      plugin.elements = !NodeList.prototype.isPrototypeOf(plugin.elements) ? document.querySelectorAll(plugin.elements) : plugin.elements;
+      if(iObserve){
         plugin.elements.forEach(function (element,i) {
-          elementObservers[i].unobserve(element);
+          if(elementObservers.length > 0) elementObservers[i].unobserve(element);
+          elementObservers = [];
         });
-      else{
+      }else{
         window.removeEventListener('scroll', observeOnScroll, false);
       }
 

@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Tabs 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,6 +9,7 @@
 // Import utilities
 import classList from '../utilities/_chaining.js';
 import locationHash from '../utilities/_locationHash.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmTabs = (function () {
 
@@ -58,7 +59,8 @@ const tmTabs = (function () {
     * @param  {accLink}  element  The tab tab link(s).
     */
     const addLinkEvents = (tabLink) =>{
-      tabLink.addEventListener(eventType, updateTabsState, false);
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && tabLink.tagName != 'A' ? {passive: true} : {passive: false};
+      tabLink.addEventListener(eventType, updateTabsState, eventOptions);
     };
 
     /**
@@ -73,11 +75,11 @@ const tmTabs = (function () {
     * Update tab
     */
     const updateTabsState = () =>{
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
       event.stopPropagation();
 
       let linkClicked = event.target;
-      let linkClickedTarget = linkClicked.getAttribute('href');
+      let linkClickedTarget = linkClicked.getAttribute('href') ? linkClicked.getAttribute('href') : linkClicked.dataset.target;
       let linkActive = linkClicked.closest('.tab-nav').querySelector('.active');
       let paneActive = linkClicked.closest('.tabs').querySelector('.tab-panes > .active');
       let targetPane = linkClicked.closest('.tabs').querySelector(linkClickedTarget);
@@ -127,7 +129,8 @@ const tmTabs = (function () {
         
         // Set active based on hash
         if( hashExists ){
-          plugin.triggerLinkClick('a[href="' + itemID + '"]');
+          let target = document.getElementsByTagName('a[href="' + itemID + '"]').length === 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
+          plugin.triggerLinkClick(target);
         }else{
           classList(tabs.querySelector('.tab-panes > .active')).addClass( 'animate-in' );
         }
@@ -149,12 +152,14 @@ const tmTabs = (function () {
     plugin.triggerLinkClick = (link) => {
       try{
         link = document.querySelector(link);
-        let event = new MouseEvent('click', {
+        let newEvent;
+        let event = !mobile ?  MouseEvent : TouchEvent;
+        newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
-        let canceled = !link.dispatchEvent(event);
+        let canceled = !link.dispatchEvent(newEvent);
       }catch(error) {
         console.log(`${error} - selector not entered or does not exist`);
       }

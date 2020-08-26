@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Side Navigation 
-// Version: 1.0.0
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -9,6 +9,7 @@
 // Import utilities
 import classList from '../utilities/_chaining.js';
 import tmEasing from '../utilities/_tm.easing.js';
+import passiveSupported from '../utilities/_passivesupported.js';
 
 const tmSideNavigation = (function () {
 
@@ -89,6 +90,15 @@ const tmSideNavigation = (function () {
     };
 
     /**
+    * Check event options
+    * @param  {object}  element  The clickable item to check.
+    */
+    const checkEventOptions = (target) =>{
+      let eventOptions = eventType == 'click' ? false : passiveSupported() && target.tagName != 'A' ? {passive: true} : {passive: false};
+      return eventOptions;
+    };
+
+    /**
     * Public variables and methods.
     */
 
@@ -103,7 +113,7 @@ const tmSideNavigation = (function () {
       document.querySelectorAll(plugin.elements).forEach(function(sideNavShow){
         
         // Get side nav target
-        let sideNavId = sideNavShow.dataset.targetSideNav ? sideNavShow.dataset.targetSideNav : sideNavShow.href.substring(sideNavShow.href.indexOf('#'));
+        let sideNavId = sideNavShow.dataset.target ? sideNavShow.dataset.target : sideNavShow.href.substring(sideNavShow.href.indexOf('#'));
         let targetSideNav;
         try{
           targetSideNav = document.querySelector(sideNavId);
@@ -113,10 +123,10 @@ const tmSideNavigation = (function () {
         }
 
         // Add open events to nav show links
-        sideNavShow.addEventListener(eventType, plugin.openNav, false);
+        sideNavShow.addEventListener(eventType, plugin.openNav, checkEventOptions(sideNavShow));
 
         // Add close events to side nav hide links
-        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).addEventListener(eventType, plugin.closeNav, false);
+        if(targetSideNav.querySelector(sideNavHide) != null) targetSideNav.querySelector(sideNavHide).addEventListener(eventType, plugin.closeNav, checkEventOptions(sideNavHide));
       });
 
       // Get body
@@ -139,12 +149,14 @@ const tmSideNavigation = (function () {
     plugin.triggerLinkClick = (link) => {
       try{
         link = document.querySelector(link);
-        let event = new MouseEvent('click', {
+        let newEvent;
+        let event = !mobile ?  MouseEvent : TouchEvent;
+        newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
-        let canceled = !link.dispatchEvent(event);
+        let canceled = !link.dispatchEvent(newEvent);
       }catch(error) {
         console.log(`${error} - selector not entered or does not exist`);
       }
@@ -155,13 +167,13 @@ const tmSideNavigation = (function () {
     * @param  {object}  element  The target side nav. 
     */
     plugin.openNav = function(){
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       // Add active class to button
       classList(event.target).addClass('active');
 
       // Get side nav target
-      let sideNavId = event.target.dataset.targetSideNav ? event.target.dataset.targetSideNav : event.target.href.substring(event.target.href.indexOf('#'));
+      let sideNavId = event.target.dataset.target ? event.target.dataset.target : event.target.href.substring(event.target.href.indexOf('#'));
       let targetSideNav = document.querySelector(sideNavId);
 
       // Check if target side nav is already active
@@ -196,7 +208,7 @@ const tmSideNavigation = (function () {
     * Close side navigation.
     */
     plugin.closeNav = function(){
-      event.preventDefault();
+      if(event.target.tagName === 'A') event.preventDefault();
 
       // Remove active class to button
       document.querySelectorAll(plugin.elements).forEach(function(sideNavShow){
@@ -210,7 +222,7 @@ const tmSideNavigation = (function () {
         sideNavId = event.target.closest('.side-navigation-wrapper').id;
         targetSideNav = document.querySelector('#'+sideNavId);
       }else{
-        sideNavId = event.target.dataset.targetSideNav ? event.target.dataset.targetSideNav : event.target.href.substring(event.target.href.indexOf('#'));
+        sideNavId = event.target.dataset.target ? event.target.dataset.target : event.target.href.substring(event.target.href.indexOf('#'));
         targetSideNav = document.querySelector(sideNavId);
       }                          
       
@@ -257,7 +269,7 @@ const tmSideNavigation = (function () {
       document.querySelectorAll(plugin.elements).forEach(function(sideNavShow){
 
         // Get side nav target
-        let sideNavId = sideNavShow.dataset.targetSideNav ? sideNavShow.dataset.targetSideNav : sideNavShow.href.substring(sideNavShow.href.indexOf('#'));
+        let sideNavId = sideNavShow.dataset.target ? sideNavShow.dataset.target : sideNavShow.href.substring(sideNavShow.href.indexOf('#'));
         let targetSideNav = document.querySelector(sideNavId);
 
         // Remove open events to nav show links
