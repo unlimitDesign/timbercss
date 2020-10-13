@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Tabs 
-// Version: 1.0.3
+// Version: 1.0.4
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -129,7 +129,7 @@ const tmTabs = (function () {
         
         // Set active based on hash
         if( hashExists ){
-          let target = document.getElementsByTagName('a[href="' + itemID + '"]').length === 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
+          let target = document.getElementsByTagName('a[href="' + itemID + '"]').length !== 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
           plugin.triggerLinkClick(target);
         }else{
           classList(tabs.querySelector('.tab-panes > .active')).addClass( 'animate-in' );

@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Accordion 
-// Version: 1.0.3
+// Version: 1.0.4
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -155,7 +155,7 @@ const tmAccordion = (function () {
       let hashExists = location[0];
       let itemID = location[1];
       if(hashExists){
-        let target = document.getElementsByTagName('a[href="' + itemID + '"]').length === 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
+        let target = document.getElementsByTagName('a[href="' + itemID + '"]').length !== 0 ? 'a[href="' + itemID + '"]' : 'button[data-target="' + itemID + '"]';
         plugin.triggerLinkClick(target);
       }
 

@@ -162,7 +162,7 @@ const tmCollapsable = (function () {
         let location = locationHash(element);
         let hashExists = location[0];
         let itemID = location[1];
-
+        
         // Add events
         if(radio || checkbox){
           if(element.hasAttribute('data-toggle-content')){
