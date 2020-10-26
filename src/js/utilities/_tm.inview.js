@@ -116,7 +116,7 @@ const tmInView = (function () {
     * Observe on intersect - modern browsers
     */
     const observeOnIntersect = (element, threshold, detectionBuffer) =>{
-      let elementObserver = new IntersectionObserver(function(entries, observer) {
+      let elementObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           let item = entry.target;
           if(entry.isIntersecting){
@@ -210,7 +210,6 @@ const tmInView = (function () {
       let rect = element.getBoundingClientRect();
       let windowHeight = window.innerHeight + plugin.settings.detectionBuffer || document.documentElement.clientHeight + plugin.settings.detectionBuffer;
       let threshold = element.getAttribute('data-threshold') ? element.getAttribute('data-threshold') : plugin.settings.threshold;
-      let isBeyondRect = Math.floor(100 - (((rect.top >= 0 ? 0 : rect.top) / +-( rect.height / 1 )) * 100)) < 1 || Math.floor( 100 - ((rect.bottom - windowHeight) / rect.height) * 100 ) < 1;
       let isBeyondThreshold = Math.floor(100 - (((rect.top >= 0 ? 0 : rect.top) / +-( rect.height / 1)) * 100)) < threshold * 100 || Math.floor( 100 - ((rect.bottom - windowHeight) / rect.height) * 100 ) < threshold * 100;
       return !(isBeyondThreshold);
     };
