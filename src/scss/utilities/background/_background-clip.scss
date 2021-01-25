@@ -1,0 +1,46 @@
+/*------------------------------------------------------------------
+@section 28. Background Clip Classes
+*/
+
+.bg-clip-border{
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+}
+.bg-clip-padding{
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.bg-clip-content{
+  background-clip: content-box;
+  -webkit-background-clip: content-box;
+}
+.bg-clip-text{
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Breakpoints */
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint-max($breakpoint){
+		@each $bg-clip-breakpoint in $bg-clip-responsive {
+			@if $bg-clip-breakpoint == $breakpoint{
+				.bg-#{$breakpoint}-clip-border{
+          background-clip: border-box;
+          -webkit-background-clip: border-box;
+				}
+				.bg-#{$breakpoint}-clip-padding{
+          background-clip: padding-box;
+          -webkit-background-clip: padding-box;
+				}
+				.bg-#{$breakpoint}-clip-content{
+          background-clip: content-box;
+          -webkit-background-clip: content-box;
+        }
+        .bg-#{$breakpoint}-clip-text{
+          background-clip: text;
+          -webkit-background-clip: text;
+				}
+			}
+		}
+	}
+}

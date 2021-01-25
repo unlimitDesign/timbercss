@@ -1541,6 +1541,7 @@ hr {
   text-decoration: none;
   vertical-align: middle;
   display: inline-flex;
+  align-items: center;
   justify-content: center;
   cursor: pointer;
   -webkit-appearance: none;
@@ -6097,6 +6098,87 @@ iframe {
   }
   .bg-sm-scroll {
     background-attachment: scroll;
+  }
+}
+
+/*------------------------------------------------------------------
+@section 28. Background Clip Classes
+*/
+.bg-clip-border {
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+}
+
+.bg-clip-padding {
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+.bg-clip-content {
+  background-clip: content-box;
+  -webkit-background-clip: content-box;
+}
+
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Breakpoints */
+@media only screen and (max-width: 1200px) {
+  .bg-lg-clip-border {
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+  }
+  .bg-lg-clip-padding {
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+  }
+  .bg-lg-clip-content {
+    background-clip: content-box;
+    -webkit-background-clip: content-box;
+  }
+  .bg-lg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .bg-md-clip-border {
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+  }
+  .bg-md-clip-padding {
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+  }
+  .bg-md-clip-content {
+    background-clip: content-box;
+    -webkit-background-clip: content-box;
+  }
+  .bg-md-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-sm-clip-border {
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+  }
+  .bg-sm-clip-padding {
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+  }
+  .bg-sm-clip-content {
+    background-clip: content-box;
+    -webkit-background-clip: content-box;
+  }
+  .bg-sm-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 }
 
