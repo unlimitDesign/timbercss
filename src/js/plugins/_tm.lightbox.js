@@ -60,7 +60,7 @@ const tmLightbox = (function () {
     navZoom: true,
     zoomvMarkup: '',                                     // Use markup instead
     navExit: true,                                    //Exit nav: boolean
-    exitvMarkup: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><path d="M18 6L6 18M6 6l12 12"/></svg>',                                     // Use markup instead
+    exitMarkup: '',                                     // Use markup instead
     overlayClickClose: true,                           //Close lightbox upon clicking overlay: boolean
 
     // Zoom
@@ -297,7 +297,7 @@ const tmLightbox = (function () {
         // Construct
         let exit = document.createElement('button');
         classList(exit).addClass('tml-nav').addClass('tml-exit').addClass('outline-none');
-        if (plugin.settings.exitvMarkup != '') exit.innerHTML = plugin.settings.exitvMarkup;
+        if (plugin.settings.exitMarkup != '') exit.innerHTML = plugin.settings.exitMarkup;
         exit.setAttribute('aria-label', 'Exit');
 
         // Add to lightbox
