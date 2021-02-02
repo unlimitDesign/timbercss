@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Lightbox 
-// Version: 1.0.3
+// Version: 1.0.4
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -53,11 +53,15 @@ const tmLightbox = (function () {
 
     // Navigation
     navArrows: true,                                  //Arrow nav: boolean
+    prevMarkup: '',                                     // Use markup instead
+    nextMarkup: '',                                     // Use markup instead
     navKeyboard: true,                                  //Keyboard nav: boolean
     navThumbnails: true,
     navZoom: true,
+    zoomvMarkup: '',                                     // Use markup instead
     navExit: true,                                    //Exit nav: boolean
-    overlayClickClose: true,                              //Close lightbox upon clicking overlay: boolean
+    exitvMarkup: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><path d="M18 6L6 18M6 6l12 12"/></svg>',                                     // Use markup instead
+    overlayClickClose: true,                           //Close lightbox upon clicking overlay: boolean
 
     // Zoom
     zoomDuration: 400,
@@ -293,6 +297,7 @@ const tmLightbox = (function () {
         // Construct
         let exit = document.createElement('button');
         classList(exit).addClass('tml-nav').addClass('tml-exit').addClass('outline-none');
+        if (plugin.settings.exitvMarkup != '') exit.innerHTML = plugin.settings.exitvMarkup;
         exit.setAttribute('aria-label', 'Exit');
 
         // Add to lightbox
@@ -313,6 +318,7 @@ const tmLightbox = (function () {
         // Construct
         let prev = document.createElement('button');
         classList(prev).addClass('tml-nav').addClass('tml-prev').addClass('outline-none');
+        if (plugin.settings.prevMarkup != '') prev.innerHTML = plugin.settings.prevMarkup;
         prev.setAttribute('aria-label', 'Previous');
 
         let next = document.createElement('button');
