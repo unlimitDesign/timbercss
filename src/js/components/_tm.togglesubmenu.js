@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Toggle Sub Menu 
-// Version: 1.0.2
+// Version: 1.0.3
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -21,8 +21,8 @@ const tmToggleSubMenu = (function () {
 
   // Check for mobile device and determine event type
   let mobile = false;
-  if( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) ||  navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) ||  navigator.userAgent.match(/BlackBerry/i) ||  navigator.userAgent.match(/Windows Phone/i) ) mobile = true;
-  
+  if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) mobile = true;
+
   // Check event type
   const eventType = mobile ? 'touchstart' : 'click';
 
@@ -34,10 +34,10 @@ const tmToggleSubMenu = (function () {
   const defaults = {
     easing: 'easeInOutQuint',                       // Sub menu  easing
     multipleMenusOpen: false,                       // Whether multiple top level sub menus should be open simultaneously
-    initialized: function(){},                      // Callback - side nav initialized
-    subMenuOpen: function(){},                      // Callback - side nav open
-    subMenuClosed: function(){},                    // Callback - side nav closed
-    destroyed: function(){}                         // Callback - side nav destroyed
+    initialized: function () { },                      // Callback - side nav initialized
+    subMenuOpen: function () { },                      // Callback - side nav open
+    subMenuClosed: function () { },                    // Callback - side nav closed
+    destroyed: function () { }                         // Callback - side nav destroyed
   };
 
   /**
@@ -51,13 +51,13 @@ const tmToggleSubMenu = (function () {
     const plugin = {};
 
     // Get defaults and merge with user options
-    try{
+    try {
       plugin.this = this;
       plugin.elements = element;
       plugin.defaults = defaults;
       plugin.options = options;
       plugin.settings = Object.assign({}, defaults, options);
-    }catch(error){
+    } catch (error) {
       console.log(`${error} - format must be: let x = new tmToggleSubMenu('.selector',{options})`);
     }
 
@@ -79,8 +79,8 @@ const tmToggleSubMenu = (function () {
     const calcMenuHeight = (link) => {
       let subMenuItems = link.nextElementSibling.childNodes;
       let subMenuHeight = 0;
-      subMenuItems.forEach(function(element){
-        if(element.nodeType == Node.ELEMENT_NODE) subMenuHeight += element.offsetHeight; 
+      subMenuItems.forEach(function (element) {
+        if (element.nodeType == Node.ELEMENT_NODE) subMenuHeight += element.offsetHeight;
       });
       return subMenuHeight;
     };
@@ -90,8 +90,8 @@ const tmToggleSubMenu = (function () {
     * @param  {boolean}  state  Whether sub menu is open or closed.
     */
     const setAncestorHeights = (link) => {
-      if(link.closest('.sub-menu') == null) return false;
-      getParents(link, 'sub-menu').forEach(function(element){
+      if (link.closest('.sub-menu') == null) return false;
+      getParents(link, 'sub-menu').forEach(function (element) {
         element.style.height = 'auto';
       });
     };
@@ -99,35 +99,35 @@ const tmToggleSubMenu = (function () {
     /**
     * Toggle sub menu
     */
-    const toggleSubMenu = (event) =>{
-      if(event.target.tagName === 'A') event.preventDefault();
-      
+    const toggleSubMenu = (event) => {
+      if (event.target.tagName === 'A') event.preventDefault();
+
       // Get link subling
       subMenu = event.target.nextElementSibling;
       subMenu.style.transitionTimingFunction = tmEasing[plugin.settings.easing];
 
       // Check if its already animating
-      if(subMenu.classList.contains('animating')) return false;
+      if (subMenu.classList.contains('animating')) return false;
 
       // Now animating
       classList(subMenu).addClass('animating');
 
       // Is a child of collapsable div
       let isChildofCollapsable = event.target.closest('.collapsable-target');
-      if(isChildofCollapsable) event.target.closest('.collapsable-target').style.height = '';
+      if (isChildofCollapsable) event.target.closest('.collapsable-target').style.height = '';
 
       // Swap active link and set heights
-      if(event.target.classList.contains('active')){
+      if (event.target.classList.contains('active')) {
         subMenu.style.height = calcMenuHeight(event.target) + 'px';
-    
+
         // Set timeout for animation
-        let toggleTimeout = setTimeout(function(){
+        let toggleTimeout = setTimeout(function () {
           classList(event.target).removeClass('active');
           setAncestorHeights(event.target);
           closeSubMenus(event.target);
           clearTimeout(toggleTimeout);
         }, 100);
-      }else{
+      } else {
         closeSubMenus(event.target);
         subMenu.style.height = calcMenuHeight(event.target) + 'px';
         setAncestorHeights(event.target);
@@ -136,9 +136,9 @@ const tmToggleSubMenu = (function () {
       }
 
       // On transition end issue callack
-      subMenu.addEventListener('transitionend', function transition(event){
+      subMenu.addEventListener('transitionend', function transition(event) {
         event.target.removeEventListener('transitionend', transition, false);
-        if(event.target != subMenu) return false;
+        if (event.target != subMenu) return false;
         classList(subMenu).removeClass('animating');
 
         // Callback
@@ -155,21 +155,21 @@ const tmToggleSubMenu = (function () {
     */
     plugin.initialize = () => {
 
-      if(plugin.elements == null) return false;
+      if (plugin.elements == null) return false;
 
       // Loop through each nav container
-      document.querySelectorAll(plugin.elements).forEach(function(navContainer){
+      document.querySelectorAll(plugin.elements).forEach(function (navContainer) {
         let links = navContainer.querySelectorAll(subMenuParentLink);
-        
+
         // Add events to parent links
         for (var i = 0; i < links.length; i++) {
-          let eventOptions = eventType == 'click' ? false : passiveSupported() && links[i].tagName != 'A' ? {passive: true} : {passive: false};
-          links[i].addEventListener(eventType, function(){
-            toggleSubMenu(event);
+          let eventOptions = eventType == 'click' ? false : passiveSupported() && links[i].tagName != 'A' ? { passive: true } : { passive: false };
+          links[i].addEventListener(eventType, function () {
+            if (window.innerWidth <= 992) toggleSubMenu(event);
           }, eventOptions);
 
           // If active, trigger click so sub menu height is set on startup
-          if(links[i].classList.contains('active')){
+          if (links[i].classList.contains('active') && window.innerWidth <= 992) {
             classList(links[i]).removeClass('active').addClass(`trigger-${i}`);
             plugin.triggerLinkClick(`.trigger-${i}`);
           }
@@ -188,17 +188,17 @@ const tmToggleSubMenu = (function () {
     * @param  {links}  element  The tab link. 
     */
     plugin.triggerLinkClick = (link) => {
-      try{
+      try {
         link = document.querySelector(link);
         let newEvent;
-        let event = !mobile ?  MouseEvent : TouchEvent;
+        let event = !mobile ? MouseEvent : TouchEvent;
         newEvent = new event(eventType, {
           bubbles: true,
           cancelable: true,
           view: window
         });
         let canceled = !link.dispatchEvent(newEvent);
-      }catch(error) {
+      } catch (error) {
         console.log(`${error} - selector not entered or does not exist`);
       }
     };
@@ -206,9 +206,9 @@ const tmToggleSubMenu = (function () {
     /**
     * Clear content heights
     */
-    plugin.clearContentHeights = () =>{
-      document.querySelectorAll('.sub-menu').forEach(function(element){
-        if(element.classList.contains('active')) element.style.height = 'auto';
+    plugin.clearContentHeights = () => {
+      document.querySelectorAll('.sub-menu').forEach(function (element) {
+        if (element.classList.contains('active')) element.style.height = 'auto';
         else element.style.height = '';
       });
     };
@@ -233,9 +233,9 @@ const tmToggleSubMenu = (function () {
       if (!plugin.settings) return;
 
       // Loop through each link in the navigation and remove events
-      document.querySelectorAll(plugin.elements).forEach(function(navigation){
+      document.querySelectorAll(plugin.elements).forEach(function (navigation) {
         let links = navigation.querySelectorAll(subMenuParentLink);
-        
+
         // Add events to accordion links
         for (var i = 0; i < links.length; i++) {
           links[i].removeEventListener(eventType, toggleSubMenu, false);
