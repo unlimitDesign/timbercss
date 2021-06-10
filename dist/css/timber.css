@@ -1307,7 +1307,7 @@ hr {
     grid-template-columns: repeat(8, 1fr);
   }
   .grid-lg-cols-1 [class*="span-cols-"] {
-    grid-column-end: auto;
+    grid-column-end: span 1 / span 1;
   }
 }
 
@@ -1364,7 +1364,7 @@ hr {
     grid-template-columns: repeat(8, 1fr);
   }
   .grid-md-cols-1 [class*="span-cols-"] {
-    grid-column-end: auto;
+    grid-column-end: span 1 / span 1;
   }
 }
 
@@ -1421,7 +1421,7 @@ hr {
     grid-template-columns: repeat(8, 1fr);
   }
   .grid-sm-cols-1 [class*="span-cols-"] {
-    grid-column-end: auto;
+    grid-column-end: span 1 / span 1;
   }
 }
 
@@ -4545,7 +4545,6 @@ iframe {
 }
 
 .navigation ul > li > a {
-  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -4557,6 +4556,10 @@ iframe {
 .navigation ul > li > a > span .description {
   display: block;
   font-size: 1.2rem;
+}
+
+.navigation > ul > li > a {
+  height: 100%;
 }
 
 .main-menu-item {
