@@ -135,7 +135,7 @@
 					}
 				}
 				.grid-#{$breakpoint}-cols-1 [class*="span-cols-"]{
-					grid-column-end: span 1 / span 1;
+					grid-column: span 1 / span 1;
 				}
 			}
 		}
