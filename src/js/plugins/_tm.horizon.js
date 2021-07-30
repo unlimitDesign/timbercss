@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Horizon 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -135,7 +135,7 @@ const tmHorizon = (function () {
         if(event.target != element) return false;
 
         // Callback
-        plugin.settings.elementVisible();
+        plugin.settings.elementVisible(event.target);
       });
     };
 
