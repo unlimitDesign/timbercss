@@ -1,6 +1,6 @@
 // Copyright © UnlimitDesign 2019
 // Plugin: Sticky Header 
-// Version: 1.0.0
+// Version: 1.0.1
 // URL: @UnlimitDesign
 // Author: UnlimitDesign, Christian Lundgren, Shu Miyao
 // Description: Detect when elements enter and/or leave viewport
@@ -126,7 +126,7 @@ const tmStickyHeader = (function () {
           classList(header).addClass(plugin.settings.headerInClass);
         }
         if(thresholdStickyScrollUp){
-          classList(header).addClass(plugin.settings.headerOutClass);
+          if (currentPos >= header.offsetHeight) classList(header).addClass(plugin.settings.headerOutClass);
         }else{
           classList(header).removeClass(plugin.settings.headerOutClass);
         }
