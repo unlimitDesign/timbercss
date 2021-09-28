@@ -23,6 +23,7 @@ const tmLoadMedia = (function () {
   const defaults = {
     lazyLoad: true,                   // Whether items should be lazyloaded using inView
     backgroundImage: false,           // Preload background image set in CSS
+    observeContainer: '',             // Container to be observed by inview - defaults to media if none is specified
     beforeLoading: function () { },   // Callback - tabs initialized
     onLoaded: function () { },           // Callback - tabs initialized
     onError: function () { },            // Callback - element in view
@@ -222,7 +223,8 @@ const tmLoadMedia = (function () {
             processMedia(element, checkMediaType(element));
           });
         } else {
-          mediaInView = new tmInView(plugin.elements, {
+          let observableElement = plugin.settings.observeContainer != '' ? plugin.settings.observeContainer : plugin.elements;
+          mediaInView = new tmInView(observableElement, {
             threshold: 0.5,
             detectionBuffer: 100,
             unObserveViewed: true,
@@ -231,8 +233,11 @@ const tmLoadMedia = (function () {
               // Callback
               plugin.settings.beforeLoading(visibleMedia);
 
-              visibleMedia = visibleMedia.querySelector('[data-observe-parent]') ? visibleMedia.querySelector(plugin.elements) : visibleMedia;
-              processMedia(visibleMedia, checkMediaType(visibleMedia));
+              visibleMedia = plugin.settings.observeContainer ? visibleMedia.querySelector(plugin.elements) : visibleMedia;
+              
+              if (visibleMedia !== null) {
+                processMedia(visibleMedia, checkMediaType(visibleMedia))
+              }
             }
           });
           mediaInView.initialize();
